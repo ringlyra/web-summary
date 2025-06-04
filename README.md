@@ -56,6 +56,7 @@ repo-root
 <ここに HTML→Markdown 変換済み本文をそのまま貼り付ける>  
 
 HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。最後に本文が全て取得できたか確認することを忘れないでください。
+```
 
 ⸻
 
@@ -76,7 +77,7 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 5. 命名・タグ規約 / Naming & Tag Rules
 	•	ファイル名: <YYYY-MM-DD>_<slug>.md (slug は title をスネーク/ケバブケース化したもの)。
 	•	必須タグ: codex
-	•	推奨タグ: コンテンツ種別 (article, tutorial, spec など)。
+	•	推奨タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列. タグ名は必ず英語にすること
 
 ⸻
 
