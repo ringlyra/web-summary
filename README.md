@@ -47,15 +47,26 @@ repo-root
 
 ## 概要 / Summary  
 - **500 字以内**、日本語。
-- 重要キーワードは **bold** で強調。  
+- 重要キーワードは **bold** で強調。
 
-3.3 本文 / Markdown Body Section
+### 3.3 質疑応答 / Q&A Section ※質問が無い場合はセクションごと省略
+
+## Q&A / Conversation
+- ユーザーがサマリーを査読した後、AI に投げた **質問** と **回答** を **順番どおり** すべて記録する。  
+- フォーマットは Markdown 箇条書き
+
+例 (箇条書き):
+
+- **Q (User):** 「codex タグは必須とありますが、複数タグにしたい場合は?」  
+  **A (AI):** `codex` に加え任意の英語タグ (15 個以内) を併記してください。  
+
+3.4 本文 / Markdown Body Section
 
 ## 本文 / Article  
 
 <ここに HTML→Markdown 変換済み本文をそのまま貼り付ける>  
 
-HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。最後に本文が全て取得できたか確認することを忘れないでください。
+HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。最後に本文が全て取得できたか確認することを忘れないでください。本文を上から順番に照らし合わせて確認してください。
 ```
 
 ⸻
