@@ -3,7 +3,7 @@
 - **source**: https://arxiv.org/abs/2506.00523
 - **author**: Ge, Xingtong, Zhang, Xin, Xu, Tongda, Zhang, Yi, Zhang, Xinjie, Wang, Yan, Zhang, Jun
 - **published**: 2025-05-31
-- **fetched**: 2025-06-04T02:07:02Z
+- **fetched**: 2025-06-04T04:40:02Z
 - **tags**: codex, machine-learning, diffusion-model, image-generation
 - **image**: https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png
 
