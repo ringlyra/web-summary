@@ -4,6 +4,7 @@ on:
 
 permissions:
   pull-requests: write
+  contents: write
 
 jobs:
   enable:
@@ -12,4 +13,3 @@ jobs:
       - uses: peter-evans/enable-pull-request-automerge@v3
         with:
           pull-request-number: ${{ github.event.pull_request.number }}
-          
