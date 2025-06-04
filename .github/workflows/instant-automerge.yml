@@ -1,7 +1,10 @@
+# .github/workflows/instant-automerge.yml
 name: instant-automerge
+
 on:
   pull_request:
     types: [opened, ready_for_review]
+
 permissions:
   contents: write
   pull-requests: write
@@ -12,6 +15,5 @@ jobs:
     steps:
       - uses: peter-evans/enable-pull-request-automerge@v3
         with:
+          merge-method: squash          # 好みで merge / rebase も可
           token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ github.event.pull_request.number }}  # ← 明示推奨
-          merge-method: squash       # ← ハイフン!!
