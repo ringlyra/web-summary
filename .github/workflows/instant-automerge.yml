@@ -1,11 +1,8 @@
-name: instant-automerge
-
 on:
   pull_request:
     types: [opened, ready_for_review]
 
 permissions:
-  contents: write
   pull-requests: write
 
 jobs:
@@ -13,7 +10,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/enable-pull-request-automerge@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: squash               # 好みで merge / rebase
-          pull-request-number: ${{ github.event.pull_request.number }}
