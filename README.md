@@ -37,7 +37,7 @@ repo-root
 <!-- metadata -->
 - **title**: ChatGPT, an AI model
 - **source**: https://openai.com/blog/chatgpt
-- **author**: openai.com
+- **author**: openai.com (author が見つからなければドメイン名を入力)
 - **published**: 2025-05-30T14:00:00Z
 - **fetched**: 2025-06-04T03:30:45Z
 - **tags**: codex, ai, nlp
@@ -55,7 +55,7 @@ repo-root
 
 <ここに HTML→Markdown 変換済み本文をそのまま貼り付ける>  
 
-HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。
+HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。最後に本文が全て取得できたか確認することを忘れないでください。
 
 ⸻
 
