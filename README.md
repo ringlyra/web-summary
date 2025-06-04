@@ -61,16 +61,16 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 ⸻
 
 4. 処理フロー / Workflow
-	1.	Input: エージェントに URL が渡される。
-	2.	Fetch: HTTP GET。必要に応じて Headless browser で JS レンダリング。
-	3.	Parse:
-	•	<title>, <meta> 各種, OGP, <time> 等を抽出。
-	•	取得できない項目は空文字列。tags には必ず codex を入れる。
-	4.	Convert: 本文 HTML を Markdown に変換。
-	5.	Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
-	6.	Save: YYYY/MM/<domain>/<YYYY-MM-DD>_<slug>.md に保存。
-	7.	Commit: git add → git commit -m "Add clip: <title or domain>"。
-	8.	Repeat: 次の URL へ。
+  1. Input: エージェントに URL が渡される。
+  2. Fetch: HTTP GET。必要に応じて Headless browser で JS レンダリング。
+  3. Parse:
+  - <title>, <meta> 各種, OGP, <time> 等を抽出。
+  - 取得できない項目は空文字列。tags には必ず codex を入れる。
+  4. Convert: 本文 HTML を Markdown に変換。
+  5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
+  6. Save: YYYY/MM/<domain>/<YYYY-MM-DD>_<slug>.md に保存。
+  7. Commit: git add → git commit -m "Add clip: <title or domain>"。
+  8. Repeat: 次の URL へ。
 
 ⸻
 
@@ -82,10 +82,10 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 ⸻
 
 6. 注意事項 / Caveats
-	•	robots.txt を尊重。スクレイピング禁止サイトは除外。
-	•	JS レンダリング必須サイトは Headless browser (e.g. Playwright) を使用。
-	•	著作権・ライセンスを確認し、引用の範囲に収める。
-	•	同じタイトル、同じ URL の場合は更新(上書き)してください。
+- robots.txt を尊重。スクレイピング禁止サイトは除外。
+- JS レンダリング必須サイトは Headless browser (e.g. Playwright) を使用。
+- 著作権・ライセンスを確認し、引用の範囲に収める。
+- 同じタイトル、同じ URL の場合は更新(上書き)してください。
 
 ⸻
 
