@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>高機能なAIエージェントを爆速で作る方法 - Speaker Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="stylesheet" href="https://d1eu30co0ohy4w.cloudfront.net/assets/application-7a6c79d9e664c8c1dab0f20ba5c84b65ebc0dd8b755bdb3748cf9197ae783e74.css" />
+<script src="https://d1eu30co0ohy4w.cloudfront.net/assets/application-6671076983cb094c30ae.js"></script>
+
+<link rel="icon" type="image/png" href="https://d1eu30co0ohy4w.cloudfront.net/assets/favicon-bdd5839d46040a50edf189174e6f7aacc8abb3aaecd56a4711cf00d820883f47.png" />
+<link rel="apple-touch-icon" type="image/png" href="https://d1eu30co0ohy4w.cloudfront.net/assets/favicon-bdd5839d46040a50edf189174e6f7aacc8abb3aaecd56a4711cf00d820883f47.png" />
+<link rel="manifest" href="/manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="yRfPT4WNoofB_YO9YfreEkN84QJX893C6dooIUQ8rC0YgwUxeOl6I6EjNX11iPQxlPBYcBBKuubW1WB2dVjMMg" />
+
+
+      <link rel="stylesheet" href="https://d1eu30co0ohy4w.cloudfront.net/assets/player-c74d65a4f21e9749d74d542aa33a756e75fab8bc82a394cab3a9d7a456dd2023.css" />
+  <script src="https://d1eu30co0ohy4w.cloudfront.net/assets/player-5149bb60884c0e415330.js"></script>
+  <link rel="alternate" type="application/json+oembed" href="https://speakerdeck.com/oembed.json?url=https%3A%2F%2Fspeakerdeck.com%2Fkmd09%2Fgao-ji-neng-naaiezientowobao-su-dezuo-rufang-fa" title="高機能なAIエージェントを爆速で作る方法">
+  <meta property="og:url" content="https://speakerdeck.com/kmd09/gao-ji-neng-naaiezientowobao-su-dezuo-rufang-fa">
+  <meta property="og:site_name" content="Speaker Deck">
+  <meta property="og:title" content="高機能なAIエージェントを爆速で作る方法">
+  <meta property="og:description" name="description" content="Cloudflare Workers Tech Talks in Tokyo #5">
+  <meta property="og:type" content="website" />
+  <meta property="og:author" content="Mizuki Kameda">
+  <meta property="og:image" content="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_0.jpg?35325630">
+  <meta name="robots" content="max-image-preview:large">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@speakerdeck">
+  <meta name="twitter:creator" content="@speakerdeck">
+  <meta name="twitter:title" content="高機能なAIエージェントを爆速で作る方法">
+  <meta name="twitter:description" content="Cloudflare Workers Tech Talks in Tokyo #5">
+  <meta name="twitter:image:src" content="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_0.jpg?35325630">
+  <link rel="canonical" href="https://speakerdeck.com/kmd09/gao-ji-neng-naaiezientowobao-su-dezuo-rufang-fa" />
+  <meta name="twitter:label1" value="Deck by" />
+  <meta name="twitter:data1" value="Mizuki Kameda">
+  <meta name="stats-owner_id" content="3359703" />
+  <meta name="stats-talk_id" content="1378822" />
+  <meta name="stats-view_type" content="talk" />
+
+    
+    <style>
+    @media only screen and (min-width: 0px) and (min-height: 0px) { .ads-container > div { min-width:300px; min-height:250px; } }
+    @media only screen and (min-width: 640px) and (min-height: 0px) { .ads-container > div { min-width:570px; min-height:90px; } }
+    </style>
+    <script type="text/javascript">
+      (function(){
+        var bsa_optimize=document.createElement('script');
+        bsa_optimize.type='text/javascript';
+        bsa_optimize.async=true;
+        bsa_optimize.src='https://cdn4.buysellads.net/pub/speakerdeck.js?'+(new Date()-new Date()%600000);
+        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa_optimize);
+      })();
+    </script>
+  </head>
+  <body class="sd-app">
+    
+      <div class="alert alert-banner">
+            <a class="d-block text-center text-white" href="/pro">
+      <span class="text-warning">Upgrade to Pro</span> &mdash; share decks privately, control downloads, hide ads and more &hellip;
+</a>
+      </div>
+    <div class="sd-menu d-md-none">
+  <div class="container sd-menu-fixed-container">
+    <div class="sd-brand">
+      <a class="sd-brand-logo" href="/">
+        <img alt="Speaker Deck" width="32" height="20" src="https://d1eu30co0ohy4w.cloudfront.net/assets/mark-f4be6df1e05965cac9f98e664a6c35f5ffdd0207385d07464a9214d6cdf76082.svg" /> <span class="d-none d-xl-inline">Speaker Deck</span>
+</a>    </div>
+
+      <nav class="sd-fixed-nav" aria-label="Primary">
+        <div class="sd-nav-main js-toggle-container">
+          <ul class="sd-nav-fixed-group nav toggle-flex-when-off">
+            <li class="sd-nav-item nav-item d-none d-md-block">
+              <a class="sd-nav-link nav-link" href="/features">
+                Features
+</a>            </li>
+              <li class="sd-nav-item nav-item d-none d-md-block">
+                  <a class="sd-nav-link nav-link" href="/pro">
+                    <span class="d-none d-md-inline">Speaker Deck</span>
+                    <div class="badge badge-pro-prominent">PRO</div>
+</a>              </li>
+            <li class="sd-nav-item nav-item">
+              <a class="sd-nav-link nav-link" href="/signin">
+                Sign in
+</a>            </li>
+            <li class="sd-nav-item nav-item">
+              <a class="btn btn-primary" href="/signup">
+                Sign up for free
+</a>            </li>
+            <li class="sd-nav-item d-block d-md-none">
+              <button class="btn btn-link me-2 js-toggle-trigger" aria-label="Toggle Search">
+                <svg class="icon icon-search "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-search"></use></svg>
+              </button>
+            </li>
+            <li class="sd-nav-item nav-item d-none d-md-block">
+                <form action="https://www.google.com/cse" id="cse-search-box" class="row">
+    <input type="hidden" name="cx" value="010150859881542981030:hqhxyxpwtc4">
+    <input type="hidden" name="ie" value="UTF-8">
+    <label for="q" class="visually-hidden">Search</label>
+    <div class="col"><input type="text" name="q" id="q" value="" placeholder="Search..." class="form-control search-input w-auto"></div>
+    <div class="col"><input type="submit" name="sa" value="Search" class="btn btn-outline-primary d-inline-block d-md-none d-lg-inline-block"></div>
+  </form>
+
+            </li>
+          </ul>
+
+          <ul class="sd-nav-fixed-group nav toggle-flex-when-on">
+            <li class="sd-nav-item">
+                <form action="https://www.google.com/cse" id="cse-search-box" class="row">
+    <input type="hidden" name="cx" value="010150859881542981030:hqhxyxpwtc4">
+    <input type="hidden" name="ie" value="UTF-8">
+    <label for="q" class="visually-hidden">Search</label>
+    <div class="col"><input type="text" name="q" id="q" value="" placeholder="Search..." class="form-control search-input w-auto"></div>
+    <div class="col"><input type="submit" name="sa" value="Search" class="btn btn-outline-primary d-inline-block d-md-none d-lg-inline-block"></div>
+  </form>
+
+            </li>
+            <li class="sd-nav-item pe-2">
+              <button class="btn btn-link js-toggle-trigger">
+                <svg class="icon icon-x "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-x"></use></svg>
+              </button>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+  </div>
+</div>
+
+    
+    
+    <div class="sd-main">
+      
+
+
+
+<div class="deck deck-with-banner">
+  <div class="deck-background" style="background-image: url('https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/preview_slide_0.jpg?35325630')"></div>
+  
+  <div class="deck-header d-none d-md-block js-toggle-container">
+    <div class="container d-flex align-items-center w-100">
+      <div class="deck-header-logo py-3 me-5">
+        <a class="sd-brand-logo" href="/">
+          <img alt="Speaker Deck" width="32" height="21" src="https://d1eu30co0ohy4w.cloudfront.net/assets/mark-white-8d908558fe78e8efc8118c6fe9b9b1a9846b182c503bdc6902f97df4ddc9f3af.svg" />
+</a>      </div>
+      <div class="p-3 text-center toggle-block-when-off flex-fill">
+        <h4 class="deck-header-title text-white text-truncate">
+
+
+
+
+          高機能なAIエージェントを爆速で作る方法
+        </h4>
+      </div>
+      <div class="d-flex justify-content-end align-items-center ms-auto">
+        <div class="deck-header-user-nav toggle-block-when-on">
+            <form action="https://www.google.com/cse" id="cse-search-box" class="row">
+    <input type="hidden" name="cx" value="010150859881542981030:hqhxyxpwtc4">
+    <input type="hidden" name="ie" value="UTF-8">
+    <label for="q" class="visually-hidden">Search</label>
+    <div class="col"><input type="text" name="q" id="q" value="" placeholder="Search..." class="form-control search-input w-auto"></div>
+    <div class="col"><input type="submit" name="sa" value="Search" class="btn btn-outline-primary d-inline-block d-md-none d-lg-inline-block"></div>
+  </form>
+
+        </div>
+        <div class="deck-header-user-nav toggle-block-when-on">
+          <button class="btn btn-link me-2 js-toggle-trigger text-white">
+            <svg class="icon icon-x "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-x"></use></svg>
+          </button>
+        </div>
+        <div class="deck-header-user-nav toggle-block-when-off">
+          <button class="btn btn-link me-2 js-toggle-trigger text-white" aria-label="Toggle Search">
+            <svg class="icon icon-search "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-search"></use></svg>
+          </button>
+        </div>
+        <div class="deck-header-user-nav flex-grow-0 dropdown py-3">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deck-embed js-deck-embed" style="aspect-ratio:1024/576;" data-ratio="1.7777777777777777" data-state="processed">
+    <div class="speakerdeck-embed" data-title="false" data-skip-resize="true" data-id="09858e1ca19f42e2a6120d8f746900ec" data-name="高機能なAIエージェントを爆速で作る方法" data-ratio="1.7777777777777777" data-host="speakerdeck.com"></div>
+</div>
+
+
+  <div class="deck-meta">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md-auto col-12 py-3">
+          <div class="row align-items-center justify-content-md-start">
+            <a class="d-flex align-items-center font-weight-bold text-white col-auto" href="/kmd09">
+              <span class="me-2">
+                <img width="47" height="47" class="avatar " loading="eager" alt="Avatar for Mizuki Kameda" src="https://secure.gravatar.com/avatar/19dcf74e1c74d52eb858f819b14c0b93?s=47" />
+              </span>
+              <span>
+                Mizuki Kameda
+              </span>
+</a>            
+            <div class="col-auto deck-date">
+              June 03, 2025
+            </div>
+            <div class="col-auto d-none d-md-block">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-auto col-12 py-md-3 pb-3">
+          <div class="row justify-content-between justify-content-md-start gap-2 gap-md-0">
+
+
+            <div class="col-auto me-auto me-md-0 align-self-center">
+            </div>
+            <div class="row col-auto text-white font-weight-bold">
+              <div class="col-auto pe-0 pe-lg-2 align-self-center"><div class="js-bookmark bookmark animated" data-talk-id="1378822">
+</div>
+</div>
+
+              <div class="col-auto pe-0 pe-lg-2 align-self-center"><div class="js-stargazer stargazer animated" data-talk-id="1378822">
+      <a class="font-weight-bold" title="Star 高機能なAIエージェントを爆速で作る方法" href="/signin?return_to=%2Fkmd09%2Fgao-ji-neng-naaiezientowobao-su-dezuo-rufang-fa">
+        <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 1
+</a></div>
+</div>
+
+              <div class="col-auto pe-0 pe-lg-2 align-self-center" title="397 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 400</div>
+
+                <div class="col-auto pe-0 pe-lg-2 align-self-center"><a title="Download PDF" class="text-white" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/workers-tech-talk5.pdf"><svg class="icon icon-download "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-download"></use></svg></a></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container py-md-5">
+  <div class="ads-container"><div id="bsa-zone_1710255896577-0_123456"></div></div>
+
+  <h1 class="mb-4 text-break"> 高機能なAIエージェントを爆速で作る方法</h1>
+    <div class="deck-description text-break mb-4">
+      <p>Cloudflare Workers Tech Talks in Tokyo #5</p>
+      <small><p></p></small>
+    </div>
+  <div class="row align-items-center td-none mb-4">
+    <div class="col-md-auto col-12 me-md-auto mb-4 mb-md-0">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <img width="128" height="128" class="avatar avatar-lg" loading="eager" alt="Avatar for Mizuki Kameda" src="https://secure.gravatar.com/avatar/19dcf74e1c74d52eb858f819b14c0b93?s=128" />
+        </div>
+        <div class="col-auto ps-0">
+          <h2 class="m-0 h4">
+            <a class="text-dark" href="/kmd09">Mizuki Kameda</a>
+            
+          </h2>
+          <div class="text-muted">
+              June 03, 2025
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-auto col-12">
+      <div class="btn-group btn-group-flex d-flex" role="group">
+        
+          <a href="https://x.com/intent/tweet?url=https://speakerdeck.com/kmd09/gao-ji-neng-naaiezientowobao-su-dezuo-rufang-fa&text=%E9%AB%98%E6%A9%9F%E8%83%BD%E3%81%AAAI%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%82%92%E7%88%86%E9%80%9F%E3%81%A7%E4%BD%9C%E3%82%8B%E6%96%B9%E6%B3%95" class="btn btn-outline-primary w-100">
+            <svg class="icon icon-twitter-x "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-twitter-x"></use></svg> Tweet
+          </a>
+          <button class="facebook-share btn btn-outline-primary w-100">
+            <svg class="icon icon-facebook "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-facebook"></use></svg> Share
+          </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ads-container"><div id="bsa-zone_1712565778570-2_123456"></div></div>
+</div>
+
+
+
+<div class="bg-lightest border-top">
+  <div class="container py-md-4 py-3">
+
+
+        <div class="row mb-4 align-items-center">
+          <div class="col-12 col-lg-9 mb-3 mb-lg-0">
+            <h2 class="m-0">More Decks by Mizuki Kameda</h2>
+          </div>
+          <div class="col-12 col-lg-3 text-lg-end">
+            <a class="btn btn-outline-primary btn-break" href="/kmd09">
+              See All by Mizuki Kameda <svg class="icon icon-chevron-right "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-chevron-right"></use></svg>
+</a>          </div>
+        </div>
+        <div class="row">
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="a91b13d8482e4a51ab6bee66676800ad" data-slide-count="31" data-cover-image="https://files.speakerdeck.com/presentations/a91b13d8482e4a51ab6bee66676800ad/preview_slide_0.jpg?34602125">
+        <a class="deck-preview-link" href="/kmd09/sukeraburunamcpsabakai-fa-rimotomcpnoxian-zai-di-tokorekara" title="スケーラブルなMCPサーバ開発 -リモートMCPの現在地とこれから-">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/a91b13d8482e4a51ab6bee66676800ad/preview_slide_0.jpg?34602125');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/a91b13d8482e4a51ab6bee66676800ad/preview_slide_0.jpg?34602125');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            スケーラブルなMCPサーバ開発 -リモートMCPの現在地とこれから-
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/kmd09" aria-label="Mizuki Kameda profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Mizuki Kameda" src="https://secure.gravatar.com/avatar/19dcf74e1c74d52eb858f819b14c0b93?s=24" />
+                kmd09
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 0
+            </div>
+            <div class="px-1 py-3">
+              <span title="9 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 9</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="b9aeb48b72764af4891273221cdd9568" data-slide-count="28" data-cover-image="https://files.speakerdeck.com/presentations/b9aeb48b72764af4891273221cdd9568/preview_slide_0.jpg?33453049">
+        <a class="deck-preview-link" href="/kmd09/cloudflaredeshi-xian-suru-aieziento-wakuhuroji-pan" title="Cloudflareで実現する AIエージェント ワークフロー基盤">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/b9aeb48b72764af4891273221cdd9568/preview_slide_0.jpg?33453049');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/b9aeb48b72764af4891273221cdd9568/preview_slide_0.jpg?33453049');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Cloudflareで実現する AIエージェント ワークフロー基盤
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/kmd09" aria-label="Mizuki Kameda profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Mizuki Kameda" src="https://secure.gravatar.com/avatar/19dcf74e1c74d52eb858f819b14c0b93?s=24" />
+                kmd09
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 0
+            </div>
+            <div class="px-1 py-3">
+              <span title="431 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 430</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+        </div>
+
+
+        <div class="row mb-4 align-items-center">
+          <div class="col-12 col-lg-9 mb-3 mb-lg-0">
+            <h2 class="m-0">Featured</h2>
+          </div>
+          <div class="col-12 col-lg-3 text-lg-end">
+            <a class="btn btn-outline-primary" href="/p/featured">
+              See All Featured <svg class="icon icon-chevron-right "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-chevron-right"></use></svg>
+</a>          </div>
+        </div>
+        <div class="row">
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="34d2856027ce01316b5d621ab8e7d421" data-slide-count="32" data-cover-image="https://files.speakerdeck.com/presentations/34d2856027ce01316b5d621ab8e7d421/preview_slide_0.jpg?2224591">
+        <a class="deck-preview-link" href="/denniskardys/the-straight-up-how-to-draw-better-workshop" title="The Straight Up &quot;How To Draw Better&quot; Workshop">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/34d2856027ce01316b5d621ab8e7d421/preview_slide_0.jpg?2224591');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/34d2856027ce01316b5d621ab8e7d421/preview_slide_0.jpg?2224591');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            The Straight Up &quot;How To Draw Better&quot; Workshop
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/denniskardys" aria-label="Dennis Kardys profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Dennis Kardys" src="https://secure.gravatar.com/avatar/aff5641764408271f7bc398f2097edd0?s=24" />
+                denniskardys
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 233
+            </div>
+            <div class="px-1 py-3">
+              <span title="136,883 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 140k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="76fd6952b6fc4f0b9ad75153f065c7e2" data-slide-count="100" data-cover-image="https://files.speakerdeck.com/presentations/76fd6952b6fc4f0b9ad75153f065c7e2/preview_slide_0.jpg?6194130">
+        <a class="deck-preview-link" href="/akosma/being-a-developer-after-40" title="Being A Developer After 40">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/76fd6952b6fc4f0b9ad75153f065c7e2/preview_slide_0.jpg?6194130');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/76fd6952b6fc4f0b9ad75153f065c7e2/preview_slide_0.jpg?6194130');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Being A Developer After 40
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/akosma" aria-label="Adrian Kosmaczewski profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Adrian Kosmaczewski" src="https://secure.gravatar.com/avatar/88dd97cf2dc7f06cc51a01d450f0b1e5?s=24" />
+                akosma
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 91
+            </div>
+            <div class="px-1 py-3">
+              <span title="586,514 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 590k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="4e893993a91c17005300fd54" data-slide-count="72" data-cover-image="https://files.speakerdeck.com/presentations/4e893993a91c17005300fd54/preview_slide_0.jpg?566740">
+        <a class="deck-preview-link" href="/brad_frost/for-a-future-friendly-web" title="For a Future-Friendly Web">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/4e893993a91c17005300fd54/preview_slide_0.jpg?566740');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/4e893993a91c17005300fd54/preview_slide_0.jpg?566740');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            For a Future-Friendly Web
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/brad_frost" aria-label="Brad Frost profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Brad Frost" src="https://secure.gravatar.com/avatar/f68cb25ae3e5c2106997454b13b7737d?s=24" />
+                brad_frost
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 178
+            </div>
+            <div class="px-1 py-3">
+              <span title="9,738 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 9.7k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="c8dc06d4fac14d21a860fdcd7a4662d6" data-slide-count="43" data-cover-image="https://files.speakerdeck.com/presentations/c8dc06d4fac14d21a860fdcd7a4662d6/preview_slide_0.jpg?30527305">
+        <a class="deck-preview-link" href="/sergeychernyshev/speed-design" title="Speed Design">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/c8dc06d4fac14d21a860fdcd7a4662d6/preview_slide_0.jpg?30527305');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/c8dc06d4fac14d21a860fdcd7a4662d6/preview_slide_0.jpg?30527305');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Speed Design
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/sergeychernyshev" aria-label="Sergey Chernyshev profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Sergey Chernyshev" src="https://secure.gravatar.com/avatar/1e2ff8ee6ac0e790883b1cdc420f158d?s=24" />
+                sergeychernyshev
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 30
+            </div>
+            <div class="px-1 py-3">
+              <span title="964 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 960</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="d3bb722e14f947d4aeda2d663b162e9d" data-slide-count="95" data-cover-image="https://files.speakerdeck.com/presentations/d3bb722e14f947d4aeda2d663b162e9d/preview_slide_0.jpg?15571043">
+        <a class="deck-preview-link" href="/keathley/building-adaptive-systems" title="Building Adaptive Systems">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/d3bb722e14f947d4aeda2d663b162e9d/preview_slide_0.jpg?15571043');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/d3bb722e14f947d4aeda2d663b162e9d/preview_slide_0.jpg?15571043');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Building Adaptive Systems
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/keathley" aria-label="Chris Keathley profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Chris Keathley" src="https://secure.gravatar.com/avatar/06f8b41980eb4c577fa40c41d5030c19?s=24" />
+                keathley
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 41
+            </div>
+            <div class="px-1 py-3">
+              <span title="2,571 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 2.6k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="4e92fa62e62130005400ba77" data-slide-count="58" data-cover-image="https://files.speakerdeck.com/presentations/4e92fa62e62130005400ba77/preview_slide_0.jpg?580567">
+        <a class="deck-preview-link" href="/colly/embracing-the-ebb-and-flow" title="Embracing the Ebb and Flow">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/4e92fa62e62130005400ba77/preview_slide_0.jpg?580567');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/4e92fa62e62130005400ba77/preview_slide_0.jpg?580567');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Embracing the Ebb and Flow
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/colly" aria-label="Simon Collison profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Simon Collison" src="https://secure.gravatar.com/avatar/c9b18d9dff88a9dd2393364c2b3b21bd?s=24" />
+                colly
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 85
+            </div>
+            <div class="px-1 py-3">
+              <span title="4,689 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 4.7k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="4ea3c7c8a0250e0051008810" data-slide-count="34" data-cover-image="https://files.speakerdeck.com/presentations/4ea3c7c8a0250e0051008810/preview_slide_0.jpg?599408">
+        <a class="deck-preview-link" href="/davidbonilla/gamification-cas2011" title="Gamification - CAS2011">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/4ea3c7c8a0250e0051008810/preview_slide_0.jpg?599408');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/4ea3c7c8a0250e0051008810/preview_slide_0.jpg?599408');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Gamification - CAS2011
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/davidbonilla" aria-label="David Bonilla profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for David Bonilla" src="https://secure.gravatar.com/avatar/4394ceb8b277f35ee3da7030384efb5d?s=24" />
+                davidbonilla
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 81
+            </div>
+            <div class="px-1 py-3">
+              <span title="5,288 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 5.3k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="d85e14f914754d4da76fb9682fe24bd4" data-slide-count="78" data-cover-image="https://files.speakerdeck.com/presentations/d85e14f914754d4da76fb9682fe24bd4/preview_slide_0.jpg?14177923">
+        <a class="deck-preview-link" href="/eitanlees/visualization" title="Visualization">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/d85e14f914754d4da76fb9682fe24bd4/preview_slide_0.jpg?14177923');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/d85e14f914754d4da76fb9682fe24bd4/preview_slide_0.jpg?14177923');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Visualization
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/eitanlees" aria-label="Eitan Lees profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Eitan Lees" src="https://secure.gravatar.com/avatar/170b760e0147792d0140e59ec78e9893?s=24" />
+                eitanlees
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 146
+            </div>
+            <div class="px-1 py-3">
+              <span title="15,755 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 16k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="a3970e23eb734781843c012bca4c5dbf" data-slide-count="159" data-cover-image="https://files.speakerdeck.com/presentations/a3970e23eb734781843c012bca4c5dbf/preview_slide_0.jpg?4662923">
+        <a class="deck-preview-link" href="/samlambert/the-mysql-ecosystem-at-github-2015" title="The MySQL Ecosystem @ GitHub 2015">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/a3970e23eb734781843c012bca4c5dbf/preview_slide_0.jpg?4662923');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/a3970e23eb734781843c012bca4c5dbf/preview_slide_0.jpg?4662923');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            The MySQL Ecosystem @ GitHub 2015
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/samlambert" aria-label="Sam Lambert profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Sam Lambert" src="https://secure.gravatar.com/avatar/be9caeb9d4ef9944d151af909063ed6e?s=24" />
+                samlambert
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 251
+            </div>
+            <div class="px-1 py-3">
+              <span title="12,492 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 12k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="dbca5693cbdf47a39b96576557ef4971" data-slide-count="73" data-cover-image="https://files.speakerdeck.com/presentations/dbca5693cbdf47a39b96576557ef4971/preview_slide_0.jpg?19769786">
+        <a class="deck-preview-link" href="/mraible/java-rest-api-framework-comparison-pwx-2021" title="Java REST API Framework Comparison - PWX 2021">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/dbca5693cbdf47a39b96576557ef4971/preview_slide_0.jpg?19769786');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/dbca5693cbdf47a39b96576557ef4971/preview_slide_0.jpg?19769786');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Java REST API Framework Comparison - PWX 2021
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/mraible" aria-label="Matt Raible profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Matt Raible" src="https://secure.gravatar.com/avatar/72a2082c6a4dd79ad68befb3db911616?s=24" />
+                mraible
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 31
+            </div>
+            <div class="px-1 py-3">
+              <span title="8,596 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 8.6k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="4f926da9cb4cd0001f00a1ff" data-slide-count="96" data-cover-image="https://files.speakerdeck.com/presentations/4f926da9cb4cd0001f00a1ff/preview_slide_0.jpg?800362">
+        <a class="deck-preview-link" href="/bkeepers/git-the-nosql-database" title="Git: the NoSQL Database">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/4f926da9cb4cd0001f00a1ff/preview_slide_0.jpg?800362');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/4f926da9cb4cd0001f00a1ff/preview_slide_0.jpg?800362');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            Git: the NoSQL Database
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/bkeepers" aria-label="Brandon Keepers profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Brandon Keepers" src="https://secure.gravatar.com/avatar/20bfe76b3d6105641f879fe45cfc9272?s=24" />
+                bkeepers
+              </a>
+                <span class="ms-1">  <div class="badge badge-pro "><a href="/pro">PRO</a></div>
+</span>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 430
+            </div>
+            <div class="px-1 py-3">
+              <span title="64,930 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 65k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card deck-preview" data-id="2d52ac45fb2e46218ef26a11ec6076b7" data-slide-count="90" data-cover-image="https://files.speakerdeck.com/presentations/2d52ac45fb2e46218ef26a11ec6076b7/preview_slide_0.jpg?27324033">
+        <a class="deck-preview-link" href="/eileencodes/rails-world-2023-day-1-closing-keynote-the-magic-of-rails" title="[Rails World 2023 - Day 1 Closing Keynote] - The Magic of Rails">
+          <div class="deck-preview-image">
+            <div class="content"></div>
+            <div class="deck-preview-slide" style="background-image: url('https://files.speakerdeck.com/presentations/2d52ac45fb2e46218ef26a11ec6076b7/preview_slide_0.jpg?27324033');"></div>
+            <div class="deck-preview-background" style="background-image: url('https://files.speakerdeck.com/presentations/2d52ac45fb2e46218ef26a11ec6076b7/preview_slide_0.jpg?27324033');"></div>
+            <div class="deck-preview-slide deck-preview-scrub-slide"></div>
+            <div class="deck-preview-background deck-preview-scrub-background"></div>
+            <div class="deck-preview-scrubber"></div>
+          </div>
+
+
+          <div class="deck-title px-3 pt-3 text-truncate">
+            [Rails World 2023 - Day 1 Closing Keynote] - The Magic of Rails
+          </div>
+        </a>
+        <div class="deck-preview-meta d-flex px-2">
+            <div class="text-truncate py-3 pe-2 me-auto py-3">
+              <a href="/eileencodes" aria-label="Eileen M. Uchitelle profile">
+                <img width="24" height="24" class="avatar avatar-sm" loading="lazy" alt="Avatar for Eileen M. Uchitelle" src="https://secure.gravatar.com/avatar/c44e1f7e22c3f23cff7bc130871047ef?s=24" />
+                eileencodes
+              </a>
+            </div>
+            <div class="px-1 py-3">
+            </div>
+            <div class="px-2 py-3">
+                <svg class="icon icon-star "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-star"></use></svg> 34
+            </div>
+            <div class="px-1 py-3">
+              <span title="2,274 views"><svg class="icon icon-eye "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-eye"></use></svg> 2.3k</span>
+            </div>
+        </div>
+      </div>
+  </div>
+
+        </div>
+  </div>
+</div>
+
+  <div id="transcript" class="container py-4 transcript text-break">
+    <h2 class="mb-4">Transcript</h2>
+    <ol>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="ߴػೳͳAIΤʔδΣϯτΛ
+ര଎Ͱ࡞Δํ๏
+Cloud
+fl
+are Workers Tech..." title="高機能なAIエージェントを爆速で作る方法 ߴػೳͳAIΤʔδΣϯτΛ
+ര଎Ͱ࡞Δํ๏
+Cloud
+fl
+are Workers Tech..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_0.jpg">ߴػೳͳAIΤʔδΣϯτΛ ര଎Ͱ࡞Δํ๏ Cloud fl are Workers Tech Talks in Tokyo</a>
+              </h3>
+              #5
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="ࣗݾ঺հ
+ُాਸ਼و
+.BDCFF1MBOFU71PG3%
+ઑٕͬͨज़ͳΜͰ΋԰
+..." title="高機能なAIエージェントを爆速で作る方法 ࣗݾ঺հ
+ُాਸ਼و
+.BDCFF1MBOFU71PG3%
+ઑٕͬͨज़ͳΜͰ΋԰
+..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_1.jpg">ࣗݾ঺հ ُాਸ਼و .BDCFF1MBOFU71PG3% ઑٕͬͨज़ͳΜͰ΋԰  ޷͖ͳٕज़ྖҬ .-%48FC% 8FC(-8FC(16 ిࢠ޻࡞ ͦͷଞͷͩ͜ΘΓ</a>
+              </h3>
+              ָثίʔώʔᖿḦΧϝϥ !LNE@
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="఻͍͑ͨ͜ͱ
+" title="高機能なAIエージェントを爆速で作る方法 ఻͍͑ͨ͜ͱ
+" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_2.jpg">఻͍͑ͨ͜ͱ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="Mastra͸࠷ߴ
+Cloud
+fl
+are͸࠷ߴ
+͜ͷ૊Έ߹Θͤ͸࠷ߴ(γϯσϨϥϑΟοτ)..." title="高機能なAIエージェントを爆速で作る方法 Mastra͸࠷ߴ
+Cloud
+fl
+are͸࠷ߴ
+͜ͷ૊Έ߹Θͤ͸࠷ߴ(γϯσϨϥϑΟοτ)..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_3.jpg">Mastra͸࠷ߴ Cloud fl are͸࠷ߴ ͜ͷ૊Έ߹Θͤ͸࠷ߴ(γϯσϨϥϑΟοτ) ͻͱ݄΄Ͳલ͸ඍົͳ૊Έ߹ΘͤͰ͕ͨ͠ ࠓ͸࠷ߴͰ͢ʂ ϦϞʔτʹΤʔδΣϯτΛ࡞Δͱ͖</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="Mastra
+• HonoϕʔεͷOSS ΤʔδΣϯτ/ϫʔΫϑϩʔϑϨʔϜϫʔΫ
+
+• Ba..." title="高機能なAIエージェントを爆速で作る方法 Mastra
+• HonoϕʔεͷOSS ΤʔδΣϯτ/ϫʔΫϑϩʔϑϨʔϜϫʔΫ
+
+• Ba..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_4.jpg">Mastra • HonoϕʔεͷOSS ΤʔδΣϯτ/ϫʔΫϑϩʔϑϨʔϜϫʔΫ • Battery Included(RAG΍Memory, VoiceͳͲͷ࿈ܞ͕ඪ४૷උ) • OpenAPI४ڌ,</a>
+              </h3>
+              Swagger UI, OpenTelemetry४ڌͳͲ࣮຿্ͰؾʹͳΔ෦෼ ͕શ෦ೖΓ • MCP, A2A, AG-UIͳͲͷϓϩτίϧΛαϙʔτ
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="࠷ߴ
+" title="高機能なAIエージェントを爆速で作る方法 ࠷ߴ
+" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_5.jpg">࠷ߴ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="ɹΤʔδΣϯτ։ൃ͋Δ͋Δ
+FWͷൃలʹΑΓ
+ϩʔΧϧͰಈ͘ͱ͜Ζ·Ͱ͸ྑ͍͕
+Πϯϑϥʹࡌͤ..." title="高機能なAIエージェントを爆速で作る方法 ɹΤʔδΣϯτ։ൃ͋Δ͋Δ
+FWͷൃలʹΑΓ
+ϩʔΧϧͰಈ͘ͱ͜Ζ·Ͱ͸ྑ͍͕
+Πϯϑϥʹࡌͤ..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_6.jpg">ɹΤʔδΣϯτ։ൃ͋Δ͋Δ FWͷൃలʹΑΓ ϩʔΧϧͰಈ͘ͱ͜Ζ·Ͱ͸ྑ͍͕ ΠϯϑϥʹࡌͤΔͱ͜Ζ͕ਏ͍໰୊</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="ϦϞʔτ࣮ߦͷ՝୊
+• Πϯϑϥ؀ڥͷߏங΍ӡ༻ͷ޻਺͕େ͖͍
+
+• ྫ: AWS, GCP্..." title="高機能なAIエージェントを爆速で作る方法 ϦϞʔτ࣮ߦͷ՝୊
+• Πϯϑϥ؀ڥͷߏங΍ӡ༻ͷ޻਺͕େ͖͍
+
+• ྫ: AWS, GCP্..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_7.jpg">ϦϞʔτ࣮ߦͷ՝୊ • Πϯϑϥ؀ڥͷߏங΍ӡ༻ͷ޻਺͕େ͖͍ • ྫ: AWS, GCP্ͷίϯςφج൫(ECS, CloudRunͳͲ) • ґଘ෺͕ଟ͍</a>
+              </h3>
+              • VectorDB, LLM, DB.. • ӡ༻͕؆୯ͳ΋ͷ͸ߴίετ͔ͭϩοΫΠϯͷϦεΫ͕େ͖͍ • ྫ: FWͷCloud(Dify Cloud, Mastra Cloud), JS༻PaaS(Net fl ify, Vercel)
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="ͦ͜Ͱ
+Cloud
+fl
+are Workers
+ͱͦͷ஥ؒͨͪ
+" title="高機能なAIエージェントを爆速で作る方法 ͦ͜Ͱ
+Cloud
+fl
+are Workers
+ͱͦͷ஥ؒͨͪ
+" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_8.jpg">ͦ͜Ͱ Cloud fl are Workers ͱͦͷ஥ؒͨͪ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="Cloud
+fl
+areͳཧ༝
+1. Agentʹదͨ͠Πϯϑϥಛ੡
+
+2. Mastraͷ΄..." title="高機能なAIエージェントを爆速で作る方法 Cloud
+fl
+areͳཧ༝
+1. Agentʹదͨ͠Πϯϑϥಛ੡
+
+2. Mastraͷ΄..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_9.jpg">Cloud fl areͳཧ༝ 1. Agentʹదͨ͠Πϯϑϥಛ੡ 2. Mastraͷ΄΅શͯͷ֎෦ґଘʹରԠ(ϑϧϚωʔδυͰఏڙ) 3. ௒؆୯σϓϩΠ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="1. Agentʹ͋ͬͨಛ੡
+• 0 ms εϐϯΞοϓ 
+
+• CPU࣮ߦ࣌ؒͱϦΫΤετ਺..." title="高機能なAIエージェントを爆速で作る方法 1. Agentʹ͋ͬͨಛ੡
+• 0 ms εϐϯΞοϓ 
+
+• CPU࣮ߦ࣌ؒͱϦΫΤετ਺..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_10.jpg">1. Agentʹ͋ͬͨಛ੡ • 0 ms εϐϯΞοϓ • CPU࣮ߦ࣌ؒͱϦΫΤετ਺ͷ • αϒϦΫΤετͷϨεϙϯε଴ͪ͸CPU࣮ߦ࣌ؒʹೖΒͳ͍</a>
+              </h3>
+              • ࠷ߴͳεέʔϥϏϦςΟ
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="2. ΄΅શͯͷ֎෦ґଘʹରԠ
+" title="高機能なAIエージェントを爆速で作る方法 2. ΄΅શͯͷ֎෦ґଘʹରԠ
+" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_11.jpg">2. ΄΅શͯͷ֎෦ґଘʹରԠ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="શํҐ͋Δͷ͸وॏ
+خ͍͠ʂ
+" title="高機能なAIエージェントを爆速で作る方法 શํҐ͋Δͷ͸وॏ
+خ͍͠ʂ
+" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_12.jpg">શํҐ͋Δͷ͸وॏ خ͍͠ʂ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="௒؆୯σϓϩΠ
+1. @mastra/deployer-cloud
+fl
+are ͷґଘΛ௥Ճ..." title="高機能なAIエージェントを爆速で作る方法 ௒؆୯σϓϩΠ
+1. @mastra/deployer-cloud
+fl
+are ͷґଘΛ௥Ճ..." href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_13.jpg">௒؆୯σϓϩΠ 1. @mastra/deployer-cloud fl are ͷґଘΛ௥Ճ͢Δ (ྫ:bun install @mastra/deployer-cloud fl</a>
+              </h3>
+              are) 2. MastraΠϯελϯεఆٛ࣌ʹdeployerΛఆٛ͢Δ 3. build੒Ռ෺ʹରͯ͠wrangler deploy(CF WorkersͷσϓϩΠίϚϯυ) 4. σϓϩΠ͞ΕɺURL͕ൃߦ͞ΕΔ 2025೥4݄17೔Ҏલͷόʔδϣϯͩͱ wrangler deployͰ͖ͳ͍ͷͰ஫ҙ
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="࠷ߴͷFW
+ͱ
+࠷ߴͷΠϯϑϥ͕
+γϯσϨϥϑΟοτ
+" title="高機能なAIエージェントを爆速で作る方法 ࠷ߴͷFW
+ͱ
+࠷ߴͷΠϯϑϥ͕
+γϯσϨϥϑΟοτ
+" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_14.jpg">࠷ߴͷFW ͱ ࠷ߴͷΠϯϑϥ͕ γϯσϨϥϑΟοτ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+        <li class="mb-2">
+          <div class="slide-transcript">
+              <h3 class="fs-6 fw-normal">
+                <a alt="࠷ߴͷΤʔδΣϯτ։ൃϥΠϑΛʂ
+" title="高機能なAIエージェントを爆速で作る方法 ࠷ߴͷΤʔδΣϯτ։ൃϥΠϑΛʂ
+" href="https://files.speakerdeck.com/presentations/09858e1ca19f42e2a6120d8f746900ec/slide_15.jpg">࠷ߴͷΤʔδΣϯτ։ൃϥΠϑΛʂ</a>
+              </h3>
+              
+          </div>
+
+        </li>
+    </ol>
+  </div>
+
+    </div>
+    <footer class="d-block bg-black sd-footer">
+  <img alt="" class="footer-logo-bg" loading="lazy" src="https://d1eu30co0ohy4w.cloudfront.net/assets/mark-f4be6df1e05965cac9f98e664a6c35f5ffdd0207385d07464a9214d6cdf76082.svg" />
+  <div class="container position-relative">
+    <div class="row py-3 py-md-5 justify-content-lg-between">
+
+      <div class="col-12 col-md-4 col-lg-3 text-center mb-2">
+        <a href="/">
+          <img alt="Speaker Deck" class="footer-logo mb-2" loading="lazy" src="https://d1eu30co0ohy4w.cloudfront.net/assets/mark-f4be6df1e05965cac9f98e664a6c35f5ffdd0207385d07464a9214d6cdf76082.svg" width="70" height="44" />
+          <p class="speaker-deck">SpeakerDeck</p>
+        </a>
+        <a class="footer-icon mx-1" title="SpeakerDeck on Facebook" href="https://www.facebook.com/speakerdeck"><svg class="icon icon-facebook "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-facebook"></use></svg></a>
+        <a class="footer-icon mx-1" title="SpeakerDeck on Twitter" href="https://x.com/speakerdeck"><svg class="icon icon-twitter-x "><use xlink:href="/icons/icons.svg?v=2025-04-16#icon-twitter-x"></use></svg></a>
+      </div>
+      <div class="col-12 col-md-4 col-lg-auto py-2">
+        <nav aria-label="Top Categories">
+          <h2>Top Categories</h2>
+          <ul class="nav-footer">
+            <li><a href="/c/programming">Programming</a></li>
+            <li><a href="/c/technology">Technology</a></li>
+            <li class="mb-3"><a href="/c/storyboards">Storyboards</a></li>
+            <li><a href="/p/featured">Featured decks</a></li>
+            <li><a href="/s/featured">Featured speakers</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-12 col-md-4 col-lg-auto py-2">
+        <nav aria-label="Legal">
+          <h2>Use Cases</h2>
+          <ul class="nav-footer">
+            <li><a href="/pro/storyboard-artists">Storyboard Artists</a></li>
+            <li><a href="/educators">Educators</a></li>
+            <li><a href="/student-pricing">Students</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-12 col-md-4 col-lg-auto offset-md-4 offset-lg-0 py-2">
+        <nav aria-label="Resources">
+          <h2>Resources</h2>
+          <ul class="nav-footer">
+            <li><a href="https://help.speakerdeck.com/">Help Center</a></li>
+            <li><a href="https://blog.speakerdeck.com/">Blog</a></li>
+            
+            <li><a href="/slideshare-alternative">Compare Speaker Deck</a></li>
+            <li><a href="/advertising">Advertising</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-12 col-md-4 col-lg-auto py-2">
+        <nav aria-label="Features">
+          <h2>Features</h2>
+          <ul class="nav-footer">
+            <li><a href="/features/privacy-controls">Private URLs</a></li>
+            <li><a href="/features/password-protection">Password Protection</a></li>
+            <li><a href="/features/custom-urls">Custom URLS</a></li>
+            <li><a href="/features/scheduled-publishing">Scheduled publishing</a></li>
+            <li><a href="/features/remove-branding">Remove Branding</a></li>
+            <li><a href="/features/restrict-embedding">Restrict embedding</a></li>
+            <li><a href="/features/slide-notes">Notes</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="row text-center border-top">
+      <div class="col-12 py-3">
+        <p class="copyright-text mb-1">Copyright &copy; 2025 Speaker Deck, LLC.</p>
+        <p class="mb-1">All slide content and descriptions are owned by their creators.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="/about">About</a></li>
+          <li class="list-inline-item"><a href="/tos">Terms</a></li>
+          <li class="list-inline-item"><a href="/privacy">Privacy</a></li>
+          <li class="list-inline-item"><a href="/dmca">DMCA</a></li>
+          <li class="list-inline-item"><a href="/accessibility">Accessibility Statement</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      <script src="https://d1eu30co0ohy4w.cloudfront.net/assets/stats-985244a1810e3ad665b3.js"></script>
+  <script data-turbolinks-eval="false">
+    Stats.host = 'speakerdeck.com';
+  </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WD0LC0MP9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8WD0LC0MP9');
+    </script>
+
+
+    <script>
+      !function(f,b,e,v,n,t,s) {
+        if(f.fbq) return;
+        n=f.fbq=function() { n.callMethod? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+        if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
+        t=b.createElement(e); t.async=!0; t.src=v;
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '2893765844191276');
+      fbq('track', 'PageView');
+
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2893765844191276&ev=PageView&noscript=1" />
+    </noscript>
+
+  
+
+    <script async type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+<script>
+Array.from(document.querySelectorAll('.facebook-share')).forEach((element) => {
+  element.addEventListener('click', function(e){
+    e.preventDefault()
+    let title = encodeURIComponent(document.title)
+    let url = encodeURIComponent(document.location.href)
+    window.open('https://www.facebook.com/dialog/share?app_id=1428152667543587&display=popup&href=' + url + '&title=' + title, "_blank", "toolbar=no,menubar=no,location=yes,resizable=yes,scrollbars=yes,status=yes,width=600,height=400,modal=yes,alwaysRaised=yes");
+  }, false)
+})
+</script>
+
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94a312067e556bd8',t:'MTc0ODk5NDM5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
