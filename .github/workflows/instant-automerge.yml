@@ -1,4 +1,3 @@
-# .github/workflows/instant-automerge.yml
 name: instant-automerge
 
 on:
@@ -15,5 +14,6 @@ jobs:
     steps:
       - uses: peter-evans/enable-pull-request-automerge@v3
         with:
-          merge-method: squash          # 好みで merge / rebase も可
           token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: squash               # 好みで merge / rebase
+          pull-request-number: ${{ github.event.pull_request.number }}
