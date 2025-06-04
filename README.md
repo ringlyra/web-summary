@@ -46,7 +46,7 @@ repo-root
 3.2 要約 / Summary Section
 
 ## 概要 / Summary  
-- **140 字以内**、日本語。
+- **500 字以内**、日本語。
 - 重要キーワードは **bold** で強調。  
 
 3.3 本文 / Markdown Body Section
