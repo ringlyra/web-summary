@@ -1,15 +1,17 @@
 name: instant-automerge
 on:
   pull_request:
-    types: [opened, ready_for_review]   # PR が開かれた／ドラフト解除されたら実行
+    types: [opened, ready_for_review]
 permissions:
-  contents: write       # マージに必要
+  contents: write
   pull-requests: write
+
 jobs:
   enable:
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/enable-pull-request-automerge@v3
         with:
-          merge_method: squash         # merge / rebase も可
           token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ github.event.pull_request.number }}  # ← 明示推奨
+          merge-method: squash       # ← ハイフン!!
