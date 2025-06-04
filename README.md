@@ -27,7 +27,7 @@ repo-root
 
 ---
 
-## 3. 出力フォーマット / File Spec (`<date>_<title>.md`)  
+## 3. 出力フォーマット / File Spec (`{date}_{time}.md`)  
 
 ### 3.1 ヘッダー / Metadata Section  
 
@@ -68,14 +68,14 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
     - 取得できない項目は空文字列。tags には必ず codex を入れる。
     4. Convert: 本文 HTML を Markdown に変換。
     5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
-    6. Save: YYYY/MM/<domain>/<YYYY-MM-DD>_<title>.md に保存。
+    6. Save: YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
     7. Commit: git add → git commit -m "Add clip: <title or domain>"。
     8. Repeat: 次の URL へ。
 
 ⸻
 
 5. 命名・タグ規約 / Naming & Tag Rules
-- ファイル名: <YYYY-MM-DD>_<title>.md
+- ファイル名: {YYYY-MM-DD}_{title}.md
 - 必須タグ: codex
 - 推奨タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列. タグ名は必ず英語にすること
 
