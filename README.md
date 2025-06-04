@@ -85,6 +85,7 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 	•	robots.txt を尊重。スクレイピング禁止サイトは除外。
 	•	JS レンダリング必須サイトは Headless browser (e.g. Playwright) を使用。
 	•	著作権・ライセンスを確認し、引用の範囲に収める。
+	•	同じタイトル、同じ URL の場合は更新(上書き)してください。
 
 ⸻
 
