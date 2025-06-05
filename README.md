@@ -74,7 +74,7 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 
 ⸻
 
-4. 処理フロー / Workflow
+## 4. 処理フロー / Workflow
     1. Input: エージェントに URL が渡される。
     2. Fetch: HTTP GET。必要に応じて Headless browser で JS レンダリング。
     3. Parse:
@@ -88,14 +88,14 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 
 ⸻
 
-5. 命名・タグ規約 / Naming & Tag Rules
+## 5. 命名・タグ規約 / Naming & Tag Rules
 - ファイル名: {YYYY-MM-DD}_{title}.md
 - 必須タグ: codex
 - 推奨タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列. タグ名は必ず英語にすること
 
 ⸻
 
-6. 注意事項 / Caveats
+## 6. 注意事項 / Caveats
 - robots.txt を尊重。スクレイピング禁止サイトは除外。
 - JS レンダリング必須サイトは Headless browser (e.g. Playwright) を使用。
 - 著作権・ライセンスを確認し、引用の範囲に収める。
