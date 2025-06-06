@@ -4,14 +4,14 @@
 
 ---
 
-## 1. 目的 / Purpose  
+## 1. 目的 
 - **再現性 & 検索性**：取得物を決まった場所・統一フォーマットで保存し、後から機械的に再利用できるようにする。  
 - **最小限の加工**：元 HTML を Markdown 化しつつ、解釈 (メタデータ・要約) を明確に分離。  
 - **タグ駆動**：必ず `codex` タグを含め、後のクエリーやフィルタを容易にする。  
 
 ---
 
-## 2. ディレクトリ構成 / Directory Tree  
+## 2. ディレクトリ構成 
 
 ```
 repo-root
@@ -27,9 +27,10 @@ repo-root
 
 ---
 
-## 3. 出力フォーマット / File Spec (`{date}_{time}.md`)  
+## 3. 出力フォーマット
+`{date}_{time}.md`
 
-### 3.1 ヘッダー / Metadata Section  
+### 3.1 ヘッダー 
 
 1 行目に `<!-- metadata -->`、2 行目以降に **Markdown 箇条書き**で key-value を並べる。解析ツール側で行頭 `- **key**:` パターンをパースすれば機械処理も容易。
 
@@ -43,30 +44,14 @@ repo-root
 - **tags**: codex, ai, nlp
 - **image**: https://cdn.openai.com/og/chatgpt.png
 
-## 3.2 要約 / Summary Section
-
-要約 / Summary  
+## 3.2 要約
 - **日本語** で回答すること。
 - あなたが一番理解しやすい形にまとめること。短すぎるのはNG。内容が頭に入ってこないから。
 - 概要だけでなく要約を作成してください。
 - 重要キーワードは **bold** で強調。
 - 引用を含めることを許可します。
 
-## 3.3 質疑応答 / Q&A Section ※質問が無い場合はセクションごと省略
-
-質疑応答 / Conversation
-- ユーザーがサマリーを査読した後、AI に投げた **質問** と **回答** を **順番どおり** すべて記録する。  
-- フォーマットは Markdown 箇条書き
-
-例 (箇条書き):
-
-- **Q (User):** 「codex タグは必須とありますが、複数タグにしたい場合は?」  
-  **A (AI):** `codex` に加え任意の英語タグ (15 個以内) を併記してください。  
-
-## 3.4 本文 / Markdown Body Section
-
-本文 / Article  
-
+## 3.4 本文
 <ここに HTML→Markdown 変換済み本文をそのまま貼り付ける>  
 
 HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。最後に本文が全て取得できたか確認することを忘れないでください。本文を上から順番に照らし合わせて確認してください。
@@ -74,7 +59,7 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 
 ⸻
 
-## 4. 処理フロー / Workflow
+## 4. 処理フロー
     1. Input: エージェントに URL が渡される。
     2. Fetch: HTTP GET。必要に応じて Headless browser で JS レンダリング。
     3. Parse:
@@ -88,14 +73,14 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 
 ⸻
 
-## 5. 命名・タグ規約 / Naming & Tag Rules
+## 5. 命名・タグ規約
 - ファイル名: {YYYY-MM-DD}_{title}.md
 - 必須タグ: codex
 - 推奨タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列. タグ名は必ず英語にすること
 
 ⸻
 
-## 6. 注意事項 / Caveats
+## 6. 注意事項
 - robots.txt を尊重。スクレイピング禁止サイトは除外。
 - JS レンダリング必須サイトは Headless browser (e.g. Playwright) を使用。
 - 著作権・ライセンスを確認し、引用の範囲に収める。
