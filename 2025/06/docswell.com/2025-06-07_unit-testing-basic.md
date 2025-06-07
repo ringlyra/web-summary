@@ -3,7 +3,7 @@
 - **source**: https://www.docswell.com/s/tyonekubo/ZP21V1-unit-testing-basic
 - **author**: yonekubo / アーキテクトの教科書
 - **published**: 2025-06-07
-- **fetched**: 2025-06-07T12:10:54Z
+- **fetched**: 2025-06-07T23:35:53Z
 - **tags**: codex, unit-testing, software-quality, jjug
 - **image**: https://bcdn.docswell.com/page/PJXKD19D7X.jpg?width=480
 
