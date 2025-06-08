@@ -1,0 +1,65 @@
+import sys
+import requests
+from bs4 import BeautifulSoup
+from readability import Document
+from markdownify import markdownify as md
+from urllib.parse import urlparse
+from datetime import datetime
+import os
+
+url = sys.argv[1]
+resp = requests.get(url)
+resp.raise_for_status()
+html = resp.text
+soup = BeautifulSoup(html, 'html.parser')
+
+def get_meta(prop):
+    tag = soup.find('meta', attrs={'property': prop}) or soup.find('meta', attrs={'name': prop})
+    if tag and tag.get('content'):
+        return tag['content']
+    return ''
+
+title = get_meta('og:title') or soup.title.string.strip()
+author = soup.find('meta', attrs={'name':'author'})
+if author:
+    author = author['content']
+else:
+    author = urlparse(url).hostname
+published = get_meta('article:published_time')
+image = get_meta('og:image')
+fetched = datetime.utcnow().isoformat()+'Z'
+source = url
+
+article = Document(html)
+content_html = article.summary()
+content_md = md(content_html)
+
+# filename from url slug instead of title
+import re
+slug = os.path.basename(urlparse(url).path.strip('/')) or 'index'
+file_title = re.sub(r'[^a-zA-Z0-9_-]+', '-', slug).strip('-')
+
+domain = urlparse(url).hostname
+# ensure path
+published_date = published[:10] if published else datetime.utcnow().strftime('%Y-%m-%d')
+year,month,_ = published_date.split('-')
+path = os.path.join(year, month, domain)
+os.makedirs(path, exist_ok=True)
+filename = f"{published_date}_{file_title}.md"
+filepath = os.path.join(path, filename)
+
+with open(filepath,'w') as f:
+    f.write("<!-- metadata -->\n")
+    f.write(f"- **title**: {title}\n")
+    f.write(f"- **source**: {source}\n")
+    f.write(f"- **author**: {author}\n")
+    f.write(f"- **published**: {published}\n")
+    f.write(f"- **fetched**: {fetched}\n")
+    f.write(f"- **tags**: codex\n")
+    f.write(f"- **image**: {image}\n\n")
+    f.write("## 要約\n\n")
+    f.write("TODO: summary\n\n")
+    f.write("## 本文\n\n")
+    f.write(content_md)
+
+print(filepath)
