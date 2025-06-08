@@ -1,0 +1,3260 @@
+<!DOCTYPE html><html lang="ja-x-mtfrom-en" dir="ltr"><head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/webhistory">
+    <meta property="og:site_name" content="Google Cloud">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#039be5"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="manifest" href="/_pwa/cloud/manifest.json" crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="">
+    <link rel="preconnect" href="//apis.google.com" crossorigin="">
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin=""><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500,700|Google+Sans+Text:400,400italic,500,500italic,700,700italic|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&amp;display=swap">
+      <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Material+Icons&amp;family=Material+Symbols+Outlined&amp;display=block"><link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/favicons/onecloud/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/favicons/onecloud/super_cloud.png"><link rel="canonical" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ja"><link rel="search" type="application/opensearchdescription+xml" title="Google Cloud" href="https://cloud.google.com/s/opensearch.xml?hl=ja">
+      <link rel="alternate" hreflang="en" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction"><link rel="alternate" hreflang="x-default" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction"><link rel="alternate" hreflang="zh-Hans" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=zh-cn"><link rel="alternate" hreflang="zh-Hant" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=zh-tw"><link rel="alternate" hreflang="fr" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=fr"><link rel="alternate" hreflang="de" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=de"><link rel="alternate" hreflang="id" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=id"><link rel="alternate" hreflang="it" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=it"><link rel="alternate" hreflang="ja" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ja"><link rel="alternate" hreflang="ko" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ko"><link rel="alternate" hreflang="pt-BR" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=pt-br"><link rel="alternate" hreflang="es-419" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=es-419"><title>Vertex AI Search の概要 &nbsp;|&nbsp; AI Applications &nbsp;|&nbsp; Google Cloud</title>
+
+<meta property="og:title" content="Vertex AI Search の概要 &nbsp;|&nbsp; AI Applications &nbsp;|&nbsp; Google Cloud"><meta property="og:url" content="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ja"><meta property="og:image" content="https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png?hl=ja">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630"><meta property="og:locale" content="ja"><meta name="twitter:card" content="summary_large_image"><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-WH2QY8WWF5&amp;cx=c&amp;gtm=45He5641h1v897536842za200zb6343254&amp;tag_exp=101509157~103116026~103200004~103233427~103351869~103351871~104653070~104653072~104661466~104661468~104698127~104698129" nonce=""></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-64EQFFKSHW&amp;l=atDataLayer&amp;cx=c&amp;gtm=45He5641h1v9183356566za200&amp;tag_exp=101509157~103116026~103200004~103233427~103351869~103351871~104653070~104653072~104661466~104661468~104698127~104698129" nonce=""></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-M8NRS5J&amp;gtm=45He5641h1v6343254za200&amp;tag_exp=101509157~103116026~103200004~103233427~103351869~103351871~104617979~104617981~104653070~104653072~104661466~104661468~104698127~104698129" nonce=""></script><script class="all-tenants" async="" src="//www.googletagmanager.com/gtm.js?id=GTM-NDV7K7V5&amp;l=atDataLayer" nonce=""></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CVQBG" nonce=""></script><script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.nJpyt-fjzo8.O/m=client/rt=j/sv=1/d=1/ed=1/rs=AHpOoo9fTqXSCmwMDsu9FH68l5KSqr6MBg/cb=gapi.loaded_0?le=scs" nonce="" async=""></script><script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/612f74a3/www-widgetapi.vflset/www-widgetapi.js" async="" nonce=""></script><script async="" src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/app_loader.js"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+
+    "headline": "Vertex AI Search の概要"
+  }
+</script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI Applications",
+      "item": "https://cloud.google.com/generative-ai-app-builder"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Documentation",
+      "item": "https://cloud.google.com/generative-ai-app-builder/docs"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Vertex AI Search の概要",
+      "item": "https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction"
+    }]
+  }
+  </script><link rel="alternate machine-translated-from" hreflang="en" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=en">
+
+
+
+
+
+
+
+
+      <link rel="stylesheet" href="/extras.css"><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_app_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_app_custom_elements_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_header_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_tabs_nav_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_free_trial_eligible_store_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_track_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_a11y_announce_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_analytics_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_badger_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_content_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_cookie_notification_bar_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_feature_tooltip_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_feedback_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_footer_linkboxes_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_footer_promos_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_footer_utility_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_hats_survey_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_heading_link_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_language_selector_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_notification_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_panel_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_progress_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_recommendations_sidebar_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_search_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_sitemask_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_snackbar_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_toc_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_tooltip_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_user_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_video_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_view_release_notes_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_experiments_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_experiment_ids_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_pricing_socket_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_user_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_cloudx_utils_init_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_bookmark_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_book_nav_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_thumb_rating_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_badge_awarded_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_dialog_module__ja.js" nonce=""></script><script async="" src="https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js" nonce=""></script><script src="//www.youtube.com/iframe_api" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_dropdown_list_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_view_release_notes_dialog_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_spinner_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_mwc_module__ja.js" nonce=""></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_fast_track_profile_creator_module__ja.js" nonce=""></script><script type="text/javascript" charset="UTF-8" src="https://apis.google.com/js/client.js" nonce="" gapi_processed="true"></script><script src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/devsite_devsite_checkbox_module__ja.js" nonce=""></script><style type="text/css"></style></head>
+  <body class="viewport--desktop tenant--cloud" template="page" theme="cloud-theme" type="article" layout="docs" free-trial="" display-toc="" ready="" style="--devsite-panel-height: 0px; --devsite-js-header-height: 113px; --devsite-cookie-bar-height: 64px;">
+    <devsite-progress id="app-progress"></devsite-progress>
+
+    <a href="#main-content" class="skip-link button">
+
+      メイン コンテンツにスキップ
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar><div class="glue-cookie-notification-bar" id="glue-cookie-notification-bar-1" aria-labelledby="glue-cookie-notification-bar-1-label" role="region" data-nosnippet="" tabindex="-1" dir="ltr" lang="ja" style="font-size: 1rem;"><p class="glue-cookie-notification-bar__text"><span id="glue-cookie-notification-bar-1-label">cloud.google.com では、サービスの提供および品質向上とトラフィックの分析に Google の Cookie が使用されています。 </span><a href="https://policies.google.com/technologies/cookies?hl=ja" class="glue-cookie-notification-bar__more" rel="noopener" aria-describedby="glue-cookie-notification-bar-1-label" target="_blank" aria-label="詳しくは、Google による Cookie の使用についての説明をご覧ください。 新しいタブで開きます。">詳細</a>。</p><button class="glue-cookie-notification-bar__accept">OK</button></div><!----></devsite-cookie-notification-bar><cloudx-track usercountry="ZZ"></cloudx-track>
+<cloudx-utils-init></cloudx-utils-init>
+
+<devsite-header keep-tabs-visible="" fixed="" top-row--height="65" bottom-row--height="48" bottom-tabs--height="48" style="--devsite-js-top-row--height: 65px; --devsite-js-bottom-row--height: 48px; --devsite-js-bottom-tabs--height: 48px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet="">
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Navigation menu button" aria-label="メニューを開く">
+        </button>
+        <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="googleCloud" track-metadata-position="nav" track-metadata-eventdetail="nav">
+
+  <picture>
+
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/cloud-logo.svg" class="devsite-site-logo" alt="Google Cloud">
+  </picture>
+
+</a>
+
+
+
+
+
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list">
+
+  <li class="devsite-breadcrumb-item
+             devsite-has-google-wordmark">
+
+
+
+
+
+
+  </li>
+
+</ul>
+  </span>
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+
+
+
+  <cloudx-tabs-nav class="upper-tabs" connected="">
+
+    <div class="devsite-overflow-cover devsite-left-overflow"></div><button class="devsite-scroll-button devsite-scroll-left" aria-label="前のアイテムにスクロール"></button><nav class="devsite-tabs-wrapper" aria-label="上部のタブ" style="--scroll-animation-duration: 250ms; --scroll-offset: 0px;">
+
+
+          <tab class="devsite-active">
+
+    <a href="https://cloud.google.com/docs?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/docs?hl=ja" track-type="nav" track-metadata-position="nav - docs-home" track-metadata-module="primary nav" aria-label="ドキュメント, selected" data-category="Site-Wide Custom Events" data-label="Tab: ドキュメント" track-name="docs-home" track-link-column-type="single-column">
+    ドキュメント
+
+    </a>
+
+
+          </tab>
+
+
+
+          <tab class="devsite-dropdown
+
+
+    devsite-clickable
+    ">
+
+    <a href="https://cloud.google.com/docs/tech-area-overviews?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/docs/tech-area-overviews?hl=ja" track-type="nav" track-metadata-position="nav - technology-areas" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: テクノロジー分野" track-name="technology-areas" track-link-column-type="single-column">
+    テクノロジー分野
+
+    </a>
+
+      <button aria-haspopup="menu" aria-expanded="false" aria-label="プルダウン メニュー: テクノロジー分野" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/tech-area-overviews?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: テクノロジー分野" track-name="technology-areas" track-link-column-type="single-column" class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down"></button>
+
+
+  <div class="devsite-tabs-dropdown" role="menu" aria-label="submenu" hidden="">
+
+      <button class="devsite-tabs-close-button material-icons button-flat gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close dropdown menu" aria-label="プルダウン メニューを閉じる" track-type="nav" track-name="close" track-metadata-eventdetail="#" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav">close</button>
+
+    <div class="devsite-tabs-dropdown-content">
+
+        <div class="devsite-tabs-dropdown-column
+                    ">
+
+            <ul class="devsite-tabs-dropdown-section
+                       ">
+
+
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/ai-ml?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/ai-ml?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      AI と ML
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/application-development?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/application-development?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      アプリケーション開発
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/application-hosting?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/application-hosting?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      アプリケーションのホスティング
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/compute-area?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/compute-area?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      コンピューティング
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/data?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/data?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      データ分析とパイプライン
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/databases?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/databases?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      データベース
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/dhm-cloud?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/dhm-cloud?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      分散型クラウド、ハイブリッド クラウド、マルチクラウド
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/generative-ai?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/generative-ai?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      生成 AI
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/industry?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/industry?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      業種別ソリューション
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/networking?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/networking?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      ネットワーキング
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/observability?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/observability?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      オブザーバビリティとモニタリング
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/security?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/security?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      セキュリティ
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/storage?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/storage?hl=ja" track-metadata-position="nav - technology-areas" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Storage
+                    </div>
+
+                  </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+  </div>
+</tab>
+
+
+
+          <tab class="devsite-dropdown
+
+
+    devsite-clickable
+    ">
+
+    <a href="https://cloud.google.com/docs/cross-product-overviews?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/docs/cross-product-overviews?hl=ja" track-type="nav" track-metadata-position="nav - crossproduct" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: プロダクト横断型のツール" track-name="crossproduct" track-link-column-type="single-column">
+    プロダクト横断型のツール
+
+    </a>
+
+      <button aria-haspopup="menu" aria-expanded="false" aria-label="プルダウン メニュー: プロダクト横断型のツール" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/cross-product-overviews?hl=ja" track-metadata-position="nav - crossproduct" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: プロダクト横断型のツール" track-name="crossproduct" track-link-column-type="single-column" class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down"></button>
+
+
+  <div class="devsite-tabs-dropdown" role="menu" aria-label="submenu" hidden="">
+
+      <button class="devsite-tabs-close-button material-icons button-flat gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close dropdown menu" aria-label="プルダウン メニューを閉じる" track-type="nav" track-name="close" track-metadata-eventdetail="#" track-metadata-position="nav - crossproduct" track-metadata-module="tertiary nav">close</button>
+
+    <div class="devsite-tabs-dropdown-content">
+
+        <div class="devsite-tabs-dropdown-column
+                    ">
+
+            <ul class="devsite-tabs-dropdown-section
+                       ">
+
+
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/access-resources?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/access-resources?hl=ja" track-metadata-position="nav - crossproduct" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      アクセスとリソースの管理
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/costs-usage?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/costs-usage?hl=ja" track-metadata-position="nav - crossproduct" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      費用と使用量の管理
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/devtools?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/devtools?hl=ja" track-metadata-position="nav - crossproduct" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud SDK、言語、フレームワーク、ツール
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/iac?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/iac?hl=ja" track-metadata-position="nav - crossproduct" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Infrastructure as Code
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/docs/migration?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/docs/migration?hl=ja" track-metadata-position="nav - crossproduct" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      移行
+                    </div>
+
+                  </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+  </div>
+</tab>
+
+
+
+          <tab class="devsite-dropdown
+
+
+    devsite-clickable
+    ">
+
+    <a href="https://cloud.google.com/?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/?hl=ja" track-type="nav" track-metadata-position="nav - related-sites" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: 関連サイト" track-name="related-sites" track-link-column-type="single-column">
+    関連サイト
+
+    </a>
+
+      <button aria-haspopup="menu" aria-expanded="false" aria-label="プルダウン メニュー: 関連サイト" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: 関連サイト" track-name="related-sites" track-link-column-type="single-column" class="devsite-tabs-dropdown-toggle devsite-icon devsite-icon-arrow-drop-down"></button>
+
+
+  <div class="devsite-tabs-dropdown" role="menu" aria-label="submenu" hidden="">
+
+      <button class="devsite-tabs-close-button material-icons button-flat gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close dropdown menu" aria-label="プルダウン メニューを閉じる" track-type="nav" track-name="close" track-metadata-eventdetail="#" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav">close</button>
+
+    <div class="devsite-tabs-dropdown-content">
+
+        <div class="devsite-tabs-dropdown-column
+                    ">
+
+            <ul class="devsite-tabs-dropdown-section
+                       ">
+
+
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud のホーム
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/free?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/free?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      無料トライアルと無料枠
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/architecture?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/architecture?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      アーキテクチャ センター
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/blog?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/blog?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      ブログ
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/contact?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/contact?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      お問い合わせ
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/developers?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/developers?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud Developer Center
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://developers.google.com/?hl=ja" track-type="nav" track-metadata-eventdetail="https://developers.google.com/?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Developer Center
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://console.cloud.google.com/marketplace?hl=ja" track-type="nav" track-metadata-eventdetail="https://console.cloud.google.com/marketplace?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud Marketplace
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/marketplace/docs?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/marketplace/docs?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud Marketplace のドキュメント
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://www.cloudskillsboost.google/paths?hl=ja" track-type="nav" track-metadata-eventdetail="https://www.cloudskillsboost.google/paths?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud Skills Boost
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/solutions?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/solutions?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud Solutions Center
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://cloud.google.com/support-hub?hl=ja" track-type="nav" track-metadata-eventdetail="https://cloud.google.com/support-hub?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      Google Cloud サポート
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="devsite-nav-item">
+                  <a href="https://www.youtube.com/@googlecloudtech?hl=ja" track-type="nav" track-metadata-eventdetail="https://www.youtube.com/@googlecloudtech?hl=ja" track-metadata-position="nav - related-sites" track-metadata-module="tertiary nav" tooltip="">
+
+                    <div class="devsite-nav-item-title">
+                      YouTube の Google Cloud Tech チャンネル
+                    </div>
+
+                  </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+  </div>
+</tab>
+
+
+    <tab class="devsite-overflow-tab" style=""><!---->
+          <button class="devsite-tabs-overflow-button devsite-icon devsite-icon-arrow-drop-down" aria-haspopup="menu" aria-expanded="false" id="tab-overflow-button-kWXb" aria-label="拡張ナビゲーションのプルダウン メニュー" aria-controls="tab-overflow-menu-WESJ"><!--?lit$840961425$-->もっと見る</button>
+          <div class="devsite-tabs-overflow-menu" hidden="" scrollbars="" role="menu" id="tab-overflow-menu-WESJ" aria-labelledby="tab-overflow-button-kWXb">
+          </div>
+        </tab></nav>
+
+  <!----><button class="devsite-scroll-button devsite-scroll-right devsite-visible" aria-label="次のアイテムにスクロール"></button><div class="devsite-overflow-cover devsite-right-overflow"></div></cloudx-tabs-nav>
+
+
+           </div>
+
+<devsite-search enable-signin="" enable-search="" enable-suggestions="" project-name="AI Applications" tenant-name="Google Cloud" project-scope="/generative-ai-app-builder/docs" url-scoped="https://cloud.google.com/s/results/generative-ai-app-builder/docs?hl=ja">
+  <form class="devsite-search-form" action="https://cloud.google.com/s/results?hl=ja" method="GET">
+    <div class="devsite-search-container">
+      <button type="button" search-open="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="検索を開始"></button>
+      <div class="devsite-searchbox">
+        <input aria-activedescendant="" aria-autocomplete="list" aria-label="検索" aria-expanded="false" aria-haspopup="listbox" autocomplete="off" class="devsite-search-field devsite-search-query" name="q" placeholder="検索" role="combobox" type="text" value="" aria-controls="devsite-search-popout-container-id-1">
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  <div class="devsite-popout" id="devsite-search-popout-container-id-1"><div class="devsite-popout-result devsite-suggest-results-container" devsite-hide=""></div></div></form>
+  <button type="button" search-close="" class="devsite-search-button devsite-header-icon-button button-flat material-icons" aria-label="検索を閉じる"></button>
+</devsite-search>
+
+        <div class="devsite-search-background" style="opacity: 1;"></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<devsite-language-selector aria-label="言語の設定を選択します。">
+  <ul role="presentation">
+
+
+    <li role="presentation">
+      <a role="menuitem" lang="en" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction" aria-current="true">English</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="de" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=de">Deutsch</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="es-419" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=es-419">Español – América Latina</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="fr" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=fr">Français</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="id" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=id">Indonesia</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="it" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=it">Italiano</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="pt-br" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=pt-br">Português – Brasil</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="zh-cn" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=zh-cn">中文 – 简体</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="zh-tw" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=zh-tw">中文 – 繁體</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="ja" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ja">日本語</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="ko" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ko">한국어</a>
+    </li>
+
+  </ul>
+</devsite-language-selector>
+
+
+
+    <a class="devsite-header-link devsite-top-button button gc-analytics-event " href="//console.cloud.google.com/?hl=ja" data-category="Site-Wide Custom Events" data-label="Site header link: コンソール" track-metadata-position="nav" track-name="console" track-metadata-eventdetail="nav" referrerpolicy="no-referrer-when-downgrade" track-type="globalNav">
+  コンソール
+</a>
+
+
+
+
+
+          <devsite-user enable-profiles="" fp-auth="" id="devsite-user" sign-in-url="https://cloud.google.com/_d/signin?continue=https%3A%2F%2Fcloud.google.com%2Fgenerative-ai-app-builder%2Fdocs%2Fenterprise-search-introduction%3Fhl%3Dja&amp;prompt=select_account" sign-out-url="https://cloud.google.com/_d/signout?continue=https%3A%2F%2Fcloud.google.com%2Fgenerative-ai-app-builder%2Fdocs%2Fenterprise-search-introduction%3Fhl%3Dja" url="https://cloud.google.com/_d/signout?continue=https%3A%2F%2Fcloud.google.com%2Fgenerative-ai-app-builder%2Fdocs%2Fenterprise-search-introduction%3Fhl%3Dja"><div class="ogb-wrapper ogb-si"><a href="https://cloud.google.com/_d/signin?continue=https%3A%2F%2Fcloud.google.com%2Fgenerative-ai-app-builder%2Fdocs%2Fenterprise-search-introduction%3Fhl%3Dja&amp;prompt=select_account" id="devsite-signin-btn" class="devsite-user-signin button devsite-top-button" track-type="globalNav" track-name="signIn" track-metadata-eventdetail="nav" track-metadata-position="nav">
+  ログイン
+</a></div></devsite-user>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="devsite-collapsible-section
+    " style="transform: translate3d(0px, 0px, 0px);">
+    <div class="devsite-header-background">
+
+
+          <div class="devsite-product-id-row" hidden="">
+            <div class="devsite-product-description-row">
+
+
+            </div>
+
+          </div>
+
+
+
+
+        <div class="devsite-doc-set-nav-row">
+
+
+              <ul class="devsite-breadcrumb-list">
+
+  <li class="devsite-breadcrumb-item
+             ">
+
+
+
+
+  <a href="https://cloud.google.com/generative-ai-app-builder?hl=ja" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Lower Header" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="AI Applications">
+
+        AI Applications
+
+  </a>
+
+
+  </li>
+
+</ul>
+
+
+
+
+
+  <cloudx-tabs-nav class="lower-tabs" connected="">
+
+    <div class="devsite-overflow-cover devsite-left-overflow"></div><button class="devsite-scroll-button devsite-scroll-left" aria-label="前のアイテムにスクロール"></button><nav class="devsite-tabs-wrapper" aria-label="下部のタブ" style="--scroll-animation-duration: 250ms; --scroll-offset: 0px;">
+
+
+          <tab>
+
+    <a href="https://cloud.google.com/generative-ai-app-builder/docs?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/generative-ai-app-builder/docs?hl=ja" track-type="nav" track-metadata-position="nav - 概要" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: 概要" track-name="概要">
+    概要
+
+    </a>
+
+
+          </tab>
+
+
+
+          <tab class="devsite-active">
+
+    <a href="https://cloud.google.com/generative-ai-app-builder/docs/introduction?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/generative-ai-app-builder/docs/introduction?hl=ja" track-type="nav" track-metadata-position="nav - ガイド" track-metadata-module="primary nav" aria-label="ガイド, selected" data-category="Site-Wide Custom Events" data-label="Tab: ガイド" track-name="ガイド">
+    ガイド
+
+    </a>
+
+
+          </tab>
+
+
+
+          <tab>
+
+    <a href="https://cloud.google.com/generative-ai-app-builder/docs/apis?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/generative-ai-app-builder/docs/apis?hl=ja" track-type="nav" track-metadata-position="nav - リファレンス" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: リファレンス" track-name="リファレンス">
+    リファレンス
+
+    </a>
+
+
+          </tab>
+
+
+
+          <tab>
+
+    <a href="https://cloud.google.com/generative-ai-app-builder/docs/samples?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/generative-ai-app-builder/docs/samples?hl=ja" track-type="nav" track-metadata-position="nav - サンプル" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: サンプル" track-name="サンプル">
+    サンプル
+
+    </a>
+
+
+          </tab>
+
+
+
+          <tab>
+
+    <a href="https://cloud.google.com/generative-ai-app-builder/docs/support?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/generative-ai-app-builder/docs/support?hl=ja" track-type="nav" track-metadata-position="nav - サポート" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: サポート" track-name="サポート">
+    サポート
+
+    </a>
+
+
+          </tab>
+
+
+
+          <tab>
+
+    <a href="https://cloud.google.com/generative-ai-app-builder/docs/resources?hl=ja" class="devsite-tabs-content gc-analytics-event " track-metadata-eventdetail="https://cloud.google.com/generative-ai-app-builder/docs/resources?hl=ja" track-type="nav" track-metadata-position="nav - リソース" track-metadata-module="primary nav" data-category="Site-Wide Custom Events" data-label="Tab: リソース" track-name="リソース">
+    リソース
+
+    </a>
+
+
+          </tab>
+
+
+    <tab class="devsite-overflow-tab" style=""><!---->
+          <button class="devsite-tabs-overflow-button devsite-icon devsite-icon-arrow-drop-down" aria-haspopup="menu" aria-expanded="false" id="tab-overflow-button-EIk7" aria-label="その他のオプション" aria-controls="tab-overflow-menu-tGvP"><!--?lit$840961425$-->もっと見る</button>
+          <div class="devsite-tabs-overflow-menu" hidden="" scrollbars="" role="menu" id="tab-overflow-menu-tGvP" aria-labelledby="tab-overflow-button-EIk7">
+          </div>
+        </tab></nav>
+
+  <!----><button class="devsite-scroll-button devsite-scroll-right" aria-label="次のアイテムにスクロール"></button><div class="devsite-overflow-cover devsite-right-overflow"></div></cloudx-tabs-nav>
+
+
+
+            <div class="devsite-product-button-row">
+
+
+
+  <a href="https://cloud.google.com/contact?hl=ja" class="cta-button-secondary button
+      " track-type="contact" data-overflow-container="left" track-metadata-eventdetail="nav" data-overflow="devsite-tabs-wrapper" track-name="sales" data-overflow-wrapper="tab" track-metadata-position="nav">お問い合わせ</a>
+
+
+  <a href="//console.cloud.google.com/freetrial?hl=ja" class="cloud-free-trial-button cta-button-primary button-primary button cloud-button cloud-button--primary
+      " track-metadata-position="nav" track-type="freeTrial" data-overflow-container="right" track-metadata-eventdetail="nav" data-overflow="devsite-top-logo-row" referrerpolicy="no-referrer-when-downgrade" track-name="gcpCta" data-overflow-class="devsite-header-link devsite-top-button button cloud-free-trial-button cloud-free-trial-enabled cloud-button cloud-button--primary">無料で利用開始</a>
+
+</div>
+
+        </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+</devsite-header>
+      <div class="devsite-book-nav-bg" fixed=""></div><devsite-book-nav scrollbars="" fixed="" style="--devsite-book-nav-max-height: 607px; top: 113px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter">
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text" placeholder="フィルタ" aria-label="フィルタ テキストを入力" role="searchbox">
+
+  <span class="filter-clear-button hidden" data-title="フィルタをクリア" aria-label="フィルタをクリア" role="button" tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" aria-label="サイドメニュー">
+  <div class="devsite-mobile-header">
+    <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="ナビゲーションを閉じる">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="googleCloud" track-metadata-position="nav" track-metadata-eventdetail="nav">
+
+  <picture>
+
+    <img src="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/cloud-logo.svg" class="devsite-site-logo" alt="Google Cloud">
+  </picture>
+
+</a>
+
+
+
+      <span class="devsite-product-name">
+
+
+        <ul class="devsite-breadcrumb-list">
+
+  <li class="devsite-breadcrumb-item
+             devsite-has-google-wordmark">
+
+
+
+
+
+
+  </li>
+
+</ul>
+      </span>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+
+        <ul class="devsite-nav-list">
+
+            <li class="devsite-nav-item">
+
+
+  <a href="/docs" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Tab: ドキュメント" track-name="docs-home" track-link-column-type="single-column" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      ドキュメント
+   </span>
+
+
+  </a>
+
+
+
+
+                <ul class="devsite-nav-responsive-tabs">
+
+
+
+
+                    <li class="devsite-nav-item">
+
+
+  <a href="/generative-ai-app-builder/docs" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Tab: 概要" track-name="概要" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      概要
+   </span>
+
+
+  </a>
+
+
+
+                    </li>
+
+
+
+
+                    <li class="devsite-nav-item">
+
+
+  <a href="/generative-ai-app-builder/docs/introduction" class="devsite-nav-title gc-analytics-event devsite-nav-has-children" data-category="Site-Wide Custom Events" data-label="Tab: ガイド" track-name="ガイド" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="" menu="_book">
+      ガイド
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book">
+    </span>
+
+
+  </a>
+
+
+
+                    </li>
+
+
+
+
+                    <li class="devsite-nav-item">
+
+
+  <a href="/generative-ai-app-builder/docs/apis" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Tab: リファレンス" track-name="リファレンス" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      リファレンス
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+
+
+  </a>
+
+
+
+                    </li>
+
+
+
+
+                    <li class="devsite-nav-item">
+
+
+  <a href="/generative-ai-app-builder/docs/samples" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Tab: サンプル" track-name="サンプル" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      サンプル
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+
+
+  </a>
+
+
+
+                    </li>
+
+
+
+
+                    <li class="devsite-nav-item">
+
+
+  <a href="/generative-ai-app-builder/docs/support" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Tab: サポート" track-name="サポート" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      サポート
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+
+
+  </a>
+
+
+
+                    </li>
+
+
+
+
+                    <li class="devsite-nav-item">
+
+
+  <a href="/generative-ai-app-builder/docs/resources" class="devsite-nav-title gc-analytics-event
+              devsite-nav-has-children
+              " data-category="Site-Wide Custom Events" data-label="Tab: リソース" track-name="リソース" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      リソース
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+
+
+  </a>
+
+
+
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li class="devsite-nav-item">
+
+
+  <a href="/docs/tech-area-overviews" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Tab: テクノロジー分野" track-name="technology-areas" track-link-column-type="single-column" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      テクノロジー分野
+   </span>
+
+
+  </a>
+
+
+
+    <ul class="devsite-nav-responsive-tabs devsite-nav-has-menu
+               ">
+
+<li class="devsite-nav-item">
+
+
+  <span class="devsite-nav-title" tooltip="" data-category="Site-Wide Custom Events" data-label="Tab: テクノロジー分野" track-name="technology-areas" track-link-column-type="single-column">
+
+    <span class="devsite-nav-text" tooltip="" menu="テクノロジー分野">
+      その他
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward" menu="テクノロジー分野">
+    </span>
+
+
+  </span>
+
+
+</li>
+
+    </ul>
+
+
+            </li>
+
+            <li class="devsite-nav-item">
+
+
+  <a href="/docs/cross-product-overviews" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Tab: プロダクト横断型のツール" track-name="crossproduct" track-link-column-type="single-column" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      プロダクト横断型のツール
+   </span>
+
+
+  </a>
+
+
+
+    <ul class="devsite-nav-responsive-tabs devsite-nav-has-menu
+               ">
+
+<li class="devsite-nav-item">
+
+
+  <span class="devsite-nav-title" tooltip="" data-category="Site-Wide Custom Events" data-label="Tab: プロダクト横断型のツール" track-name="crossproduct" track-link-column-type="single-column">
+
+    <span class="devsite-nav-text" tooltip="" menu="プロダクト横断型のツール">
+      その他
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward" menu="プロダクト横断型のツール">
+    </span>
+
+
+  </span>
+
+
+</li>
+
+    </ul>
+
+
+            </li>
+
+            <li class="devsite-nav-item">
+
+
+  <a href="/" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Tab: 関連サイト" track-name="related-sites" track-link-column-type="single-column" track-type="globalNav" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      関連サイト
+   </span>
+
+
+  </a>
+
+
+
+    <ul class="devsite-nav-responsive-tabs devsite-nav-has-menu
+               ">
+
+<li class="devsite-nav-item">
+
+
+  <span class="devsite-nav-title" tooltip="" data-category="Site-Wide Custom Events" data-label="Tab: 関連サイト" track-name="related-sites" track-link-column-type="single-column">
+
+    <span class="devsite-nav-text" tooltip="" menu="関連サイト">
+      その他
+   </span>
+
+    <span class="devsite-nav-icon material-icons" data-icon="forward" menu="関連サイト">
+    </span>
+
+
+  </span>
+
+
+</li>
+
+    </ul>
+
+
+            </li>
+
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="//console.cloud.google.com/" class="devsite-nav-title gc-analytics-event " track-metadata-position="nav" track-name="console" track-metadata-eventdetail="nav" referrerpolicy="no-referrer-when-downgrade" track-type="globalNav" data-category="Site-Wide Custom Events" data-label="Responsive Tab: コンソール">
+
+    <span class="devsite-nav-text" tooltip="">
+      コンソール
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/contact" class="cta-button-secondary button" track-type="contact" data-overflow-container="left" track-metadata-eventdetail="nav" data-overflow="devsite-tabs-wrapper" track-name="sales" data-overflow-wrapper="tab" track-metadata-position="nav" data-category="Site-Wide Custom Events" data-label="Responsive Tab: お問い合わせ">
+
+    <span class="devsite-nav-text" tooltip="">
+      お問い合わせ
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="//console.cloud.google.com/freetrial" class="cloud-free-trial-button cta-button-primary button-primary button cloud-button cloud-button--primary" track-metadata-position="nav" track-type="freeTrial" data-overflow-container="right" track-metadata-eventdetail="nav" data-overflow="devsite-top-logo-row" referrerpolicy="no-referrer-when-downgrade" track-name="gcpCta" data-overflow-class="devsite-header-link devsite-top-button button cloud-free-trial-button cloud-free-trial-enabled cloud-button cloud-button--primary" data-category="Site-Wide Custom Events" data-label="Responsive Tab: 無料で利用開始">
+
+    <span class="devsite-nav-text" tooltip="">
+      無料で利用開始
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+
+
+        </ul>
+
+    </div>
+
+      <div class="devsite-mobile-nav-bottom">
+
+
+          <ul class="devsite-nav-list" menu="_book">
+            <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Discover</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/introduction" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/introduction" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/introduction"><span class="devsite-nav-text" tooltip="">Vertex AI Agent Builder とは</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/enterprise-search-introduction" class="devsite-nav-title gc-analytics-event devsite-nav-active" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/enterprise-search-introduction" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/enterprise-search-introduction" aria-selected="true"><span class="devsite-nav-text" tooltip="">Vertex AI Search の概要</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/about-media" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/about-media" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/about-media"><span class="devsite-nav-text" tooltip="">メディア検索とレコメンデーションの概要</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/responsible-ai" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/responsible-ai" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/responsible-ai"><span class="devsite-nav-text" tooltip="">責任ある AI</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/data-governance" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/data-governance" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/data-governance"><span class="devsite-nav-text" tooltip="">データ ガバナンスと生成 AI</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Vertex AI Search を使ってみる</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/try-it" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/try-it" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/try-it"><span class="devsite-nav-text" tooltip="">試してみる</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/before-you-begin" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/before-you-begin" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/before-you-begin"><span class="devsite-nav-text" tooltip="">始める前に</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/access-control" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/access-control" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/access-control"><span class="devsite-nav-text" tooltip="">IAM を使用したアクセス制御</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">チュートリアル</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/try-enterprise-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/try-enterprise-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/try-enterprise-search"><span class="devsite-nav-text" tooltip="">汎用検索を使ってみる</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/try-generic-recommendations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/try-generic-recommendations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/try-generic-recommendations"><span class="devsite-nav-text" tooltip="">汎用レコメンデーションを使ってみる</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/try-media-recommendations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/try-media-recommendations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/try-media-recommendations"><span class="devsite-nav-text" tooltip="">メディア レコメンデーションを使ってみる</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/try-media-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/try-media-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/try-media-search"><span class="devsite-nav-text" tooltip="">メディア検索を使ってみる</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">アプリ作成のチェックリスト</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/about-checklists" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/about-checklists" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/about-checklists"><span class="devsite-nav-text" tooltip="">チェックリストについて</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/generic-search-checklist" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/generic-search-checklist" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/generic-search-checklist"><span class="devsite-nav-text" tooltip="">一般的な検索のチェックリスト</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/website-search-checklist" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/website-search-checklist" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/website-search-checklist"><span class="devsite-nav-text" tooltip="">ウェブサイト検索のチェックリスト</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/generic-recommendations-checklist" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/generic-recommendations-checklist" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/generic-recommendations-checklist"><span class="devsite-nav-text" tooltip="">汎用レコメンデーションのチェックリスト</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/media-search-checklist" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/media-search-checklist" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/media-search-checklist"><span class="devsite-nav-text" tooltip="">メディア検索のチェックリスト</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/media-recommendations-checklist" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/media-recommendations-checklist" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/media-recommendations-checklist"><span class="devsite-nav-text" tooltip="">メディア レコメンデーションのチェックリスト</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/healthcare-search-checklist" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/healthcare-search-checklist" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/healthcare-search-checklist"><span class="devsite-nav-text" tooltip="">医療検索のチェックリスト</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Vertex AI Search で作成する</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/create-datastore-ingest" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-datastore-ingest" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-datastore-ingest"><span class="devsite-nav-text" tooltip="">アプリとデータストアについて</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/prepare-data" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/prepare-data" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/prepare-data"><span class="devsite-nav-text" tooltip="">取り込み用にデータを準備する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/provide-schema" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/provide-schema" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/provide-schema"><span class="devsite-nav-text" tooltip="">スキーマを指定する、またはスキーマを自動検出する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/parse-chunk-documents" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/parse-chunk-documents" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/parse-chunk-documents"><span class="devsite-nav-text" tooltip="">ドキュメントを解析してチャンク処理する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">高度な機能</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/about-advanced-features" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/about-advanced-features" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/about-advanced-features"><span class="devsite-nav-text" tooltip="">高度な機能について</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/estimate-size-web-data" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/estimate-size-web-data" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/estimate-size-web-data"><span class="devsite-nav-text" tooltip="">ストレージの月額費用の見積もりを取得する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/domain-verification" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/domain-verification" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/domain-verification"><span class="devsite-nav-text" tooltip="">ウェブサイトのドメインを確認する</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">一般的な検索エクスペリエンスを作成する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/create-data-store-es" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-data-store-es" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-data-store-es"><span class="devsite-nav-text" tooltip="">検索データストアを作成する</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/connect-third-party-data-source" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/connect-third-party-data-source" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/connect-third-party-data-source"><span class="devsite-nav-text" tooltip="">サードパーティ データソースを接続する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/create-engine-es" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-engine-es" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-engine-es"><span class="devsite-nav-text" tooltip="">検索アプリを作成する</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">汎用レコメンデーション エクスペリエンスを作成する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/create-data-store-recommendations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-data-store-recommendations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-data-store-recommendations"><span class="devsite-nav-text" tooltip="">汎用レコメンデーション データストアを作成する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/create-generic-recommendations-app" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-generic-recommendations-app" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-generic-recommendations-app"><span class="devsite-nav-text" tooltip="">汎用レコメンデーション アプリを作成する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">メディア エクスペリエンスを作成する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/media-documents" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/media-documents" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/media-documents"><span class="devsite-nav-text" tooltip="">メディア ドキュメントとデータストアについて</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/about-media-recommendations-types" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/about-media-recommendations-types" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/about-media-recommendations-types"><span class="devsite-nav-text" tooltip="">メディアアプリのレコメンデーション タイプについて</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/create-data-store-media" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-data-store-media" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-data-store-media"><span class="devsite-nav-text" tooltip="">メディア データストアを作成する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/create-app-media" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-app-media" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-app-media"><span class="devsite-nav-text" tooltip="">メディアアプリを作成する</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">医療エクスペリエンスを作成する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/create-data-store-hc" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-data-store-hc" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-data-store-hc"><span class="devsite-nav-text" tooltip="">医療検索データストアを作成する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/create-app-hc" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/create-app-hc" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/create-app-hc"><span class="devsite-nav-text" tooltip="">医療検索アプリを作成する</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">ユーザー イベントを操作する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/user-events" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/user-events" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/user-events"><span class="devsite-nav-text" tooltip="">ユーザー イベントについて</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/import-user-events" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/import-user-events" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/import-user-events"><span class="devsite-nav-text" tooltip="">過去のユーザー イベントをインポートする</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/record-user-events" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/record-user-events" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/record-user-events"><span class="devsite-nav-text" tooltip="">リアルタイムのユーザー イベントを記録する</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Vertex AI Search を構成する</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/configure-field-settings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/configure-field-settings" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/configure-field-settings"><span class="devsite-nav-text" tooltip="">フィールド設定を構成する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">予測入力を構成する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/configure-autocomplete" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/configure-autocomplete" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/configure-autocomplete"><span class="devsite-nav-text" tooltip="">基本的な予測入力</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/configure-advanced-autocomplete" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/configure-advanced-autocomplete" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/configure-advanced-autocomplete"><span class="devsite-nav-text" tooltip="">高度な予測入力</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/configure-serving-controls" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/configure-serving-controls" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/configure-serving-controls"><span class="devsite-nav-text" tooltip="">サービス提供コントロールを構成する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">検索ウィジェットを構成する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/configure-widget-attributes" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/configure-widget-attributes" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/configure-widget-attributes"><span class="devsite-nav-text" tooltip="">検索ウィジェットの結果を構成する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/configure-widget-facets" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/configure-widget-facets" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/configure-widget-facets"><span class="devsite-nav-text" tooltip="">検索ウィジェットのファセットを構成する</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/configure-feedback" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/configure-feedback" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/configure-feedback"><span class="devsite-nav-text" tooltip="">ウィジェットのフィードバックを構成する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/tune-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/tune-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/tune-search"><span class="devsite-nav-text" tooltip="">検索チューニングで検索結果を改善する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/bring-embeddings" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/bring-embeddings" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/bring-embeddings"><span class="devsite-nav-text" tooltip="">カスタム エンベディングを使用する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/data-source-access-control" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/data-source-access-control" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/data-source-access-control"><span class="devsite-nav-text" tooltip="">データソースのアクセス制御を使用する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">メディア レコメンデーションを構成する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/serving-configs" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/serving-configs" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/serving-configs"><span class="devsite-nav-text" tooltip="">サービス構成を作成して管理する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/demote-recommendations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/demote-recommendations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/demote-recommendations"><span class="devsite-nav-text" tooltip="">メディア レコメンデーションの順位を下げる</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/diversify-recommendations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/diversify-recommendations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/diversify-recommendations"><span class="devsite-nav-text" tooltip="">メディア レコメンデーションを多様化する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/train-tune-media" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/train-tune-media" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/train-tune-media"><span class="devsite-nav-text" tooltip="">メディアアプリをトレーニングしてチューニングする</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Vertex AI Search に移行する</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/migrate-from-discovery-for-media" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/migrate-from-discovery-for-media" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/migrate-from-discovery-for-media"><span class="devsite-nav-text" tooltip="">Discovery for Media からメディア レコメンデーションに切り替える</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/migrate-from-cse" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/migrate-from-cse" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/migrate-from-cse"><span class="devsite-nav-text" tooltip="">Custom Search Site Restricted JSON API から移行する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Vertex AI Search をデプロイする</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/preview-search-results" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/preview-search-results" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/preview-search-results"><span class="devsite-nav-text" tooltip="">検索結果を取得する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/answer" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/answer" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/answer"><span class="devsite-nav-text" tooltip="">回答とフォローアップを取得する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/search-hc-data" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/search-hc-data" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/search-hc-data"><span class="devsite-nav-text" tooltip="">医療データを検索する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">検索のフィルタ</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/filter-search-metadata" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/filter-search-metadata" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/filter-search-metadata"><span class="devsite-nav-text" tooltip="">構造化データまたは非構造化データの一般的な検索をフィルタする</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/filter-website-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/filter-website-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/filter-website-search"><span class="devsite-nav-text" tooltip="">ウェブサイト検索をフィルタする</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/filter-media-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/filter-media-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/filter-media-search"><span class="devsite-nav-text" tooltip="">メディア検索をフィルタする</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/filter-hc-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/filter-hc-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/filter-hc-search"><span class="devsite-nav-text" tooltip="">ヘルスケア検索をフィルタする</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/filter-by-relevance" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/filter-by-relevance" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/filter-by-relevance"><span class="devsite-nav-text" tooltip="">ドキュメント レベルの関連性でフィルタする</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/natural-language-queries" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/natural-language-queries" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/natural-language-queries"><span class="devsite-nav-text" tooltip="">自然言語理解でフィルタする</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/boost-search-results" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/boost-search-results" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/boost-search-results"><span class="devsite-nav-text" tooltip="">検索結果をブーストする</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">検索結果を並べ替える</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/order-web-search-results" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/order-web-search-results" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/order-web-search-results"><span class="devsite-nav-text" tooltip="">ウェブ検索結果を並べ替える</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/order-structured-results" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/order-structured-results" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/order-structured-results"><span class="devsite-nav-text" tooltip="">構造化データストアから結果を並べ替える</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/order-hc-results" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/order-hc-results" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/order-hc-results"><span class="devsite-nav-text" tooltip="">医療検索結果を並べ替える</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/snippets" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/snippets" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/snippets"><span class="devsite-nav-text" tooltip="">スニペットと抽出コンテンツを取得する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/get-search-summaries" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/get-search-summaries" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/get-search-summaries"><span class="devsite-nav-text" tooltip="">検索のサマリーを取得する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/answer-generation-models" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/answer-generation-models" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/answer-generation-models"><span class="devsite-nav-text" tooltip="">回答生成モデルのバージョン</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/preview-recommendations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/preview-recommendations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/preview-recommendations"><span class="devsite-nav-text" tooltip="">レコメンデーションを表示する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/filter-recommendations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/filter-recommendations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/filter-recommendations"><span class="devsite-nav-text" tooltip="">レコメンデーションをフィルタリングする</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/add-widget" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/add-widget" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/add-widget"><span class="devsite-nav-text" tooltip="">検索ウィジェットをウェブページに追加する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-deprecated"><a href="/generative-ai-app-builder/docs/multi-turn-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/multi-turn-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/multi-turn-search"><span class="devsite-nav-text" tooltip="">フォローアップ付きの検索</span><span class="devsite-nav-icon material-icons" data-icon="deprecated" data-title="非推奨" aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/image-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/image-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/image-search"><span class="devsite-nav-text" tooltip="">ウェブサイトで画像を検索する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Vertex AI Search をモニタリングする</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/view-analytics" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/view-analytics" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/view-analytics"><span class="devsite-nav-text" tooltip="">分析情報を表示</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/monitor-api" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/monitor-api" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/monitor-api"><span class="devsite-nav-text" tooltip="">API メソッドをモニタリングする</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/long-running-operations" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/long-running-operations" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/long-running-operations"><span class="devsite-nav-text" tooltip="">長時間実行オペレーションをモニタリングする</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/audit-logging" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/audit-logging" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/audit-logging"><span class="devsite-nav-text" tooltip="">監査ロギング</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Vertex AI Search をメンテナンスする</span>
+      </div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">データを更新</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/refresh-data" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/refresh-data" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/refresh-data"><span class="devsite-nav-text" tooltip="">構造化データと非構造化データを更新する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/recrawl-websites" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/recrawl-websites" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/recrawl-websites"><span class="devsite-nav-text" tooltip="">ウェブページを更新する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/refresh-hc-data" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/refresh-hc-data" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/refresh-hc-data"><span class="devsite-nav-text" tooltip="">医療データを更新する</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">スキーマを管理する</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/update-schemas" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/update-schemas" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/update-schemas"><span class="devsite-nav-text" tooltip="">スキーマを更新する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/get-schema-definition" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/get-schema-definition" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/get-schema-definition"><span class="devsite-nav-text" tooltip="">スキーマ定義を表示する</span></a></li><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/fhir-schema-reference" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/fhir-schema-reference" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/fhir-schema-reference"><span class="devsite-nav-text" tooltip="">Healthcare FHIR R4 データスキーマ リファレンス</span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/check-media-data-quality" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/check-media-data-quality" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/check-media-data-quality"><span class="devsite-nav-text" tooltip="">メディア レコメンデーションのデータ品質を確認する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/manage-user-events" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/manage-user-events" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/manage-user-events"><span class="devsite-nav-text" tooltip="">ユーザー イベントを管理する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/delete-datastores" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/delete-datastores" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/delete-datastores"><span class="devsite-nav-text" tooltip="">データストアからデータをパージする</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/delete-schemas" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/delete-schemas" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/delete-schemas"><span class="devsite-nav-text" tooltip="">構造化データのスキーマを削除する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/delete-engine" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/delete-engine" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/delete-engine"><span class="devsite-nav-text" tooltip="">アプリを削除する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/delete-a-data-store" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/delete-a-data-store" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/delete-a-data-store"><span class="devsite-nav-text" tooltip="">データストアを削除する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/enterprise-edition" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/enterprise-edition" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/enterprise-edition"><span class="devsite-nav-text" tooltip="">Enterprise Edition をオンまたはオフにする</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/advanced-llm" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/advanced-llm" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/advanced-llm"><span class="devsite-nav-text" tooltip="">高度な LLM 機能をオンまたはオフにする</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-expandable"><div class="devsite-expandable-nav">
+      <a class="devsite-nav-toggle" aria-hidden="true"></a><div class="devsite-nav-title devsite-nav-title-no-path" tabindex="0" role="button">
+        <span class="devsite-nav-text" tooltip="">ウェブサイトの高度なインデックス登録</span>
+      </div><ul class="devsite-nav-section"><li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/turn-on-advanced-indexing" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/turn-on-advanced-indexing" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/turn-on-advanced-indexing"><span class="devsite-nav-text" tooltip="">ウェブサイトの高度なインデックス登録を有効にする</span></a></li><li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/add-website-metadata" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/add-website-metadata" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/add-website-metadata"><span class="devsite-nav-text" tooltip="">ウェブサイトの高度なインデックス登録に構造化データを使用する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li></ul></div></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-beta"><a href="/generative-ai-app-builder/docs/evaluate-search-quality" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/evaluate-search-quality" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/evaluate-search-quality"><span class="devsite-nav-text" tooltip="">検索品質を評価する</span><span class="devsite-nav-icon material-icons" data-icon="beta" data-title="ベータ版" aria-hidden="true"></span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">管理</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/turn-off-enterprise-search" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/turn-off-enterprise-search" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/turn-off-enterprise-search"><span class="devsite-nav-text" tooltip="">Vertex AI Agent Builder を無効にする</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/access-transparency" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/access-transparency" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/access-transparency"><span class="devsite-nav-text" tooltip="">Vertex AI Search でアクセスの透明性を有効にする</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/cmek" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/cmek" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/cmek"><span class="devsite-nav-text" tooltip="">Vertex AI Agent Builder の顧客管理の暗号鍵</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">DIY 検索と RAG</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/builder-apis" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/builder-apis" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/builder-apis"><span class="devsite-nav-text" tooltip="">検索と RAG エクスペリエンスを構築するための Vertex AI API</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/ranking" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/ranking" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/ranking"><span class="devsite-nav-text" tooltip="">RAG を使用してドキュメントのランク付けと再ランク付けを行う</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/grounded-gen" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/grounded-gen" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/grounded-gen"><span class="devsite-nav-text" tooltip="">RAG を使用して根拠のある回答を生成する</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/check-grounding" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/check-grounding" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/check-grounding"><span class="devsite-nav-text" tooltip="">RAG でグラウンディングを確認する</span></a></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">サンプル</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><a href="/generative-ai-app-builder/docs/samples" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /generative-ai-app-builder/docs/samples" track-type="bookNav" track-name="click" track-metadata-eventdetail="/generative-ai-app-builder/docs/samples"><span class="devsite-nav-text" tooltip="">Vertex AI Agent Builder のコードサンプル</span></a></li>
+
+  <li class="devsite-nav-item"><a href="/docs/samples" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Book nav link, pathname: /docs/samples" track-type="bookNav" track-name="click" track-metadata-eventdetail="/docs/samples"><span class="devsite-nav-text" tooltip="">すべてのプロダクトのコードサンプル</span></a></li>
+          </ul>
+
+
+
+
+
+
+
+      <ul class="devsite-nav-list" menu="テクノロジー分野" aria-label="サイドメニュー" hidden="">
+
+
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/ai-ml" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: AI と ML" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      AI と ML
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/application-development" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: アプリケーション開発" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      アプリケーション開発
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/application-hosting" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: アプリケーションのホスティング" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      アプリケーションのホスティング
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/compute-area" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: コンピューティング" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      コンピューティング
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/data" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: データ分析とパイプライン" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      データ分析とパイプライン
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/databases" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: データベース" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      データベース
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/dhm-cloud" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: 分散型クラウド、ハイブリッド クラウド、マルチクラウド" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      分散型クラウド、ハイブリッド クラウド、マルチクラウド
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/generative-ai" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: 生成 AI" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      生成 AI
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/industry" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: 業種別ソリューション" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      業種別ソリューション
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/networking" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: ネットワーキング" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      ネットワーキング
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/observability" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: オブザーバビリティとモニタリング" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      オブザーバビリティとモニタリング
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/security" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: セキュリティ" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      セキュリティ
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/storage" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Storage" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Storage
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+
+      </ul>
+
+
+
+
+      <ul class="devsite-nav-list" menu="プロダクト横断型のツール" aria-label="サイドメニュー" hidden="">
+
+
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/access-resources" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: アクセスとリソースの管理" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      アクセスとリソースの管理
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/costs-usage" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: 費用と使用量の管理" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      費用と使用量の管理
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/devtools" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud SDK、言語、フレームワーク、ツール" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud SDK、言語、フレームワーク、ツール
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/iac" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Infrastructure as Code" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Infrastructure as Code
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/docs/migration" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: 移行" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      移行
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+
+      </ul>
+
+
+
+
+      <ul class="devsite-nav-list" menu="関連サイト" aria-label="サイドメニュー" hidden="">
+
+
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud のホーム" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud のホーム
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/free" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: 無料トライアルと無料枠" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      無料トライアルと無料枠
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/architecture" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: アーキテクチャ センター" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      アーキテクチャ センター
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="https://cloud.google.com/blog" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: ブログ" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      ブログ
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/contact" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: お問い合わせ" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      お問い合わせ
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/developers" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud Developer Center" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud Developer Center
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="https://developers.google.com/" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Developer Center" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Developer Center
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="https://console.cloud.google.com/marketplace" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud Marketplace" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud Marketplace
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/marketplace/docs" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud Marketplace のドキュメント" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud Marketplace のドキュメント
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="https://www.cloudskillsboost.google/paths" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud Skills Boost" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud Skills Boost
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/solutions" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud Solutions Center" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud Solutions Center
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="/support-hub" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: Google Cloud サポート" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      Google Cloud サポート
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+<li class="devsite-nav-item">
+
+
+  <a href="https://www.youtube.com/@googlecloudtech" class="devsite-nav-title gc-analytics-event
+
+              " data-category="Site-Wide Custom Events" data-label="Responsive Tab: YouTube の Google Cloud Tech チャンネル" track-type="navMenu" track-metadata-eventdetail="globalMenu" track-metadata-position="nav">
+
+    <span class="devsite-nav-text" tooltip="">
+      YouTube の Google Cloud Tech チャンネル
+   </span>
+
+
+  </a>
+
+
+</li>
+
+
+
+
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+  </div>
+</nav>
+
+      </devsite-book-nav><div class="devsite-book-nav-blur" fixed="" style="--devsite-js-book-nav-scrollbar-width: 0px;"></div><button class="devsite-book-nav-toggle" aria-haspopup="menu" fixed="" aria-label="サイド ナビゲーションを表示しない" data-title="サイド ナビゲーションを表示しない" aria-expanded="true"><span class="material-icons devsite-book-nav-toggle-icon"></span></button>
+      <section id="gc-wrapper" style="margin-top: 113px;">
+        <main role="main" id="main-content" class="devsite-main-content" has-book-nav="" has-sidebar="">
+          <div class="devsite-sidebar" fixed="" style="--devsite-js-sidebar-max-height: 559px; --devsite-js-sidebar-offset: 0; --devsite-js-sidebar-max-width: 144px;">
+            <div class="devsite-sidebar-content">
+
+                <devsite-toc class="devsite-nav devsite-toc" role="navigation" aria-label="このページの内容" depth="2" scrollbars="" visible=""><ul class="devsite-nav-list"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><span class="devsite-nav-title" role="heading" aria-level="2"><span class="devsite-nav-text">このページの内容</span></span></li><li class="devsite-nav-item"><a href="#information_retrieval_using_ai_and_llms" class="devsite-nav-title gc-analytics-event devsite-nav-active" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="0" track-type="navigation" track-name="rightNav" track-metadata-position="0" track-metadata-link-destination="#information_retrieval_using_ai_and_llms"><span class="devsite-nav-text" tooltip="">AI と LLM を使用した情報検索</span></a></li><li class="devsite-nav-item"><a href="#an_easy_experience_to_get_started" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="1" track-type="navigation" track-name="rightNav" track-metadata-position="1" track-metadata-link-destination="#an_easy_experience_to_get_started"><span class="devsite-nav-text" tooltip="">簡単に始められる</span></a></li><li class="devsite-nav-item"><a href="#datastores-engines" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="2" track-type="navigation" track-name="rightNav" track-metadata-position="2" track-metadata-link-destination="#datastores-engines"><span class="devsite-nav-text" tooltip="">データストアとアプリ</span></a></li><li class="devsite-nav-item"><a href="#or_the_api" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="3" track-type="navigation" track-name="rightNav" track-metadata-position="3" track-metadata-link-destination="#or_the_api"><span class="devsite-nav-text" tooltip="">Google Cloud コンソールまたは API のどちらを使用すればよいですか？</span></a></li><li class="devsite-nav-item"><a href="#whats_next" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Right nav" data-value="4" track-type="navigation" track-name="rightNav" track-metadata-position="4" track-metadata-link-destination="#whats_next"><span class="devsite-nav-text" tooltip="">次のステップ</span></a></li></ul></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article">
+
+
+
+
+
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+
+
+    <ul class="devsite-breadcrumb-list" aria-label="パンくずリスト">
+
+  <li class="devsite-breadcrumb-item
+             ">
+
+
+
+
+  <a href="https://cloud.google.com/?hl=ja" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="1" track-type="globalNav" track-name="breadcrumb" track-metadata-position="1" track-metadata-eventdetail="Google Cloud">
+
+        Home
+
+  </a>
+
+
+  </li>
+
+  <li class="devsite-breadcrumb-item
+             ">
+
+
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+
+
+
+
+  <a href="https://cloud.google.com/docs?hl=ja" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="2" track-type="globalNav" track-name="breadcrumb" track-metadata-position="2" track-metadata-eventdetail="">
+
+        ドキュメント
+
+  </a>
+
+
+  </li>
+
+  <li class="devsite-breadcrumb-item
+             ">
+
+
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+
+
+
+
+  <a href="https://cloud.google.com/generative-ai-app-builder?hl=ja" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="3" track-type="globalNav" track-name="breadcrumb" track-metadata-position="3" track-metadata-eventdetail="AI Applications">
+
+        AI Applications
+
+  </a>
+
+
+  </li>
+
+  <li class="devsite-breadcrumb-item
+             ">
+
+
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+
+
+
+
+  <a href="https://cloud.google.com/generative-ai-app-builder/docs?hl=ja" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="4" track-type="globalNav" track-name="breadcrumb" track-metadata-position="4" track-metadata-eventdetail="AI Applications">
+
+        Documentation
+
+  </a>
+
+
+  </li>
+
+  <li class="devsite-breadcrumb-item
+             ">
+
+
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+
+
+
+
+  <a href="https://cloud.google.com/generative-ai-app-builder/docs/introduction?hl=ja" class="devsite-breadcrumb-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Breadcrumbs" data-value="5" track-type="globalNav" track-name="breadcrumb" track-metadata-position="5" track-metadata-eventdetail="">
+
+        ガイド
+
+  </a>
+
+
+  </li>
+
+</ul>
+
+
+    <devsite-thumb-rating position="header"><div class="devsite-thumb-rating" role="form" aria-labelledby="devsite-thumb-label-header"><div class="devsite-thumb-label" id="devsite-thumb-label-header">この情報は役に立ちましたか？</div><div class="devsite-thumbs"><button class="devsite-thumb devsite-thumb-up" data-title="役に立った" aria-label="役に立った"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7h-6.31l0.95-4.57l0.03-0.32c0-0.41-0.17-0.79-0.44-1.06L14.17,0c0,0-7.09,6.85-7.17,7H2v13h16 c0.83,0,1.54-0.5,1.84-1.22l3.02-7.05C22.95,11.5,23,11.26,23,11V9C23,7.9,22.1,7,21,7z M7,18H4V9h3V18z M21,11l-3,7H9V8l4.34-4.34 L12,9h9V11z"></path></svg></button><button class="devsite-thumb devsite-thumb-down" data-title="役に立たない" aria-label="役に立たない"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,17h6.31l-0.95,4.57l-0.03,0.32c0,0.41,0.17,0.79,0.44,1.06L9.83,24c0,0,7.09-6.85,7.17-7h5V4H6 C5.17,4,4.46,4.5,4.16,5.22l-3.02,7.05C1.05,12.5,1,12.74,1,13v2C1,16.1,1.9,17,3,17z M17,6h3v9h-3V6z M3,13l3-7h9v10l-4.34,4.34 L12,15H3V13z"></path></svg></button></div></div></devsite-thumb-rating>
+
+
+  </div>
+
+    <devsite-feedback position="header" project-name="AI Applications" product-id="5041938" bucket="Documentation" context="" version="t-devsite-webserver-20250603-r00-rc02.469552985398027687" data-label="Send Feedback Button" track-type="feedback" track-name="sendFeedbackLink" track-metadata-position="header" class="nocontent" project-icon="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/favicons/onecloud/super_cloud.png">
+
+  <button>
+
+
+    フィードバックを送信
+
+  </button>
+</devsite-feedback>
+
+    <h1 class="devsite-page-title" tabindex="-1">
+      Vertex AI Search の概要
+      <div class="devsite-actions" data-nosnippet=""><devsite-feature-tooltip ack-key="AckCollectionsBookmarkTooltipDismiss" analytics-category="Site-Wide Custom Events" analytics-action-show="Callout Profile displayed" analytics-action-close="Callout Profile dismissed" analytics-label="Create Collection Callout" class="devsite-page-bookmark-tooltip nocontent inline-block" dismiss-button="true" id="devsite-collections-dropdown" dismiss-button-text="閉じる" close-button-text="OK" rendered="" current-step="0" style="--devsite-popout-offset-x: 32px;">
+
+
+
+      <devsite-bookmark class="show"><devsite-dropdown-list aria-label="Bookmark collections drop down" ellipsis="" checkboxes="" fetchingitems="true" writable="" additemtext="新規コレクション" rendered="" style="--devsite-popout-offset-x: 0px;"><span data-label="devsite-bookmark-direct-action" data-title="ページを保存" class="material-icons bookmark-icon bookmark-action" slot="toggle">bookmark_border</span><span data-label="devsite-bookmark-direct-action" data-title="ページの保存を解除" hidden="" class="material-icons bookmark-icon unbookmark-action toggled" slot="toggle">bookmark</span></devsite-dropdown-list></devsite-bookmark>
+
+
+    <span slot="popout-heading">
+
+      コレクションでコンテンツを整理
+    </span>
+    <span slot="popout-contents">
+
+      必要に応じて、コンテンツの保存と分類を行います。
+    </span>
+  </devsite-feature-tooltip></div>
+
+    </h1>
+  <div class="devsite-page-title-meta"></div>
+
+
+  <devsite-toc class="devsite-nav devsite-toc-embedded" depth="2" devsite-toc-embedded="" visible=""><ul class="devsite-nav-list"><li class="devsite-nav-item devsite-nav-heading devsite-toc-toggle"><span class="devsite-nav-title" role="heading" aria-level="2"><span class="devsite-nav-text">このページの内容</span></span><button type="button" title="コンテンツを展開 / 折りたたむ" class="devsite-nav-show-all button-transparent material-icons"></button></li><li class="devsite-nav-item" visible=""><a href="#information_retrieval_using_ai_and_llms" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="0" track-type="navigation" track-name="embeddedNav" track-metadata-position="0" track-metadata-link-destination="#information_retrieval_using_ai_and_llms"><span class="devsite-nav-text" tooltip="">AI と LLM を使用した情報検索</span></a></li><li class="devsite-nav-item" visible=""><a href="#an_easy_experience_to_get_started" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="1" track-type="navigation" track-name="embeddedNav" track-metadata-position="1" track-metadata-link-destination="#an_easy_experience_to_get_started"><span class="devsite-nav-text" tooltip="">簡単に始められる</span></a></li><li class="devsite-nav-item" visible=""><a href="#datastores-engines" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="2" track-type="navigation" track-name="embeddedNav" track-metadata-position="2" track-metadata-link-destination="#datastores-engines"><span class="devsite-nav-text" tooltip="">データストアとアプリ</span></a></li><li class="devsite-nav-item" visible=""><a href="#or_the_api" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="3" track-type="navigation" track-name="embeddedNav" track-metadata-position="3" track-metadata-link-destination="#or_the_api"><span class="devsite-nav-text" tooltip="">Google Cloud コンソールまたは API のどちらを使用すればよいですか？</span></a></li><li class="devsite-nav-item" visible=""><a href="#whats_next" class="devsite-nav-title gc-analytics-event" data-category="Site-Wide Custom Events" data-action="click" data-label="Embedded nav" data-value="4" track-type="navigation" track-name="embeddedNav" track-metadata-position="4" track-metadata-link-destination="#whats_next"><span class="devsite-nav-text" tooltip="">次のステップ</span></a></li><li class="devsite-toc-toggle"><button type="button" class="button-flat devsite-nav-more-items material-icons" track-type="navigation" track-name="embeddedNavExpand" title="コンテンツを展開 / 折りたたむ"></button></li></ul></devsite-toc>
+
+
+  <div class="devsite-article-body clearfix
+  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>このページでは、Vertex AI Search の主な検索機能とレコメンデーション機能について説明します。</p>
+
+<p>メディアの検索とレコメンデーションについては、<a href="https://cloud.google.com/generative-ai-app-builder/docs/about-media?hl=ja">メディア向け Vertex AI Agent Builder の概要</a>をご覧ください。</p>
+
+<div class="video-wrapper">
+  <devsite-video inline-small="" showinfo="0" video-id="HD_xreaLKb4" list="PLOU2XLYxmsIKqt_HI3yc516rbBca_hli2"><iframe frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Harnessing the power of generative AI to deliver next-gen search experiences" width="640" height="360" src="https://www.youtube.com/embed/HD_xreaLKb4?origin=https%3A%2F%2Fcloud.google.com&amp;autoplay&amp;controls&amp;embed_domain&amp;enablejsapi=1&amp;end&amp;hl&amp;showinfo=0&amp;start&amp;video-id=HD_xreaLKb4&amp;list=PLOU2XLYxmsIKqt_HI3yc516rbBca_hli2&amp;widgetid=1&amp;forigin=https%3A%2F%2Fcloud.google.com%2Fgenerative-ai-app-builder%2Fdocs%2Fenterprise-search-introduction%3Fhl%3Dja&amp;aoriginsup=1&amp;vf=1" id="widget2" data-gtm-yt-inspected-183356566_95="true"></iframe></devsite-video>
+</div>
+
+<h2 data-text="AI と LLM を使用した情報検索" id="information_retrieval_using_ai_and_llms" tabindex="-1" role="presentation"><span class="devsite-heading" role="heading" aria-level="2">AI と LLM を使用した情報検索</span><button type="button" class="devsite-heading-link button-flat material-icons" aria-label="このセクションへのリンクをコピー: AI と LLM を使用した情報検索" data-title="このセクションへのリンクをコピー: AI と LLM を使用した情報検索" data-id="information_retrieval_using_ai_and_llms"></button></h2>
+
+<p>Vertex AI Search は、詳細な情報検索、最先端の自然言語処理、最新の大規模言語処理（LLM）の機能を組み合わせて、ユーザーの意図を理解し、最も関連性の高い検索結果を返します。</p>
+
+<p>Vertex AI Search を使用すると、管理するデータに基づいて Google 品質の検索アプリを構築できます。また、取得した検索結果を使用して、生成 AI LLM レスポンスを根拠づけることもできます。詳しくは、<a href="https://cloud.google.com/blog/products/ai-machine-learning/rags-powered-by-google-search-technology-part-1?hl=ja">Google 検索を活用した RAG</a> に関するブログ投稿をご覧ください。</p>
+
+<p>レコメンデーションを使用すると、ユーザーが閲覧しているコンテンツに類似したコンテンツを提案するレコメンデーション アプリをデータ全体にわたって構築できます。</p>
+<aside class="note"><strong>注:</strong><span>
+汎用レコメンデーション機能はプレビュー版で、<a href="https://cloud.google.com/terms/service-terms?hl=ja">GCP サービス固有の規約</a>の pre-GA サービス規約が適用されます。
+一般提供前のプロダクトと機能では、サポートが制限されることがあります。また、これらのプロダクトや機能には、他の一般提供前のバージョンと互換性のない変更が行われる場合があります。詳細については、<a href="https://cloud.google.com/products?hl=ja#product-launch-stages">リリース ステージの説明</a>をご覧ください。
+この機能を使用すると、<a href="https://cloud.google.com/trustedtester/aitos?hl=ja">生成 AI プレビュー版の利用規約</a>（以下「プレビュー規約」）に同意したことになります。この機能については、お客様は <a href="https://cloud.google.com/terms/data-processing-terms?hl=ja">Cloud のデータ処理に関する追加条項</a>に記載されているとおりに個人データを処理できます。その際、（プレビュー規約に定義されるとおり）本契約で規定されている制限と義務が適用されます。<p></p>
+</span></aside>
+<h2 data-text="簡単に始められる" id="an_easy_experience_to_get_started" tabindex="-1">簡単に始められる</h2>
+
+<p>Vertex AI Search を使用すると、指定したデータに基づく高品質の検索やレコメンデーションを簡単に開始できます。設定プロセスの一環として、次のことができます。</p>
+
+<ul>
+<li>既存の Google アカウントを使用するか、アカウントを作成します。</li>
+<li>既存の Google Cloud プロジェクトを使用するか、プロジェクトを作成します。</li>
+<li>アプリを作成し、データストアをアタッチします。ウェブサイト コンテンツの URL を入力するか、BigQuery または Cloud Storage からデータをインポートするか、Cloud Healthcare API から FHIR R4 データをインポートするか、RESTful CRUD API を介してアップロードして、検索またはおすすめに使用するデータを提供します。サードパーティ データソースからのデータを同期する機能は、許可リスト付きのプレビュー版で利用できます。</li>
+<li>JavaScript ウィジェットと API サンプルを埋め込んで、検索やレコメンデーションをウェブサイトやアプリケーションに統合します。</li>
+</ul>
+
+<h2 data-text="データストアとアプリ" id="datastores-engines" tabindex="-1">データストアとアプリ</h2>
+
+<p>Vertex AI Search では、検索アプリまたはレコメンデーション アプリを作成し、データストアにアタッチします。データをデータストアにインポートし、データをインデックスに登録します。アプリとデータストアは 1 対 1 の関係にあります。</p>
+
+<p>使用できるデータの種類に応じて、作成できるデータストアにはさまざまな種類があります。各データストアには、次のいずれかのタイプのデータを格納できます。</p>
+
+<ul>
+<li><strong>ウェブサイトのデータ</strong>: <code dir="ltr" translate="no">yourexamplewebsite.com/faq</code> や <code dir="ltr" translate="no">yourexamplewebsite.com/events</code> などのドメインを指定して、それらのドメインのコンテンツに対する検索やレコメンデーションを有効にできます。</li>
+<li><strong>構造化データ</strong>: 構造化データを含むデータストアでは、BigQuery テーブルや NDJSON ファイルなどの構造化データに対するハイブリッド検索（キーワードとセマンティック）やレコメンデーションを利用できます。たとえば、e コマース エクスペリエンスの場合の商品カタログ、映画の検索やレコメンデーションの場合の映画カタログ、プロバイダの検索やレコメンデーションの場合の医師のディレクトリに対して、検索やレコメンデーションを実行できます。</li>
+<li><strong>メディア向けの構造化データ</strong>: メディア業界に固有の構造化データ スキーマを持つデータストア。たとえば、メディア用のデータストアには、動画、ニュース記事、音楽ファイル、ポッドキャストに関する情報が含まれます。</li>
+<li><strong>非構造化データ</strong>: 非構造化データストアを使用すると、ドキュメントや画像などのデータに対してハイブリッド検索（キーワードとセマンティック）やレコメンデーションを実行できます。たとえば、金融機関は、金融調査の出版物の非公開コーパス（インデックス）に対する検索やレコメンデーションを有効にできます。また、バイオテクノロジー企業は、医療研究の非公開リポジトリに対する検索やレコメンデーションを実行できます。</li>
+<li><strong>医療データ</strong>: 医療データストアを使用すると、Cloud Healthcare API からインポートされたヘルスケア FHIR R4 データに対してハイブリッド検索（キーワードとセマンティック）を実行できます。たとえば、医療機関は探索クエリを使用して患者の臨床歴を検索できます。</li>
+</ul>
+
+<p>詳細については、<a href="https://cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest?hl=ja">アプリとデータストアについて</a>をご覧ください。</p>
+
+<h2 data-text="Google Cloud コンソールまたは API のどちらを使用すればよいですか？" id="or_the_api" tabindex="-1">Google Cloud コンソールまたは API のどちらを使用すればよいですか？</h2>
+
+<p>Vertex AI Search は、次のいずれかの方法で実装できます。</p>
+
+<ul>
+<li><strong>Google Cloud コンソールを使用する</strong> ウェブ インターフェースを使用したクイックスタートについては、コンソールの [<a href="https://console.cloud.google.com/gen-app-builder/engines?hl=ja" target="console" track-metadata-position="body" track-name="consoleLink" track-type="tasks">Agent Builder</a>] ページをご覧ください。コンソールでは、検索アプリの作成、データのインポート、ユーザー エクスペリエンスのテスト、分析情報の表示を行うことができます。</li>
+<li><strong>Vertex AI Agent Builder API を使用する。</strong>検索やレコメンデーションをウェブサイトまたはアプリケーションに統合する準備ができたら、Vertex AI Agent Builder API を使用します。</li>
+<li><strong>Google Cloud コンソールと API の両方を使用する。</strong>たとえば、コンソールを使用してアプリを設定し、データをインポートしてから、API を使用してユーザー エクスペリエンスをテストし、ウェブサイトまたはアプリケーションに統合できます。</li>
+</ul>
+
+<h2 data-text="次のステップ" id="whats_next" tabindex="-1">次のステップ</h2>
+
+<ul>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest?hl=ja">アプリとデータストアについて</a></li>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/try-enterprise-search?hl=ja">一般的な検索を使ってみる</a></li>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/try-generic-recommendations?hl=ja">汎用レコメンデーションを使ってみる</a></li>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/try-media-search?hl=ja">メディア検索を使ってみる</a></li>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/try-media-recommendations?hl=ja">メディア レコメンデーションを使ってみる</a></li>
+</ul>
+
+
+
+
+
+
+    <devsite-hats-survey class="nocontent" hats-id="Nd7nTix2o0eU5NUYprb0ThtUc5jf" listnr-id="83405"></devsite-hats-survey>
+
+
+
+</div>
+
+
+
+
+
+    <devsite-thumb-rating position="footer"><div class="devsite-thumb-rating" role="form" aria-labelledby="devsite-thumb-label-footer"><div class="devsite-thumb-label" id="devsite-thumb-label-footer">この情報は役に立ちましたか？</div><div class="devsite-thumbs"><button class="devsite-thumb devsite-thumb-up" data-title="役に立った" aria-label="役に立った"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21,7h-6.31l0.95-4.57l0.03-0.32c0-0.41-0.17-0.79-0.44-1.06L14.17,0c0,0-7.09,6.85-7.17,7H2v13h16 c0.83,0,1.54-0.5,1.84-1.22l3.02-7.05C22.95,11.5,23,11.26,23,11V9C23,7.9,22.1,7,21,7z M7,18H4V9h3V18z M21,11l-3,7H9V8l4.34-4.34 L12,9h9V11z"></path></svg></button><button class="devsite-thumb devsite-thumb-down" data-title="役に立たない" aria-label="役に立たない"><svg class="devsite-thumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,17h6.31l-0.95,4.57l-0.03,0.32c0,0.41,0.17,0.79,0.44,1.06L9.83,24c0,0,7.09-6.85,7.17-7h5V4H6 C5.17,4,4.46,4.5,4.16,5.22l-3.02,7.05C1.05,12.5,1,12.74,1,13v2C1,16.1,1.9,17,3,17z M17,6h3v9h-3V6z M3,13l3-7h9v10l-4.34,4.34 L12,15H3V13z"></path></svg></button></div></div></devsite-thumb-rating>
+
+
+         <devsite-feedback position="footer" project-name="AI Applications" product-id="5041938" bucket="Documentation" context="" version="t-devsite-webserver-20250603-r00-rc02.469552985398027687" data-label="Send Feedback Button" track-type="feedback" track-name="sendFeedbackLink" track-metadata-position="footer" class="nocontent" project-icon="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/favicons/onecloud/super_cloud.png">
+
+  <button>
+
+
+    フィードバックを送信
+
+  </button>
+</devsite-feedback>
+
+
+
+
+
+
+  <div class="devsite-floating-action-buttons">
+
+
+</div>
+</article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>特に記載のない限り、このページのコンテンツは<a href="https://creativecommons.org/licenses/by/4.0/">クリエイティブ・コモンズの表示 4.0 ライセンス</a>により使用許諾されます。コードサンプルは <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 ライセンス</a>により使用許諾されます。詳しくは、<a href="https://developers.google.com/site-policies?hl=ja">Google Developers サイトのポリシー</a>をご覧ください。Java は Oracle および関連会社の登録商標です。</p>
+  <p>最終更新日 2024-12-24 UTC。</p>
+</devsite-content-footer>
+
+
+<devsite-notification>
+</devsite-notification>
+
+
+
+<div class="devsite-content-data">
+
+
+
+    <template class="devsite-thumb-rating-feedback">
+      <devsite-feedback position="thumb-rating" project-name="AI Applications" product-id="5041938" bucket="Documentation" context="" version="t-devsite-webserver-20250603-r00-rc02.469552985398027687" data-label="Send Feedback Button" track-type="feedback" track-name="sendFeedbackLink" track-metadata-position="thumb-rating" class="nocontent" project-icon="https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/favicons/onecloud/super_cloud.png">
+
+  <button>
+
+    ご意見をお聞かせください
+
+  </button>
+</devsite-feedback>
+    </template>
+
+
+    <template class="devsite-content-data-template">
+      [[["わかりやすい","easyToUnderstand","thumb-up"],["問題の解決に役立った","solvedMyProblem","thumb-up"],["その他","otherUp","thumb-up"]],[["わかりにくい","hardToUnderstand","thumb-down"],["情報またはサンプルコードが不正確","incorrectInformationOrSampleCode","thumb-down"],["必要な情報 / サンプルがない","missingTheInformationSamplesINeed","thumb-down"],["翻訳に関する問題","translationIssue","thumb-down"],["その他","otherDown","thumb-down"]],["最終更新日 2024-12-24 UTC。"],[[["Vertex AI Search utilizes AI, natural language processing, and large language models (LLMs) to deliver highly relevant search results and understand user intent."],["It allows the creation of a Google-quality search application using controlled data, with the added ability to use search results to inform generative AI LLM responses."],["The service enables the development of recommendation applications that suggest relevant content to users, based on data the user is viewing."],["Vertex AI Search simplifies setup by allowing users to use existing Google Accounts and Google Cloud projects, as well as enabling various methods for importing and syncing data."],["Users can access and implement the search and recommendation features through the Google Cloud console, the Vertex AI Agent Builder API, or a combination of both."]]],[]]
+    </template>
+
+</div>
+
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+
+
+
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+
+
+<nav class="devsite-footer-linkboxes nocontent" aria-label="フッターのリンク">
+
+  <ul class="devsite-footer-linkboxes-list">
+
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Google を選ぶ理由</h3>
+      <ul class="devsite-footer-linkbox-list">
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/why-google-cloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-child_headline="why google" track-type="footer link" track-name="choosing google cloud" track-metadata-eventdetail="cloud.google.com/why-google-cloud/" track-metadata-module="footer" track-metadata-position="footer">
+
+
+            Google Cloud を選ぶ理由
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/trust-center/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-child_headline="why google" track-name="trust and security" track-metadata-position="footer" track-type="footer link" track-metadata-eventdetail="cloud.google.com/security/" track-metadata-module="footer">
+
+
+            信頼とセキュリティ
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/solutions/modern-infrastructure/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-type="footer link" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/solutions/modern-infrastructure/" track-metadata-child_headline="why google" track-metadata-position="footer" track-name="modern infrastructure cloud">
+
+
+            最新のインフラ クラウド
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/multicloud/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-metadata-child_headline="why google" track-name="multicloud" track-metadata-position="footer" track-type="footer link" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/multicloud/">
+
+
+            マルチクラウド
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/infrastructure/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-name="global infrastructure" track-type="footer link" track-metadata-child_headline="why google" track-metadata-module="footer" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/infrastructure/">
+
+
+            グローバル インフラストラクチャ
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/customers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-eventdetail="cloud.google.com/customers/" track-name="customers and case studies" track-metadata-child_headline="why google" track-metadata-module="footer" track-metadata-position="footer" track-type="footer link">
+
+
+            お客様と導入事例
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/analyst-reports/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-name="analyst reports" track-metadata-child_headline="why google" track-metadata-position="footer" track-metadata-module="footer" track-type="footer link" track-metadata-eventdetail="cloud.google.com/analyst-reports/">
+
+
+            アナリスト レポート
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/whitepapers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/whitepapers/" track-type="footer link" track-metadata-position="footer" track-name="whitepapers" track-metadata-child_headline="why google">
+
+
+
+
+
+            ホワイトペーパー
+
+          </a>
+
+
+        </li>
+
+      </ul>
+    </li>
+
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">プロダクトと料金</h3>
+      <ul class="devsite-footer-linkbox-list">
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/products/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-name="see all products" track-type="footer link" track-metadata-module="footer" track-metadata-position="footer" track-metadata-child_headline="products and pricing" track-metadata-eventdetail="cloud.google.com/products/">
+
+
+            すべてのプロダクトを見る
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/solutions/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-module="footer" track-name="see all solutions" track-metadata-eventdetail="cloud.google.com/solutions/" track-metadata-child_headline="solutions" track-type="footer link" track-metadata-position="footer">
+
+
+            すべてのソリューションを見る
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/startup/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-child_headline="resources" track-type="footer link" track-name="google cloud for startups" track-metadata-position="footer" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/startup/">
+
+
+            Google Cloud スタートアップ
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/marketplace/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-metadata-position="footer" track-type="footer link" track-metadata-child_headline="resources" track-metadata-module="footer" track-name="google cloud marketplace" track-metadata-eventdetail="cloud.google.com/marketplace/">
+
+
+            Google Cloud Marketplace
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/pricing/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-child_headline="products and pricing" track-metadata-eventdetail="cloud.google.com/pricing/" track-type="footer link" track-metadata-position="footer" track-metadata-module="footer" track-name="google cloud pricing">
+
+
+            Google Cloud の料金
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/contact/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-eventdetail="cloud.google.com/contact/" track-metadata-child_headline="engage" track-metadata-module="footer" track-name="contact sales" track-type="footer link" track-metadata-position="footer">
+
+
+
+
+
+            お問い合わせ
+
+          </a>
+
+
+        </li>
+
+      </ul>
+    </li>
+
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">サポート</h3>
+      <ul class="devsite-footer-linkbox-list">
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//www.googlecloudcommunity.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-metadata-eventdetail="www.googlecloudcommunity.com" track-metadata-module="footer" track-metadata-child_headline="engage" track-type="footer link" track-metadata-position="footer" target="_blank" track-name="google cloud community" rel="noopener">
+
+
+            Google Cloud コミュニティ
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/support-hub/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-name="support" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/support-hub/" track-metadata-child_headline="resources" track-type="footer link" track-metadata-module="footer">
+
+
+            サポート
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/release-notes" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-module="footer" track-type="footer link" track-metadata-position="footer" track-metadata-eventdetail="cloud.google.com/release-notes/" track-name="release notes" track-metadata-child_headline="resources">
+
+
+            リリースノート
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//status.cloud.google.com" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-type="footer link" track-metadata-eventdetail="status.cloud.google.com" track-metadata-child_headline="resources" target="_blank" track-metadata-module="footer" track-metadata-position="footer" track-name="system status">
+
+
+
+
+
+            システム ステータス
+
+          </a>
+
+
+        </li>
+
+      </ul>
+    </li>
+
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">リソース</h3>
+      <ul class="devsite-footer-linkbox-list">
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//github.com/googlecloudPlatform/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-name="github" track-type="footer link" track-metadata-eventdetail="github.com/googlecloudPlatform/" track-metadata-child_headline="resources" track-metadata-position="footer" track-metadata-module="footer">
+
+
+            GitHub
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/docs/get-started/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-metadata-module="footer" track-name="google cloud quickstarts" track-metadata-eventdetail="cloud.google.com/docs/get-started/" track-metadata-position="footer" track-type="footer link" track-metadata-child_headline="resources">
+
+
+            Google Cloud の概要
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/docs/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-metadata-position="footer" track-name="google cloud documentation" track-metadata-eventdetail="cloud.google.com/docs/" track-metadata-child_headline="resources" track-type="footer link" track-metadata-module="footer">
+
+
+            Google Cloud のドキュメント
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/docs/samples" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-metadata-position="footer" track-metadata-module="footer" track-name="code samples" track-metadata-eventdetail="cloud.google.com/docs/samples" track-type="footer link" track-metadata-child_headline="resources">
+
+
+            コードサンプル
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/architecture/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-position="footer" track-type="footer link" track-metadata-eventdetail="cloud.google.com/architecture/" track-metadata-child_headline="resources" track-name="cloud architecture center" track-metadata-module="footer">
+
+
+            Cloud アーキテクチャ センター
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//cloud.google.com/learn/training/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-type="footer link" track-metadata-child_headline="resources" track-metadata-eventdetail="cloud.google.com/learn/training/" track-metadata-module="footer" track-name="training" track-metadata-position="footer">
+
+
+            トレーニングと認定資格
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/developers/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-eventdetail="cloud.google.com/developers/" track-metadata-position="footer" track-metadata-child_headline="engage" track-name="developer center" track-metadata-module="footer" track-type="footer link">
+
+
+
+
+
+            Developer Center
+
+          </a>
+
+
+        </li>
+
+      </ul>
+    </li>
+
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">つながる</h3>
+      <ul class="devsite-footer-linkbox-list">
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//cloud.google.com/blog/ja" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 1)" track-name="blog" track-metadata-module="footer" track-type="footer link" track-metadata-eventdetail="cloud.google.com/blog/" track-metadata-position="footer" track-metadata-child_headline="engage">
+
+
+            ブログ
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/events/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 2)" track-type="footer link" track-name="events" track-metadata-eventdetail="cloud.google.com/events/" track-metadata-child_headline="engage" track-metadata-module="footer" track-metadata-position="footer">
+
+
+            イベント
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//x.com/googlecloud" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 3)" track-name="follow on x" track-metadata-module="footer" track-metadata-eventdetail="x.com/googlecloud" track-type="footer link" track-metadata-child_headline="engage" target="_blank" track-metadata-position="footer" rel="noopener">
+
+
+            X（Twitter）
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//www.youtube.com/googlecloud" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 4)" track-name="google cloud on youtube" track-metadata-position="footer" track-type="footer link" rel="noopener" target="_blank" track-metadata-module="footer" track-metadata-eventdetail="www.youtube.com/googlecloud" track-metadata-child_headline="engage">
+
+
+            YouTube の Google Cloud チャンネル
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//www.youtube.com/googlecloudplatform" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 5)" track-metadata-position="footer" rel="noopener" track-name="google cloud tech on youtube" track-metadata-module="footer" track-type="footer link" track-metadata-eventdetail="www.youtube.com/googlecloudplatform" target="_blank" track-metadata-child_headline="engage">
+
+
+            YouTube の Google Cloud Tech チャンネル
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/partners/become-a-partner/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 6)" track-metadata-module="footer" track-metadata-eventdetail="cloud.google.com/partners/become-a-partner/" track-type="footer link" track-name="become a partner" track-metadata-child_headline="engage" track-metadata-position="footer">
+
+
+            パートナーになる
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="/affiliate-program/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 7)" track-metadata-eventdetail="cloud.google.com/affiliate-program/" track-metadata-module="footer" track-metadata-child_headline="resources" track-metadata-position="footer" track-type="footer link" track-name="google cloud affiliate program">
+
+
+            Google Cloud Affiliate Program
+
+          </a>
+
+
+        </li>
+
+        <li class="devsite-footer-linkbox-item">
+
+          <a href="//www.googlecloudpresscorner.com/" class="devsite-footer-linkbox-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Link (index 8)" rel="noopener" track-metadata-position="footer" track-type="footer link" track-metadata-eventdetail="www.googlecloudpresscorner.com" track-metadata-child_headline="engage" target="_blank" track-metadata-module="footer" track-name="press corner">
+
+
+
+
+
+            プレスコーナー
+
+          </a>
+
+
+        </li>
+
+      </ul>
+    </li>
+
+  </ul>
+
+</nav>
+
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+
+
+
+<div class="devsite-footer-utility nocontent">
+
+
+
+  <nav class="devsite-footer-utility-links" aria-label="ユーティリティのリンク">
+
+    <ul class="devsite-footer-utility-list">
+
+      <li class="devsite-footer-utility-item
+                 ">
+
+
+        <a class="devsite-footer-utility-link gc-analytics-event" href="//about.google/intl/ja/?hl=ja" data-category="Site-Wide Custom Events" data-label="Footer About Google link" track-metadata-position="footer" track-metadata-eventdetail="//about.google/" track-type="footer link" target="_blank" track-metadata-module="utility footer" track-name="about google">
+          Google について
+        </a>
+
+      </li>
+
+      <li class="devsite-footer-utility-item
+                 devsite-footer-privacy-link">
+
+
+        <a class="devsite-footer-utility-link gc-analytics-event" href="//policies.google.com/privacy?hl=ja" data-category="Site-Wide Custom Events" data-label="Footer Privacy link" track-metadata-eventdetail="//policies.google.com/privacy" track-type="footer link" track-metadata-position="footer" target="_blank" track-name="privacy" track-metadata-module="utility footer">
+          プライバシー
+        </a>
+
+      </li>
+
+      <li class="devsite-footer-utility-item
+                 ">
+
+
+        <a class="devsite-footer-utility-link gc-analytics-event" href="//policies.google.com/terms?hl=ja" data-category="Site-Wide Custom Events" data-label="Footer Site terms link" track-type="footer link" track-metadata-module="utility footer" target="_blank" track-metadata-eventdetail="//www.google.com/intl/en/policies/terms/regional.html" track-name="site terms" track-metadata-position="footer">
+          サイトの利用規約
+        </a>
+
+      </li>
+
+      <li class="devsite-footer-utility-item
+                 ">
+
+
+        <a class="devsite-footer-utility-link gc-analytics-event" href="https://cloud.google.com/product-terms/?hl=ja" data-category="Site-Wide Custom Events" data-label="Footer Google Cloud terms link" track-metadata-eventdetail="/product-terms/" track-metadata-module="utility footer" track-name="google cloud terms" track-type="footer link" track-metadata-position="footer">
+          Google Cloud 利用規約
+        </a>
+
+      </li>
+
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+
+
+        <a class="devsite-footer-utility-link gc-analytics-event" href="#" data-category="Site-Wide Custom Events" data-label="Footer Manage cookies link" track-name="Manage cookies" track-metadata-position="footer" track-type="footer link" track-metadata-eventdetail="#" aria-hidden="true" track-metadata-module="utility footer">
+          Manage cookies
+        </a>
+
+      </li>
+
+      <li class="devsite-footer-utility-item
+                 devsite-footer-carbon-button">
+
+
+        <a class="devsite-footer-utility-link gc-analytics-event" href="//cloud.google.com/sustainability?hl=ja" data-category="Site-Wide Custom Events" data-label="Footer Our third decade of climate action: join us link" track-metadata-module="utility footer" track-metadata-eventdetail="/sustainability/" track-metadata-position="footer" track-name="Our third decade of climate action: join us" track-type="footer link">
+          Google の 30 年の気候変動対策: ご参加ください
+        </a>
+
+      </li>
+
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+
+        <span class="devsite-footer-utility-description">Google Cloud ニュースレターに登録</span>
+
+
+        <a class="devsite-footer-utility-link gc-analytics-event" href="//cloud.google.com/newsletter/?hl=ja" data-category="Site-Wide Custom Events" data-label="Footer Subscribe link" track-metadata-position="footer" track-name="subscribe" track-type="footer link" track-metadata-module="utility footer" track-metadata-eventdetail="/newsletter/">
+          購読
+        </a>
+
+      </li>
+
+    </ul>
+
+
+<devsite-language-selector aria-label="言語の設定を選択します。">
+  <ul role="presentation">
+
+
+    <li role="presentation">
+      <a role="menuitem" lang="en" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction" aria-current="true">English</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="de" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=de">Deutsch</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="es-419" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=es-419">Español – América Latina</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="fr" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=fr">Français</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="id" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=id">Indonesia</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="it" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=it">Italiano</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="pt-br" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=pt-br">Português – Brasil</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="zh-cn" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=zh-cn">中文 – 简体</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="zh-tw" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=zh-tw">中文 – 繁體</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="ja" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ja">日本語</a>
+    </li>
+
+    <li role="presentation">
+      <a role="menuitem" lang="ko" href="https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ko">한국어</a>
+    </li>
+
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+
+        </devsite-footer-utility>
+        <devsite-panel style="height: auto;">
+
+        </devsite-panel>
+
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar style="bottom: 0px;"></devsite-snackbar>
+    <devsite-tooltip></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+
+        <script type="application/json" analytics="">[]</script>
+<script type="application/json" tag-management="">{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [{&#34;id&#34;: &#34;GTM-5CVQBG&#34;, &#34;purpose&#34;: 1}], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;ja&#34;, &#34;served&#34;: &#34;ja&#34;}, &#34;pageType&#34;: &#34;article&#34;, &#34;projectName&#34;: &#34;AI Applications&#34;, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;cloud&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+
+    </devsite-analytics>
+
+      <devsite-badger></devsite-badger>
+
+    <cloudx-user></cloudx-user>
+
+
+  <cloudx-free-trial-eligible-store freetrialeligible="true"></cloudx-free-trial-eligible-store>
+
+
+<cloudx-pricing-socket></cloudx-pricing-socket>
+<cloudx-experiments type="TestAACodivertedExperiment" path="/virtual/TestAACodivertedExperiment/configureExperiment" location="ZZ" variant="variant2"></cloudx-experiments>
+<cloudx-experiment-ids usercountry="ZZ" devsiteexperimentidlist="[39300012, 39300021, 39300118, 39300195, 39300241, 39300317, 39300322, 39300326, 39300345, 39300354, 39300363, 39300373, 39300412, 39300422, 39300436, 39300471, 39300487, 39300496, 39300498, 39300569]">
+</cloudx-experiment-ids>
+
+<script nonce="">
+
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/js/app_loader.js', '[2,"ja",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc","https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud","https://cloud-dot-devsite-v2-prod.appspot.com",null,null,["/_pwa/cloud/manifest.json","https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/favicons/onecloud/favicon.ico","https://www.gstatic.com/devrel-devsite/prod/vd980a342b8e3e77c07209be506f8385246f583d6eec83ceb07569bbf26f054dc/cloud/images/cloud-logo.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Google+Sans+Text:400,400italic,500,500italic,700,700italic|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","cloud.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["DevPro__enable_vertex_credit_card","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_awarding_url","DevPro__enable_developer_subscriptions","Profiles__enable_complete_playlist_endpoint","CloudShell__cloud_code_overflow_menu","Search__enable_page_map","Profiles__enable_release_notes_notifications","Profiles__require_profile_eligibility_for_signin","Experiments__reqs_query_experiments","MiscFeatureFlags__enable_framebox_badge_methods","DevPro__enable_enterprise","Cloud__enable_cloudx_experiment_ids","Search__enable_suggestions_from_borg","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__emergency_css","MiscFeatureFlags__enable_variable_operator","DevPro__enable_firebase_workspaces_card","Profiles__enable_public_developer_profiles","Cloud__enable_cloud_dlp_service","Cloud__enable_free_trial_server_call","Profiles__enable_completecodelab_endpoint","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__developers_footer_dark_image","MiscFeatureFlags__enable_variable_operator_index_yaml","DevPro__enable_devpro_offers","Search__scope_to_project_tenant","Concierge__enable_actions_menu","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__developers_footer_image","EngEduTelemetry__enable_engedu_telemetry","Search__enable_dynamic_content_confidential_banner","Concierge__enable_pushui","CloudShell__cloud_shell_button","Profiles__enable_page_saving","MiscFeatureFlags__enable_view_transitions","MiscFeatureFlags__enable_firebase_utm","Cloud__enable_llm_concierge_chat","Profiles__enable_stripe_subscription_management","Search__enable_ai_eligibility_checks","Profiles__enable_recognition_badges","BookNav__enable_tenant_cache_key","DevPro__enable_google_one_card","Cloud__enable_legacy_calculator_redirect","DevPro__enable_cloud_innovators_plus","Cloud__enable_cloud_shell","Analytics__enable_clearcut_logging","MiscFeatureFlags__enable_project_variables","Profiles__enable_profile_collections","TpcFeatures__enable_unmirrored_page_left_nav","Profiles__enable_developer_profiles_callout","Profiles__enable_completequiz_endpoint","DevPro__enable_code_assist"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.clients6.google.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.clients6.google.com",1,4,1,"https://developerprofiles-pa.clients6.google.com",[2,"cloud","Google Cloud","cloud.google.com",null,"cloud-dot-devsite-v2-prod.appspot.com",null,null,[1,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,1,[1],[null,null,null,[1,20],"/terms/recommendations"],[1],null,[1],[1,null,1],[1,1,null,null,1,null,["/vertex-ai/"]],[1]],null,[22,null,null,null,null,null,"/images/cloud-logo.svg","/images/favicons/onecloud/apple-icon.png",null,null,null,null,1,1,1,[6,5],[],null,null,[[],[],[],[],[],[],[],[]],null,null,null,null,null,null,[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,22,23,29,37],null,[[null,null,null,null,null,null,[1,[["docType","Choose a content type",[["ApiReference",null,null,null,null,null,null,null,null,"API reference"],["Sample",null,null,null,null,null,null,null,null,"Code sample"],["ReferenceArchitecture",null,null,null,null,null,null,null,null,"Reference architecture"],["Tutorial",null,null,null,null,null,null,null,null,"Tutorial"]]],["category","Choose a topic",[["AiAndMachineLearning",null,null,null,null,null,null,null,null,"Artificial intelligence and machine learning (AI/ML)"],["ApplicationDevelopment",null,null,null,null,null,null,null,null,"Application development"],["BigDataAndAnalytics",null,null,null,null,null,null,null,null,"Big data and analytics"],["Compute",null,null,null,null,null,null,null,null,"Compute"],["Containers",null,null,null,null,null,null,null,null,"Containers"],["Databases",null,null,null,null,null,null,null,null,"Databases"],["HybridCloud",null,null,null,null,null,null,null,null,"Hybrid and multicloud"],["LoggingAndMonitoring",null,null,null,null,null,null,null,null,"Logging and monitoring"],["Migrations",null,null,null,null,null,null,null,null,"Migrations"],["Networking",null,null,null,null,null,null,null,null,"Networking"],["SecurityAndCompliance",null,null,null,null,null,null,null,null,"Security and compliance"],["Serverless",null,null,null,null,null,null,null,null,"Serverless"],["Storage",null,null,null,null,null,null,null,null,"Storage"]]]]]],[1],null,1],[[null,null,null,null,null,["GTM-5CVQBG"],null,null,null,null,null,[["GTM-5CVQBG",2]],1],null,null,null,null,null,1],"mwETRvWii0eU5NUYprb0Y9z5GVbc",4,null,null,null,null,null,null,null,null,null,null,null,null,null,"cloud.devsite.google"],1,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,null,"https://developerscontentinsights-pa.clients6.google.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.clients6.google.com"]')
+
+</script>
+
+    <devsite-a11y-announce aria-live="assertive" aria-atomic="true"></devsite-a11y-announce>
+
+<iframe id="apiproxy12435bc5ccd3019adf77189bf2753a7fe50e6d530.1922045474" name="apiproxy12435bc5ccd3019adf77189bf2753a7fe50e6d530.1922045474" src="https://feedback-pa.clients6.google.com/static/proxy.html?usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.nJpyt-fjzo8.O%2Fd%3D1%2Frs%3DAHpOoo9fTqXSCmwMDsu9FH68l5KSqr6MBg%2Fm%3D__features__#parent=https%3A%2F%2Fcloud.google.com&amp;rpctoken=297926273" tabindex="-1" aria-hidden="true" data-gtm-yt-inspected-183356566_95="true" style="width: 1px; height: 1px; position: absolute; top: -100px; display: none;"></iframe></body></html>
