@@ -27,19 +27,31 @@ else:
     author = urlparse(url).hostname
 published = get_meta('article:published_time')
 image = get_meta('og:image')
-fetched = datetime.utcnow().isoformat()+'Z'
+fetched = datetime.utcnow().isoformat()+"Z"
 source = url
 
-article = Document(html)
-content_html = article.summary()
-content_md = md(content_html)
+parsed = urlparse(url)
+domain = parsed.hostname
+path_segments = parsed.path.strip('/').split('/')
+content_md = ""
+if domain == "github.com" and len(path_segments) == 2:
+    user, repo = path_segments
+    for branch in ["master", "main"]:
+        raw_url = f"https://raw.githubusercontent.com/{user}/{repo}/{branch}/README.md"
+        r = requests.get(raw_url)
+        if r.status_code == 200:
+            content_md = r.text
+            break
+
+if not content_md:
+    article = Document(html)
+    content_html = article.summary()
+    content_md = md(content_html)
 
 # filename from url slug instead of title
 import re
-slug = os.path.basename(urlparse(url).path.strip('/')) or 'index'
+slug = os.path.basename(parsed.path.strip('/')) or 'index'
 file_title = re.sub(r'[^a-zA-Z0-9_-]+', '-', slug).strip('-')
-
-domain = urlparse(url).hostname
 # ensure path
 published_date = published[:10] if published else datetime.utcnow().strftime('%Y-%m-%d')
 year,month,_ = published_date.split('-')
