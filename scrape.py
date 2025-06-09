@@ -19,13 +19,17 @@ def get_meta(prop):
         return tag['content']
     return ''
 
-title = get_meta('og:title') or soup.title.string.strip()
-author = soup.find('meta', attrs={'name':'author'})
-if author:
-    author = author['content']
+title = get_meta('og:title') or get_meta('citation_title') or soup.title.string.strip()
+authors = soup.find_all('meta', attrs={'name': 'citation_author'})
+if authors:
+    author = ", ".join([a['content'] for a in authors])
 else:
-    author = urlparse(url).hostname
-published = get_meta('article:published_time')
+    author_tag = soup.find('meta', attrs={'name':'author'})
+    if author_tag:
+        author = author_tag['content']
+    else:
+        author = urlparse(url).hostname
+published = get_meta('article:published_time') or get_meta('citation_date') or get_meta('citation_publication_date')
 image = get_meta('og:image')
 fetched = datetime.now(timezone.utc).isoformat()
 source = url
@@ -57,7 +61,10 @@ import re
 slug = os.path.basename(parsed.path.strip('/')) or 'index'
 file_title = re.sub(r'[^a-zA-Z0-9_-]+', '-', slug).strip('-')
 # ensure path
-published_date = published[:10] if published else datetime.now(timezone.utc).strftime('%Y-%m-%d')
+if published:
+    published_date = published[:10].replace('/', '-')
+else:
+    published_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 year,month,_ = published_date.split('-')
 path = os.path.join(year, month, domain)
 os.makedirs(path, exist_ok=True)
