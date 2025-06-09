@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 from readability import Document
 from markdownify import markdownify as md
 from urllib.parse import urlparse
-from datetime import datetime
+from datetime import datetime, timezone
 import os
 
 url = sys.argv[1]
-resp = requests.get(url)
+resp = requests.get(url, timeout=10)
 resp.raise_for_status()
 html = resp.text
 soup = BeautifulSoup(html, 'html.parser')
@@ -27,7 +27,7 @@ else:
     author = urlparse(url).hostname
 published = get_meta('article:published_time')
 image = get_meta('og:image')
-fetched = datetime.utcnow().isoformat()+"Z"
+fetched = datetime.now(timezone.utc).isoformat()
 source = url
 
 parsed = urlparse(url)
@@ -44,8 +44,12 @@ if domain == "github.com" and len(path_segments) == 2:
             break
 
 if not content_md:
-    article = Document(html)
-    content_html = article.summary()
+    article_tag = soup.find('article')
+    if article_tag:
+        content_html = article_tag.decode_contents()
+    else:
+        article = Document(html)
+        content_html = article.summary()
     content_md = md(content_html)
 
 # filename from url slug instead of title
@@ -53,7 +57,7 @@ import re
 slug = os.path.basename(parsed.path.strip('/')) or 'index'
 file_title = re.sub(r'[^a-zA-Z0-9_-]+', '-', slug).strip('-')
 # ensure path
-published_date = published[:10] if published else datetime.utcnow().strftime('%Y-%m-%d')
+published_date = published[:10] if published else datetime.now(timezone.utc).strftime('%Y-%m-%d')
 year,month,_ = published_date.split('-')
 path = os.path.join(year, month, domain)
 os.makedirs(path, exist_ok=True)
