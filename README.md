@@ -42,7 +42,7 @@ repo-root
 - **published**: 2025-05-30T14:00:00Z
 - **fetched**: 2025-06-04T03:30:45Z
 - **tags**: codex, ai, nlp
-- **image**: https://cdn.openai.com/og/chatgpt.png
+- **image**: https://cdn.openai.com/og/chatgpt.png (URL が長くてエラーが出る場合は短縮 URL にすること)
 
 ## 3.2 要約
 - **日本語** で回答すること。
