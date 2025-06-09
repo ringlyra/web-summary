@@ -28,7 +28,7 @@ repo-root
 ---
 
 ## 3. 出力フォーマット
-`{date}_{time}.md`
+`{date}_{title}.md`
 
 ### 3.1 ヘッダー 
 
