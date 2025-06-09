@@ -64,7 +64,7 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
     2. Fetch: HTTP GET。必要に応じて Headless browser で JS レンダリング。
     3. Parse:
     - {title}, {meta} 各種, OGP, {time} 等を抽出。
-    - 取得できない項目は空文字列。tags には必ず codex を入れる。
+    - 取得できない項目は空文字列。tags には必ず codex を入れる。任意タグも必ず含めてください。
     4. Convert: 本文 HTML を Markdown に変換。
     5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
     6. Save: YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
