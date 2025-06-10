@@ -1,0 +1,1 @@
+<video src="https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-genmoji-mix/large_2x.mp4" preload="auto" muted playsinline class> </video>
