@@ -1,5 +1,6 @@
 <!-- metadata -->
-- **title**: National Security Expert Richard Fontaine appointed to Anthropic’s Long-Term Benefit Trust 
+
+- **title**: National Security Expert Richard Fontaine appointed to Anthropic’s Long-Term Benefit Trust
 - **source**: https://www.anthropic.com/news/national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-benefit-trust
 - **author**: www.anthropic.com
 - **published**: 2025-06-07T00:00:00Z
@@ -15,8 +16,7 @@ Anthropicの長期的利益信託LTBTは、国家安全保障の専門家でCNAS
 
 Announcements
 
-National Security Expert Richard Fontaine appointed to Anthropic’s Long-Term Benefit Trust
-==========================================================================================
+# National Security Expert Richard Fontaine appointed to Anthropic’s Long-Term Benefit Trust
 
 Jun 7, 2025●2 min read
 

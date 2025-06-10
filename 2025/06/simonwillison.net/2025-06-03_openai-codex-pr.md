@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: PR #537: Fix Markdown in og descriptions
 - **source**: https://simonwillison.net/2025/Jun/3/openai-codex-pr/
 - **author**: Simon Willison
@@ -8,9 +9,11 @@
 - **image**: https://static.simonwillison.net/static/2025/codex-fix.jpg
 
 ## 要約
+
 **OpenAI Codex** を活用し自ブログの **OGP** 説明文のMarkdownを除去する **GitHub** PRを作成し、Codexのエージェント活用事例を紹介。
 
 ## 本文 / Article
+
 **[PR #537: Fix Markdown in og descriptions](https://github.com/simonw/simonwillisonblog/pull/537)**. Since [OpenAI Codex](https://openai.com/index/introducing-codex/) is now available to us ChatGPT Plus subscribers I decided to try it out against my blog.
 
 It's a very nice implementation of the GitHub-connected coding "agent" pattern, as also seen in Google's [Jules](https://jules.google/) and Microsoft's [Copilot Coding Agent](https://github.blog/changelog/2025-05-19-github-copilot-coding-agent-in-public-preview/).
@@ -54,7 +57,7 @@ Then I prompted Codex with the following (after one previous experimental task t
 > username = testuser
 > password = testpass
 >
-> Put those in the DATABASE\_URL environment variable.
+> Put those in the DATABASE_URL environment variable.
 
 I left it to churn away for a few minutes (4m12s, to be precise) and [it came back](https://chatgpt.com/s/cd_683f8b81657881919a8d1ce71978a2df) with a fix that edited two templates and added one more (passing) test. Here's [that change in full](https://github.com/simonw/simonwillisonblog/pull/537/files).
 

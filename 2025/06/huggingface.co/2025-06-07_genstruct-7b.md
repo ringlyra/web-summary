@@ -1,18 +1,20 @@
 <!-- metadata -->
+
 - **title**: NousResearch/Genstruct-7B · Hugging Face
 - **source**: https://huggingface.co/NousResearch/Genstruct-7B
 - **author**: huggingface.co
-- **published**: 
+- **published**:
 - **fetched**: 2025-06-07T23:40:39Z
 - **tags**: codex
 - **image**: https://cdn-thumbnails.huggingface.co/social-thumbnails/models/NousResearch/Genstruct-7B.png
 
 ## 要約
+
 Genstruct 7Bは生データからユーザーに与えられた文脈を取り入れ、複雑なシナリオを含む質問と回答例を生成するモデルである。Ada-Instructを基にしつつ、追加の文脈を用いたInstruction生成を行い、生成したデータから推論能力を高めることを狙っている。
 
 ## 本文 / Article
-Genstruct 7B
-============
+
+# Genstruct 7B
 
 [![image/png](https://cdn-uploads.huggingface.co/production/uploads/64137e2150358a805203cbac/ZhntfiUrRzRtB16nQb_1e.png)](https://cdn-uploads.huggingface.co/production/uploads/64137e2150358a805203cbac/ZhntfiUrRzRtB16nQb_1e.png)
 
@@ -27,12 +29,12 @@ Previous methods largely rely on in-context approaches to generate instructions,
 Inspired by this, we took this approach further by grounding the generations in user-provided context passages.
 Further, the model is trained to generate questions involving complex scenarios that require detailed reasoning, allowing for models trained on the generated data to reason step-by-step.
 
-|  | ChatGPT | Few-shot prompting | RAG | Ada-Instruct | **Genstruct** |
-| --- | --- | --- | --- | --- | --- |
-| Open models | ❌ | ☑️ | ☑️ | ✅ | ✅ |
-| Grounded generation | ❌ | ❌ | ✅ | ❌ | ✅ |
-| Complex questions | ❌ | ❌ | ❌ | ☑️ | ✅ |
-| Complex responses | ✅ | ☑️ | ❌ | ☑️ | ✅ |
+|                     | ChatGPT | Few-shot prompting | RAG | Ada-Instruct | **Genstruct** |
+| ------------------- | ------- | ------------------ | --- | ------------ | ------------- |
+| Open models         | ❌      | ☑️                 | ☑️  | ✅           | ✅            |
+| Grounded generation | ❌      | ❌                 | ✅  | ❌           | ✅            |
+| Complex questions   | ❌      | ❌                 | ❌  | ☑️           | ✅            |
+| Complex responses   | ✅      | ☑️                 | ❌  | ☑️           | ✅            |
 
 An example notebook is provided [here](https://huggingface.co/NousResearch/Genstruct-7B/blob/main/notebook.ipynb), which details how to load and sample from the model.
 
@@ -56,8 +58,7 @@ print(tokenizer.decode(model.generate(inputs, max_new_tokens=512)[0]).split(toke
 
 ```
 
-Example outputs
-===============
+# Example outputs
 
 The input is the text up to and including "`[[[User]]]` ", and the completion is everything that follows.
 
@@ -99,7 +100,7 @@ Which group of children would less likely have increased rates of diarrhea?
 
 ### Cortado
 
-```
+````
 [[[Title]]] Cortado
 [[[Content]]] A cortado is a Spanish beverage consisting of espresso mixed with a roughly equal amount of warm milk to reduce the acidity,[1][2] although the exact ratios have considerable regional variation.[3] The milk in a cortado is steamed, but not frothy and "texturized" as in many Italian coffee drinks.[4] The cortado is commonly served all over Spain.[5] The word cortado is the past participle of the Spanish verb cortar (to cut), in the sense of "dilute", and can refer variously to either coffee or espresso drinks throughout Spanish and Portuguese speaking countries.
 
@@ -113,15 +114,14 @@ Given that Brett has moved from Madrid, where he was accustomed to enjoying cort
 
 Therefore, based on their respective locations, Sean will have an easier time finding a barista that knows what a cortado is compared to Brett.```
 
-```
+````
 
-How to cite:
-============
+# How to cite:
 
 ```
-@misc{Genstruct, 
-      url={[https://https://huggingface.co/NousResearch/Genstruct-7B](https://huggingface.co/NousResearch/https://huggingface.co/NousResearch/Genstruct-7B)}, 
-      title={Genstruct}, 
+@misc{Genstruct,
+      url={[https://https://huggingface.co/NousResearch/Genstruct-7B](https://huggingface.co/NousResearch/https://huggingface.co/NousResearch/Genstruct-7B)},
+      title={Genstruct},
       author={"euclaise"}
 }
 

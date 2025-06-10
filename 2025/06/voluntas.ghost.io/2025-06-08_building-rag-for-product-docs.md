@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: 自社製品ドキュメント向けの RAG を作ろうとしている
 - **source**: https://voluntas.ghost.io/building-rag-for-product-docs/
 - **author**: voluntas.ghost.io
@@ -21,13 +22,13 @@
 
 ### 前提条件
 
-* オープンかつ無料で提供する
-* DuckDB ベースで実現する
-* PFN PLaMo のモデルや API を利用する
-* Akamai Cloud の GPU インスタンスを利用する
-* 落ちても良いサービス
-* HTML スクレイピングを採用する
-* 予算は月 700 ドル程度に抑える
+- オープンかつ無料で提供する
+- DuckDB ベースで実現する
+- PFN PLaMo のモデルや API を利用する
+- Akamai Cloud の GPU インスタンスを利用する
+- 落ちても良いサービス
+- HTML スクレイピングを採用する
+- 予算は月 700 ドル程度に抑える
 
 ### DuckDB
 

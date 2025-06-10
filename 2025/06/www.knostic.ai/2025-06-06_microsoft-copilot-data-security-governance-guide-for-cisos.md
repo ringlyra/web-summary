@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Microsoft Copilot Data Security & Governance Guide for CISOs
 - **source**: https://www.knostic.ai/blog/microsoft-copilot-data-security-governance
 - **author**: Knostic Team
@@ -8,16 +9,18 @@
 - **image**: https://www.knostic.ai/hubfs/365.png
 
 ## 要約
+
 Microsoft 365 Copilot を安全に導入するためのセキュリティとガバナンス施策を詳述する記事。Copilot はテナント分離やゼロトラスト、暗号化、プロンプトインジェクション対策など強固な基盤を持つが、過剰権限や LLM のハルシネーション、ソーシャルエンジニアリングといった残存リスクが課題となる。Microsoft Purview の感度ラベル、DLP、通信コンプライアンス、監査ログなどを活用した統制が推奨される一方、コンテナ単位のラベルが内部ファイルに自動継承されないなどのギャップも指摘される。導入はリスク評価、ライセンス管理、パイロット、ポリシー適用、継続的改善の5段階で進めると効果的。Knostic のプラットフォームはこれらの準備やポリシー設定を自動化し、安全な Copilot 利用を後押しする。
 
 ## 本文
+
 ## Fast Facts on Microsoft Copilot Data Security and Governance
 
-* **Security Foundation**: Copilot uses tenant isolation, Zero Trust principles, and end-to-end encryption to protect enterprise data while defending against prompt injection with machine learning filters, that are probabilistic in nature and may not detect novel or camouflaged threats
-* **Governance Controls**: Microsoft Purview tools enforce sensitivity labels, DLP policies, and communication compliance monitoring, but gaps remain in labeling non-Office files and nested content in Teams or SharePoint
-* **Persistent Risks**: Organizations must address over-permissioned content, AI hallucinations, and social engineering threats that Copilot can unintentionally amplify
-* **Deployment Strategy**: Microsoft recommends a five-phase rollout for secure and compliant adoption: assessment, licensing, piloting, enforcement, and continuous improvement
-* **Automation Edge**: Tools like Knostic support secure Copilot deployment by streamlining readiness assessments and auditing data access. It also identifies permission risks and therefore helps reduce manual workload and improve consistency
+- **Security Foundation**: Copilot uses tenant isolation, Zero Trust principles, and end-to-end encryption to protect enterprise data while defending against prompt injection with machine learning filters, that are probabilistic in nature and may not detect novel or camouflaged threats
+- **Governance Controls**: Microsoft Purview tools enforce sensitivity labels, DLP policies, and communication compliance monitoring, but gaps remain in labeling non-Office files and nested content in Teams or SharePoint
+- **Persistent Risks**: Organizations must address over-permissioned content, AI hallucinations, and social engineering threats that Copilot can unintentionally amplify
+- **Deployment Strategy**: Microsoft recommends a five-phase rollout for secure and compliant adoption: assessment, licensing, piloting, enforcement, and continuous improvement
+- **Automation Edge**: Tools like Knostic support secure Copilot deployment by streamlining readiness assessments and auditing data access. It also identifies permission risks and therefore helps reduce manual workload and improve consistency
 
 ## Introduction
 
@@ -59,10 +62,10 @@ T[o protect against prompt injection attacks](https://learn.microsoft.com/en-us/
 
 #### CISO Takeaways
 
-* Enforce Zero Trust principles across all Copilot integrations
-* Review tenant isolation settings to ensure logical separation is active
-* Verify encryption policies are aligned with your data residency obligations
-* Audit Copilot traffic for prompt-injection behavior or watchdog-triggered retractions
+- Enforce Zero Trust principles across all Copilot integrations
+- Review tenant isolation settings to ensure logical separation is active
+- Verify encryption policies are aligned with your data residency obligations
+- Audit Copilot traffic for prompt-injection behavior or watchdog-triggered retractions
 
 ### Copilot’s security risks you still own
 
@@ -82,10 +85,10 @@ Copilot's ability to produce fluent, human-style responses can help attackers to
 
 #### **CISO Takeaways**
 
-* Conduct a permissions audit to identify and reduce overexposed content.
-* Monitor for hallucinated outputs, especially in regulated environments.
-* Train users on safe prompting techniques and scope-limited requests.
-* Evaluate the risk of AI improved phishing via impersonation or social engineering.
+- Conduct a permissions audit to identify and reduce overexposed content.
+- Monitor for hallucinated outputs, especially in regulated environments.
+- Train users on safe prompting techniques and scope-limited requests.
+- Evaluate the risk of AI improved phishing via impersonation or social engineering.
 
 ## What is Microsoft Copilot data governance?
 
@@ -111,11 +114,11 @@ Currently, Microsoft Purview does not support automatic sensitivity labeling for
 
 #### **CISO Takeaway**
 
-* Enable sensitivity labels and DLP policies that apply to prompts and responses
-* Review container-level labels in Teams and SharePoint to ensure item-level coverage
-* Implement data minimization policies to limit unnecessary exposure of sensitive files
-* Monitor Copilot activity via audit logs and eDiscovery for transparency
-* Use Microsoft Purview’s communication compliance tools to flag policy violations
+- Enable sensitivity labels and DLP policies that apply to prompts and responses
+- Review container-level labels in Teams and SharePoint to ensure item-level coverage
+- Implement data minimization policies to limit unnecessary exposure of sensitive files
+- Monitor Copilot activity via audit logs and eDiscovery for transparency
+- Use Microsoft Purview’s communication compliance tools to flag policy violations
 
 ## How to deploy Microsoft Copilot Securely: Step-by-Step
 
@@ -149,10 +152,10 @@ Knostic’s validation comes not only from its deployment across multiple enterp
 
 #### **CISO Takeaway**
 
-* Start with a readiness assessment to address open links and misconfigurations.
-* Run Copilot in audit-only mode during pilots to gather telemetry safely.
-* Automate label inheritance and enforce policies before scaling.
-* Set up ongoing KPI dashboards to monitor DLP hits and guardrail efficiency.
+- Start with a readiness assessment to address open links and misconfigurations.
+- Run Copilot in audit-only mode during pilots to gather telemetry safely.
+- Automate label inheritance and enforce policies before scaling.
+- Set up ongoing KPI dashboards to monitor DLP hits and guardrail efficiency.
 
 ## How Knostic accelerates secure copilot adoption
 

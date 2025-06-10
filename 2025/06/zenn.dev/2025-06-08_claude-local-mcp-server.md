@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: claude code でローカルなMCPサーバーを叩けるようにする
 - **source**: https://zenn.dev/mizchi/articles/claude-local-mcp-server
 - **author**: mizchi
@@ -8,9 +9,11 @@
 - **image**: https://res.cloudinary.com/zenn/image/upload/s--miyzM-f0--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:claude%2520code%2520%25E3%2581%25A7%25E3%2583%25AD%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25AB%25E3%2581%25AAMCP%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2590%25E3%2583%25BC%25E3%2582%2592%25E5%258F%25A9%25E3%2581%2591%25E3%2582%258B%25E3%2582%2588%25E3%2581%2586%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:mizchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liclRHT052Z3d3ay1fNGxlcVk4TGNGSlNuX0FoWnpEWVlKaXJNcWc9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
 
 ## 要約
+
 claude code をローカルの MCP サーバーへ接続する方法を解説。Node 製サーバーで URL から本文を抽出して返すツール `read_url_content` を実装し、 `.claude/mcp.json` に設定。`claude --mcp-config` で CLI から利用でき、Deno 版や zshrc 用ラッパー `claudex` も紹介している。
 
 ## 本文
+
 claude code 安くて便利。
 
 自前 MCP を大量に持ってると、手元に用意しておいた MCP サーバーに繋ぎたくなります。
@@ -21,8 +24,7 @@ claude code 安くて便利。
 
 以下、claude code に手元の MCP サーバーを登録する例です。
 
-ローカル MCP につなぐ
--------------
+## ローカル MCP につなぐ
 
 MCP サーバー実装を書きます。
 
@@ -77,8 +79,7 @@ try {
 
 特に変なことはしていません。
 
-実行
---
+## 実行
 
 これを標準入出力で読み込む設定の例
 
@@ -152,8 +153,7 @@ Tool use                                                │
 
 ```
 
-おまけ: deno 用
------------
+## おまけ: deno 用
 
 MCP サーバーはパーミッションを絞って起動したいので、自分は deno で書いてることが多いです。
 
@@ -186,8 +186,7 @@ node 環境でも `.vscode/settings.json`の`deno.enablePaths` で `.claude/deno
 
 ```
 
-おまけ: zshrc 用の claudex コマンド
---------------------------
+## おまけ: zshrc 用の claudex コマンド
 
 `.claude/mcp.json` がある場合、これを読み込むコマンドを作りました。
 

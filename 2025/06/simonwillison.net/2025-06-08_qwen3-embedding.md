@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Qwen3 Embedding
 - **source**: https://simonwillison.net/2025/Jun/8/qwen3-embedding/
 - **author**: Simon Willison
@@ -8,9 +9,11 @@
 - **image**: https://static.simonwillison.net/static/2025/qwen3-mteb.jpg
 
 ## 要約
+
 Qwenが公開した新しい埋め込みモデル「Qwen3 Embedding」は0.6B、4B、8Bの3サイズで、Text EmbeddingとText Rerankingの2種類があります。最小モデルは639MBのGGUFで、`llm-sentence-transformers`プラグインを使ったテストでは1024次元のベクトルが得られました。これらのモデルはMTEBリーダーボードで最も高く評価され、Apache 2.0ライセンスで提供されています。また、Transformers.jsによるブラウザ上のデモもあり、560MBのモデルファイルを読み込んでクラスタ可視化を行うことができます。
 
 ## 本文
+
 **[Qwen3 Embedding](https://qwenlm.github.io/blog/qwen3-embedding/)** ([via](https://twitter.com/xenovacom/status/1931082176788906006 "@xenovacom")) New family of embedding models from Qwen, in three sizes: 0.6B, 4B, 8B - and two categories: Text Embedding and Text Reranking.
 
 The full collection [can be browsed](https://huggingface.co/collections/Qwen/qwen3-embedding-6841b2055b99c44d9a4c371f) on Hugging Face. The smallest available model is the 0.6B Q8 one, which is available as a 639MB GGUF. I tried it out using my [llm-sentence-transformers](https://github.com/simonw/llm-sentence-transformers) plugin like this:
@@ -31,4 +34,3 @@ These new models are the highest scoring open-weight models on the well regarded
 You can also try them out in your web browser, thanks to a [Transformers.js](https://huggingface.co/docs/transformers.js/en/index) port of the models. I loaded ![this page in Chrome](https://static.simonwillison.net/static/2025/qwen3-web.jpg) and it fetched 560MB of model files and gave me an interactive interface for visualizing clusters of embeddings like this:
 
 ![Screenshot of a text embedding web application interface showing a "Sentences" panel on the left with various sample sentences about topics like cooking, technology, sports, finance, music, and history, a "Labels" section below listing these categories, and a "Scatterplot" visualization on the right displaying colored clusters of data points representing the embedded sentences grouped by topic, with an "Embed & Plot" button at the bottom and instructions to "Done! Hover over points to see sentences."](https://static.simonwillison.net/static/2025/qwen3-web.jpg)
-

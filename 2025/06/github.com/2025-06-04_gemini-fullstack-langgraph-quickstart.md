@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: GitHub - google-gemini/gemini-fullstack-langgraph-quickstart: Get started with building Fullstack Agents using Gemini 2.5 and LangGraph
 - **source**: https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart
 - **author**: google-gemini
@@ -8,9 +9,11 @@
 - **image**: https://opengraph.githubassets.com/2b9c333af10cd3ad269285183d4f042224f744c53854c8fa487a54debdcbf835/google-gemini/gemini-fullstack-langgraph-quickstart
 
 ## 要約
+
 Gemini 2.5とLangGraphを組み合わせ、検索クエリ生成・反復的なリサーチ・引用付き回答までを自動化する**フルスタックAIエージェント**のサンプル。ReactフロントエンドとFastAPIバックエンドをDockerで実行可能。
 
 ## 本文 / Article
+
 # Gemini Fullstack LangGraph Quickstart
 
 This project demonstrates a fullstack application using a React frontend and a LangGraph-powered backend agent. The agent is designed to perform comprehensive research on a user's query by dynamically generating search terms, querying the web using Google Search, reflecting on the results to identify knowledge gaps, and iteratively refining its search until it can provide a well-supported answer with citations. This application serves as an example of building research-augmented conversational AI using LangGraph and Google's Gemini models.
@@ -31,8 +34,8 @@ This project demonstrates a fullstack application using a React frontend and a L
 
 The project is divided into two main directories:
 
--   `frontend/`: Contains the React application built with Vite.
--   `backend/`: Contains the LangGraph/FastAPI application, including the research agent logic.
+- `frontend/`: Contains the React application built with Vite.
+- `backend/`: Contains the LangGraph/FastAPI application, including the research agent logic.
 
 ## Getting Started: Development and Local Testing
 
@@ -40,12 +43,12 @@ Follow these steps to get the application running locally for development and te
 
 **1. Prerequisites:**
 
--   Node.js and npm (or yarn/pnpm)
--   Python 3.8+
--   **`GEMINI_API_KEY`**: The backend agent requires a Google Gemini API key.
-    1.  Navigate to the `backend/` directory.
-    2.  Create a file named `.env` by copying the `backend/.env.example` file.
-    3.  Open the `.env` file and add your Gemini API key: `GEMINI_API_KEY="YOUR_ACTUAL_API_KEY"`
+- Node.js and npm (or yarn/pnpm)
+- Python 3.8+
+- **`GEMINI_API_KEY`**: The backend agent requires a Google Gemini API key.
+  1.  Navigate to the `backend/` directory.
+  2.  Create a file named `.env` by copying the `backend/.env.example` file.
+  3.  Open the `.env` file and add your Gemini API key: `GEMINI_API_KEY="YOUR_ACTUAL_API_KEY"`
 
 **2. Install Dependencies:**
 
@@ -70,7 +73,8 @@ npm install
 ```bash
 make dev
 ```
-This will run the backend and frontend development servers.    Open your browser and navigate to the frontend development server URL (e.g., `http://localhost:5173/app`).
+
+This will run the backend and frontend development servers. Open your browser and navigate to the frontend development server URL (e.g., `http://localhost:5173/app`).
 
 _Alternatively, you can run the backend and frontend development servers separately. For the backend, open a terminal in the `backend/` directory and run `langgraph dev`. The backend API will be available at `http://127.0.0.1:2024`. It will also open a browser window to the LangGraph UI. For the frontend, open a terminal in the `frontend/` directory and run `npm run dev`. The frontend will be available at `http://localhost:5173`._
 
@@ -96,15 +100,17 @@ _Note: If you are not running the docker-compose.yml example or exposing the bac
 
 **1. Build the Docker Image:**
 
-   Run the following command from the **project root directory**:
-   ```bash
-   docker build -t gemini-fullstack-langgraph -f Dockerfile .
-   ```
+Run the following command from the **project root directory**:
+
+```bash
+docker build -t gemini-fullstack-langgraph -f Dockerfile .
+```
+
 **2. Run the Production Server:**
 
-   ```bash
-   GEMINI_API_KEY=<your_gemini_api_key> LANGSMITH_API_KEY=<your_langsmith_api_key> docker-compose up
-   ```
+```bash
+GEMINI_API_KEY=<your_gemini_api_key> LANGSMITH_API_KEY=<your_langsmith_api_key> docker-compose up
+```
 
 Open your browser and navigate to `http://localhost:8123/app/` to see the application. The API will be available at `http://localhost:8123`.
 
@@ -118,4 +124,4 @@ Open your browser and navigate to `http://localhost:8123/app/` to see the applic
 
 ## License
 
-This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details. 
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.

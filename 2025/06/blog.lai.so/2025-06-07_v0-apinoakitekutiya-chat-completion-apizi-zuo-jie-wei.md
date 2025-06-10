@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: v0 APIのアーキテクチャ: Chat Completion API自作界隈
 - **source**: https://blog.lai.so/v0-api/
 - **author**: laiso
@@ -8,9 +9,11 @@
 - **image**: https://blog.lai.so/content/images/2025/03/my-github-icon-2024-2.png
 
 ## 要約
+
 Vercelが提供する **v0 API** は、OpenAI互換のエンドポイントを備え、**Chat Completion API** を拡張して高品質なコード生成を実現するサービスです。記事では、v0 APIが**複合モデルアーキテクチャ**を採用し、前処理でRAGを行い、既存LLMでコード生成後、**AutoFix**で修正する仕組みを詳しく解説。さらに、自分で同様のAPIプロキシを構築する手順を紹介し、HonoとWorkersを使った実装例や、Cloudflare **Workers AI** を利用したモデル切り替え方法、ストリーミングレスポンスの変換など、実践的なノウハウがまとめられています。
 
 ## 本文 / Article
+
 ## はじめに
 
 先日、Vercelがv0 APIという興味深いサービスを発表しました。[v0.dev](https://v0.dev/?ref=blog.lai.so)は、アプリのプロトタイピングからデプロイまでをWebブラウザ上のチャットで行えるサービスです。v0 APIは、この機能を外部から利用可能にする有料プラン向けのAPIサービスとして提供されています。

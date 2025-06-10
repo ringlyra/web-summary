@@ -1,11 +1,12 @@
 <!-- metadata -->
+
 - **title**: The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
 - **source**: https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf
 - **author**: Parshin Shojaee, Maxwell Horton, Iman Mirzadeh, Keivan Alizadeh, Samy Bengio, Mehrdad Farajtabar, Apple
 - **published**: 2025-06-04T16:43:49Z
 - **fetched**: 2025-06-08T17:52:31Z
 - **tags**: codex, reasoning, puzzle, large-language-model, ai
-- **image**: 
+- **image**:
 
 ## 要約
 
@@ -17,16 +18,16 @@ Apple の研究者らは、パズル環境を用いて最新の "Large Reasoning
 4. 研究で用いたパズル環境は現実世界の多様な課題を完全には再現しない点や、ブラックボックス API への依存など制約も存在する。
 
 これらの結果から、現在の LRM は高い複雑度に対する汎用的な推論能力をまだ身につけておらず、今後の研究課題を残していると結論付けている。
+
 ## 本文
+
 The Illusion of Thinking:
 Understanding the Strengths and Limitations of Reasoning Models
 via the Lens of Problem Complexity
-Parshin Shojaee∗†         Iman Mirzadeh∗  Keivan Alizadeh
-Maxwell Horton            Samy Bengio   Mehrdad Farajtabar
+Parshin Shojaee∗† Iman Mirzadeh∗ Keivan Alizadeh
+Maxwell Horton Samy Bengio Mehrdad Farajtabar
 
 Apple
-
-
 
 Abstract
 Recent generations of frontier language models have introduced Large Reasoning Models
@@ -52,8 +53,7 @@ also investigate the reasoning traces in more depth, studying the patterns of ex
 and analyzing the models’ computational behavior, shedding light on their strengths, limitations,
 and ultimately raising crucial questions about their true reasoning capabilities.
 
-
-1        Introduction
+1 Introduction
 Large Language Models (LLMs) have recently evolved to include specialized variants explicitly
 designed for reasoning tasks—Large Reasoning Models (LRMs) such as OpenAI’s o1/o3 [1, 2],
 DeepSeek-R1 [3], Claude 3.7 Sonnet Thinking [4], and Gemini Thinking [5]. These models are new
@@ -65,203 +65,110 @@ Equal contribution.
 Work done during an internship at Apple.
 {p_shojaee, imirzadeh, kalizadehvahid, mchorton, bengio, farajtabar}@apple.com
 
-
 1
-LLM Response                                                                                                                                    Peg 0   Peg 1     Peg 2
+LLM Response Peg 0 Peg 1 Peg 2
 <think>
 1
 2
-Move disk 1 from peg 0 to peg 2 ...                                                                                 Initial State                               3
-moves = [
+Move disk 1 from peg 0 to peg 2 ...   Initial State 3
+(for analysis) [1, 2, 1]
+2 3
 
-[1, 0, 2],
-[1, 0, 2]
+</think> [1, 0, 2]
+<answer> the final answer is moves=... (for measuring accuracy) 2
+</answer> Target State 3
+100 1.0
+(+thinking) Claude 3.7
+80 0.8
+15,000 (+thinking)
+60 0.6
+40 0.4
+Claude 3.7 Incorrect Solutions
+Claude 3.7 5,000
+20 0.2
+0 0
+1 2 3 4 5 6 7 8 10 15 20 1 2 3 4 5 6 7 8 10 15 20 1 2 3 4 5 6 7 8 9 10 15
+Complexity (number of disks) Complexity (number of disks) Complexity (number of disks)
 
-[2, 0, 1],
-extract moves from thoughts  [2, 0, 1]
+2 Related Works
+MATH-500 AIME24 AIME25
+100 100 100
+80 80
 
-[1, 2, 1],
-(for analysis)               [1, 2, 1]
+60 60
+40 40
+claude-3-7-sonnet-thinking 20 claude-3-7-sonnet-thinking 20 claude-3-7-sonnet-thinking
+claude-3-7-sonnet-no-thinking claude-3-7-sonnet-no-thinking claude-3-7-sonnet-no-thinking
+80 0 0
+0 5000 10000 15000 20000 25000 30000 35000 0 50000 100000 150000 200000 0 50000 100000 150000 200000
+Inference Compute Budget (Tokens) Inference Compute Budget (Tokens) Inference Compute Budget (Tokens)
+MATH-500 AIME24 AIME25
+100 100 100
 
-[3, 0, 2],
-[3, 0, 2]
-[1, 1, 0],
-1
-2          3
-[2, 1, 2],
-Middle State
-[1, 0, 2],
+80 80
 
-]
-[1, 1, 0]
+60 60
+40 40
 
-Let me double-check this...
-[2, 1, 2]
+DeepSeek-R1 20 DeepSeek-R1 20 DeepSeek-R1
+DeepSeek-V3 DeepSeek-V3 DeepSeek-V3
+80 0 0
+0 10000 20000 30000 40000 0 20000 40000 60000 80000 100000 120000 0 20000 40000 60000 80000 100000 120000
+Inference Compute Budget (Tokens) Inference Compute Budget (Tokens) Inference Compute Budget (Tokens)
+3 Math and Puzzle Environments
 
-</think>                                                                                                          [1, 0, 2]
-extract final answer 
-1
-<answer> the final answer is moves=...                                         (for measuring accuracy)                                                                            2
-</answer>                                                                                                           Target State                                                   3
+Tower of Hanoi Checkers Jumping River Crossing Blocks World
+3.1 Puzzle Environments
+4 Experiments & Results
+4.1 Experimental Setup
+4.2 How Does Complexity Affect Reasoning?
+4.2.1 Three Regimes of Complexity
 
-
-100                                                                                                                                                        1.0
-Response Length (Tokens)
-20,000
-
-
-
-
-Position within Thoughts
-Claude 3.7
-(+thinking)                                                                                  Claude 3.7
-80                                                                                                                                                        0.8
-Accuracy (%)
-
-
-
-
-15,000                               (+thinking)
-Correct Solutions
-60                                                                                                                                                        0.6
-10,000
-40                                                                                                                                                        0.4
-Claude 3.7                                                                Incorrect Solutions
-Claude 3.7                                                            5,000
-20                                                                                                                                                        0.2
-
-0                                                                            0
-0.0
-1 2 3 4 5 6 7 8 10         15       20                                       1 2 3 4 5 6 7 8 10        15         20                                      1 2 3 4 5 6 7 8 9 10                      15
-Complexity (number of disks)                                                 Complexity (number of disks)                                                Complexity (number of disks)
-
-
-Figure 1: Top: Our setup enables verification of both final answers and intermediate reasoning traces,
-allowing detailed analysis of model thinking behavior. Bottom left & middle: At low complexity,
-non-thinking models are more accurate and token-efficient. As complexity increases, reasoning models
-outperform but require more tokens—until both collapse beyond a critical threshold, with shorter
-traces. Bottom right: For correctly solved cases, Claude 3.7 Thinking tends to find answers early
-at low complexity and later at higher complexity. In failed cases, it often fixates on an early wrong
-answer, wasting the remaining token budget. Both cases reveal inefficiencies in the reasoning process.
-
-
-emergence suggests a potential paradigm shift in how LLM systems approach complex reasoning
-and problem-solving tasks, with some researchers proposing them as significant steps toward more
-general artificial intelligence capabilities.
-Despite these claims and performance advancements, the fundamental benefits and limitations of
-LRMs remain insufficiently understood. Critical questions still persist: Are these models capable
-of generalizable reasoning, or are they leveraging different forms of pattern matching [6]? How
-does their performance scale with increasing problem complexity? How do they compare to their
-non-thinking standard LLM counterparts when provided with the same inference token compute?
-Most importantly, what are the inherent limitations of current reasoning approaches, and what
-improvements might be necessary to advance toward more robust reasoning capabilities?
-We believe the lack of systematic analyses investigating these questions is due to limitations in
-current evaluation paradigms. Existing evaluations predominantly focus on established mathematical
-and coding benchmarks, which, while valuable, often suffer from data contamination issues and do
-not allow for controlled experimental conditions across different settings and complexities. Moreover,
-these evaluations do not provide insights into the structure and quality of reasoning traces. To
-understand the reasoning behavior of these models more rigorously, we need environments that
-enable controlled experimentation.
-In this study, we probe the reasoning mechanisms of frontier LRMs through the lens of problem
+4.2.2 Collapse of Reasoning Models
+4.3 What Happens Inside the Thoughts of Reasoning Models?
+100 N=1
+80 N=3
+60 N=6
+40 N=8
+0 4000 8000 12000
+(a) (b)
+4.4 Open Questions: Puzzling Behavior of Reasoning Models
+Tower of Hanoi Tower of Hanoi Tower of Hanoi River Crossing
+100 100
+DeepSeek-R1 Claude-3.7-Sonnet (thinking) Claude-3.7-Sonnet (thinking)
+Algorithm Given Algorithm Given 8
+80 80 80
+Default Default
+60 60 60 6
+40 40 40 4
+20 20 20
+0 0 0
+1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 2 3 4 5 6 8 10 15 20
+Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of People)
+(a) (b) (c) (d)
+5 Conclusion
 
 
-2
-complexity. Rather than standard benchmarks (e.g., math problems), we adopt controllable puzzle en-
-vironments that let us vary complexity systematically—by adjusting puzzle elements while preserving
-the core logic—and inspect both solutions and internal reasoning (Fig. 1, top). These puzzles: (1) of-
-fer fine-grained control over complexity; (2) avoid contamination common in established benchmarks;
-(3) require only the explicitly provided rules, emphasizing algorithmic reasoning; and (4) support
-rigorous, simulator-based evaluation, enabling precise solution checks and detailed failure analyses.
-Our empirical investigation reveals several key findings about current Language Reasoning Models
-(LRMs): First, despite their sophisticated self-reflection mechanisms learned through reinforcement
-learning, these models fail to develop generalizable problem-solving capabilities for planning tasks,
-with performance collapsing to zero beyond a certain complexity threshold. Second, our comparison
-between LRMs and standard LLMs under equivalent inference compute reveals three distinct reason-
-ing regimes (Fig. 1, bottom). For simpler, low-compositional problems, standard LLMs demonstrate
-greater efficiency and accuracy. As problem complexity moderately increases, thinking models gain
-an advantage. However, when problems reach high complexity with longer compositional depth,
-both model types experience complete performance collapse (Fig. 1, bottom left). Notably, near
-this collapse point, LRMs begin reducing their reasoning effort (measured by inference-time tokens)
-as problem complexity increases, despite operating well below generation length limits (Fig. 1,
-bottom middle). This suggests a fundamental inference time scaling limitation in LRMs’ reasoning
-capabilities relative to problem complexity. Finally, our analysis of intermediate reasoning traces or
-thoughts reveals complexity-dependent patterns: In simpler problems, reasoning models often identify
-correct solutions early but inefficiently continue exploring incorrect alternatives—an “overthinking”
-phenomenon. At moderate complexity, correct solutions emerge only after extensive exploration
-of incorrect paths. Beyond a certain complexity threshold, models completely fail to find correct
-solutions (Fig. 1, bottom right). This indicates LRMs possess limited self-correction capabilities
-that, while valuable, reveal fundamental inefficiencies and clear scaling limitations.
-These findings highlight both the strengths and limitations of existing LRMs, raising questions
-about the nature of reasoning in these systems with important implications for their design and
-deployment. Our key contributions are:
-• We question the current evaluation paradigm of LRMs on established math benchmarks and
-design a controlled experimental testbed by leveraging algorithmic puzzle environments that enable
-controllable experimentation with respect to problem complexity.
-• We show that state-of-the-art LRMs (e.g., o3-mini, DeepSeek-R1, Claude-3.7-Sonnet-Thinking)
-still fail to develop generalizable problem-solving capabilities, with accuracy ultimately collapsing
-to zero beyond certain complexities across different environments.
-• We find that there exists a scaling limit in the LRMs’ reasoning effort with respect to problem
-complexity, evidenced by the counterintuitive decreasing trend in the thinking tokens after a
-complexity point.
-• We question the current evaluation paradigm based on final accuracy and extend our evaluation
-to intermediate solutions of thinking traces with the help of deterministic puzzle simulators. Our
-analysis reveals that as problem complexity increases, correct solutions systematically emerge at
-later positions in thinking compared to incorrect ones, providing quantitative insights into the
-self-correction mechanisms within LRMs.
-• We uncover surprising limitations in LRMs’ ability to perform exact computation, including their
-failure to benefit from explicit algorithms and their inconsistent reasoning across puzzle types.
-
-
-
-
-3
-2    Related Works
-Reasoning in Language Models. Large Language Models (LLMs) undergo multiple costly
-training phases using vast amounts of training data. While these LLMs demonstrate promising
-language understanding with strong compression capabilities, their intelligence and reasoning abilities
-remain a critical topic of scientific debate [7, 8]. Earlier iterations of LLMs [9, 10, 11] exhibited
-poor performance on reasoning benchmarks [12, 13, 14, 6]. To address these shortcomings, several
-approaches have been explored with the common theme among them being “scaling” both the training
-data and test-time computation. For instance, generating a Chain of Thought (CoT) [15, 16, 17, 18]
-and incorporating self-verification [19, 20, 21] prior to the final answer have been shown to improve
-model performance. However, obtaining high-quality and scalable CoT data is quite expensive
-due to its scarcity. Another line of research focuses on compensating for the lack of supervised
-data by teaching models to think more effectively through supervised learning or reinforcement
-learning [22, 23, 24, 25, 26, 27]. A notable open-source example of these improvements is Deepseek-
-R1 [3], which demonstrated that applying RL with verifiable rewards can significantly enhance model
-performance, matching that of closed models like OpenAI’s o1 [2], leading to a new generation of
-language models referred to as Large Reasoning Models (LRMs) such as Gemini flash thinking [5],
-Claude 3.7 Sonnet thinking [4], etc.
-Understanding Large Reasoning Models. Recent studies have explored various aspects of
-reasoning behavior: Large Reasoning Models have shown emergent behaviors such as discrepancy
-between thought traces and final answers [28, 29] as well as efficiency concerns through what
-researchers term the “overthinking phenomenon” [30, 31, 32, 33], where models produce verbose,
-redundant outputs, even after finding the solution, creating significant inference computational
-overhead. In this work, we systematically analyze how much model thinks w.r.t task complexity.
-Recently, Ballon et al. [34] demonstrated that in newer LRMs accuracy generally declines when
-thinking increases in math problems, in contrast we observe when in controlled puzzle environment
-difficulty passes a certain level the model starts to think less and opposite corelation of thinking and
-task complexity only happens up to some threshold. Yue et al. [35] questioned whether reinforcement
-learning truly elicits novel reasoning patterns and shows pass@k of reasoning vs non-reasoning models
-converge to the same point. We also observe that in MATH-500 pass@k is close for reasoning versus
-non-reasoning models but we observed different patterns under medium and high complexity of
-puzzles, which is not easily observable on established math benchmarks used in common evaluations.
-Controllable Evaluation Environments. Unlike earlier studies that focused on mathematical
-problems to evaluate the reasoning capabilities of language models, this work introduces controllable
-puzzle environments. These environments allow for precise manipulation of problem complexity while
-maintaining consistent logical processes, enabling a more rigorous analysis of reasoning patterns and
-limitations. Controllable environments are not uncommon in the literature [12, 36, 37]. However,
-our primary aim is not to propose a new benchmark; instead, we use these benchmarks as tools
-for designing experiments to understand the reasoning capabilities of language models. A closely
-related study by Valmeekam et al. [38] demonstrated that o1-models show significant performance
-improvements compared to previous models. Our work offers additional insights, such as examining
-pairs of thinking/non-thinking models (e.g., DeepSeek-R1/V3, Claude 3.7 Sonnet thinking/non-
-thinking). Furthermore, we study the reasoning traces of the LRMs in more depth, revealing different
-behaviors across various complexity levels.
-Overall, the promising results from recent LRMs raise a critical question: how much have the
-previously reported limitations of LLMs been improved? In this work, we move beyond merely
-measuring the performance of these LRMs. We analyze how well these LRMs tackle problems of
-varying complexities and examine the properties of their reasoning processes.
+technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219, 2024.
+Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825, 2023.
+Sedghi. Teaching algorithmic reasoning via in-context learning. arXiv preprint arXiv:2211.09066, 2022.
+[24] David Herel and Tomas Mikolov. Thinking tokens for language modeling. ArXiv, abs/2405.08644, 2024.
+jishirzi. Tülu 3: Pushing frontiers in open language model post-training. ArXiv, abs/2411.15124, 2024.
+[41] Mathematical Association of America. American invitational math-
+ematics examination (aime). https://maa.org/math-competitions/
+[42] Art of Problem Solving. Amc historical results - aime i (february 1, 2024).
+[43] Art of Problem Solving. Amc historical results – aime i (february 6, 2025).
+A Appendix
+A.1 Details on Puzzle Environment Specifications and Design
+A.1.1 Tower of Hanoi
+   another stack.
+A.1.2 Checker Jumping
+(’\_’). In the standard configuration, N red checkers are positioned on the left side, followed by an
+space (’\_’). A checker can move by either:
+moves = [[’R ’ , 0 , 1] , [ ’B ’ , 2 , 0] , [ ’R ’ , 1 , 2]]
+Goal board: B B ... B \_ R R ... R
+A.1.3 River Crossing
+A.1.4 Blocks World
 
 
 4
@@ -1227,11 +1134,8 @@ sponding complete list of moves.
 format: moves = [[block, from stack, to stack], ...]
 
 The user prompt presents the specific puzzle instance with the initial and goal configurations provided,
-and explicitly reminds the model about the movement constraint.
 
-User Prompt Template for $N$ Blocks - BlocksWorld
-
-I have a puzzle with $N$ blocks.
+A.2 Implementation Details
 Initial state:
 
 Stack 0: $blocks_0$ (top)
@@ -1324,66 +1228,39 @@ Example of Prescribed Algorithm for Tower of Hanoi
 
 Here is a pseudocode of recursive algorithm to solve the puzzle:
 
-ALGORITHM Solve(n, source, target, auxiliary, moves)
-// n = number of disks to move
-// source = starting peg (0, 1, or 2)
-// target = destination peg (0, 1, or 2)
-// auxiliary = the unused peg (0, 1, or 2)
-// moves = list to store the sequence of moves
 
-IF n equals 1 THEN
-// Get the top disk from source peg
-disk = the top disk on the source peg
-// Add the move to our list: [disk_id, source, target]
-ADD [disk, source, target] to moves
-RETURN
-END IF
+A.3 Details on Computational Complexity
+A.3.1 Compositional Depth Characterization
+erations (i.e., moves) required to reach a full solution. 60 Blocks World
+Figure 9 demonstrates how this depth scales with Checker Jumping
+problem size (N ) across our four puzzle environments. 50 Tower of Hanoi
+its underlying computational complexity. For exam- 40
+ple, Tower of Hanoi shows exponential growth (2N −1), 30
+(N + 1)2 − 1). The River Crossing and Blocks World 20
+N . These varying compositional depth profiles enable 10
+us to evaluate how language reasoning models handle 0
+different types of sequential reasoning challenges and 1 2 3 4 5 6
+if their accuracy is always correlated with the com- Problem Size (N)
+in App. A.4. for our four puzzle environments.
 
-// Move n-1 disks from source to auxiliary peg
-Solve(n-1, source, auxiliary, target, moves)
+A.3.2 Performance vs Compositional Depth
+A.4 Extended Results and Analysis
+DeepSeek-R1 Claude-3.7-Sonnet (thinking) o3-mini (high)
+100 100 100
+80 80 80
 
-// Move the nth disk from source to target
-disk = the top disk on the source peg
-ADD [disk, source, target] to moves
+60 60 60
+40 40 40
 
-// Move n-1 disks from auxiliary to target
-Solve(n-1, auxiliary, target, source, moves)
-END ALGORITHM
+20 20 20
 
-To solve the entire puzzle of moving n disks from peg 0 to peg 2:
-1. Initialize an empty list ’moves’
-2. Execute Solve(n, 0, 2, 1, moves)
-3. The ’moves’ list will contain the complete solution
-
-
-
-
-25
-Note: When executing this pseudocode, track which disk is currently on top of each peg. The
-disk IDs in the moves list should correspond to the actual disk being moved.
-You can use this algorithm as a scratchpad to help you solve the problem step by step.
+0 0 0
+100 101 102 103 100 101 102 103 100 101 102 103
+Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
+Tower Hanoi Checker Jumping River Crossing Blocks World
 
 
 
-A.3     Details on Computational Complexity
-A.3.1    Compositional Depth Characterization
-Compositional depth is the number of sequential op-
-erations (i.e., moves) required to reach a full solution.   60      Blocks World
-Figure 9 demonstrates how this depth scales with                    Checker Jumping
-
-
-
-
-Compositional Depth (# of Moves)
-River Crossing
-problem size (N ) across our four puzzle environments.      50      Tower of Hanoi
-Each puzzle has a distinct growth pattern, reflecting
-its underlying computational complexity. For exam-          40
-ple, Tower of Hanoi shows exponential growth (2N −1),       30
-and Checker Jumping displays quadratic scaling (
-(N + 1)2 − 1). The River Crossing and Blocks World          20
-puzzles show more moderate, near-linear growth with
-N . These varying compositional depth profiles enable       10
 us to evaluate how language reasoning models handle           0
 different types of sequential reasoning challenges and          1       2        3        4    5    6
 if their accuracy is always correlated with the com-                          Problem Size (N)

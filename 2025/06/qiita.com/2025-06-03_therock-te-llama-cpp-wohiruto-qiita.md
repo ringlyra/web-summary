@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: TheRock で llama.cpp をビルド - Qiita
 - **source**: https://qiita.com/7shi/items/99d5f80a45bf72b693e9
 - **author**: 7shi
@@ -8,13 +9,14 @@
 - **image**: https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGMzIwNTclMkZwcm9maWxlLWltYWdlcyUyRjE0NzM2ODU4MjM_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmZtPXBuZzMyJnM9ZjkzNGEwNDA4YTRhNzY1OTgwMDQzODVlN2ZlOGFiN2U%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D66b5a274999f487487c018e23f50cb6b?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9VGhlUm9jayUyMCVFMyU4MSVBNyUyMGxsYW1hLmNwcCUyMCVFMyU4MiU5MiVFMyU4MyU5MyVFMyU4MyVBQiVFMyU4MyU4OSZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTI3N2NmY2EwMmFkNTk3YjRlYWE5MWNjMGQyODk1NDFk&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDA3c2hpJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZTY5Nzc0ZGRlYmNkNTAzNDM5ODM2ZGY1N2FmYjc0NTE&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=fa0c44d088f02658b7818f9d4e4bf138
 
 ## 要約
+
 TheRock（ROCm開発版）を用いて**llama.cpp**をビルドする手順を解説。API変更により**HIP**周りのヘッダを修正し、llvm-rcを利用してCMakeでコンパイル。RX 7600 XT向けにgfx1102を指定して問題なくビルドできた。**HIP SDK 6.2**版とのベンチマークでは処理速度にほぼ差はなく、TheRockでも安定動作を確認した。
 
 ## 本文 / Article
+
 TheRock（ROCm の開発版）で llama.cpp をビルドしてみました。API に変更があり、llvm-rc がなかったため、多少の修正が必要でした。
 
-準備
-==
+# 準備
 
 TheRock をビルドします。PyTorch は不要です。
 
@@ -92,10 +94,9 @@ TheRock は API に変更があるため、CUDA との対応付けを修正し�
 
 ```
 
-ビルド
----
+## ビルド
 
-llvm-rc が足りないため、CMAKE\_RC\_COMPILER で HIP SDK のものを指定します。Radeon RX 7600 XT を使用しているため gfx1102 を指定します。
+llvm-rc が足りないため、CMAKE_RC_COMPILER で HIP SDK のものを指定します。Radeon RX 7600 XT を使用しているため gfx1102 を指定します。
 
 ```
 cmake -S . -B build -G Ninja -DAMDGPU_TARGETS=gfx1102 -DGGML_HIP=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF "-DCMAKE_RC_COMPILER=C:/Program Files/AMD/ROCm/6.2/bin/llvm-rc.exe" -DHIP_PLATFORM=amd
@@ -163,8 +164,7 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 
 これで一応ビルドが通りました。
 
-比較
-==
+# 比較
 
 HIP SDK 6.2 でビルドしたものとベンチで比較してみましたが、ほぼ誤差です。
 
@@ -175,32 +175,30 @@ llama-bench -m Falcon3-3B-Instruct-q4_k_m.gguf
 
 Falcon3 を使ったのは以前 BitNet と比較した GGUF が手元にあったからで、特に意味はないです。
 
-TheRock
--------
+## TheRock
 
-ggml\_cuda\_init: GGML\_CUDA\_FORCE\_MMQ: no  
-ggml\_cuda\_init: GGML\_CUDA\_FORCE\_CUBLAS: no  
-ggml\_cuda\_init: found 1 ROCm devices:  
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ: no  
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no  
+ggml_cuda_init: found 1 ROCm devices:  
 Device 0: AMD Radeon RX 7600 XT, gfx1102 (0x1102), VMM: no, Wave Size: 32
 
-| model | size | params | backend | ngl | test | t/s |
-| --- | --- | --- | --- | --- | --- | --- |
-| llama 1B Q4\_K - Medium | 1.86 GiB | 3.23 B | ROCm | 99 | pp512 | 2756.56 ± 67.24 |
-| llama 1B Q4\_K - Medium | 1.86 GiB | 3.23 B | ROCm | 99 | tg128 | 94.95 ± 0.44 |
+| model                  | size     | params | backend | ngl | test  | t/s             |
+| ---------------------- | -------- | ------ | ------- | --- | ----- | --------------- |
+| llama 1B Q4_K - Medium | 1.86 GiB | 3.23 B | ROCm    | 99  | pp512 | 2756.56 ± 67.24 |
+| llama 1B Q4_K - Medium | 1.86 GiB | 3.23 B | ROCm    | 99  | tg128 | 94.95 ± 0.44    |
 
 build: ea1431b0 (5582)
 
-HIP SDK 6.2
------------
+## HIP SDK 6.2
 
-ggml\_cuda\_init: GGML\_CUDA\_FORCE\_MMQ: no  
-ggml\_cuda\_init: GGML\_CUDA\_FORCE\_CUBLAS: no  
-ggml\_cuda\_init: found 1 ROCm devices:  
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ: no  
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no  
+ggml_cuda_init: found 1 ROCm devices:  
 Device 0: AMD Radeon RX 7600 XT, gfx1102 (0x1102), VMM: no, Wave Size: 32
 
-| model | size | params | backend | ngl | test | t/s |
-| --- | --- | --- | --- | --- | --- | --- |
-| llama 1B Q4\_K - Medium | 1.86 GiB | 3.23 B | ROCm | 99 | pp512 | 2755.35 ± 54.43 |
-| llama 1B Q4\_K - Medium | 1.86 GiB | 3.23 B | ROCm | 99 | tg128 | 94.53 ± 0.42 |
+| model                  | size     | params | backend | ngl | test  | t/s             |
+| ---------------------- | -------- | ------ | ------- | --- | ----- | --------------- |
+| llama 1B Q4_K - Medium | 1.86 GiB | 3.23 B | ROCm    | 99  | pp512 | 2755.35 ± 54.43 |
+| llama 1B Q4_K - Medium | 1.86 GiB | 3.23 B | ROCm    | 99  | tg128 | 94.53 ± 0.42    |
 
 build: ea1431b0 (5582)

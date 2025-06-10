@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: UK Prime Minister, NVIDIA CEO Set the Stage as AI Lights Up Europe
 - **source**: https://blogs.nvidia.com/blog/ai-lights-up-europe/
 - **author**: David Hogan
@@ -13,22 +14,17 @@ AI をテーマに開かれたロンドンテックウィークで、英国の�
 
 ## 本文
 
-UK Prime Minister, NVIDIA CEO Set the Stage as AI Lights Up Europe
-==================================================================
+# UK Prime Minister, NVIDIA CEO Set the Stage as AI Lights Up Europe
 
 Keir Starmer and Jensen Huang open London Tech Week as ambition meets infrastructure.
 
 June 9, 2025 by [David Hogan](https://blogs.nvidia.com/blog/author/davidhogan/ "View all posts by David Hogan")
 
-
-
 ![](https://blogs.nvidia.com/wp-content/uploads/2025/06/54576859692_d55264ac4b_o-1280x674.jpeg)
-
-
 
 Share
 
-* [Email0](#ea-share-count-email)
+- [Email0](#ea-share-count-email)
 
 AI isn’t waiting. And this week, neither is Europe.
 
@@ -50,16 +46,15 @@ To that end, NVIDIA will continue to invest in the U.K. “We’re going to star
 
 All of these investments will build on one another. “Infrastructure enables more research, more research, more breakthroughs, more companies,” Huang said. That flywheel will start taking off; it’s already quite large.”
 
-UK on the Move: Momentum in Action
-----------------------------------
+## UK on the Move: Momentum in Action
 
 This wasn’t just a symbolic handshake. It marked the U.K.’s acceleration toward embedding AI at the core of its economic strategy. A major announcement from Prime Minister Starmer confirmed the U.K. will invest ~£1 billion in AI research compute by 2030, with investments commencing this year.
 
-* A national AI skills initiative supported by the NVIDIA Deep Learning Institute aims to train developers in advanced AI skills.
-* A new NVIDIA AI Technology Center in the U.K. is launching to accelerate research in embodied AI, material science and earth system modeling.
-* The U.K.’s Financial Conduct Authority is using NVIDIA tech to power its innovation sandbox for safe and secure AI experimentation.
-* The U.K. government and NVIDIA also announced a new initiative to accelerate AI-native 6G research and deployment.
-* And further cementing the U.K.’s compute power, Isambard AI, the U.K.’s fastest AI supercomputer powered by 5.5k GH200s, is set to be fully operational this summer.
+- A national AI skills initiative supported by the NVIDIA Deep Learning Institute aims to train developers in advanced AI skills.
+- A new NVIDIA AI Technology Center in the U.K. is launching to accelerate research in embodied AI, material science and earth system modeling.
+- The U.K.’s Financial Conduct Authority is using NVIDIA tech to power its innovation sandbox for safe and secure AI experimentation.
+- The U.K. government and NVIDIA also announced a new initiative to accelerate AI-native 6G research and deployment.
+- And further cementing the U.K.’s compute power, Isambard AI, the U.K.’s fastest AI supercomputer powered by 5.5k GH200s, is set to be fully operational this summer.
 
 “We need to showcase what we have,” Starmer said. “This is a two-way conversation” between the government and industry.
 
@@ -67,9 +62,9 @@ Starmer underscored the U.K.’s “sovereign AI ambitions,” emphasizing that 
 
 And the movement isn’t confined to the U.K. Across Europe, governments are no longer debating whether AI matters. Now the question in every capital isn’t why AI, it’s how soon can we deploy it at scale?
 
-* In Sweden, NVIDIA is working with Wallenberg Investments, AstraZeneca, Ericsson, Saab and SEB to build the country’s first national AI infrastructure, anchored by the NVIDIA Grace Blackwell platform.
-* In Germany, the Leibniz Supercomputing Centre is building Blue Lion — a €250 million supercomputer based on the new NVIDIA Vera Rubin architecture, designed for real-time AI, simulation and science.
-* In France, a joint venture between MGX, Bpifrance, Mistral AI and NVIDIA will establish Europe’s largest AI Campus in the Paris region, a 1.4 GW facility aiming to build sovereign and sustainable AI infrastructure for the continent.
+- In Sweden, NVIDIA is working with Wallenberg Investments, AstraZeneca, Ericsson, Saab and SEB to build the country’s first national AI infrastructure, anchored by the NVIDIA Grace Blackwell platform.
+- In Germany, the Leibniz Supercomputing Centre is building Blue Lion — a €250 million supercomputer based on the new NVIDIA Vera Rubin architecture, designed for real-time AI, simulation and science.
+- In France, a joint venture between MGX, Bpifrance, Mistral AI and NVIDIA will establish Europe’s largest AI Campus in the Paris region, a 1.4 GW facility aiming to build sovereign and sustainable AI infrastructure for the continent.
 
 “In the last 10 years, AI has advanced 1 million times,” Huang said. “The speed of change is incredible.”
 
@@ -79,8 +74,7 @@ NVIDIA is actively building the ‘AI factories of the future’ [with leading U
 
 And it’s powering the next generation of startups and scale-ups, from Basecamp Research to Wayve.
 
-What Comes Next: NVIDIA GTC Paris at VivaTech
----------------------------------------------
+## What Comes Next: NVIDIA GTC Paris at VivaTech
 
 Next, the story moves to Paris, where Jensen Huang will headline NVIDIA GTC Paris live from VivaTech.
 
@@ -90,8 +84,7 @@ Next, the story moves to Paris, where Jensen Huang will headline NVIDIA GTC Pari
 
 Expect news on NVIDIA Blackwell, sovereign AI initiatives, new regional partnerships and how European innovators are turning intent into infrastructure with NVIDIA.
 
-One Week. One Story. One Start.
--------------------------------
+## One Week. One Story. One Start.
 
 From Downing Street to the Dôme de Paris, this week reads less like a schedule and more like a strategy.
 
@@ -99,7 +92,7 @@ This isn’t just a collection of conferences. It’s a continental shift — wh
 
 This is just chapter one. But the story is already racing ahead.
 
-*Photo credit: Lauren Hurley / No 10 Downing Street*
+_Photo credit: Lauren Hurley / No 10 Downing Street_
 
 Categories: [Corporate](https://blogs.nvidia.com/blog/category/corporate/) | [Data Center](https://blogs.nvidia.com/blog/category/enterprise/)
 
