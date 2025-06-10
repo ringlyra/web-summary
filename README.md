@@ -91,7 +91,7 @@ repo-root
     4. Convert: 本文 HTML を Markdown に変換。
     5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
     6. Save: YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
-    7. 各種テストを実行し、エラーが出る場合はの修正を行う
+    7. 各種テストと prettier を実行し、エラーが出る場合はの修正を行う
     8. Commit: git add → git commit -m "Add clip: <title or domain>"。
     9. Repeat: 次の URL へ。
 
