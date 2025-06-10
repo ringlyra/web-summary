@@ -18,7 +18,7 @@
 
 June 05, 2025
 
-![](/assets/edinet-bench/main-border.jpeg)
+![](https://sakana.ai/assets/edinet-bench/main-border.jpeg)
 
 概要
 --
@@ -99,7 +99,7 @@ EDINET-Benchの評価から、今回のような有価証券報告書をLLMに�
 
 本研究が、日本の金融業界におけるLLM活用に向けた一助となることを願っております。また、本ベンチマークの作成とその評価で得た知見をもとに、Sakana AIは金融タスクによりよく対応できる特化型LLMの開発など、金融分野へのAI実装に向けた研究開発を進めてまいります。
 
-[![](/assets/careers/funny_fish.jpg)](/careers/)  
+[![funny fish](https://sakana.ai/assets/careers/funny_fish.jpg)](https://sakana.ai/careers/)
 
 Sakana AI
 ---------
