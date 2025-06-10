@@ -64,7 +64,7 @@ Apple Intelligenceの機能は年末までに、デンマーク語、オラン�
 
 ジェン文字とImage Playgroundは、ユーザーにさらに多くの自己表現の方法を提供します。テキストによる説明をジェン文字に変換するだけでなく、絵文字を取り入れ、それらを説明と組み合わせることによって、新しいものを作り出せるようになります。ジェン文字やImage Playgroundを使用して、家族や友人からインスピレーションを得た画像を作成する際、ユーザーは表現方法を変更したり、例えば友人の最新の見た目に合わせてヘアスタイルを変えるなど、個人の特徴を調整したりできます。
 
-![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-genmoji-mix/large_2x.mp4)
+[![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-genmoji-mix/posters/Apple-WWDC25-Apple-Intelligence-Genmoji-mix-250609.jpg.large_2x.jpg)](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-genmoji-mix/large_2x.mp4)
 
 ジェン文字の機能強化により、ユーザーは絵文字を取り入れ、説明と組み合わせることによって新しいものを作り出すオプションを活用し、より多くの方法で自己表現できるようになります。
 
@@ -79,19 +79,19 @@ Image Playgroundでは、ChatGPTによって油絵風やベクターアートな
 
 Apple Intelligenceを基盤とするビジュアルインテリジェンスがユーザーのiPhoneの画面に拡張され、ユーザーはあらゆるアプリで、画面上に表示しているものを検索し操作できます。
 
-![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-with-etsy/large_2x.mp4)
+[![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-with-etsy/posters/Apple-WWDC25-Apple-Intelligence-Visual-Intelligence-with-Etsy-250609.jpg.large_2x.jpg)](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-with-etsy/large_2x.mp4)
 
 Apple Intelligenceのアップデートで、ビジュアルインテリジェンスがユーザーのiPhoneの画面上に表示されているコンテンツに拡張され、GoogleやEtsyなどの対応アプリを使って似たようなものを探すといった操作が可能になります。
 
 ビジュアルインテリジェンスはすでに、ユーザーがiPhoneのカメラを使用して周囲の対象物や場所について学ぶのに役立っていますが、これからはiPhoneの画面上に表示されているものについて、より多くのことを、より速く実行できるようになります。ユーザーは画面上で見ているものについてChatGPTに質問して詳しい情報を得たり、GoogleやEtsyなどの対応アプリで検索して類似の画像や製品を見つけたりできます。例えばランプなど、特に興味を惹かれるものが表示されている場合、ユーザーはそれをハイライトし、同じものや似たようなものをオンラインで検索することができます。
 
-![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-with-chatgpt/large_2x.mp4)
+[![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-with-chatgpt/posters/Apple-WWDC25-Apple-Intelligence-Visual-Intelligence-with-ChatGPT-250609.jpg.large_2x.jpg)](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-with-chatgpt/large_2x.mp4)
 
 ビジュアルインテリジェンスによって、ユーザーは特定の対象物についての詳細をChatGPTに質問することができます。
 
 ビジュアルインテリジェンスは、イベントが表示されていることを認識してカレンダーへの追加を提案し4、Apple Intelligenceが関連するデータを抽出してイベントを作成します。
 
-![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-add-to-calendar/large_2x.mp4)
+[![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-add-to-calendar/posters/Apple-WWDC25-Apple-Intelligence-Visual-Intelligence-add-to-Calendar-250609.jpg.large_2x.jpg)](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-visual-intelligence-add-to-calendar/large_2x.mp4)
 
 ビジュアルインテリジェンスは、イベントが表示されていることを認識してカレンダーへの追加を提案し、Apple Intelligenceが関連するデータを抽出してイベントを作成します。
 
@@ -106,7 +106,7 @@ Workout Buddyは、Apple Intelligenceを利用した、ほかに類を見ないA
 
 Workout Buddyは、Bluetoothヘッドフォンを接続したApple Watchで利用でき、Apple Intelligence対応のiPhoneが近くにあることが必要です。屋外および屋内のランニング、屋外および屋内のウォーキング、屋外のサイクリング、高強度インターバルトレーニング、機能的および従来型筋力トレーニングなど、人気の高いワークアウトの種類の一部において、まずは英語で利用できるようになります。
 
-![動画](https://www.apple.com/newsroom/videos/2025/hls/06/watchOS-26/Web/US/apple-wwdc25-watchos-26-apple-intelligence-workout-buddy-250609_16x9.m3u8)
+[![動画](https://www.apple.com/newsroom/videos/2025/hls/06/watchOS-26/Web/US/posters/Apple-WWDC25-watchOS-26-Apple-Intelligence-Workout-Buddy-250609_571x321.jpg.large.jpg)](https://www.apple.com/newsroom/videos/2025/hls/06/watchOS-26/Web/US/apple-wwdc25-watchos-26-apple-intelligence-workout-buddy-250609_16x9.m3u8)
 
 Apple Watchに登場するWorkout Buddyは、Apple Intelligenceを利用した、ほかに類を見ないワークアウト体験で、ユーザーのワークアウトのデータと個人的なフィットネス履歴を取り込み、パーソナライズされた洞察を生成してモチベーションを高めます。
 
@@ -115,13 +115,13 @@ Apple Watchに登場するWorkout Buddyは、Apple Intelligenceを利用した�
 
 Appleは、Apple Intelligenceの中核にあるデバイス上の基盤モデルをどのアプリからでも直接利用できるようにしました。
 
-![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-on-device-foundation-model-framework-kahoot/large_2x.mp4)
+[![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-on-device-foundation-model-framework-kahoot/posters/Apple-WWDC25-Apple-Intelligence-on-device-Foundation-Model-framework-Kahoot-250609.jpg.large_2x.jpg)](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-on-device-foundation-model-framework-kahoot/large_2x.mp4)
 
 基盤モデルフレームワークにより、デベロッパはApple Intelligenceの中核にあるデバイス上の基盤モデルを直接利用できるようになり、パワフルかつ高速で、プライバシーが組み込まれ、ユーザーがオフラインの時にも使えるインテリジェンスにアクセスできます。
 
 基盤モデルフレームワークを利用すれば、アプリのデベロッパはApple Intelligenceをベースに、無料のAI推論を利用して、インテリジェントで、オフラインでも利用でき、プライバシーが保護される新たな体験をユーザーに提供できるようになります。例えば教育アプリなら、デバイス上のモデルを利用して、クラウドAPIの費用をかけることなく、ユーザーのメモをもとにパーソナライズされたクイズを作成でき、アウトドアアプリなら、ユーザーがオフラインの時にも使える自然な言葉づかいでの検索機能を追加できます。
 
-![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-on-device-foundation-model-framework-alltrails/large_2x.mp4)
+[![動画](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-on-device-foundation-model-framework-alltrails/posters/Apple-WWDC25-Apple-Intelligence-on-device-Foundation-Model-framework_AllTrails-250609.jpg.large_2x.jpg)](https://www.apple.com/newsroom/videos/2025/autoplay/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/apple-wwdc25-apple-intelligence-on-device-foundation-model-framework-alltrails/large_2x.mp4)
 
 基盤モデルフレームワークはSwiftにネイティブ対応しているため、アプリのデベロッパはたった3行のコードでApple Intelligenceのモデルを簡単に利用できます。
 
