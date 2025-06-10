@@ -36,6 +36,7 @@ repo-root
 
 ```md
 <!-- metadata -->
+
 - **title**: <タイトル>
 - **source**: <URL>
 - **author**: <著者名 / ドメイン名>
@@ -45,9 +46,11 @@ repo-root
 - **image**: <OGP 画像やアイキャッチ URL>
 
 ## 要約
+
 <ここに日本語の要約を書く>
 
 ## 本文
+
 <HTML→Markdown 変換済み本文をそのまま貼り付ける>
 ```
 
