@@ -14,7 +14,11 @@ def pdf_to_text(pdf_path: Path) -> str:
 
 def main(url: str, out_file: Path):
     # download pdf
-    r = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0 Safari/537.36",
+        "Referer": url,
+    }
+    r = requests.get(url, headers=headers)
     r.raise_for_status()
     tmp_path = out_file.with_suffix('.pdf')
     tmp_path.write_bytes(r.content)
