@@ -58,15 +58,11 @@ repo-root
 
 ### 3.1 ヘッダー
 
-1 行目に `<!-- metadata -->`、2 行目以降に **Markdown 箇条書き**で key-value を並べる。解析ツール側で行頭 `- **key**:` パターンをパースすれば機械処理も容易。
-
-- **title**: ChatGPT, an AI model
-- **source**: https://openai.com/blog/chatgpt
-- **author**: openai.com (author が見つからなければドメイン名を入力)
-- **published**: 2025-05-30T14:00:00Z
-- **fetched**: 2025-06-04T03:30:45Z
+- author が見つからなければドメイン名を入力すること。
 - **tags**: codex, ai, nlp
-- **image**: https://cdn.openai.com/og/chatgpt.png (URL が長くてエラーが出る場合は短縮 URL にすること)
+- image の URL が長くてエラーが出る場合は短縮 URL にすること。
+
+> **Note**: 1 行目に `<!-- metadata -->`、2 行目以降に **Markdown 箇条書き**で key-value を並べる。解析ツール側で行頭 `- **key**:` パターンをパースすれば機械処理も容易。
 
 ### 3.2 要約
 
@@ -79,7 +75,9 @@ repo-root
 
 ### 3.3 本文
 
-HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。最後に本文が全て取得できたか確認することを忘れないでください。本文を上から順番に照らし合わせて確認してください。
+- HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。
+- 最後に本文が全て取得できたか確認することを忘れないでください。
+- 本文を上から順番に照らし合わせて確認してください。
 
 ⸻
 
@@ -103,7 +101,8 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 
 - ファイル名: {YYYY-MM-DD}\_{title}.md
 - 必須タグ: codex
-- 推奨タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列. タグ名は必ず英語にすること
+- 推奨タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列にすること。
+- タグ名は必ず英語にすること。
 
 ⸻
 
@@ -117,7 +116,7 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 
 ## 7. Prettier の実行
 
-`npm install` で最新の Prettier を取得できる。Markdown やコードを整形する場合は次のコマンドを使いましょう。
+`npm install` で最新の Prettier を取得できる。Markdown やコードを整形する場合は node_tools/run_prettier.js を使いましょう。
 
 ```bash
 npx prettier --write <file globs>
