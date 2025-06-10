@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Claude can now connect to your world | Anthropic
 - **source**: https://www.anthropic.com/news/integrations
 - **author**: anthropic.com
@@ -8,9 +9,11 @@
 - **image**: https://cdn.sanity.io/images/4zrzovbb/website/823ff5e709d270e101840e349b539c4cb636dab9-1201x1201.png
 
 ## 要約
+
 Anthropicが**Integrations**を公開し、アプリをClaudeに接続可能に。**Research**機能も拡充、ウェブやGoogle Workspaceを横断検索。検索は有料プランで提供。
 
 ## 本文 / Article
+
 Today we're announcing Integrations, a new way to connect your apps and tools to Claude. We're also expanding Claude's [Research](https://www.anthropic.com/news/research) capabilities with an advanced mode that searches the web, your Google Workspace, and now your Integrations too. Claude can research for up to 45 minutes before delivering a comprehensive report, complete with citations. In addition to these updates, we're making web search available globally for all Claude users on paid plans.
 
 ## Integrations
@@ -41,7 +44,7 @@ When Claude incorporates information from sources, it provides clear citations t
 
 Integrations and advanced Research are now available in beta on the Max, Team, and Enterprise plans, and will soon be available on Pro. Web search is now globally available to all [Claude.ai](http://claude.ai) paid plans. For more information on getting started with Integrations, MCP servers, and security and privacy practices when connecting data sources to Claude, visit our [Help Center](https://support.anthropic.com/en/articles/11175166-about-integrations-using-remote-mcp).
 
-* Update
+- Update
 
   Expanded availability
 

@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Production-ready AI: Remote Agents now available for VS Code
 - **source**: https://www.augmentcode.com/blog/production-ready-ai-remote-agents-now-available-for-all-augment-code-users
 - **author**: Augment Code
@@ -8,6 +9,7 @@
 - **image**: https://cdn.prod.website-files.com/66e230b8c8062a18d04d3723/6840d2ef1a8604acec06d173_Blog%20Image%20-%20remote%201%20(1).png
 
 ## 要約
+
 Augment Codeはクラウド上で複数のタスクを並列に実行できるRemote Agentsを一般公開した。VS Code拡張 v0.472.1以降で利用でき、技術的負債の解消、リファクタリング、テスト生成、ドキュメント作成などを自律的に行う。コンテナ化されたエージェントがインフラ全体を横断し、セマンティックインデックスにより文脈を維持。プライバシーとリアルタイムのワークフロー制御にも配慮され、著名エンジニアからも高く評価されている。AIが雑務を肩代わりすることで開発者は戦略的思考に集中できる。
 
 ## 本文 / Article
@@ -24,19 +26,19 @@ Remote Agents don't just complete tasks—they expand your team's capacity to sh
 
 **Use Remote Agents to:**
 
-* Tackle technical debt: Fix small bugs and papercuts that never make it to your priority list
-* Refactor with confidence: Restructure code while maintaining conventions and ensuring bug-free operation
-* Boost test coverage: Automatically generate comprehensive unit tests for new and existing features
-* Explore multiple solutions: Run parallel agents to prototype alternative implementations
-* Accelerate documentation: Generate detailed documentation for libraries and features
+- Tackle technical debt: Fix small bugs and papercuts that never make it to your priority list
+- Refactor with confidence: Restructure code while maintaining conventions and ensuring bug-free operation
+- Boost test coverage: Automatically generate comprehensive unit tests for new and existing features
+- Explore multiple solutions: Run parallel agents to prototype alternative implementations
+- Accelerate documentation: Generate detailed documentation for libraries and features
 
 ### **What people are saying:**
 
-*“I don’t think the next big leap in software productivity comes from ‘vibe coding.’ It comes from removing the grind in real codebases. Augment Code’s new Remote Agent tackles flaky tests, stale docs & tedious refactors—with up to 10 autonomous agents.”* [Eric Schmidt, Former Executive Chairman & CEO, Google](https://x.com/ericschmidt/status/1920246354229563888)
+_“I don’t think the next big leap in software productivity comes from ‘vibe coding.’ It comes from removing the grind in real codebases. Augment Code’s new Remote Agent tackles flaky tests, stale docs & tedious refactors—with up to 10 autonomous agents.”_ [Eric Schmidt, Former Executive Chairman & CEO, Google](https://x.com/ericschmidt/status/1920246354229563888)
 
-*“The Remote Agent is great for clearly scoped tasks with a clearly defined outcome. Learning to break development up into clearly scoped tasks with clearly defined outcomes is going to become a highly leveraged software development skill. My first success was telling the genie to copy the tests & implementation strategy from Python & implement the equivalent code in idiomatic Rust. Not many iterations later I had my PR."* [Kent Beck, Inventor of Extreme Programming](https://kentbeck.com/)
+_“The Remote Agent is great for clearly scoped tasks with a clearly defined outcome. Learning to break development up into clearly scoped tasks with clearly defined outcomes is going to become a highly leveraged software development skill. My first success was telling the genie to copy the tests & implementation strategy from Python & implement the equivalent code in idiomatic Rust. Not many iterations later I had my PR."_ [Kent Beck, Inventor of Extreme Programming](https://kentbeck.com/)
 
-*“After spending the time using Remote Agents, I already can tell that this is the future. Remote Agents force you as the developer to level up your thinking. Now if you can think of clear and parallel features to develop you can dramatically increase your throughput.”* [Chris Dunlop, CEO & Co-Founder of Cub Digital](https://medium.com/realworld-ai-use-cases/augment-code-remote-agent-code-without-turning-on-your-computer-9cbf2864babe)
+_“After spending the time using Remote Agents, I already can tell that this is the future. Remote Agents force you as the developer to level up your thinking. Now if you can think of clear and parallel features to develop you can dramatically increase your throughput.”_ [Chris Dunlop, CEO & Co-Founder of Cub Digital](https://medium.com/realworld-ai-use-cases/augment-code-remote-agent-code-without-turning-on-your-computer-9cbf2864babe)
 
 ### **What makes Augment’s Remote Agents different?**
 

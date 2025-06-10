@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: 音楽生成AI 「Suno」でAWSの曲を作って楽しく資格勉強できないだろうか #SUNOAI - Qiita
 - **source**: https://qiita.com/Takenoko4594/items/38e50a607ce2dad2ab06
 - **author**: qiita.com
@@ -8,11 +9,12 @@
 - **image**: https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-v4.9f790b4dcf003500eb01.png?auto=format&bg=fff&fit=fill&fill=blur&w=1200&h=630&q=100&s=63164cc85fd254d91d216087b2a78c3f
 
 ## 要約
+
 **Suno**という音楽生成AIを使い、**AWS**サービスをテーマにしたオリジナル曲で資格学習を盛り上げようという記事。Claude 4を用いて歌詞を作り、Sunoで曲を生成する手順を紹介。試作曲として"Foundation of Tomorrow"など3曲を掲載し、Sunoの無料枠情報も触れている。
 
 ## 本文 / Article
-はじめに
-====
+
+# はじめに
 
 最近、音楽が簡単に作れる 「Suno」という生成AIを知りまして、AWSサービスを曲にしたら資格の勉強が捗るでは？という思い付きです。
 
@@ -34,21 +36,17 @@ Amazon CloudFrontの曲です
 
 Amazon Timestreamの曲です
 
-Sunoとは
-======
+# Sunoとは
 
 無料枠もありまして1日に5曲？くらいは作れるようなので、気になった方はぜひ！
 
-作ってみる
-=====
+# 作ってみる
 
-題材を決める
-------
+## 題材を決める
 
 今回は、「Amazon Bedrock」をテーマに音楽を作ります。
 
-歌詞を用意する
--------
+## 歌詞を用意する
 
 音楽を作る上で歌の歌詞が必要となります。  
 今回は、Claude 4 Sonnet にAmazon Bedrockの歌詞を書いてもらいます。
@@ -221,8 +219,7 @@ HIPAA、PCI DSS対応
 
 ```
 
-Sunoで音楽を作る
-----------
+## Sunoで音楽を作る
 
 ### サインアップまたはサインイン
 
@@ -256,8 +253,7 @@ Song Title欄は、任意の曲タイトルを入力します。今回は別途�
 ちなみに1度に2曲作ってくれるみたいです  
 [![image.png](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F560123%2F5b5d211c-9660-4579-b816-a8791143182a.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=fafac52836e26f24b9bf2ac897ab535e)](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F560123%2F5b5d211c-9660-4579-b816-a8791143182a.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=fafac52836e26f24b9bf2ac897ab535e)
 
-所感
-==
+# 所感
 
 最近は、こんな簡単に音楽作れちゃうんだなぁとしみじみと感じました。  
 無茶ぶりで依頼してもいい感じの曲にしてくれるので、単純に曲を作っても楽しそうですね。

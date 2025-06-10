@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Codex agent internet access
 - **source**: https://simonwillison.net/2025/Jun/3/codex-agent-internet-access/
 - **author**: Simon Willison
@@ -8,9 +9,11 @@
 - **image**: https://static.simonwillison.net/static/2025/codex-allow.jpg
 
 ## 要約
+
 **Codex** エージェントが **インターネット** へアクセス可能になったことを受け、**Sam Altman** はリスクを理解した上で必要な場面のみ利用すべきだと強調。デフォルトではオフで、利用にはドメインの許可リストやHTTPメソッド制限が推奨される。悪用例としてコミット内容を即座に外部送信する攻撃も紹介され、**プロンプトインジェクション**と**情報流出**に注意が必要と指摘している。
 
 ## 本文 / Article
+
 **[Codex agent internet access](https://platform.openai.com/docs/codex/agent-network)**. Sam Altman, [just now](https://twitter.com/sama/status/1930006856019390521):
 
 > codex gets access to the internet today! it is off by default and there are complex tradeoffs; people should read about the risks carefully and use when it makes sense.
@@ -45,4 +48,3 @@ OpenAI's approach here looks sensible to me: internet access is off by default, 
 ... but their default "Common dependencies" allowlist includes 71 common package management domains, any of which might turn out to host a surprise exfiltration vector. Given that, their advice on allowing only specific HTTP methods seems wise as well:
 
 > For enhanced security, you can further restrict network requests to only `GET`, `HEAD`, and `OPTIONS` methods. Other HTTP methods (`POST`, `PUT`, `PATCH`, `DELETE`, etc.) will be blocked.
-

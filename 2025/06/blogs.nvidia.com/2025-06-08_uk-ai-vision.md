@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: ‘AI Maker, Not an AI Taker’: UK Builds Its Vision With NVIDIA Infrastructure
 - **source**: https://blogs.nvidia.com/blog/uk-ai-vision/
 - **author**: Anthony Hills
@@ -13,22 +14,17 @@
 
 ## 本文
 
-‘AI Maker, Not an AI Taker’: UK Builds Its Vision With NVIDIA Infrastructure
-============================================================================
+# ‘AI Maker, Not an AI Taker’: UK Builds Its Vision With NVIDIA Infrastructure
 
 Prime Minister Keir Starmer set the ambition. At London Tech Week, the UK is teaming with NVIDIA to take action.
 
 June 8, 2025 by [Anthony Hills](https://blogs.nvidia.com/blog/author/anthonyhills/ "View all posts by Anthony Hills")
 
-
-
 ![](https://blogs.nvidia.com/wp-content/uploads/2025/06/eyJ3IjoyMDQ4LCJoIjoyMDQ4LCJzY29wZSI6ImFwcCJ9-1280x720.webp)
-
-
 
 Share
 
-* [Email0](#ea-share-count-email)
+- [Email0](#ea-share-count-email)
 
 U.K. Prime Minister Keir Starmer’s ambition for Britain to be an “AI maker, not an AI taker,” is becoming a reality at London Tech Week.
 
@@ -50,8 +46,7 @@ Responding to this opportunity, cloud provider [Nscale announced](http://www.nsc
 
 And cloud provider Nebius is continuing the region’s momentum with the launch of its [first AI factory in the U.K.](https://group.nebius.com/newsroom/nebius-launches-in-uk-expands-britains-ai-infrastructure-with-nvidia-blackwell-ultra) It announced it’s bringing 4,000 [NVIDIA Blackwell GPUs](https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/) online, making available scalable, high-performance AI capacity at home in the U.K. — to power U.K. research, academia and public services, including the NHS.
 
-Mind the (Skills) Gap
----------------------
+## Mind the (Skills) Gap
 
 AI developers are the engine of this new industrial revolution. That’s why NVIDIA is supporting the U.K. government’s [national skills drive](https://www.gov.uk/government/news/pm-launches-national-skills-drive-to-unlock-opportunities-for-young-people-in-tech) by training developers in AI.
 
@@ -65,8 +60,7 @@ At the same time, Barclays Eagle Labs’ launch of an Innovation Hub in London w
 
 Furthermore, the Department for Science, Innovation and Technology announced a collaboration with NVIDIA to promote the nation’s goals for AI development in telecoms. Leading U.K. universities will gain access to a suite of powerful AI tools, 6G research platforms and training resources to bolster research and development on AI-native wireless networks.
 
-The Research Engine
--------------------
+## The Research Engine
 
 Universities are central to the U.K.’s strategy.
 
@@ -80,8 +74,7 @@ NVIDIA also champions the U.K.’s most ambitious AI startups through NVIDIA Inc
 
 Basecamp Research is revolutionizing drug discovery with AI trained on the planet’s biodiversity. Humanoid advances automation and brings commercially scalable, reliable and safe [humanoid robots](https://www.nvidia.com/en-us/glossary/humanoid-robot/) closer to real-world deployment. Relation is accelerating the discovery of tomorrow’s medicines. And Synthesia turns text into studio-quality, multilingual videos with lifelike avatars.
 
-**Industry in Motion**
-----------------------
+## **Industry in Motion**
 
 The U.K.’s biggest companies are moving fast, too.
 
@@ -89,7 +82,7 @@ Companies like BT, LSEG and NatWest are transforming industries with AI. BT is p
 
 With government vision, talent and cutting-edge tech converging, the U.K. is taking its place among those making AI advances at home and worldwide.
 
-*Watch NVIDIA founder and CEO Jensen Huang’s keynote* [*NVIDIA GTC Paris at VivaTech*](https://www.nvidia.com/en-eu/gtc/)*.*
+_Watch NVIDIA founder and CEO Jensen Huang’s keynote_ [_NVIDIA GTC Paris at VivaTech_](https://www.nvidia.com/en-eu/gtc/)_._
 
 Categories: [Corporate](https://blogs.nvidia.com/blog/category/corporate/) | [Data Center](https://blogs.nvidia.com/blog/category/enterprise/) | [Generative AI](https://blogs.nvidia.com/blog/category/generative-ai/) | [Supercomputing](https://blogs.nvidia.com/blog/category/enterprise/supercomputing/)
 

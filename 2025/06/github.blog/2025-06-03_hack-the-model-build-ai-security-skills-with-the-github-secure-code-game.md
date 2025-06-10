@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Hack the model: Build AI security skills with the GitHub Secure Code Game - The GitHub Blog
 - **source**: https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/
 - **author**: Joseph Katsioloudes, Jaroslav Lobacevski, Greg Ose, Man Yue Mo
@@ -8,9 +9,11 @@
 - **image**: https://github.blog/wp-content/uploads/2025/04/wallpaper_github_generic_1.png
 
 ## 要約
+
 GitHubはソフトウェア開発者向けの無料学習コース「Secure Code Game」のシーズン3を公開した。今回はAIがもたらすセキュリティ課題に焦点を当て、悪意あるプロンプトを作ってLLMの脆弱性を突く攻撃者視点から始め、最終的には防御策を実装していく。各レベルではシステムプロンプト設計、出力検証、入力フィルタリング、自己検証などの手法を段階的に学べる。またオープンソースの貢献者が作ったHackMerlinをベースにより実践的なシナリオを備える。リポジトリを公開しており、誰でもチャレンジや改善に参加可能。
 
 ## 本文 / Article
+
 We just launched season three of the GitHub Secure Code Game, and this time we’re putting you face to face with the security risks introduced by artificial intelligence. Get ready to learn by doing and have fun doing it! First, you’ll step into the shoes of an adversary crafting malicious prompts. Then, you’ll secure your application against those attacks.
 
 The [Secure Code Game](https://gh.io/securecodegame) is a free software security course suitable for all developer levels, where players fix intentionally vulnerable code to build code security skills. By placing gameplay directly in the code editor—a developer’s natural habitat—it helps them practice spotting vulnerabilities where they normally work. Its straightforward setup allows players to start in under two minutes using Codespaces.
@@ -25,22 +28,20 @@ We launched the [first season](https://github.blog/developer-skills/github/build
 >
 > Tyler Anton, Computer science student
 
-Now’s the perfect time to elevate your skills!
-----------------------------------------------
+## Now’s the perfect time to elevate your skills!
 
 Today, we’re excited to launch the [third season](https://github.com/skills/secure-code-game/tree/main/Season-3), which immerses players into the fascinating world of artificial intelligence through six realistic challenges. As the world moves decisively into a new era—McKinsey & Company reports that the use of generative AI increased from 33% in 2023 to 71% in 2024 and GitHub Copilot is now being used by more than 77,000 organizations—there’s no better time to enhance your skills.
 
-What you’ll learn
------------------
+## What you’ll learn
 
 Each of the six security challenges focuses on a different defensive technique. The levels get progressively harder as they build on the defensive techniques of the previous ones. Some of the topics you’ll learn about include:
 
-* **Crafting robust system prompts:** Securely design the initial instructions that guide the model’s behavior, ensuring desired, safe, and relevant outputs by setting its role, constraints, format, and context.
-* **Output validation:** Prevent leaks by verifying that the output conforms to certain predefined rules, formats, or expectations.
+- **Crafting robust system prompts:** Securely design the initial instructions that guide the model’s behavior, ensuring desired, safe, and relevant outputs by setting its role, constraints, format, and context.
+- **Output validation:** Prevent leaks by verifying that the output conforms to certain predefined rules, formats, or expectations.
 
-* **Input filtering:** Examine, modify, or block user-provided text before it’s fed into the model to prevent harmful or irrelevant content from influencing the model as it generates output.
+- **Input filtering:** Examine, modify, or block user-provided text before it’s fed into the model to prevent harmful or irrelevant content from influencing the model as it generates output.
 
-* **LLM self-verification:** Use this technique to have the Large Language Model (LLM) check its own output for accuracy, consistency, and compliance with defined rules or constraints. This may involve checking for errors, validating reasoning, or confirming adherence to policies. Self-verification can be prompted directly or built into the model’s response generation.
+- **LLM self-verification:** Use this technique to have the Large Language Model (LLM) check its own output for accuracy, consistency, and compliance with defined rules or constraints. This may involve checking for errors, validating reasoning, or confirming adherence to policies. Self-verification can be prompted directly or built into the model’s response generation.
 
 Progressing through season three requires players to hack LLMs. Each challenge begins with a set of guiding instructions for the LLM provided in the form of a code and a system message. These elements might include gaps or edge cases that could be exploited using a malicious prompt. Your task is to identify the vulnerabilities and craft prompts to manipulate the model into exposing a hidden secret.
 
@@ -56,13 +57,11 @@ After exploiting the vulnerability, your next task is to refine the code and sys
 >
 > Reshmi Mehta, Security analyst at Alcon
 
-How to get started
-------------------
+## How to get started
 
-If you’re eager to start learning, we’ve got a [Secure Code Game repository](https://github.com/skills/secure-code-game) all set up and ready to go. It includes instructions for all the seasons, so you can experience everything it has to offer. Just browse through the *README* and get started.
+If you’re eager to start learning, we’ve got a [Secure Code Game repository](https://github.com/skills/secure-code-game) all set up and ready to go. It includes instructions for all the seasons, so you can experience everything it has to offer. Just browse through the _README_ and get started.
 
-How season three came together
-------------------------------
+## How season three came together
 
 > Don’t wait to be an expert. Build, share, and the right people will find you. Open source changed my life, and it can do the same for you.
 >
@@ -70,9 +69,9 @@ How season three came together
 
 It all started in [FOSDEM 2025](https://fosdem.org/2025/) in Belgium, where I presented the Secure Code Game to a group of open source maintainers. [Bartosz](https://www.linkedin.com/in/bartosz-galek/) was in the audience and here’s what happened in his own words:
 
-*The Secure Code Game immediately clicked, as security and game development is my thing! After the talk, I thanked Joseph on LinkedIn and shared [HackMerlin](https://hackmerlin.io/) with him—a game I created that challenges players to test their prompting skills. To my surprise, he liked it!*
+_The Secure Code Game immediately clicked, as security and game development is my thing! After the talk, I thanked Joseph on LinkedIn and shared [HackMerlin](https://hackmerlin.io/) with him—a game I created that challenges players to test their prompting skills. To my surprise, he liked it!_
 
-*One thing led to another, and HackMerlin became the base of our collaboration for season three. The whole journey started as a silly idea, but it turned into something much bigger.*
+_One thing led to another, and HackMerlin became the base of our collaboration for season three. The whole journey started as a silly idea, but it turned into something much bigger._
 
 ![Screenshot of an interactive game interface at Level 6. The game instructs the player to outsmart Merlin by asking clever questions to reveal a password. A cartoon wizard, Merlin, appears at the top, saying 'Hello traveler! Ask me anything...'. Below is a text box where the user can type questions, an 'Ask' button, and a field labeled 'Enter the secret password' followed by a 'Submit' button to check the validity of the answer.](https://github.blog/wp-content/uploads/2025/06/hackmerlin.png?resize=932%2C1240)
 

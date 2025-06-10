@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: ふーん Devinやるじゃん - nikkie-ftnextの日記
 - **source**: https://nikkie-ftnext.hatenablog.com/entry/hey-devin-please-research-instead-of-me
 - **author**: nikkie-ftnext.hatenablog.com
@@ -15,7 +16,7 @@
 
 ### はじめに
 
-[七尾百合子](https://millionlive-theaterdays.idolmaster-official.jp/idol/yuriko/)さん、お誕生日 *83日目* おめでとうございます！ nikkieです。
+[七尾百合子](https://millionlive-theaterdays.idolmaster-official.jp/idol/yuriko/)さん、お誕生日 _83日目_ おめでとうございます！ nikkieです。
 
 Devinは*ジュニアエンジニア*と言われますが、手取り足取りお世話しなくてもいいんだなと思った事象の紹介です[1](#fn:1)
 

@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Reverse Engineering Cursor's LLM Client · TensorZero
 - **source**: https://www.tensorzero.com/blog/reverse-engineering-cursors-llm-client/
 - **author**: Viraj Mehta, Aaron Hill, Gabriel Bianconi
@@ -8,9 +9,11 @@
 - **image**: https://www.tensorzero.com/tensorzero-1200x630.png?1737435600
 
 ## 要約
+
 TensorZeroをセルフホストのプロキシとして**Cursor**とLLMの間に挟み、送受信されるリクエストを記録・最適化する試みを紹介。最初はCursorが自社サーバを経由するため接続に失敗したが、**Ngrok**と**Nginx**で公開エンドポイントを構築し、CORS対応も追加して解決した。これによりCursorのシステムプロンプトや実際のLLM呼び出しを観察でき、各種モデルを使ったA/Bテストやプロンプト実験が可能となった。現在はClaude 4.0 SonnetやGPT‑4.1など複数モデルをランダムに使用しながらも遅延は感じない。今後はフィードバックを収集し、個々の利用状況に合わせてCursorを最適化する予定だ。
 
 ## 本文 / Article
+
 # Reverse Engineering Cursor's LLM Client
 
 June 5, 2025 · Viraj Mehta, Aaron Hill, Gabriel Bianconi
@@ -19,7 +22,7 @@ June 5, 2025 · Viraj Mehta, Aaron Hill, Gabriel Bianconi
 
 What happens under the hood at Cursor?
 
-We wired  [TensorZero](https://github.com/tensorzero/tensorzero) between Cursor and the LLMs to see every token fly by… and bend those API calls to our own will.
+We wired [TensorZero](https://github.com/tensorzero/tensorzero) between Cursor and the LLMs to see every token fly by… and bend those API calls to our own will.
 
 TensorZero is an open-source framework that helps engineers optimize LLM applications with downstream feedback signals (e.g. production metrics, human feedback, user behavior), and we figured it would be interesting to see whether we could use TensorZero on the LLM application we use most heavily ourselves: Cursor.
 
@@ -107,7 +110,7 @@ For example, here’s what we saw after asking Cursor “how do I get nginx to g
 
 ### System Prompt
 
-```
+````
 You are a an AI coding assistant, powered by tensorzero::function_name::cursorzero. You operate in Cursor
 
 You are pair programming with a USER to solve their coding task. Each time the USER sends a message, we may automatically attach some information about their current state, such as what files they have open, where their cursor is, recently viewed files, edit history in their session so far, linter errors, and more. This information may or may not be relevant to the coding task, it is up for you to decide.
@@ -136,7 +139,7 @@ When the user is asking for edits to their code, please output a simplified vers
 // ... existing code ...
 {{ edit_2 }}
 // ... existing code ...
-```
+````
 
 The user can see the entire file, so they prefer to only read the updates to the code. Often this will mean that the start/end of the file will be skipped, but that's okay! Rewrite the entire file only if specifically requested. Always provide a brief explanation of the updates, unless the user specifically requests only the code.
 
@@ -148,15 +151,19 @@ The user's OS version is darwin 24.3.0. The absolute path of the user's workspac
 </user_info>
 
 You MUST use the following format when citing code regions or blocks:
+
 ```12:15:app/components/Todo.tsx
 // ... existing code ...
 ```
-This is the ONLY acceptable format for code citations. The format is ```startLine:endLine:filepath``` where startLine and endLine are line numbers.
+
+This is the ONLY acceptable format for code citations. The format is `startLine:endLine:filepath` where startLine and endLine are line numbers.
+
 ```
 
 ### User Prompt
 
 ```
+
 <additional_data>
 Below are some potentially helpful/relevant pieces of information for figuring out to respond
 
@@ -167,6 +174,7 @@ Line Content: `events {}`
 </current_file>
 <attached_files>
 <file_contents>
+
 ```path=nginx/nginx.conf, lines=1-46
 events {}
 
@@ -215,9 +223,11 @@ http {
 }
 
 ```
+
 </file_contents>
 
 <manually_added_selection>
+
 ```path=nginx/nginx.conf, lines=1-16
 events {}
 
@@ -236,6 +246,7 @@ http {
       listen 80;
 
 ```
+
 </manually_added_selection>
 
 </attached_files>
@@ -244,11 +255,13 @@ http {
 <user_query>
 how do I get nginx to get the key from an environment variable in my .env?
 </user_query>
+
 ```
 
 ### Response
 
 ```
+
 I see you're trying to use an environment variable for your authentication token in the Nginx configuration instead of hardcoding "your-token-here" in the `nginx.conf` file.
 
 Unfortunately, Nginx doesn't directly read environment variables from a `.env` file. However, there are a few approaches you can take:
@@ -287,6 +300,7 @@ CMD ["/bin/sh", "-c", "envsubst '${API_TOKEN}$' < /etc/nginx/templates/default.c
 ```
 
 Then run with:
+
 ```bash
 docker run -e API_TOKEN=your-secret-token -p 80:80 your-nginx-image
 ```
@@ -303,6 +317,7 @@ location /auth {
 ```
 
 For your specific case, I'd recommend Option 1 or 2 depending on your deployment setup. This way, you can keep your token in your `.env` file and have it securely injected into the Nginx configuration at startup time.
+
 ```
 
 ## Prompt Engineering Cursor
@@ -318,7 +333,9 @@ This must be due to extensive post-training efforts by the big labs.
 We find the following snippet particularly intriguing:
 
 ```
+
 These edit codeblocks are also read by a less intelligent language model, colloquially called the apply model, to update the file. To help specify the edit to the apply model, you will [...]. You will not mention the apply model.
+
 ```
 
 It’s common to mix different models to optimize cost and latency, but Cursor explains this hierarchy to the models themselves? Interesting.
@@ -347,3 +364,4 @@ Sneak peek: git hooks, tree-sitter, and more.
 Then, we’ll explore if this feedback signal might be able to improve Cursor by optimizing models and inferences through your individual usage patterns.
 
 Stay tuned by subscribing below.
+```

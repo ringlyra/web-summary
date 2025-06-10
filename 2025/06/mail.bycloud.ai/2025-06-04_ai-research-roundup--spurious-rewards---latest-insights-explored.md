@@ -1,32 +1,35 @@
 <!-- metadata -->
+
 - **title**: AI Research Roundup: Spurious Rewards & Latest Insights Explored
 - **source**: https://mail.bycloud.ai/p/a-shocking-rlvr-revelation-for-llm-just-dropped-dacd425f175077f9
 - **author**: mail.bycloud.ai
-- **published**: 
+- **published**:
 - **fetched**: 2025-06-04T11:10:30.676110Z
 - **tags**: codex, ai, research
 - **image**: https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6d21e855-ca01-459a-b19b-a8b5c4cfbb2b/issue_58.jpg?t=1748980487
 
 ## 要約
+
 最新のAI研究ニュースレターでは、**DeepSeek**モデルの強化版や、画像編集に強い**FLUX.1 Kontext**など業界動向を紹介。注目論文は、**RLVR**でランダムや誤った報酬でも計算能力が向上するという衝撃の事実を報告し、特に**Qwen**系列はコード生成への嗜好が精度向上に寄与していると指摘。他にも、Transformerが系統的探索を苦手とする問題や、外部報酬を使わず自己確信度で学習する**RLIF/INTUITOR**手法の効果を解説。全体としてLLMの推論能力を高める新たなアプローチが議論された。
 
 ## 本文 / Article
 
-###### *May 26th ~ June 2nd* *#58 Latest AI Research Explained Simply*
+###### _May 26th ~ June 2nd_ _#58 Latest AI Research Explained Simply_
 
-🗞️ Industry News in 1 Line
---------------------------
+## 🗞️ Industry News in 1 Line
 
 1. ♥ 9.8k DeepSeek released DeepSeek-R1-0528, a version 2 for its R1 model. Around 10~20% performance increase compared to R1v1. It is currently the SoTA open source model, and they also distilled a DeepSeek-R1-0528-Qwen3-8B. You can watch [my video](https://youtu.be/_5Xv3kXyBDE) for a brief overview. Weights are now available on [Huggingface](https://huggingface.co/deepseek-ai/DeepSeek-R1-0528).
 
    ![](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/84b61904-b493-4b7f-b47f-b6e231a116db/GsHZfE_aUAEo64N.png?t=1748978442)
 
    DeepSeek-R1-0528 Benchmarks
+
 2. ♥ 2.5k Black Forest Labs, founded by the key people behind Stable Diffusion, has released FLUX.1 Kontext. Unlike traditional text-to-image models, Kontext understands both text AND images as input, enabling true in-context generation and editing. Currently SoTA in image editing with text.
 
    ![](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/427e5156-afca-4796-a069-5afc7abd913c/GsIi2ydXYAAbfjw.jpg?t=1748978693)
 
    FLUX.1 Kontext text-based image editing demo
+
 3. ♥ 4.9k [Anthropic has open-sourced its circuit tracing tools](https://www.anthropic.com/research/open-source-circuit-tracing) for their mechanistic interpretability research. These tools utilize cross-layer transcoders to construct interpretable graphs, allowing for interventions on model features to observe changes in output. The interactive Neuronpedia platform supports visualization and annotation of these graphs, helping studies on behaviors such as multi-step reasoning and hallucination suppression in models like Gemma-2-2B and Llama-3.2-1B.
 
    ![]()
@@ -45,10 +48,9 @@ So now, we are able to display the papers that are being searched on! (truly a n
 
 and a nicer citation section
 
-Spurious Rewards: Rethinking Training Signals in RLVR
------------------------------------------------------
+## Spurious Rewards: Rethinking Training Signals in RLVR
 
-*Shao et al. [University of Washington, Allen Institute for Artificial Intelligence, University of California]*
+_Shao et al. [University of Washington, Allen Institute for Artificial Intelligence, University of California]_
 
 ♥ 1.7k   LLM RLVR   bycloud’s pick
 
@@ -62,7 +64,7 @@ This study tells us that certain models improve dramatically even when trained o
 
 The researchers of this study tested the RLVR method across multiple reward types on mathematical benchmarks like MATH-500. For Qwen models, rewards ranged from ground-truth labels to "spurious" signals like random binary assignments or incentives for incorrect answers. Surprisingly, all rewards (even those with zero correlation to correctness) gave significant accuracy gains.
 
-After analyzing this behavior, the researchers analyzed that Qwen models frequently use "code reasoning" to generate Python-like pseudocode to structure solutions without execution. Before training, this appeared in 66.7% of responses. After RLVR with *any* reward, it surged past 90%. This shift correlated strongly with performance improvements, suggesting RLVR amplifies pretrained capabilities rather than imparting new knowledge.
+After analyzing this behavior, the researchers analyzed that Qwen models frequently use "code reasoning" to generate Python-like pseudocode to structure solutions without execution. Before training, this appeared in 66.7% of responses. After RLVR with _any_ reward, it surged past 90%. This shift correlated strongly with performance improvements, suggesting RLVR amplifies pretrained capabilities rather than imparting new knowledge.
 
 For non-Qwen models like Llama or OLMo, spurious rewards failed. These models lack Qwen’s pretrained affinity for code reasoning. When they attempted code generation, accuracy often dropped.
 
@@ -72,10 +74,9 @@ The tests on RLVR approach with Qwen2.5-Math-7B achieved 21-26% accuracy gains o
 
 Forcing Qwen models to generate code via prompts improved accuracy by 11-25%, while suppressing it reduced gains. However, when Non-Qwen models were prompted for code, they performed worse. This confirms code reasoning as a primary driver behind Qwen’s reward-agnostic improvements, and that a handful of RLVR research may need to be re-evaluated as a lot of them **only validated their performance Qwen model families, thus their results may fail to generalize**.
 
-Reasoning LLMs are Wandering Solution Explorers
------------------------------------------------
+## Reasoning LLMs are Wandering Solution Explorers
 
-*Lu et al. [NUS AI Institute]*
+_Lu et al. [NUS AI Institute]_
 
 ♥ 361   LLM Reasoning Search
 
@@ -89,9 +90,9 @@ This paper shows that as problems grow more complex, RLLMs stumble and produce i
 
 Systematic exploration requires three steps:
 
-* **Validity** means each reasoning step follows the problem’s rules, like staying within bounds during a grid search.
-* **Effectiveness** ensures the model reaches a valid solution.
-* **Necessity** means no wasted steps. i.e. every action must directly contribute to solving the problem or ruling out dead ends.
+- **Validity** means each reasoning step follows the problem’s rules, like staying within bounds during a grid search.
+- **Effectiveness** ensures the model reaches a valid solution.
+- **Necessity** means no wasted steps. i.e. every action must directly contribute to solving the problem or ruling out dead ends.
 
 For instance, in depth-first search tasks, a systematic explorer would backtrack correctly after hitting dead ends, avoiding redundant paths. Current RLLMs violate these principles repeatedly. They commit boundary violations, like hallucinating array indices beyond actual limits. Procedure omission occurs when models skip essential substeps, halting prematurely. Incorrect backtracking leads them to restore outdated states, corrupting the search.
 
@@ -109,10 +110,9 @@ The findings signal three urgent shifts for AI research.
 2. Second, training must prioritize process supervision, rewarding valid step-by-step reasoning over final-output mimicry.
 3. Third, evaluation should evolve beyond accuracy metrics to audit reasoning traces for validity and efficiency.
 
-Learning to Reason without External Rewards
--------------------------------------------
+## Learning to Reason without External Rewards
 
-*Zhao et al. [UC Berkeley, Yale University]*
+_Zhao et al. [UC Berkeley, Yale University]_
 
 ### Introduction to Reasoning in LLMs
 

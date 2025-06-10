@@ -1,11 +1,12 @@
 <!-- metadata -->
+
 - **title**: Changelog
 - **source**: https://jules.google/docs/changelog
 - **author**: jules.google
-- **published**: 
+- **published**:
 - **fetched**: 2025-06-08T17:31:25.876866Z
 - **tags**: codex
-- **image**: 
+- **image**:
 
 ## 要約
 
@@ -34,9 +35,9 @@ This week, our focus has been on improving reliability, fixing our GitHub integr
 
 **Hereâs whatâs we shipped:**
 
-* Updated our limits to 60 tasks per day, 5 concurrent.
-* We substantially improved the reliability of the GitHub sync. Export to GitHub should also be fixed on previously created tasks.
-* Weâve decreased the number of failure cases by 2/3
+- Updated our limits to 60 tasks per day, 5 concurrent.
+- We substantially improved the reliability of the GitHub sync. Export to GitHub should also be fixed on previously created tasks.
+- Weâve decreased the number of failure cases by 2/3
 
 Learn more [about usage limits.](./../usage-limits)
 
@@ -46,9 +47,9 @@ Weâve been heads down improving stability and fixing bugsâbig and smal
 
 **Hereâs whatâs fixed:**
 
-* Upgraded our queuing system and added more compute to reduce wait times during peak usage
-* Publish Branch button is now part of the summary UI in the activity feed so itâs easier to find
-* Bug vixes for task status and mobile
+- Upgraded our queuing system and added more compute to reduce wait times during peak usage
+- Publish Branch button is now part of the summary UI in the activity feed so itâs easier to find
+- Bug vixes for task status and mobile
 
 [Learn more](https://jules.google/docs/code/#pushing-to-github) about how to publish a branch on GitHub.
 
@@ -64,11 +65,11 @@ Once you give Jules a task, it spins up a fresh dev environment in a VM, install
 
 **What Jules can do today**
 
-* Fix bugs with test verified patches
-* Handle version bumps and dependency upgrades
-* Perform scoped code transformations
-* Migrate code across languages or frameworks
-* Ship isolated, scoped, features
-* Open PRs with runnable code and test results
+- Fix bugs with test verified patches
+- Handle version bumps and dependency upgrades
+- Perform scoped code transformations
+- Migrate code across languages or frameworks
+- Ship isolated, scoped, features
+- Open PRs with runnable code and test results
 
 [Get started with the Jules documentation](/), and visit [jules.google.com](https://jules.google.com) to run your first Jules task.

@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Scaling Laws for Robust Comparison of Open Foundation Language-Vision Models and Datasets
 - **source**: https://arxiv.org/abs/2506.04598
 - **author**: Marianna Nezhurina et al.
@@ -8,10 +9,12 @@
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
 ## 要約
+
 オープンデータセット上でCLIPとMaMMUTを訓練し、密なスケール測定から得られるスケーリング則を用いてモデルとデータセットを比較する手法を提示する。小規模計算ではCLIPが優位だが、計算量が増えるとMaMMUTが優位となり、約10^10～10^11 GFLOPSで両者の性能が逆転することを明らかにした。DataComp、DFN、Re-LAIONという三つのデータセットで同様の傾向が確認され、特にDFNが分類と検索の両面で最も高いスケーラビリティを示す。さらに、一定学習率スケジュールでも98%の計算削減で同様の結論を得られることを示し、スケーリング則に基づく比較が少数のスケールだけから得られる誤解を避ける上で有用であると結論づけている。すべての中間チェックポイントとopenMaMMUT-L/14モデルを公開し、再現性のあるオープンな基盤モデルの構築を促進する。
 
 ## 本文
-arXiv:2506.04598v1  [cs.LG]  5 Jun 2025Scaling Laws for Robust Comparison of Open
+
+arXiv:2506.04598v1 [cs.LG] 5 Jun 2025Scaling Laws for Robust Comparison of Open
 Foundation Language-Vision Models and Datasets
 Marianna Nezhurina1,2,5§∗Tomer Porian1,2,5∗Giovanni Pucceti3Tommie Kerssies1,4
 Romain Beaumont1Mehdi Cherti1,2,5§°∗Jenia Jitsev1,2,5°∗
@@ -283,7 +286,7 @@ Compute C [GFLOPs]100
 MSCOCO Image Retrival R@5 [Error Rate]
 CLIP: 56.57*(x+exp(18.43))0.233+0.22
 MAMMUT: 122.94*(x+exp(19.13))0.264+0.21
- (b) MS-COCO image R@5
+(b) MS-COCO image R@5
 Figure 1: Scaling on DataComp-1.4B. Comparison of CLIP and MaMMUT via scaling laws on
 DataComp-1.4B. Error rate on downstream tasks is plotted against compute. MaMMUT outperforms
 CLIP in terms of scalability, indicated by crossing scaling law fit lines, where MaMMUT takes over
@@ -305,7 +308,7 @@ Compute C [GFLOPs]100
 MSCOCO Image Retrival R@5 [Error Rate]
 CLIP: 41.22*(x+exp(18.03))0.219+0.21
 MAMMUT: 126.81*(x+exp(19.15))0.264+0.20
- (b) MS-COCO image R@5
+(b) MS-COCO image R@5
 Figure 2: Scaling on Re-LAION-1.4B. Comparison of CLIP and MaMMUT via scaling laws on
 Re-LAION-1.4B. Error rate on downstream tasks is plotted against compute. MaMMUT outperforms
 CLIP in terms of scalability, indicated by crossing scaling law fit lines, where MaMMUT takes over
@@ -346,7 +349,7 @@ Compute C [GFLOPs]100
 MSCOCO Image Retrival R@5 [Error Rate]
 CLIP: 1087.58*(x+exp(18.70))0.396+0.33
 MAMMUT: 519.92*(x+exp(19.25))0.34+0.26
- (b) MS-COCO image R@5
+(b) MS-COCO image R@5
 Figure 3: Scaling on DFN-1.4B. Comparison of CLIP and MaMMUT via scaling laws on DFN-1.4B.
 Error rate on downstream tasks is plotted against compute. MaMMUT outperforms CLIP in terms
 of scalability, indicated by crossing scaling law fit lines, where MaMMUT takes over CLIP in
@@ -555,7 +558,7 @@ ImageNet1k 0-shot [Error Rate]
 CLIP: 54.68*(x+exp(18.21))0.227+0.14
 COCA: 87.11*(x+exp(19.44))0.236+0.11
 MAMMUT: 218.02*(x+exp(19.41))0.285+0.14
- (b) MaMMUT vs CoCa vs CLIP on DataComp-
+(b) MaMMUT vs CoCa vs CLIP on DataComp-
 1.4B
 Figure 9: Scaling laws for ImageNet-1k 0-shot classification, comparing SigLIP ( left) and CoCa
 (right ) with standard CLIP and MaMMUT using open DataComp-1.4B dataset. SigLIP shows no
@@ -587,970 +590,967 @@ ImageNet robustness set 0-shot classification performance for both openMaMMUT an
 (Fig. 12). For all of these tasks we see the same trend - openMaMMUT is stronger scalable than
 openCLIP and has higher performance given the same compute at larger compute scales. This is also
 valid for the important robustness metrics that reflects out-of-distribution generalization (Fig. 12)
+
 - openMaMMUT shows stronger scalable robustness and outperforms openCLIP in robustness at
-larger compute scales.
-Scaling law for fine-tuning error on segmentation dense prediction task For further comparison
-evidence, we derive a scaling law (Eq. 1) for ADE20K segmentation error ( 1−mIoU ) after fine-tuning
-10
-107108109101010111012
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-DataComp Eval Suite 0-shot [Error Rate]
-CLIP: 18.19*(x+exp(17.27))0.179+0.14
-MAMMUT: 19.10*(x+exp(18.04))0.169+0.07
-Figure 11: Scaling law on DataComp evaluation suite (average over 35 tasks, 0-shot classification),
-openCLIP vs. openMaMMUT comparison on DataComp-1.4B
-107108109101010111012
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-ImageNet1k-V2 [Error Rate]
-CLIP: 27.24*(x+exp(18.41))0.188+0.15
-MAMMUT: 19.72*(x+exp(18.99))0.158+0.02
-(a) ImageNet V2
-107108109101010111012
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-ImageNet1k-Robustness [Error Rate]
-CLIP: 13.47*(x+exp(18.94))0.138+0.00
-MAMMUT: 31.69*(x+exp(20.14))0.172+0.00
- (b) ImageNet Robustness
-Figure 12: Scaling laws for ImageNet-v2 (left) and ImageNet robustness set (right, averaged perfor-
-mance across 5 datasets ImageNet-v2[ 27], ImageNet-R[ 28], ImageNet-Sketch[ 30], ObjectNet[ 31],
-and ImageNet-A[ 29]), 0-shot classification for openCLIP and openMaMMUT comparison on
-DataComp-1.4B
-dependent on pre-training compute scale for CLIP and MaMMUT. As shown in Fig. 13, MaMMUT
-again exhibits stronger scaling than CLIP ( α=−0.208vs.−0.354), with an error crossover at
-approximately 109GFLOPs. This is far below the crossover at approximately 1011GFLOPs observed
-for zero-shot ImageNet classification (Fig. 1a), indicating that captioning supervision via fine-tuning
-improves dense prediction already at lower pre-training scales. See more details in Appendix E.
-3.6 Scaling law derivation using constant learning rate scheduler
-We follow [ 44] and show a scaling law derivation based on training with constant learning rate, thus
-saving 98% of compute compared to cosine. We omit points from warmup duration in our derivation,
-to prevent noise in the low-compute part of the scaling law. In Fig. 14 we visualize our results,
-showing the measurements density and in App. Tab. 6 we tabulate the coefficients. Our results further
-support the better scalability of MaMMUT over CLIP, showing consistent trends even when replacing
-learning rate scheduler. Note that crossing point of MaMMUT overtaking CLIP is again consistently
-estimated to be between 1010and1011GFLOPS when using const lr schedule, as also observed for
-cosine schedule and across various datasets.
-3.7 Scaling up following the comparison: OpenMaMMUT-L-14
-OpenMaMMUT-L-14 is a large scale open vision-language foundation model. Training hyperpa-
-rameters can be found in Tab. 4. We used insights from our scaling analysis to guide our choice
-of model and dataset scale. OpenMaMMUT achieves state of the art performance on zero-shot
-11
-107108109101010111012
-Compute C [GFLOPs]5×101
-6×101
-7×101
-8×101
-9×101
-ADE20K Semantic Segmentation [Error Rate]
-CLIP: 17.93*(x+exp(17.49))0.208+0.47
-MAMMUT: 331.17*(x+exp(18.73))0.354+0.50
-Figure 13: Scaling law for semantic segmentation. Downstream error rate (1 – mIoU) of openCLIP
-and openMaMMUT pre-trained on DataComp-1.4B and fine-tuned on ADE20K. MaMMUT shows
-higher performance than CLIP for segmentation at higher scales. Crossing point appears earlier
-around 109GFLOPS, which might be due to fine-tuning used for this task, as opposed to zero-shot
-evaluation applied everywhere else.
-10610710810910101011
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-ImageNet1k 0-shot [Error Rate]
-CLIP: 14.77*(x+exp(16.72))0.168+0.12
-MAMMUT: 1850.29*(x+exp(20.52))0.379+0.20
-(a) ImageNet-1k 0-shot classification
-10610710810910101011
-Compute C [GFLOPs]100
-4×101
-6×101
-MSCOCO Image Retrival R@5 [Error Rate]
-CLIP: 6.69*(x+exp(16.21))0.123+0.09
-MAMMUT: 634.19*(x+exp(20.26))0.335+0.25
- (b) MS-COCO image R@5
-Figure 14: Scaling law fits using constant learning rate scheduler. Comparison of CLIP and
-MaMMUT via scaling laws on DataComp-1.4B. Error rate on downstream tasks is plotted against
-compute. Using constant learning rate scheduler for scaling law derivation reveals the same trend
-as with cosine - MaMMUT outperforms CLIP in terms of scalability, with crossing point again
-consistently found to be between 1010and1011GFLOPS as observed for cosine schedule and across
-various datasets.
-classification and retrieval tasks among similar-sized models trained only on publicly-available data
-(MetaCLIP, DataComp, OpenVision, Tab. 3). It outperforms with 80.3% IN1k accuracy as predicted
-openCLIP pre-trained on same DataComp-1.4B budget of 12.8B ( 79.2%) and even rivals models with
-much larger pre-training compute like SigLIP. OpenMaMMUT represents a highly performant, fully
-reproducible alternative to other models with openly available data and training code . Note that on
-12.8B samples seen scale the performance suffers from high amount of repetitions, and therefore is
-below our prediction of 82% (Tab. 1) that is valid for training on unique samples.
-4 Related work & limitations
-Recent work has investigated the performance of vision-language models such as CLIP [ 7], CoCa
-[16], MaMMUT [ 17], Cap [ 43], SigLIP [ 14], TULIP[ 47] or OpenVision[ 48] at various scales.
-These studies analyze different model sizes and highlight either architectural or dataset innovations;
-however, they do not perform a comprehensive scaling law analysis. Furthermore, the datasets used
-in these works—such as WIT for OpenAI CLIP and WebLI for SigLIP—are closed , severely limiting
-reproducibility and making it impossible to study which of algorithmic or dataset interventions
-12
-ImageNet-1k COCO
-ViT Res. Seq. Model Dataset #Samples val v2 T →I I →T
-L/16 256 256SigLIP [18] WebLI-10B 40B 80.44 73.76 75.26 88.40
-SigLIP 2 [14] WebLI-10B 40B 82.35 76.66 76.84 90.44
-L/14 224 256OpenCLIP [10] LAION-2B 34B 75.24 67.73 70.46 84.30
-CLIP [7] WIT-400M 12.8B 75.54 69.84 59.95 79.56
-MetaCLIP [45] MetaCLIP-2.5B 12.8B 79.19 72.64 71.36 84.94
-EV A-CLIP [46] Merged-2B 4B∗79.75∗72.92∗70.68 85.26
-DFN [20] DFN-2B 13B 81.41∗74.58∗73.19∗86.20∗
-DataComp [19] DataComp-1.4B 12.8B 79.19 72.06 69.86 84.64
-OpenMaMMUT (Ours) DataComp-1.4B 12.8B 80.34 73.78 71.19 85.88
-Table 3: Zero-shot classification (accuracy) and retrieval (R@5) results. DFN used ImageNet/MS-
-COCO-finetuned model for data filtering; EV A-CLIP was initialized from models pre-trained on
-ImageNet. We use bold for best overall results, gray for models involving ImageNet/MS-COCO data
-as training data in pipeline, and underlined for best results without ImageNet/MS-COCO involvement.
-Hyperparameter Value
-Model Architecture mammut-ViT-L-14
-Samples Seen 12.8B
-Warmup Steps 6000
-Global Batch Size 180,224
-Learning Rate 2.5×10−3
-GPU Hours 3.53×104
-Number of NVIDIA A100 GPUs 1024
-Table 4: Training hyperparameters for openMaMMUT-L-14.
-claimed to have beneficial effect on learning used in those studies indeed lead to better model
-performance. Using our procedure, we can check such claims. For instance in Fig. 9, we compare
-open implementations of CoCa and SigLIP to openCLIP and openMaMMUT on DataComp-1.4B,
-finding no significant difference of SigLIP to standard CLIP in model scalability. We also observe
-advantage for MaMMUT over CoCa on same compute budget, while both architectures use the same
-contrastive and captioning loss combination.
-In [49], authors investigate how various language model families compare in terms of their scaling
-behavior. While it offers valuable insights into architectural trends, it does not use for comparison a
-full scaling law framework in the sense of jointly modeling loss or downstream task performance as a
-function of compute and dataset size varied systematically across multiple scales. As accuracy of
-predictions derived from such trends was not measured, it makes it unclear whether observed trends
-for various language model architectures are to be trusted and whether comparison would remain
-valid across various scenarios, which we demonstrate to be the case for scaling law based comparison.
-Preparing grounds for this work, [ 10] derived first reproducible scaling laws for openCLIP using
-LAION datasets and performed comparison between open LAION-400M/5B and closed WIT. The
-work used however only few samples seen scales (3B, 12.8B and 34B), while also going up to scales
-that are prone to strongly diminishing performance due to heavy sample repetition (6x on 12.8B and
-17x on 34B sample seen scales). This affects extrapolations of the scaling law and thus the validity of
-comparisons based on it. Interestingly, in our work using much denser scaling law derivation without
-strong repetitions for higher prediction accuracy, we can confirm the dataset comparison in [ 10] using
-Re-LAION-1.4B, observing same trends for WIT being better on zero-shot classification (Fig. 4)
-while worse on retrieval (Fig. 5), providing further evidence for robustness of scaling law based
-comparison. Another data-centric work responsible for composing open DataComp-1.4B dataset
-[19] used measurements on few selected scales to compare datasets and decide for benefit of various
-dataset interventions. No scaling laws were derived to back up the comparisons, leaving unclear
-whether the observed trends will propagate across larger scales than taken for the comparisons.
-Several works explored the effects of data constraints on scaling laws. Notably, studies investigating
-the scaling law behavior under dataset repetitions for language models [ 38,41] and for CLIP[ 50]
-reported that high repetition factors can lead to heavily diminished performance compared to the
-Pareto front of scaling with unique data samples. Our experiments carefully limit the repetition factor
-13
-to less than 3 ×, minimizing such confounding effects, assuming unique samples or only little sample
-repetition for comparisons to be valid on Pareto front with strong performance scaling.
-Building on these foundations, our work provides a unified and empirically grounded scaling law
-analysis of vision-language models trained on open datasets. We explicitly model performance as
-a function of data and compute [ 8,9], and compare multiple architectures under fully controlled,
-consistent and reproducible settings. Unlike prior work, our approach enables rigorous comparison
-of both data and compute efficiency, ensuring the consistency of the comparison across scales and
-training conditions.
-Limitations. While our work provides a comprehensive analysis for language-vision models such as
-CLIP and MaMMUT trained on large-scale open foundation datasets, it also has several limitations:
-1)We mostly use zero-shot setting for model evaluation (for classification and retrieval tasks), using
-fine-tuning only for segmentation. Linear probing, fine-tuning [ 10] or vision instruction-tuning [ 12]
-of the pre-trained vision encoders can provide further insights into validity and consistency of scaling
-laws based comparison. 2)While open datasets we use have substantial scale - 1.4B unique samples -
-this still limits the ability of derived scaling laws to extrapolate to higher scales, as the effect of sample
-repetition has to be considered when conducting measurements above 1.4B. To test comparison
-validity and scaling law predictions on larger reference scales like 12.8B, larger scale open datasets
-are required. 3)In our study we only looked at standard contrastive loss or contrastive and captioning
-loss objectives and did not incorporate further "loss mixtures" such as masking or diffusion-based
-losses. We also did not derive scaling laws for specific architectural components such as optimal
-number of parameters in text or vision tower, or other important properties of training procedure like
-image input resolution and patch size, or context length in general. In its current form, scaling laws
-based comparison has high computational cost, prohibiting naive incorporation of many factors that
-influence scalability of the training procedure.
-5 Discussion & conclusion
-In this work, we show how open foundation models trained on open datasets can provide grounds
-for systematic learning procedure comparison via scaling law derivation under fully controlled,
-reproducible training conditions. We take as example scenario openCLIP [ 7,22,10] and open-
-MaMMUT based on [ 17] , two important open language-vision models relying either on image-text
-contrastive only or contrastive and captioning loss, trained on three important open reference datasets,
-DataComp-1.4B [ 19], Re-LAION-1.4B [ 21] and DFN-1.4B [ 20]. We show that deriving scaling
-laws gives comparison of model and dataset based on their estimated scalability for wide scale spans
-and for various downstream tasks, aligned on same total pre-training compute. Such comparison
-can be validated by checking consistency of scaling trends in different scenarios. For instance,
-openMaMMUT scalability is stronger than openCLIP both on zero-shot classification and retrieval,
-also showing advantage for a wide scale span on segmentation, and across all three studied datasets
-DataComp-1.4B, Re-LAION-1.4B and DFN-1.4B. Also, inconsistencies are insightful - for instance,
-DataComp-1.4B shows stronger scalability for both openMaMMUT and openCLIP for zero-shot
-classification while being slightly weaker for retrieval. Thus, none of these two datasets is the most
-scalable candidate across all downstream tasks, and scaling advantage there is task dependent. For
-DFN on the other hand, a consistent picture emerges: both openMaMMUT and openCLIP trained
-on DFN show superior performance over other datasets across downstream tasks, allowing to draw
-conclusion favoring DFN over other datasets for pretraining strong and scalable models.
-Comparison via scaling laws offers better protection against misleading conclusions derived from
-comparison of only few selected points, especially when done on small scales only. On smaller
-scales, openCLIP outperforms stronger scalable openMaMMUT that takes over on larger scales.
-Remarkably, we observe the compute scale threshold where openMaMMUT takes over openCLIP
-to be consistently settled between 1010and1011GFLOPS across datasets, zero-shot downstream
-tasks and learning schedules. This gives further evidence for the robustness of scaling law based
-comparison. To properly estimate such crossings, it is crucial to perform dense measurements on
-smaller scales and use fitting routines that allow for accurate extrapolation to larger scales. Efficient
-derivation of accurate scaling laws [ 44,11] for factors affecting the learning procedure is thus an
-important topic for future work.
-14
-In our study, we used open datasets with 1.4B samples. While this is sufficient to demonstrate
-usefulness of scaling law based comparison, more accurate predictions for training at larger scales
-on unique samples require larger datasets. Those are also required to train larger scale models with
-predicted strong capabilities, as too many repetitions on smaller datasets might lead to diminished
-performance [ 41,50], which we see in openMaMMUT L-14 trained on 12.8B samples, staying
-with zero-shot IN1k 80.3% below the predicted 82% (Tab. 1). Deriving scaling law correction for
-diminishing performance due to data repetitions as well as increasing scale of open datasets are
-important directions for future work.
-While we show that robust and reproducible comparison via scaling law derivation is possible, it
-relies crucially on the whole pipeline to be fully open - including dataset composition, training
-itself, and downstream evaluation. We hope that our work will encourage the creation of more open
-artefacts, especially open datasets as those are still scarce [ 42,19,20,21], to enable collaborative and
-reproducible progress towards stronger scalable open foundation models guided by independently
-verifiable and systematic comparison.
-Acknowledgements
-MN, TP, MC and JJ acknowledge funding by the Federal Ministry of Education and Research
-of Germany (BMBF) under grant no. 01IS24085C (OPENHAFM), under the grant 16HPC117K
-(MINERV A) and under the grant no. 01IS22094B (WestAI - AI Service Center West), as well as co-
-funding by EU from EuroHPC Joint Undertaking programm under grant no. 101182737 (MINERV A)
-and from Digital Europe Programme under grant no. 101195233 (openEuroLLM).
-We gratefully acknowledge the Gauss Centre for Supercomputing e.V . for funding this work by
-providing computing time through the John von Neumann Institute for Computing (NIC) on the su-
-percomputer JUWELS Booster at Jülich Supercomputing Centre (JSC), EuroHPC Joint Undertaking
-for computing time and storage on the EuroHPC supercomputer LEONARDO, hosted by CINECA
-(Italy) and the LEONARDO consortium through an EuroHPC Extreme Access grant EHPC-EXT-
-2023E02-068, storage resources on JUST granted and operated by JSC and supported by Helmholtz
-Data Federation (HDF), computing time granted by the JARA and JSC on the supercomputer JU-
-RECA at JSC, and computing time granted on prototype JEDI via JUREAP (JUPITER Early Access
-Programm) grant at JSC.
-Further thanks go for support provided by supercomputing facilities and their teams, especially to
-Damian Alvarez and Mathis Bode from Juelich Supercomputer Center (JSC, Germany) and to Laura
-Morselli from CINECA (Italy).
-We also would like to express gratitude to all the people who are working on making code, models and
-data publicly available, advancing community based research and making research more reproducible.
-Specifically, we would like to thank all the members of the LAION Discord server2community and
-Open- Ψ(Open-Sci) Collective3for providing fruitful ground for scientific exchange and open-source
-development.
-References
-[1]Rishi Bommasani, Drew A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney von
-Arx, Michael S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, et al. On the
-opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258 , 2021.
-[2]Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of
-deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 ,
-2018.
-[3]Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena,
-Yanqi Zhou, Wei Li, and Peter J Liu. Exploring the limits of transfer learning with a unified
-text-to-text transformer. Journal of machine learning research , 21(140):1–67, 2020.
-2https://discord.gg/BZqhreFazY
-3https://discord.gg/GsKh4mBVcv
-15
-[4]Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal,
-Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are
-few-shot learners. Advances in neural information processing systems , 33:1877–1901, 2020.
-[5]David Fan, Shengbang Tong, Jiachen Zhu, Koustuv Sinha, Zhuang Liu, Xinlei Chen, Michael
-Rabbat, Nicolas Ballas, Yann LeCun, Amir Bar, et al. Scaling language-free visual representa-
-tion learning. arXiv preprint arXiv:2504.01017 , 2025.
-[6]Benjamin Elizalde, Soham Deshmukh, Mahmoud Al Ismail, and Huaming Wang. Clap learning
-audio concepts from natural language supervision. In ICASSP 2023-2023 IEEE International
-Conference on Acoustics, Speech and Signal Processing (ICASSP) , pages 1–5. IEEE, 2023.
-[7]Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal,
-Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual
-models from natural language supervision. In International Conference on Machine Learning ,
-pages 8748–8763. PMLR, 2021.
-[8]Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child,
-Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. Scaling laws for neural language
-models. arXiv preprint arXiv:2001.08361 , 2020.
-[9]Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza
-Rutherford, Diego de las Casas, Lisa Anne Hendricks, Johannes Welbl, Aidan Clark, Tom
-Hennigan, Eric Noland, Katherine Millican, George van den Driessche, Bogdan Damoc, Aurelia
-Guy, Simon Osindero, Karen Simonyan, Erich Elsen, Oriol Vinyals, Jack William Rae, and
-Laurent Sifre. An empirical analysis of compute-optimal large language model training. In
-Alice H. Oh, Alekh Agarwal, Danielle Belgrave, and Kyunghyun Cho, editors, Advances in
-Neural Information Processing Systems , 2022.
-[10] Mehdi Cherti, Romain Beaumont, Ross Wightman, Mitchell Wortsman, Gabriel Ilharco, Cade
-Gordon, Christoph Schuhmann, Ludwig Schmidt, and Jenia Jitsev. Reproducible scaling laws
-for contrastive language-image learning. In Proceedings of the IEEE/CVF conference on
-computer vision and pattern recognition , pages 2818–2829, 2023.
-[11] Margaret Li, Sneha Kudugunta, and Luke Zettlemoyer. (mis)fitting scaling laws: A survey of
-scaling law fitting techniques in deep learning. In The Thirteenth International Conference on
-Learning Representations , 2025.
-[12] Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. Visual instruction tuning. Advances
-in neural information processing systems , 36:34892–34916, 2023.
-[13] Zhe Chen, Jiannan Wu, Wenhai Wang, Weijie Su, Guo Chen, Sen Xing, Muyan Zhong, Qinglong
-Zhang, Xizhou Zhu, Lewei Lu, et al. Internvl: Scaling up vision foundation models and aligning
-for generic visual-linguistic tasks. In Proceedings of the IEEE/CVF conference on computer
-vision and pattern recognition , pages 24185–24198, 2024.
-[14] Michael Tschannen, Alexey Gritsenko, Xiao Wang, Muhammad Ferjad Naeem, Ibrahim Alab-
-dulmohsin, Nikhil Parthasarathy, Talfan Evans, Lucas Beyer, Ye Xia, Basil Mustafa, et al. Siglip
-2: Multilingual vision-language encoders with improved semantic understanding, localization,
-and dense features. arXiv preprint arXiv:2502.14786 , 2025.
-[15] Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe
-Penna, and Robin Rombach. Sdxl: Improving latent diffusion models for high-resolution image
-synthesis. arXiv preprint arXiv:2307.01952 , 2023.
-[16] Jiahui Yu, Zirui Wang, Vijay Vasudevan, Legg Yeung, Mojtaba Seyedhosseini, and Yonghui
-Wu. Coca: Contrastive captioners are image-text foundation models. arXiv preprint
-arXiv:2205.01917 , 2022.
-[17] Weicheng Kuo, AJ Piergiovanni, Dahun Kim, xiyang luo, Benjamin Caine, Wei Li, Abhijit
-Ogale, Luowei Zhou, Andrew M. Dai, Zhifeng Chen, Claire Cui, and Anelia Angelova. MaM-
-MUT: A simple architecture for joint learning for multimodal tasks. Transactions on Machine
-Learning Research , 2023.
-16
-[18] Xiaohua Zhai, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. Sigmoid loss for
-language image pre-training. In Proceedings of the IEEE/CVF international conference on
-computer vision , pages 11975–11986, 2023.
-[19] Samir Yitzhak Gadre, Gabriel Ilharco, Alex Fang, Jonathan Hayase, Georgios Smyrnis, Thao
-Nguyen, Ryan Marten, Mitchell Wortsman, Dhruba Ghosh, Jieyu Zhang, et al. Datacomp:
-In search of the next generation of multimodal datasets. Advances in Neural Information
-Processing Systems , 36:27092–27112, 2023.
-[20] Alex Fang, Albin Madappally Jose, Amit Jain, Ludwig Schmidt, Alexander Toshev, and
-Vaishaal Shankar. Data filtering networks. In The Twelfth International Conference on Learning
-Representations , 2024.
-[21] LAION. Releasing re-laion 5b: transparent iteration on laion-5b with additional safety fixes.
-https://laion.ai/blog/relaion-5b/ , 2024. Accessed: 30 aug, 2024.
-[22] G. Ilharco, M. Wortsman, N. Carlini, R. Taori, A. Dave, V . Shankar, H. Namkoong, J. Miller,
-H. Hajishirzi, A. Farhadi, and L. Schmidt. Openclip. 2021.
-[23] Aaron van den Oord, Yazhe Li, and Oriol Vinyals. Representation learning with contrastive
-predictive coding. arXiv preprint arXiv:1807.03748 , 2018.
-[24] Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. arXiv preprint
-arXiv:1711.05101 , 2017.
-[25] Melanie Mitchell. How do we know how smart ai systems are? Science , 381(6654):eadj5957,
-2023.
-[26] J. Deng, W. Dong, R. Socher, L. Li, Kai Li, and Li Fei-Fei. Imagenet: A large-scale hierarchical
-image database. In Proc. IEEE Conf. Computer Vision and Pattern Recognition , pages 248–255,
-June 2009.
-[27] Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar. Do imagenet
-classifiers generalize to imagenet? In International conference on machine learning , pages
-5389–5400. PMLR, 2019.
-[28] Dan Hendrycks, Steven Basart, Norman Mu, Saurav Kadavath, Frank Wang, Evan Dorundo,
-Rahul Desai, Tyler Zhu, Samyak Parajuli, Mike Guo, Dawn Song, Jacob Steinhardt, and Justin
-Gilmer. The many faces of robustness: A critical analysis of out-of-distribution generalization.
-International Conference on Computer Vision (ICCV) , 2021. https://arxiv.org/abs/
-2006.16241 .
-[29] Dan Hendrycks, Kevin Zhao, Steven Basart, Jacob Steinhardt, and Dawn Song. Natural
-adversarial examples. Conference on Computer Vision and Pattern Recognition (CVPR) , 2021.
-https://arxiv.org/abs/1907.07174 .
-[30] Haohan Wang, Songwei Ge, Zachary Lipton, and Eric P Xing. Learning robust global represen-
-tations by penalizing local predictive power. In Advances in Neural Information Processing
-Systems (NeurIPS) , 2019. https://arxiv.org/abs/1905.13549 .
-[31] Andrei Barbu, David Mayo, Julian Alverio, William Luo, Christopher Wang, Dan Gutfreund,
-Josh Tenenbaum, and Boris Katz. Objectnet: A large-scale bias-controlled dataset for pushing
-the limits of object recognition models. In Advances in Neural Information Processing Systems
-(NeurIPS) , 2019.
-[32] Romain Beaumont Mehdi Cherti et al. Clip benchmark. https://github.com/LAION-AI/
-CLIP_benchmark , 2023.
-[33] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr
-Dollár, and C Lawrence Zitnick. Microsoft coco: Common objects in context. In European
-conference on computer vision , pages 740–755. Springer, 2014.
-[34] Bolei Zhou, Hang Zhao, Xavier Puig, Sanja Fidler, Adela Barriuso, and Antonio Torralba.
-Scene Parsing through ADE20K Dataset. In Proceedings of the IEEE/CVF Conference on
-Computer Vision and Pattern Recognition (CVPR) , pages 5122–5130, 2017.
-17
-[35] Tommie Kerssies, Daan De Geus, and Gijs Dubbelman. How to Benchmark Vision Foundation
-Models for Semantic Segmentation? In Proceedings of the IEEE/CVF Conference on Computer
-Vision and Pattern Recognition (CVPR) Workshops , pages 1162–1171, 2024.
-[36] Tommie Kerssies, Niccolò Cavagnero, Alexander Hermans, Narges Norouzi, Giuseppe Averta,
-Bastian Leibe, Gijs Dubbelman, and Daan de Geus. Your ViT is Secretly an Image Segmen-
-tation Model. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
-Recognition (CVPR) , 2025.
-[37] Xiaohua Zhai, Alexander Kolesnikov, Neil Houlsby, and Lucas Beyer. Scaling vision transform-
-ers. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition ,
-pages 12104–12113, 2022.
-[38] Tom Henighan, Jared Kaplan, Mor Katz, Mark Chen, Christopher Hesse, Jacob Jackson,
-Heewoo Jun, Tom B Brown, Prafulla Dhariwal, Scott Gray, et al. Scaling laws for autoregressive
-generative modeling. arXiv preprint arXiv:2010.14701 , 2020.
-[39] Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza
-Rutherford, Diego de Las Casas, Lisa Anne Hendricks, Johannes Welbl, Aidan Clark, et al.
-Training compute-optimal large language models. arXiv preprint arXiv:2203.15556 , 2022.
-[40] Stephan Borzsony, Donald Kossmann, and Konrad Stocker. The skyline operator. In Proceedings
-17th international conference on data engineering , pages 421–430. IEEE, 2001.
-[41] Niklas Muennighoff, Alexander Rush, Boaz Barak, Teven Le Scao, Nouamane Tazi, Aleksandra
-Piktus, Sampo Pyysalo, Thomas Wolf, and Colin A Raffel. Scaling data-constrained language
-models. Advances in Neural Information Processing Systems , 36:50358–50376, 2023.
-[42] Christoph Schuhmann, Romain Beaumont, Richard Vencu, Cade W Gordon, Ross Wightman,
-Mehdi Cherti, Theo Coombes, Aarush Katta, Clayton Mullis, Mitchell Wortsman, Patrick
-Schramowski, Srivatsa R Kundurthy, Katherine Crowson, Ludwig Schmidt, Robert Kaczmar-
-czyk, and Jenia Jitsev. LAION-5B: An open large-scale dataset for training next generation
-image-text models. In Thirty-sixth Conference on Neural Information Processing Systems
-(NeurIPS), Datasets and Benchmarks Track , 2022.
-[43] Michael Tschannen, Manoj Kumar, Andreas Steiner, Xiaohua Zhai, Neil Houlsby, and Lucas
-Beyer. Image captioners are scalable vision learners too. Advances in Neural Information
-Processing Systems , 36:46830–46855, 2023.
-[44] Tomer Porian, Mitchell Wortsman, Jenia Jitsev, Ludwig Schmidt, and Yair Carmon. Resolving
-discrepancies in compute-optimal scaling of language models. Advances in Neural Information
-Processing Systems , 37:100535–100570, 2024.
-[45] Hu Xu, Saining Xie, Xiaoqing Ellen Tan, Po-Yao Huang, Russell Howes, Vasu Sharma, Shang-
-Wen Li, Gargi Ghosh, Luke Zettlemoyer, and Christoph Feichtenhofer. Demystifying clip data.
-arXiv preprint arXiv:2309.16671 , 2023.
-[46] Quan Sun, Yuxin Fang, Ledell Wu, Xinlong Wang, and Yue Cao. Eva-clip: Improved training
-techniques for clip at scale. arXiv preprint arXiv:2303.15389 , 2023.
-[47] Zineng Tang, Long Lian, Seun Eisape, XuDong Wang, Roei Herzig, Adam Yala, Alane Suhr,
-Trevor Darrell, and David M Chan. Tulip: Towards unified language-image pretraining. arXiv
-preprint arXiv:2503.15485 , 2025.
-[48] Xianhang Li, Yanqing Liu, Haoqin Tu, Hongru Zhu, and Cihang Xie. Openvision: A fully-open,
-cost-effective family of advanced vision encoders for multimodal learning. arXiv preprint
-arXiv:2505.04601 , 2025.
-[49] Yi Tay, Mostafa Dehghani, Samira Abnar, Hyung Won Chung, William Fedus, Jinfeng Rao,
-Sharan Narang, Vinh Q Tran, Dani Yogatama, and Donald Metzler. Scaling laws vs model
-architectures: How does inductive bias influence scaling? arXiv preprint arXiv:2207.10551 ,
-2022.
-18
-[50] Sachin Goyal, Pratyush Maini, Zachary C Lipton, Aditi Raghunathan, and J Zico Kolter.
-Scaling laws for data filtering–data curation cannot be compute agnostic. In Proceedings of
-the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 22702–22711,
-2024.
-19
-Appendix: Scaling Laws for Robust Comparison of Open
-Foundation Language-Vision Models and Datasets
-A Estimated parameters for scaling law fits
-To complement main results for scaling law based comparison of CLIP and MaMMUT (Sec. 3.1,
-Fig. 1, 2), we provide exact numbers of scaling law fits for both openCLIP and openMaMMUT
-measurements on zero shot IN1K classification and MS-COCO retrieval downstream tasks (Tab. 5a).
-Estimated values of exponents in power laws alone do not tell which models are more scalable, as
-we use here the functional form with additive terms for both irreducible error and non-zero random
-model performance (Eq. 1). Apart from plot visualization attesting Mammut stronger scalability than
-CLIP (Fig. 1, 2), scalability can be also compared via computing derivatives of the obtained fit in
-selected compute points. Derivatives that have larger absolute values stand for larger slope (bigger
-rate of decrease) and thus indicate stronger scalability. In Tab. 5b we show derivatives computed for
-scaling law fits, obtaining larger derivatives for openMaMMUT than for openCLIP, confirming again
-stronger scalability for MaMMUT over CLIP.
-B More details on scaling law derivation experiments
-Compute budget and energy consumption for the experiments. In Tab. 7, we provide overview
-over the GPU hours and energy spent for scaling law derivation experiments. We provide separate
-calculation for different learning rate schedule types (cosine, constant learning rate and constant
-learning rate + cooldown), for different datasets (Re-LAION-1.4B and DataComp-1.4B) and for
-different GPU types (A100 and H100). Large fraction of resources was spent for reference cosine
-schedule based scaling law derivation on DataComp-1.4B. We see that despite higher density of
-possible measurements, const based schedules use substantially less compute.
-Detailed versions of scaling law plots. In the more detailed versions of scaling law plots (Fig. 15
-and 16) we see the separate scaling curves for each model size (cooler colors indicate smaller models).
-Thebigger models require larger sample seen scale to unfold their performance advantage, with
-the performance lagging behind smaller scale models on same smaller compute scale, where larger
-models suffer from sample seen scale bottleneck. On the other hand, for the higher compute and
-ModelImageNet-1k MS-COCO Retrieval
-Ac Bc αc Ec Ac Bc αc Ec
-openCLIP 57.862 18.391 -0.227 0.111 53.913 18.413 -0.230 0.216
-openMaMMUT 79.970 19.111 -0.233 0.076 119.751 19.122 -0.263 0.212
-(a) Fitted scaling law parameters (Ac, Bc, αc, Ec)for error rate on 0-shot ImageNet-1k classification and
-MS-COCO retrieval tasks, rounded to three decimal places for models trained on DataComp-1.4B.
-C0GFLOPs IN-1k Err. Rate |dL(C0)/dC| COCO R@5 Err. Rate |dL(C0)/dC|
-CLIP
-5.00e+10 9.85e-13 8.44e-13
-1.00e+11 4.21e-13 3.60e-13
-5.00e+11 5.86e-14 4.95e-14
-Average: IN-1k: 4.882e-13, COCO: 4.177e-13
-MaMMUT
-5.00e+10 1.17e-12 9.65e-13
-1.00e+11 4.92e-13 4.03e-13
-5.00e+11 6.54e-14 5.28e-14
-Average: IN-1k: 5.758e-13, COCO: 4.702e-13
-(b) Numerical values of derivatives of fitted functions with respect to compute, in points 5·1010,1·1011,5·1011
-GFLOPs for both ImageNet-1k error rate and COCO retrieval error rate (1-R@5). MaMMUT consistently
-exhibits higher values of |dL(C0)/dC|which corresponds to higher decrease rate and stronger scalability.
-Table 5: Estimated parameters for main scaling law fits for 0-shot ImageNet-1k classification and
-MS-COCO retrieval, used for openCLIP and openMaMMUT comparison in Fig. 1
-20
-ModelImageNet-1k MS-COCO Retrieval
-Ac Bc αc Ec Ac Bc αc Ec
-openCLIP 14.769 16.725 -0.168 0.121 6.686 16.209 -0.123 0.089
-openMaMMUT 1850.286 20.521 -0.379 0.198 634.190 20.256 -0.335 0.249
-Table 6: Fitted scaling law parameters (Ac, Bc, αc, Ec)for error rate on 0-shot ImageNet-1k clas-
-sification and MS-COCO retrieval tasks, rounded to three decimal places for models trained on
-DataComp-1.4B with constant learning rate scheduler.
-LR Scheduler GPU Dataset MWh GPU Hours
-NVIDIA A100
-cosine NVIDIA-A100 DataComp-1.4B 2.59e+05 1.03e+06
-const-cooldown NVIDIA-A100 DataComp-1.4B 1.43e+05 5.72e+05
-const NVIDIA-A100 DataComp-1.4B 9.30e+04 3.72e+05
-cosine NVIDIA-A100 Re-LAION-1.4B 3.91e+04 1.56e+05
-const-cooldown NVIDIA-A100 Re-LAION-1.4B 1.70e+04 6.79e+04
-const NVIDIA-A100 Re-LAION-1.4B 4.61e+03 1.84e+04
-A100 subtotal: 5.56e+05 2.22e+06
-NVIDIA H100
-cosine NVIDIA-H100 DataComp-1.4B 2.09e+04 2.98e+04
-cosine NVIDIA-H100 Re-LAION-1.4B 1.06e+04 1.52e+04
-H100 subtotal: 3.15e+04 4.50e+04
-Total: 5.87e+05 2.27e+06
-Table 7: Total GPU compute and energy consumption for scaling law derivation experiments.
-samples seen scales, smaller models tend to saturate , indicating a bottleneck in model number of
-parameters.
-C Evaluating scaling law fit quality
-To validate our scaling law fits, we use a threshold Cthreshold to up which we take the data for the fit.
-We compute RMSE for the held-out points to get a measure of how good each fit is. We compare two
-Cthreshold values (see Tab. 8 and Fig. 17 for DataComp-1.4B dataset). We see that both RMSE and
-uncertainty (the width of the confidence intervals) decreases as we take more the more points for the
-fit.
-We also compare different functional forms that can be used to fit the data: model with double
-saturation ( L(C) =Ac·(C+Bc)−αc+Ec) and without a term for irreducible error Ec:
-L(C) =Ac·(C+Bc)−αc(3)
-We choose first Cthreshold = 2.5·1011GFLOPs and the second Cthreshold = 5·1011GFLOPs. As we
-see from Tab. 8 and Tab. 9 for both values of Cthreshold double saturation form (Eq. 1) has consistently
-lower RMSE than the function without irreducible error. RMSE on held out points provides thus a
-way to select among various scaling law fits the candidate that provides better prediction accuracy for
-unseen scales, which in our case is the fit obtained via double saturation functional form (Eq. 1).
-We see that the same trend of reducing confidence intervals and thus reducing uncertainty of the
-predictions when taking more points for the scaling law fit holds also for other tasks like MS-
-COCO image retrieval and other pre-training dataset Re-LAION-1.4B (see Fig. 17 and Fig. 18
-for comparison between ImageNet-1k classification and MS-COCO retrieval and Figs. 19, 20 for
-Re-LAION-1.4B).
-When comparing predictions with actually measured downstream task performance, we see that
-accuracy for the held-out points is high (Tab. 8). For instance, we measure for 3B samples seen scale
-on held-out points for openMaMMUT ViT L-14 zero-shot IN1K 0.784, with prediction 0.777 and 95%
-confidence interval (0.771, 0.783), and for openMaMMUT ViT H-14 0.795, with prediction 0.801
-21
-107108109101010111012
-Compute C [GFLOPs]100
-2×101
-3×101
-4×101
-6×101
-ImageNet1k 0-shot [Error Rate]
-ViT-S-14
-ViT-S-16
-ViT-S-32
-ViT-M-16
-ViT-M-32
-ViT-B-14
-ViT-B-16-text-plus
-ViT-B-32
-ViT-L-14
-ViT-L-16
-ViT-L-32
-ViT-H-14
-ViT-H-16
-ViT-H-32
-CLIP: 57.86*(x+exp(18.39))0.227+0.11
-Figure 15: Detailed version of the scaling law fit for ImageNet 0-shot classification error rate
-for DataComp-1.4B for openCLIP. Cooler colors indicate smaller models. Bigger models are
-bottlenecked by samples seen scale (require larger samples seen than the smaller ones) and smaller
-models saturate with increased data and compute scale (over-training regime). Pareto front is
-composed by taking for each compute budget the points corresponding to models reaching minimal
-error rate for the given compute. Fit is performed through points on Pareto front.
-108109101010111012
-Compute C [GFLOPs]100
-2×101
-3×101
-4×101
-6×101
-ImageNet1k 0-shot [Error Rate]
-mammut_ViT-S-14
-mammut_ViT-S-16
-mammut_ViT-S-32
-mammut_ViT-M-14
-mammut_ViT-M-16
-mammut_ViT-M-32
-mammut_ViT-B-14
-mammut_ViT-B-16
-mammut_ViT-B-32
-mammut_ViT-L-14
-mammut_ViT-L-16
-mammut_ViT-L-32
-mammut_ViT-H-14
-mammut_ViT-H-16
-mammut_ViT-H-32
-MAMMUT: 125.36*(x+exp(19.29))0.256+0.10
-Figure 16: Detailed version of the scaling law fit for ImageNet 0-shot classification error rate
-for DataComp-1.4B for OpenMaMMUT. Cooler colors indicate smaller models. Bigger models
-are bottlenecked by samples seen scale (require larger samples seen than the smaller ones) and
-smaller models saturate with increased data and compute scale (overtraining regime). Pareto front is
-composed by taking for each compute budget the points corresponding to models reaching minimal
-error rate for the given compute. Fit is performed through points on Pareto front.
-22
-107108109101010111012
-Compute C [GFLOPs]100
-2×101
-3×101
-4×101
-6×101
-ImageNet1k 0-shot [Error Rate]
-CLIP: 81.05*(x+exp(18.49))0.246+0.14
-MAMMUT: 120.32*(x+exp(19.22))0.255+0.11
-(a) Scaling law fit for
-ImageNet 0-shot classification error rate for
-DataComp-1.4B
-(Cthreshold = 2.5·1011GFLOPs)
-107108109101010111012
-Compute C [GFLOPs]100
-2×101
-3×101
-4×101
-6×101
-ImageNet1k 0-shot [Error Rate]
-CLIP: 63.34*(x+exp(18.42))0.232+0.12
-MAMMUT: 102.23*(x+exp(19.18))0.246+0.10
-(b) Scaling law fit for
-ImageNet 0-shot classification error rate
-for DataComp-1.4B using more points ( Cthreshold =
-5·1011GFLOPs)
-Figure 17: Comparison of the fit quality for ImageNet-1k 0-shot classification error rate for open-
-MaMMUT and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained on
-DataComp-1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands around
-each curve).
-107108109101010111012
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-MSCOCO Image Retrival R@5 [Error Rate]
-CLIP: 57.46*(x+exp(18.43))0.234+0.22
-MAMMUT: 228.63*(x+exp(19.26))0.297+0.25
-(a) Scaling law fit for
-MS-COCO image retrieval error rate (1-Recall@5)
-for DataComp-1.4B
-(Cthreshold = 2.5·1011GFLOPs)
-107108109101010111012
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-MSCOCO Image Retrival R@5 [Error Rate]
-CLIP: 58.58*(x+exp(18.44))0.235+0.22
-MAMMUT: 174.92*(x+exp(19.21))0.283+0.23
-(b) Scaling law fit for
-MS-COCO image retrievat error rate (1-Recall@5)
-for DataComp-1.4B using more points
-(Cthreshold = 5·1011GFLOPs)
-Figure 18: Comparison of the fit quality for MS-COCO image retrieval error rate for openMaMMUT
-and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained on DataComp-
-1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands around each curve).
-23
-107108109101010111012
-Compute C [GFLOPs]100
-2×101
-3×101
-4×101
-6×101
-ImageNet1k 0-shot [Error Rate]
-CLIP: 81.05*(x+exp(18.49))0.246+0.14
-MAMMUT: 120.32*(x+exp(19.22))0.255+0.11
-(a) Scaling law fit for
-ImageNet 0-shot classification Error rate
-for Re-LAION-1.4B
-(Cthreshold = 2.5·1011GFLOPs)
-107108109101010111012
-Compute C [GFLOPs]100
-2×101
-3×101
-4×101
-6×101
-ImageNet1k 0-shot [Error Rate]
-CLIP: 63.34*(x+exp(18.42))0.232+0.12
-MAMMUT: 102.23*(x+exp(19.18))0.246+0.10
-(b) Scaling law fit for
-ImageNet 0-shot classification Error rate
-for Re-LAION-1.4B using more points
-(Cthreshold = 5·1011GFLOPs)
-Figure 19: Comparison of the fit quality for ImageNet-1k 0-shot classification error rate for open-
-MaMMUT and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained
-on Re-LAION-1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands
-around each curve).
-107108109101010111012
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-MSCOCO Image Retrival R@5 [Error Rate]
-CLIP: 57.46*(x+exp(18.43))0.234+0.22
-MAMMUT: 228.63*(x+exp(19.26))0.297+0.25
-(a) Scaling law fit for
-MS-COCO image retrieval error rate (1-Recall@5)
-for Re-LAION-1.4B
-(Cthreshold = 2.5·1011GFLOPs)
-107108109101010111012
-Compute C [GFLOPs]100
-3×101
-4×101
-6×101
-MSCOCO Image Retrival R@5 [Error Rate]
-CLIP: 58.58*(x+exp(18.44))0.235+0.22
-MAMMUT: 174.92*(x+exp(19.21))0.283+0.23
-(b) Scaling law fit for
-MS-COCO image retrieval error rate (1-Recall@5)
-for Re-LAION-1.4B
-(Cthreshold = 5·1011GFLOPs)
-Figure 20: Comparison of the fit quality for MS-COCO image retrieval error rate for openMaMMUT
-and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained on Re-
-LAION-1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands around
-each curve).
-24
-and 95% CI of (0.793, 0.809). Similar accuracy is observed for openCLIP, with actual measurements
-falling within predicted confidence intervals. The derived scaling laws provide thus solid ground
-for comparison on unseen scales that have low amount of repetitions (less than 3x in case of 3B
-samples seen scale when training on DataComp-1.4B or Re-LAION-1.4).
-As already discussed in Sec. 3.7, the prediction for performance of MaMMUT L-14 on the larger
-12.8B samples seen scale (Tab. 1, zero-shot IN1K 0.820, 95% CI (0.815, 0.826)) is therefore
-only made for low repetition scenario, and to validate it, dataset size larger than currently used
-1.4B samples (which gives around 9x repetitions for 12.8B samples seen scale) is required. The
-measured 0.803 for openMaMMUT L-14 on 12.8B (Tab. 3) is thus expectedly below the prediction,
-as performance is diminished due to high amount of repetitions, in line with observations by previous
-works [41, 50].
-Model Samples Seen GFLOPsIN1k
-0-shot accPredicted IN1k
-0-shot acc (95% CI)Predicted (more points) IN1k
-0-shot acc (95% CI)
-CLIP
-ViT-L-16 3.07e+9 4.07e+11 0.761 0.747 (0.738, 0.755) –
-ViT-L-14 3.07e+9 5.18e+11 0.766 0.753 (0.744, 0.762) 0.759 (0.751, 0.766)
-ViT-H-14 3.07e+9 1.14e+12 0.784 0.773 (0.761, 0.784) 0.779 (0.770, 0.789)
-RMSE: 1.26e-02 RMSE (more points): 5.90e-03
-MaMMUT
-mammut-ViT-L-14 1.28e+9 2.59e+11 0.749 0.743 (0.737, 0.748) –
-mammut-ViT-L-14 3.07e+9 6.22e+11 0.784 0.773 (0.765, 0.781) 0.777 (0.771, 0.783)
-mammut-ViT-H-14 3.07e+9 1.43e+12 0.794 0.797 (0.787, 0.807) 0.801 (0.793, 0.809)
-RMSE: 7.57e-03 RMSE (more points): 7.57e-03
-Table 8: Predictions for different values of Cthreshold for the functional form with double saturation
-(Eq. 1). Scaling law derivation on DataComp-1.4B. The last column shows updated predictions made
-after additional data points. Both confidence interval and RMSE decrease as we take more points.
-RMSE is consistently lower than RMSE measured for functional form without irreducible error (Tab.
-9).
-Model Samples Seen GFLOPsIN1k
-0-shot accPredicted IN1k
-0-shot acc (95% CI)Predicted (more points) IN1k
-0-shot acc (95% CI)
-CLIP
-ViT-L-16 3.07e+9 4.07e+11 0.761 0.769 (0.764, 0.773) –
-ViT-L-14 3.07e+9 5.18e+11 0.766 0.778 (0.774, 0.783) 0.777 (0.773, 0.782)
-ViT-H-14 3.07e+9 1.14e+12 0.784 0.806 (0.802, 0.811) 0.805 (0.801, 0.809)
-RMSE: 1.55e-02 RMSE (more points): 1.72e-02
-MaMMUT
-mammut-ViT-L-14 1.28e+9 2.59e+11 0.749 0.757 (0.754, 0.760) –
-mammut-ViT-L-14 3.07e+9 6.22e+11 0.784 0.795 (0.792, 0.798) 0.794 (0.791, 0.796)
-mammut-ViT-H-14 3.07e+9 1.43e+12 0.794 0.825 (0.822, 0.828) 0.824 (0.822, 0.827)
-RMSE: 1.98e-02 RMSE (more points): 2.26e-02
-Table 9: Predictions for different values of Cthreshold for the functional form without irreducible error
-(Eq. 3). Scaling law derivation on DataComp-1.4B. The last column shows updated predictions made
-after additional data points. Both confidence interval and RMSE decrease as we take more points.
-RMSE is consistently higher than RMSE measured for functional form with irreducible error (Tab.
-8).
-D Additional training details
-In the Tab. 11 and 10 we provide training hyperparameters for all models and sample seen scales that
-were used for scaling law fits (i.e. models that are located on the Pareto frontier) for openMaMMUT
-and openCLIP respectively. Tab. 12 provides overview of model architectures parameters used for
-training openCLIP and openMammut. For the hyperparameters used for training openMaMMUT-L-
-14, the strongest model obtained following scaling law based comparisons done in this study, see Tab.
-4.
-25
-Model Samples Seen Warmup Global Batch Size Learning Rate
-mammut-ViT-S-32 1.28e+06 1000 512 1.00e-03
-mammut-ViT-S-32 1.28e+06 1500 512 5.00e-04
-mammut-ViT-S-16 1.28e+06 1000 512 5.00e-04
-mammut-ViT-S-32 3.07e+06 4000 512 5.00e-04
-mammut-ViT-S-16 3.07e+06 4000 512 1.00e-03
-mammut-ViT-S-32 6.40e+06 4000 1024 1.00e-03
-mammut-ViT-S-32 1.28e+07 4000 2048 2.00e-03
-mammut-ViT-S-16 1.28e+07 3000 2048 2.00e-03
-mammut-ViT-S-32 3.07e+07 4000 4096 2.00e-03
-mammut-ViT-S-16 3.07e+07 3000 4096 2.00e-03
-mammut-ViT-S-32 6.40e+07 4000 4096 2.00e-03
-mammut-ViT-S-16 6.40e+07 4000 4096 1.50e-03
-mammut-ViT-S-32 1.28e+08 4000 8192 2.00e-03
-mammut-ViT-S-14 1.28e+08 4000 8192 2.00e-03
-mammut-ViT-M-16 1.28e+08 4000 8192 2.00e-03
-mammut-ViT-S-14 3.07e+08 4000 16384 2.00e-03
-mammut-ViT-M-16 3.07e+08 4000 16384 2.00e-03
-mammut-ViT-S-14 6.40e+08 4000 16384 1.50e-03
-mammut-ViT-B-16 3.07e+08 4000 16384 2.00e-03
-mammut-ViT-B-32 1.28e+09 4000 16384 2.00e-03
-mammut-ViT-B-16 6.40e+08 4000 32768 2.00e-03
-mammut-ViT-B-14 1.28e+09 4000 90624 2.00e-03
-mammut-ViT-L-16 6.40e+08 6000 45056 2.00e-03
-mammut-ViT-L-14 6.40e+08 6000 45056 2.00e-03
-mammut-ViT-L-14 1.28e+09 4000 90624 2.00e-03
-mammut-ViT-L-16 3.07e+09 4000 91136 2.00e-03
-mammut-ViT-L-14 3.07e+09 4000 91136 2.00e-03
-Table 10: Hyperparameters for MaMMUT models trained on DataComp-1.4B that are located on the
-Pareto frontier
-E More details on fine-tuning for segmentation and scaling laws
-Following prior work on how to benchmark vision foundation models for semantic segmentation [ 35],
-we evaluate CLIP and MaMMUT on semantic segmentation by fine-tuning them end-to-end using a
-linear decoder on ADE20K [ 34]. Regardless of the patch size used during pre-training, we interpolate
-the patch size of all models to 14×14, to ensure a fair comparison. We use an image input size of
-224×224and thus interpolate the positional embedding to 16 ×16. Hyperparameters used for training
-are consistent with [ 35], except the use of a linear learning rate warmup of 1500 steps, an epoch-
-based schedule of 31 epochs, and a batch size of 16 without gradient accumulation, following [ 36].
-We fine-tune pre-trained models up to and including ViT-L and 3B samples seen, with different
-pre-training hyperparameters. We evaluate using a sliding window approach, again following [35].
-Fig. 21 and Fig. 22 show the fitted scaling laws for CLIP and MaMMUT, respectively. Tab. 13 shows
-the corresponding estimated scaling law fit parameters.
-F Broader impact
-This paper presents work whose goal is to advance the field of machine learning. While there are
-many potential societal consequences of this work, as of any work that targets scientific progress, we
-would like to emphasize some we consider important. Foundation models and datasets necessary for
-their creation became essential artefacts in basic machine learning research. On the one hand, they
-enable systematic studies of transferable learning and generalization. To ensure the reproducibility
-of such studies by various independent parties, to draw verifiable comparisons between those and
-to make collaborative, independently validated progress, models and datasets have to be open, and
-robust comparison procedures have to be designed. On the other hand, foundation models became
-26
-Model Samples Seen Warmup Global Batch Size Learning Rate
-ViT-S-32 1.28e+06 1500 512 5.00e-04
-ViT-S-16 1.28e+06 1500 512 5.00e-04
-ViT-S-16 1.28e+06 1500 512 2.00e-03
-ViT-S-32 3.07e+06 1500 1024 5.00e-04
-ViT-S-32 6.40e+06 4000 1024 1.00e-03
-ViT-S-32 1.28e+07 4000 2048 1.00e-03
-ViT-M-32 1.28e+07 3000 2048 1.00e-03
-ViT-S-32 3.07e+07 4000 4096 2.00e-03
-ViT-S-32 6.40e+07 4000 4096 2.00e-03
-ViT-M-32 6.40e+07 10000 4096 1.00e-03
-ViT-S-32 1.28e+08 6000 8192 2.00e-03
-ViT-S-16 1.28e+08 6000 8192 2.00e-03
-ViT-S-32 3.07e+08 8000 16384 2.00e-03
-ViT-S-32 6.40e+08 4000 16384 2.00e-03
-ViT-S-14 3.07e+08 4000 16384 2.00e-03
-ViT-M-32 6.40e+08 6000 32800 2.00e-03
-ViT-B-32 1.28e+09 15000 16384 1.00e-03
-ViT-L-32 6.40e+08 4000 45056 2.00e-03
-ViT-B-16-text-plus 6.40e+08 6000 32768 2.00e-03
-ViT-L-32 1.28e+09 4000 90624 4.00e-03
-ViT-L-16 6.40e+08 4000 45056 2.00e-03
-ViT-L-32 3.07e+09 4000 91136 4.00e-03
-ViT-L-14 1.28e+09 4000 90624 4.00e-03
-ViT-L-16 3.07e+09 4000 91136 4.00e-03
-ViT-L-14 3.07e+09 4000 91136 4.00e-03
-Table 11: Hyperparameters for CLIP models trained on DataComp-1.4B that are located on the Pareto
-frontier.
-107108109101010111012
-Compute C [GFLOPs]6×101
-7×101
-8×101
-9×101
-ADE20K Semantic Segmentation [Error Rate]
-ViT-S-14
-ViT-S-16
-ViT-S-32
-ViT-M-16
-ViT-M-32
-ViT-B-14
-ViT-B-16-text-plus
-ViT-B-32
-ViT-L-14
-ViT-L-16
-ViT-L-32
-CLIP: 17.93*(x+exp(17.49))0.208+0.47
-Figure 21: Detailed scaling law for downstream semantic segmentation performance of openCLIP
-pre-trained on DataComp-1.4B and fine-tuned on ADE20K. Error rate (1 – mIoU).
-indispensable building blocks of various systems for problem solving. Claims behind the capabilities
-of those systems to be rooted in certain conditions of the learning procedure and datasets used
-to obtain the models are made, often without doing proper comparison of compute involved in
-training of different models or without controlling for various conditions in the learning procedure.
-Especially the datasets used in the large industry labs are still often closed, so that it is impossible
-to do fair model comparison on same data if studying an alternative method. This makes claims
-27
-Name Width Emb Depth Params (M) GFLOPs
-ViT-S-32 384/384 384 12/12 63.09 5.51
-mammut-ViT-S-32 384/384 384 12/12 85.62 13.91
-ViT-S-16 384/384 384 12/12 62.26 11.75
-mammut-ViT-S-16 384/384 384 12/12 84.79 20.72
-ViT-S-14 384/384 384 12/12 62.21 14.3
-mammut-ViT-S-14 384/384 384 12/12 84.74 23.5
-ViT-M-32 512/512 512 12/12 103.12 9.74
-mammut-ViT-M-32 512/512 512 12/12 134.73 22.1
-ViT-M-16 512/512 512 12/12 102.02 20.84
-mammut-ViT-M-16 512/512 512 12/12 133.63 34.2
-ViT-M-14 512/512 512 12/12 101.95 25.37
-mammut-ViT-M-14 512/512 512 12/12 133.57 39.14
-ViT-B-32 768/512 512 12/12 151.28 14.54
-mammut-ViT-B-32 768/512 512 12/12 183.02 26.91
-ViT-B-16 768/512 512 12/12 149.62 39.51
-ViT-B-16-text-plus 768/768 768 12/12 210.04 46.78
-mammut-ViT-B-16 768/512 512 12/12 290.52 79.7
-ViT-B-14 768/512 512 12/12 149.53 49.7
-mammut-ViT-B-14 768/512 512 12/12 181.27 63.54
-ViT-L-32 1024/768 768 24/12 429.95 43.59
-mammut-ViT-L-32 1024/768 768 24/12 510.63 74.28
-ViT-L-16 1024/768 768 24/12 427.74 132.37
-mammut-ViT-L-16 1024/768 768 24/12 508.42 165.37
-ViT-L-14 1024/768 768 24/12 427.62 168.61
-mammut-ViT-L-14 1024/768 768 24/12 508.29 202.56
-ViT-H-32 1280/1024 1024 32/24 989.02 109.81
-mammut-ViT-H-32 1280/1024 1024 32/24 1191.06 192.97
-ViT-H-16 1280/1024 1024 32/24 986.26 294.78
-mammut-ViT-H-16 1280/1024 1024 32/24 1188.3 385.72
-ViT-H-14 1280/1024 1024 32/24 986.11 370.28
-mammut-ViT-H-14 1280/1024 1024 32/24 1188.14 464.39
-Table 12: Hyper-parameters of architectures we consider. Width refers to encoder width, Emb refers
-to embedding size, Depth refers to number of layers, Params refer to the number of parameters in
-millions, and GFLOPs refer to total GFLOPs per forward pass. Entries in the form of A / B denote
-image and text parameters respectively. There are more parameters in MaMMUT models because of
-the additional cross-attention layers.
-Ac Bc αc Ec
-CLIP 18.407549 17.577295 -0.209187 0.468456
-MaMMUT 352.152176 18.759619 -0.356718 0.497617
-Table 13: Fitted scaling law parameters (Ac, Bc, αc, Ec)for segmentation error rate.
-hard to validate and impairs guided progress in improving foundation models and datasets. Our
-work operates with whole research pipeline being fully open and reproducible, which includes open
-datasets, open-source training and evaluation code and open weights models, including intermediate
-checkpoints and training logs. Our comparison is done involving full scaling law derivation, instead
-of reporting performance on few selected reference points. This sets standards for reproducibility,
-transparency and robust comparison to check the claims in the field that generates important artefacts
-that are getting used in increasingly many scenarios that directly impact our society. We consider this
-work thus an important catalyst for trust into open foundation models that have undergone robust
-comparison procedure, resulting in accurate, reproducible claims that can be validated by many
-independent parties and in which the society and public can develop better trust.
-28
-108109101010111012
-Compute C [GFLOPs]5×101
-6×101
-7×101
-8×101
-9×101
-ADE20K Semantic Segmentation [Error Rate]
-mammut_ViT-S-14
-mammut_ViT-S-16
-mammut_ViT-S-32
-mammut_ViT-M-16
-mammut_ViT-M-32
-mammut_ViT-B-14
-mammut_ViT-B-16
-mammut_ViT-B-32
-mammut_ViT-L-14
-mammut_ViT-L-16
-mammut_ViT-L-32
-MAMMUT: 331.17*(x+exp(18.73))0.354+0.50
-Figure 22: Detailed scaling law for downstream semantic segmentation performance of openMaM-
-MUT pre-trained on DataComp-1.4B and fine-tuned on ADE20K. Error rate (1 – mIoU).
-G Author contributions
-•Marianna Nezhurina : established major part of scaling law fitting procedures. Performed
-analysis of scaling law fit quality, derived predictions and confidence intervals. Conducted
-major part of data analysis. Performed initial training experiments with openCLIP and
-openMaMMUT. Established environments for experiments across various supercomputers.
-Supported compute resource acquisition. Established infrastructure for distributed dataset
-acquisition via Ray. Obtained Re-LAION and part of DFN dataset. Co-organized automated
-experiments data collection and analysis. Wrote the manuscript.
-•Tomer Porian : co-designed and performed const lr schedule scaling law derivation ex-
-periments. Extended automated experiments execution for const lr schedule experiments.
-Collected and analyzed data, provided further input for scaling law fitting procedures.
-Co-wrote the manuscript.
-•Tommie Kerssies : fine-tuning experiments for dense prediction segmentation, evaluating
-segmentation via different modes, scaling law derivation for segmentation, data collection
-and analysis. Co-wrote the manuscript.
-•Giovanni Pucceti : openMaMMUT implementation in openCLIP, initial experiments with
-openCLIP and openMammut training. Initial co-design and implementation of automated
-experiments execution. Proof reading the manuscript.
-•Romain Beaumont Re-LAION safety maintenance, hash filtering and re-packaging.
-Toolsets for dataset download and composition. Proof reading the manuscript.
-•Mehdi Cherti : led the project, supported compute resource acquisition. Co-established
-environments for experiments across various supercomputers. Obtained DataComp, DFN
-and part of Re-LAION dataset. Designed and implemented automated experiments execution
-and evaluation. Wrote procedure for const lr schedule experiments. Conducted scaling
-law derivation experiments (DataComp, Re-LAION, DFN; openMammut, openCLIP, Cap).
-Designed and implemented evaluation. Organized automated experiments data collection
-and analysis. Collected and analysed the experimental data. Wrote the manuscript.
-•Jenia Jitsev : led and coordinated the project, acquired compute resources. Organized data
-transfer (DataComp, Re-LAION) across the supercomputers. Co-established environments
-for experiments across various supercomputers. Co-designed automated experiments exe-
-cution. Defined, designed and conducted scaling law derivation experiments (DataComp,
-Re-LAION, DFN; openMammut, openCLIP, CoCa, SigLIP). Collected and analysed the
-experimental data. Trained openMammut-L-14 on 12.8B of DataComp-1.4B, following the
-scaling law predictions. Led manuscript writing, wrote the manuscript.
-29
+  larger compute scales.
+  Scaling law for fine-tuning error on segmentation dense prediction task For further comparison
+  evidence, we derive a scaling law (Eq. 1) for ADE20K segmentation error ( 1−mIoU ) after fine-tuning
+  10
+  107108109101010111012
+  Compute C [GFLOPs]100
+  3×101
+  4×101
+  6×101
+  DataComp Eval Suite 0-shot [Error Rate]
+  CLIP: 18.19*(x+exp(17.27))0.179+0.14
+  MAMMUT: 19.10*(x+exp(18.04))0.169+0.07
+  Figure 11: Scaling law on DataComp evaluation suite (average over 35 tasks, 0-shot classification),
+  openCLIP vs. openMaMMUT comparison on DataComp-1.4B
+  107108109101010111012
+  Compute C [GFLOPs]100
+  3×101
+  4×101
+  6×101
+  ImageNet1k-V2 [Error Rate]
+  CLIP: 27.24*(x+exp(18.41))0.188+0.15
+  MAMMUT: 19.72*(x+exp(18.99))0.158+0.02
+  (a) ImageNet V2
+  107108109101010111012
+  Compute C [GFLOPs]100
+  3×101
+  4×101
+  6×101
+  ImageNet1k-Robustness [Error Rate]
+  CLIP: 13.47*(x+exp(18.94))0.138+0.00
+  MAMMUT: 31.69*(x+exp(20.14))0.172+0.00
+  (b) ImageNet Robustness
+  Figure 12: Scaling laws for ImageNet-v2 (left) and ImageNet robustness set (right, averaged perfor-
+  mance across 5 datasets ImageNet-v2[ 27], ImageNet-R[ 28], ImageNet-Sketch[ 30], ObjectNet[ 31],
+  and ImageNet-A[ 29]), 0-shot classification for openCLIP and openMaMMUT comparison on
+  DataComp-1.4B
+  dependent on pre-training compute scale for CLIP and MaMMUT. As shown in Fig. 13, MaMMUT
+  again exhibits stronger scaling than CLIP ( α=−0.208vs.−0.354), with an error crossover at
+  approximately 109GFLOPs. This is far below the crossover at approximately 1011GFLOPs observed
+  for zero-shot ImageNet classification (Fig. 1a), indicating that captioning supervision via fine-tuning
+  improves dense prediction already at lower pre-training scales. See more details in Appendix E.
+  3.6 Scaling law derivation using constant learning rate scheduler
+  We follow [ 44] and show a scaling law derivation based on training with constant learning rate, thus
+  saving 98% of compute compared to cosine. We omit points from warmup duration in our derivation,
+  to prevent noise in the low-compute part of the scaling law. In Fig. 14 we visualize our results,
+  showing the measurements density and in App. Tab. 6 we tabulate the coefficients. Our results further
+  support the better scalability of MaMMUT over CLIP, showing consistent trends even when replacing
+  learning rate scheduler. Note that crossing point of MaMMUT overtaking CLIP is again consistently
+  estimated to be between 1010and1011GFLOPS when using const lr schedule, as also observed for
+  cosine schedule and across various datasets.
+  3.7 Scaling up following the comparison: OpenMaMMUT-L-14
+  OpenMaMMUT-L-14 is a large scale open vision-language foundation model. Training hyperpa-
+  rameters can be found in Tab. 4. We used insights from our scaling analysis to guide our choice
+  of model and dataset scale. OpenMaMMUT achieves state of the art performance on zero-shot
+  11
+  107108109101010111012
+  Compute C [GFLOPs]5×101
+  6×101
+  7×101
+  8×101
+  9×101
+  ADE20K Semantic Segmentation [Error Rate]
+  CLIP: 17.93*(x+exp(17.49))0.208+0.47
+  MAMMUT: 331.17*(x+exp(18.73))0.354+0.50
+  Figure 13: Scaling law for semantic segmentation. Downstream error rate (1 – mIoU) of openCLIP
+  and openMaMMUT pre-trained on DataComp-1.4B and fine-tuned on ADE20K. MaMMUT shows
+  higher performance than CLIP for segmentation at higher scales. Crossing point appears earlier
+  around 109GFLOPS, which might be due to fine-tuning used for this task, as opposed to zero-shot
+  evaluation applied everywhere else.
+  10610710810910101011
+  Compute C [GFLOPs]100
+  3×101
+  4×101
+  6×101
+  ImageNet1k 0-shot [Error Rate]
+  CLIP: 14.77*(x+exp(16.72))0.168+0.12
+  MAMMUT: 1850.29*(x+exp(20.52))0.379+0.20
+  (a) ImageNet-1k 0-shot classification
+  10610710810910101011
+  Compute C [GFLOPs]100
+  4×101
+  6×101
+  MSCOCO Image Retrival R@5 [Error Rate]
+  CLIP: 6.69*(x+exp(16.21))0.123+0.09
+  MAMMUT: 634.19*(x+exp(20.26))0.335+0.25
+  (b) MS-COCO image R@5
+  Figure 14: Scaling law fits using constant learning rate scheduler. Comparison of CLIP and
+  MaMMUT via scaling laws on DataComp-1.4B. Error rate on downstream tasks is plotted against
+  compute. Using constant learning rate scheduler for scaling law derivation reveals the same trend
+  as with cosine - MaMMUT outperforms CLIP in terms of scalability, with crossing point again
+  consistently found to be between 1010and1011GFLOPS as observed for cosine schedule and across
+  various datasets.
+  classification and retrieval tasks among similar-sized models trained only on publicly-available data
+  (MetaCLIP, DataComp, OpenVision, Tab. 3). It outperforms with 80.3% IN1k accuracy as predicted
+  openCLIP pre-trained on same DataComp-1.4B budget of 12.8B ( 79.2%) and even rivals models with
+  much larger pre-training compute like SigLIP. OpenMaMMUT represents a highly performant, fully
+  reproducible alternative to other models with openly available data and training code . Note that on
+  12.8B samples seen scale the performance suffers from high amount of repetitions, and therefore is
+  below our prediction of 82% (Tab. 1) that is valid for training on unique samples.
+  4 Related work & limitations
+  Recent work has investigated the performance of vision-language models such as CLIP [ 7], CoCa
+  [16], MaMMUT [ 17], Cap [ 43], SigLIP [ 14], TULIP[ 47] or OpenVision[ 48] at various scales.
+  These studies analyze different model sizes and highlight either architectural or dataset innovations;
+  however, they do not perform a comprehensive scaling law analysis. Furthermore, the datasets used
+  in these works—such as WIT for OpenAI CLIP and WebLI for SigLIP—are closed , severely limiting
+  reproducibility and making it impossible to study which of algorithmic or dataset interventions
+  12
+  ImageNet-1k COCO
+  ViT Res. Seq. Model Dataset #Samples val v2 T →I I →T
+  L/16 256 256SigLIP [18] WebLI-10B 40B 80.44 73.76 75.26 88.40
+  SigLIP 2 [14] WebLI-10B 40B 82.35 76.66 76.84 90.44
+  L/14 224 256OpenCLIP [10] LAION-2B 34B 75.24 67.73 70.46 84.30
+  CLIP [7] WIT-400M 12.8B 75.54 69.84 59.95 79.56
+  MetaCLIP [45] MetaCLIP-2.5B 12.8B 79.19 72.64 71.36 84.94
+  EV A-CLIP [46] Merged-2B 4B∗79.75∗72.92∗70.68 85.26
+  DFN [20] DFN-2B 13B 81.41∗74.58∗73.19∗86.20∗
+  DataComp [19] DataComp-1.4B 12.8B 79.19 72.06 69.86 84.64
+  OpenMaMMUT (Ours) DataComp-1.4B 12.8B 80.34 73.78 71.19 85.88
+  Table 3: Zero-shot classification (accuracy) and retrieval (R@5) results. DFN used ImageNet/MS-
+  COCO-finetuned model for data filtering; EV A-CLIP was initialized from models pre-trained on
+  ImageNet. We use bold for best overall results, gray for models involving ImageNet/MS-COCO data
+  as training data in pipeline, and underlined for best results without ImageNet/MS-COCO involvement.
+  Hyperparameter Value
+  Model Architecture mammut-ViT-L-14
+  Samples Seen 12.8B
+  Warmup Steps 6000
+  Global Batch Size 180,224
+  Learning Rate 2.5×10−3
+  GPU Hours 3.53×104
+  Number of NVIDIA A100 GPUs 1024
+  Table 4: Training hyperparameters for openMaMMUT-L-14.
+  claimed to have beneficial effect on learning used in those studies indeed lead to better model
+  performance. Using our procedure, we can check such claims. For instance in Fig. 9, we compare
+  open implementations of CoCa and SigLIP to openCLIP and openMaMMUT on DataComp-1.4B,
+  finding no significant difference of SigLIP to standard CLIP in model scalability. We also observe
+  advantage for MaMMUT over CoCa on same compute budget, while both architectures use the same
+  contrastive and captioning loss combination.
+  In [49], authors investigate how various language model families compare in terms of their scaling
+  behavior. While it offers valuable insights into architectural trends, it does not use for comparison a
+  full scaling law framework in the sense of jointly modeling loss or downstream task performance as a
+  function of compute and dataset size varied systematically across multiple scales. As accuracy of
+  predictions derived from such trends was not measured, it makes it unclear whether observed trends
+  for various language model architectures are to be trusted and whether comparison would remain
+  valid across various scenarios, which we demonstrate to be the case for scaling law based comparison.
+  Preparing grounds for this work, [ 10] derived first reproducible scaling laws for openCLIP using
+  LAION datasets and performed comparison between open LAION-400M/5B and closed WIT. The
+  work used however only few samples seen scales (3B, 12.8B and 34B), while also going up to scales
+  that are prone to strongly diminishing performance due to heavy sample repetition (6x on 12.8B and
+  17x on 34B sample seen scales). This affects extrapolations of the scaling law and thus the validity of
+  comparisons based on it. Interestingly, in our work using much denser scaling law derivation without
+  strong repetitions for higher prediction accuracy, we can confirm the dataset comparison in [ 10] using
+  Re-LAION-1.4B, observing same trends for WIT being better on zero-shot classification (Fig. 4)
+  while worse on retrieval (Fig. 5), providing further evidence for robustness of scaling law based
+  comparison. Another data-centric work responsible for composing open DataComp-1.4B dataset
+  [19] used measurements on few selected scales to compare datasets and decide for benefit of various
+  dataset interventions. No scaling laws were derived to back up the comparisons, leaving unclear
+  whether the observed trends will propagate across larger scales than taken for the comparisons.
+  Several works explored the effects of data constraints on scaling laws. Notably, studies investigating
+  the scaling law behavior under dataset repetitions for language models [ 38,41] and for CLIP[ 50]
+  reported that high repetition factors can lead to heavily diminished performance compared to the
+  Pareto front of scaling with unique data samples. Our experiments carefully limit the repetition factor
+  13
+  to less than 3 ×, minimizing such confounding effects, assuming unique samples or only little sample
+  repetition for comparisons to be valid on Pareto front with strong performance scaling.
+  Building on these foundations, our work provides a unified and empirically grounded scaling law
+  analysis of vision-language models trained on open datasets. We explicitly model performance as
+  a function of data and compute [ 8,9], and compare multiple architectures under fully controlled,
+  consistent and reproducible settings. Unlike prior work, our approach enables rigorous comparison
+  of both data and compute efficiency, ensuring the consistency of the comparison across scales and
+  training conditions.
+  Limitations. While our work provides a comprehensive analysis for language-vision models such as
+  CLIP and MaMMUT trained on large-scale open foundation datasets, it also has several limitations:
+  1)We mostly use zero-shot setting for model evaluation (for classification and retrieval tasks), using
+  fine-tuning only for segmentation. Linear probing, fine-tuning [ 10] or vision instruction-tuning [ 12]
+  of the pre-trained vision encoders can provide further insights into validity and consistency of scaling
+  laws based comparison. 2)While open datasets we use have substantial scale - 1.4B unique samples -
+  this still limits the ability of derived scaling laws to extrapolate to higher scales, as the effect of sample
+  repetition has to be considered when conducting measurements above 1.4B. To test comparison
+  validity and scaling law predictions on larger reference scales like 12.8B, larger scale open datasets
+  are required. 3)In our study we only looked at standard contrastive loss or contrastive and captioning
+  loss objectives and did not incorporate further "loss mixtures" such as masking or diffusion-based
+  losses. We also did not derive scaling laws for specific architectural components such as optimal
+  number of parameters in text or vision tower, or other important properties of training procedure like
+  image input resolution and patch size, or context length in general. In its current form, scaling laws
+  based comparison has high computational cost, prohibiting naive incorporation of many factors that
+  influence scalability of the training procedure.
+  5 Discussion & conclusion
+  In this work, we show how open foundation models trained on open datasets can provide grounds
+  for systematic learning procedure comparison via scaling law derivation under fully controlled,
+  reproducible training conditions. We take as example scenario openCLIP [ 7,22,10] and open-
+  MaMMUT based on [ 17] , two important open language-vision models relying either on image-text
+  contrastive only or contrastive and captioning loss, trained on three important open reference datasets,
+  DataComp-1.4B [ 19], Re-LAION-1.4B [ 21] and DFN-1.4B [ 20]. We show that deriving scaling
+  laws gives comparison of model and dataset based on their estimated scalability for wide scale spans
+  and for various downstream tasks, aligned on same total pre-training compute. Such comparison
+  can be validated by checking consistency of scaling trends in different scenarios. For instance,
+  openMaMMUT scalability is stronger than openCLIP both on zero-shot classification and retrieval,
+  also showing advantage for a wide scale span on segmentation, and across all three studied datasets
+  DataComp-1.4B, Re-LAION-1.4B and DFN-1.4B. Also, inconsistencies are insightful - for instance,
+  DataComp-1.4B shows stronger scalability for both openMaMMUT and openCLIP for zero-shot
+  classification while being slightly weaker for retrieval. Thus, none of these two datasets is the most
+  scalable candidate across all downstream tasks, and scaling advantage there is task dependent. For
+  DFN on the other hand, a consistent picture emerges: both openMaMMUT and openCLIP trained
+  on DFN show superior performance over other datasets across downstream tasks, allowing to draw
+  conclusion favoring DFN over other datasets for pretraining strong and scalable models.
+  Comparison via scaling laws offers better protection against misleading conclusions derived from
+  comparison of only few selected points, especially when done on small scales only. On smaller
+  scales, openCLIP outperforms stronger scalable openMaMMUT that takes over on larger scales.
+  Remarkably, we observe the compute scale threshold where openMaMMUT takes over openCLIP
+  to be consistently settled between 1010and1011GFLOPS across datasets, zero-shot downstream
+  tasks and learning schedules. This gives further evidence for the robustness of scaling law based
+  comparison. To properly estimate such crossings, it is crucial to perform dense measurements on
+  smaller scales and use fitting routines that allow for accurate extrapolation to larger scales. Efficient
+  derivation of accurate scaling laws [ 44,11] for factors affecting the learning procedure is thus an
+  important topic for future work.
+  14
+  In our study, we used open datasets with 1.4B samples. While this is sufficient to demonstrate
+  usefulness of scaling law based comparison, more accurate predictions for training at larger scales
+  on unique samples require larger datasets. Those are also required to train larger scale models with
+  predicted strong capabilities, as too many repetitions on smaller datasets might lead to diminished
+  performance [ 41,50], which we see in openMaMMUT L-14 trained on 12.8B samples, staying
+  with zero-shot IN1k 80.3% below the predicted 82% (Tab. 1). Deriving scaling law correction for
+  diminishing performance due to data repetitions as well as increasing scale of open datasets are
+  important directions for future work.
+  While we show that robust and reproducible comparison via scaling law derivation is possible, it
+  relies crucially on the whole pipeline to be fully open - including dataset composition, training
+  itself, and downstream evaluation. We hope that our work will encourage the creation of more open
+  artefacts, especially open datasets as those are still scarce [ 42,19,20,21], to enable collaborative and
+  reproducible progress towards stronger scalable open foundation models guided by independently
+  verifiable and systematic comparison.
+  Acknowledgements
+  MN, TP, MC and JJ acknowledge funding by the Federal Ministry of Education and Research
+  of Germany (BMBF) under grant no. 01IS24085C (OPENHAFM), under the grant 16HPC117K
+  (MINERV A) and under the grant no. 01IS22094B (WestAI - AI Service Center West), as well as co-
+  funding by EU from EuroHPC Joint Undertaking programm under grant no. 101182737 (MINERV A)
+  and from Digital Europe Programme under grant no. 101195233 (openEuroLLM).
+  We gratefully acknowledge the Gauss Centre for Supercomputing e.V . for funding this work by
+  providing computing time through the John von Neumann Institute for Computing (NIC) on the su-
+  percomputer JUWELS Booster at Jülich Supercomputing Centre (JSC), EuroHPC Joint Undertaking
+  for computing time and storage on the EuroHPC supercomputer LEONARDO, hosted by CINECA
+  (Italy) and the LEONARDO consortium through an EuroHPC Extreme Access grant EHPC-EXT-
+  2023E02-068, storage resources on JUST granted and operated by JSC and supported by Helmholtz
+  Data Federation (HDF), computing time granted by the JARA and JSC on the supercomputer JU-
+  RECA at JSC, and computing time granted on prototype JEDI via JUREAP (JUPITER Early Access
+  Programm) grant at JSC.
+  Further thanks go for support provided by supercomputing facilities and their teams, especially to
+  Damian Alvarez and Mathis Bode from Juelich Supercomputer Center (JSC, Germany) and to Laura
+  Morselli from CINECA (Italy).
+  We also would like to express gratitude to all the people who are working on making code, models and
+  data publicly available, advancing community based research and making research more reproducible.
+  Specifically, we would like to thank all the members of the LAION Discord server2community and
+  Open- Ψ(Open-Sci) Collective3for providing fruitful ground for scientific exchange and open-source
+  development.
+  References
+  [1]Rishi Bommasani, Drew A Hudson, Ehsan Adeli, Russ Altman, Simran Arora, Sydney von
+  Arx, Michael S Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, et al. On the
+  opportunities and risks of foundation models. arXiv preprint arXiv:2108.07258 , 2021.
+  [2]Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of
+  deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 ,
+
+2018. [3]Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena,
+      Yanqi Zhou, Wei Li, and Peter J Liu. Exploring the limits of transfer learning with a unified
+      text-to-text transformer. Journal of machine learning research , 21(140):1–67, 2020.
+      2https://discord.gg/BZqhreFazY
+      3https://discord.gg/GsKh4mBVcv
+      15
+      [4]Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal,
+      Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are
+      few-shot learners. Advances in neural information processing systems , 33:1877–1901, 2020.
+      [5]David Fan, Shengbang Tong, Jiachen Zhu, Koustuv Sinha, Zhuang Liu, Xinlei Chen, Michael
+      Rabbat, Nicolas Ballas, Yann LeCun, Amir Bar, et al. Scaling language-free visual representa-
+      tion learning. arXiv preprint arXiv:2504.01017 , 2025.
+      [6]Benjamin Elizalde, Soham Deshmukh, Mahmoud Al Ismail, and Huaming Wang. Clap learning
+      audio concepts from natural language supervision. In ICASSP 2023-2023 IEEE International
+      Conference on Acoustics, Speech and Signal Processing (ICASSP) , pages 1–5. IEEE, 2023.
+      [7]Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal,
+      Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual
+      models from natural language supervision. In International Conference on Machine Learning ,
+      pages 8748–8763. PMLR, 2021.
+      [8]Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B Brown, Benjamin Chess, Rewon Child,
+      Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. Scaling laws for neural language
+      models. arXiv preprint arXiv:2001.08361 , 2020.
+      [9]Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza
+      Rutherford, Diego de las Casas, Lisa Anne Hendricks, Johannes Welbl, Aidan Clark, Tom
+      Hennigan, Eric Noland, Katherine Millican, George van den Driessche, Bogdan Damoc, Aurelia
+      Guy, Simon Osindero, Karen Simonyan, Erich Elsen, Oriol Vinyals, Jack William Rae, and
+      Laurent Sifre. An empirical analysis of compute-optimal large language model training. In
+      Alice H. Oh, Alekh Agarwal, Danielle Belgrave, and Kyunghyun Cho, editors, Advances in
+      Neural Information Processing Systems , 2022.
+      [10] Mehdi Cherti, Romain Beaumont, Ross Wightman, Mitchell Wortsman, Gabriel Ilharco, Cade
+      Gordon, Christoph Schuhmann, Ludwig Schmidt, and Jenia Jitsev. Reproducible scaling laws
+      for contrastive language-image learning. In Proceedings of the IEEE/CVF conference on
+      computer vision and pattern recognition , pages 2818–2829, 2023.
+      [11] Margaret Li, Sneha Kudugunta, and Luke Zettlemoyer. (mis)fitting scaling laws: A survey of
+      scaling law fitting techniques in deep learning. In The Thirteenth International Conference on
+      Learning Representations , 2025.
+      [12] Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. Visual instruction tuning. Advances
+      in neural information processing systems , 36:34892–34916, 2023.
+      [13] Zhe Chen, Jiannan Wu, Wenhai Wang, Weijie Su, Guo Chen, Sen Xing, Muyan Zhong, Qinglong
+      Zhang, Xizhou Zhu, Lewei Lu, et al. Internvl: Scaling up vision foundation models and aligning
+      for generic visual-linguistic tasks. In Proceedings of the IEEE/CVF conference on computer
+      vision and pattern recognition , pages 24185–24198, 2024.
+      [14] Michael Tschannen, Alexey Gritsenko, Xiao Wang, Muhammad Ferjad Naeem, Ibrahim Alab-
+      dulmohsin, Nikhil Parthasarathy, Talfan Evans, Lucas Beyer, Ye Xia, Basil Mustafa, et al. Siglip
+      2: Multilingual vision-language encoders with improved semantic understanding, localization,
+      and dense features. arXiv preprint arXiv:2502.14786 , 2025.
+      [15] Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe
+      Penna, and Robin Rombach. Sdxl: Improving latent diffusion models for high-resolution image
+      synthesis. arXiv preprint arXiv:2307.01952 , 2023.
+      [16] Jiahui Yu, Zirui Wang, Vijay Vasudevan, Legg Yeung, Mojtaba Seyedhosseini, and Yonghui
+      Wu. Coca: Contrastive captioners are image-text foundation models. arXiv preprint
+      arXiv:2205.01917 , 2022.
+      [17] Weicheng Kuo, AJ Piergiovanni, Dahun Kim, xiyang luo, Benjamin Caine, Wei Li, Abhijit
+      Ogale, Luowei Zhou, Andrew M. Dai, Zhifeng Chen, Claire Cui, and Anelia Angelova. MaM-
+      MUT: A simple architecture for joint learning for multimodal tasks. Transactions on Machine
+      Learning Research , 2023.
+      16
+      [18] Xiaohua Zhai, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. Sigmoid loss for
+      language image pre-training. In Proceedings of the IEEE/CVF international conference on
+      computer vision , pages 11975–11986, 2023.
+      [19] Samir Yitzhak Gadre, Gabriel Ilharco, Alex Fang, Jonathan Hayase, Georgios Smyrnis, Thao
+      Nguyen, Ryan Marten, Mitchell Wortsman, Dhruba Ghosh, Jieyu Zhang, et al. Datacomp:
+      In search of the next generation of multimodal datasets. Advances in Neural Information
+      Processing Systems , 36:27092–27112, 2023.
+      [20] Alex Fang, Albin Madappally Jose, Amit Jain, Ludwig Schmidt, Alexander Toshev, and
+      Vaishaal Shankar. Data filtering networks. In The Twelfth International Conference on Learning
+      Representations , 2024.
+      [21] LAION. Releasing re-laion 5b: transparent iteration on laion-5b with additional safety fixes.
+      https://laion.ai/blog/relaion-5b/ , 2024. Accessed: 30 aug, 2024.
+      [22] G. Ilharco, M. Wortsman, N. Carlini, R. Taori, A. Dave, V . Shankar, H. Namkoong, J. Miller,
+      H. Hajishirzi, A. Farhadi, and L. Schmidt. Openclip. 2021.
+      [23] Aaron van den Oord, Yazhe Li, and Oriol Vinyals. Representation learning with contrastive
+      predictive coding. arXiv preprint arXiv:1807.03748 , 2018.
+      [24] Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. arXiv preprint
+      arXiv:1711.05101 , 2017.
+      [25] Melanie Mitchell. How do we know how smart ai systems are? Science , 381(6654):eadj5957,
+2019. [26] J. Deng, W. Dong, R. Socher, L. Li, Kai Li, and Li Fei-Fei. Imagenet: A large-scale hierarchical
+      image database. In Proc. IEEE Conf. Computer Vision and Pattern Recognition , pages 248–255,
+      June 2009.
+      [27] Benjamin Recht, Rebecca Roelofs, Ludwig Schmidt, and Vaishaal Shankar. Do imagenet
+      classifiers generalize to imagenet? In International conference on machine learning , pages
+      5389–5400. PMLR, 2019.
+      [28] Dan Hendrycks, Steven Basart, Norman Mu, Saurav Kadavath, Frank Wang, Evan Dorundo,
+      Rahul Desai, Tyler Zhu, Samyak Parajuli, Mike Guo, Dawn Song, Jacob Steinhardt, and Justin
+      Gilmer. The many faces of robustness: A critical analysis of out-of-distribution generalization.
+      International Conference on Computer Vision (ICCV) , 2021. https://arxiv.org/abs/
+      2006.16241 .
+      [29] Dan Hendrycks, Kevin Zhao, Steven Basart, Jacob Steinhardt, and Dawn Song. Natural
+      adversarial examples. Conference on Computer Vision and Pattern Recognition (CVPR) , 2021.
+      https://arxiv.org/abs/1907.07174 .
+      [30] Haohan Wang, Songwei Ge, Zachary Lipton, and Eric P Xing. Learning robust global represen-
+      tations by penalizing local predictive power. In Advances in Neural Information Processing
+      Systems (NeurIPS) , 2019. https://arxiv.org/abs/1905.13549 .
+      [31] Andrei Barbu, David Mayo, Julian Alverio, William Luo, Christopher Wang, Dan Gutfreund,
+      Josh Tenenbaum, and Boris Katz. Objectnet: A large-scale bias-controlled dataset for pushing
+      the limits of object recognition models. In Advances in Neural Information Processing Systems
+      (NeurIPS) , 2019.
+      [32] Romain Beaumont Mehdi Cherti et al. Clip benchmark. https://github.com/LAION-AI/
+      CLIP_benchmark , 2023.
+      [33] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr
+      Dollár, and C Lawrence Zitnick. Microsoft coco: Common objects in context. In European
+      conference on computer vision , pages 740–755. Springer, 2014.
+      [34] Bolei Zhou, Hang Zhao, Xavier Puig, Sanja Fidler, Adela Barriuso, and Antonio Torralba.
+      Scene Parsing through ADE20K Dataset. In Proceedings of the IEEE/CVF Conference on
+      Computer Vision and Pattern Recognition (CVPR) , pages 5122–5130, 2017.
+      17
+      [35] Tommie Kerssies, Daan De Geus, and Gijs Dubbelman. How to Benchmark Vision Foundation
+      Models for Semantic Segmentation? In Proceedings of the IEEE/CVF Conference on Computer
+      Vision and Pattern Recognition (CVPR) Workshops , pages 1162–1171, 2024.
+      [36] Tommie Kerssies, Niccolò Cavagnero, Alexander Hermans, Narges Norouzi, Giuseppe Averta,
+      Bastian Leibe, Gijs Dubbelman, and Daan de Geus. Your ViT is Secretly an Image Segmen-
+      tation Model. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+      Recognition (CVPR) , 2025.
+      [37] Xiaohua Zhai, Alexander Kolesnikov, Neil Houlsby, and Lucas Beyer. Scaling vision transform-
+      ers. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition ,
+      pages 12104–12113, 2022.
+      [38] Tom Henighan, Jared Kaplan, Mor Katz, Mark Chen, Christopher Hesse, Jacob Jackson,
+      Heewoo Jun, Tom B Brown, Prafulla Dhariwal, Scott Gray, et al. Scaling laws for autoregressive
+      generative modeling. arXiv preprint arXiv:2010.14701 , 2020.
+      [39] Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza
+      Rutherford, Diego de Las Casas, Lisa Anne Hendricks, Johannes Welbl, Aidan Clark, et al.
+      Training compute-optimal large language models. arXiv preprint arXiv:2203.15556 , 2022.
+      [40] Stephan Borzsony, Donald Kossmann, and Konrad Stocker. The skyline operator. In Proceedings
+      17th international conference on data engineering , pages 421–430. IEEE, 2001.
+      [41] Niklas Muennighoff, Alexander Rush, Boaz Barak, Teven Le Scao, Nouamane Tazi, Aleksandra
+      Piktus, Sampo Pyysalo, Thomas Wolf, and Colin A Raffel. Scaling data-constrained language
+      models. Advances in Neural Information Processing Systems , 36:50358–50376, 2023.
+      [42] Christoph Schuhmann, Romain Beaumont, Richard Vencu, Cade W Gordon, Ross Wightman,
+      Mehdi Cherti, Theo Coombes, Aarush Katta, Clayton Mullis, Mitchell Wortsman, Patrick
+      Schramowski, Srivatsa R Kundurthy, Katherine Crowson, Ludwig Schmidt, Robert Kaczmar-
+      czyk, and Jenia Jitsev. LAION-5B: An open large-scale dataset for training next generation
+      image-text models. In Thirty-sixth Conference on Neural Information Processing Systems
+      (NeurIPS), Datasets and Benchmarks Track , 2022.
+      [43] Michael Tschannen, Manoj Kumar, Andreas Steiner, Xiaohua Zhai, Neil Houlsby, and Lucas
+      Beyer. Image captioners are scalable vision learners too. Advances in Neural Information
+      Processing Systems , 36:46830–46855, 2023.
+      [44] Tomer Porian, Mitchell Wortsman, Jenia Jitsev, Ludwig Schmidt, and Yair Carmon. Resolving
+      discrepancies in compute-optimal scaling of language models. Advances in Neural Information
+      Processing Systems , 37:100535–100570, 2024.
+      [45] Hu Xu, Saining Xie, Xiaoqing Ellen Tan, Po-Yao Huang, Russell Howes, Vasu Sharma, Shang-
+      Wen Li, Gargi Ghosh, Luke Zettlemoyer, and Christoph Feichtenhofer. Demystifying clip data.
+      arXiv preprint arXiv:2309.16671 , 2023.
+      [46] Quan Sun, Yuxin Fang, Ledell Wu, Xinlong Wang, and Yue Cao. Eva-clip: Improved training
+      techniques for clip at scale. arXiv preprint arXiv:2303.15389 , 2023.
+      [47] Zineng Tang, Long Lian, Seun Eisape, XuDong Wang, Roei Herzig, Adam Yala, Alane Suhr,
+      Trevor Darrell, and David M Chan. Tulip: Towards unified language-image pretraining. arXiv
+      preprint arXiv:2503.15485 , 2025.
+      [48] Xianhang Li, Yanqing Liu, Haoqin Tu, Hongru Zhu, and Cihang Xie. Openvision: A fully-open,
+      cost-effective family of advanced vision encoders for multimodal learning. arXiv preprint
+      arXiv:2505.04601 , 2025.
+      [49] Yi Tay, Mostafa Dehghani, Samira Abnar, Hyung Won Chung, William Fedus, Jinfeng Rao,
+      Sharan Narang, Vinh Q Tran, Dani Yogatama, and Donald Metzler. Scaling laws vs model
+      architectures: How does inductive bias influence scaling? arXiv preprint arXiv:2207.10551 ,
+2020. 18
+      [50] Sachin Goyal, Pratyush Maini, Zachary C Lipton, Aditi Raghunathan, and J Zico Kolter.
+      Scaling laws for data filtering–data curation cannot be compute agnostic. In Proceedings of
+      the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 22702–22711,
+2021. 19
+      Appendix: Scaling Laws for Robust Comparison of Open
+      Foundation Language-Vision Models and Datasets
+      A Estimated parameters for scaling law fits
+      To complement main results for scaling law based comparison of CLIP and MaMMUT (Sec. 3.1,
+      Fig. 1, 2), we provide exact numbers of scaling law fits for both openCLIP and openMaMMUT
+      measurements on zero shot IN1K classification and MS-COCO retrieval downstream tasks (Tab. 5a).
+      Estimated values of exponents in power laws alone do not tell which models are more scalable, as
+      we use here the functional form with additive terms for both irreducible error and non-zero random
+      model performance (Eq. 1). Apart from plot visualization attesting Mammut stronger scalability than
+      CLIP (Fig. 1, 2), scalability can be also compared via computing derivatives of the obtained fit in
+      selected compute points. Derivatives that have larger absolute values stand for larger slope (bigger
+      rate of decrease) and thus indicate stronger scalability. In Tab. 5b we show derivatives computed for
+      scaling law fits, obtaining larger derivatives for openMaMMUT than for openCLIP, confirming again
+      stronger scalability for MaMMUT over CLIP.
+      B More details on scaling law derivation experiments
+      Compute budget and energy consumption for the experiments. In Tab. 7, we provide overview
+      over the GPU hours and energy spent for scaling law derivation experiments. We provide separate
+      calculation for different learning rate schedule types (cosine, constant learning rate and constant
+      learning rate + cooldown), for different datasets (Re-LAION-1.4B and DataComp-1.4B) and for
+      different GPU types (A100 and H100). Large fraction of resources was spent for reference cosine
+      schedule based scaling law derivation on DataComp-1.4B. We see that despite higher density of
+      possible measurements, const based schedules use substantially less compute.
+      Detailed versions of scaling law plots. In the more detailed versions of scaling law plots (Fig. 15
+      and 16) we see the separate scaling curves for each model size (cooler colors indicate smaller models).
+      Thebigger models require larger sample seen scale to unfold their performance advantage, with
+      the performance lagging behind smaller scale models on same smaller compute scale, where larger
+      models suffer from sample seen scale bottleneck. On the other hand, for the higher compute and
+      ModelImageNet-1k MS-COCO Retrieval
+      Ac Bc αc Ec Ac Bc αc Ec
+      openCLIP 57.862 18.391 -0.227 0.111 53.913 18.413 -0.230 0.216
+      openMaMMUT 79.970 19.111 -0.233 0.076 119.751 19.122 -0.263 0.212
+      (a) Fitted scaling law parameters (Ac, Bc, αc, Ec)for error rate on 0-shot ImageNet-1k classification and
+      MS-COCO retrieval tasks, rounded to three decimal places for models trained on DataComp-1.4B.
+      C0GFLOPs IN-1k Err. Rate |dL(C0)/dC| COCO R@5 Err. Rate |dL(C0)/dC|
+      CLIP
+      5.00e+10 9.85e-13 8.44e-13
+      1.00e+11 4.21e-13 3.60e-13
+      5.00e+11 5.86e-14 4.95e-14
+      Average: IN-1k: 4.882e-13, COCO: 4.177e-13
+      MaMMUT
+      5.00e+10 1.17e-12 9.65e-13
+      1.00e+11 4.92e-13 4.03e-13
+      5.00e+11 6.54e-14 5.28e-14
+      Average: IN-1k: 5.758e-13, COCO: 4.702e-13
+      (b) Numerical values of derivatives of fitted functions with respect to compute, in points 5·1010,1·1011,5·1011
+      GFLOPs for both ImageNet-1k error rate and COCO retrieval error rate (1-R@5). MaMMUT consistently
+      exhibits higher values of |dL(C0)/dC|which corresponds to higher decrease rate and stronger scalability.
+      Table 5: Estimated parameters for main scaling law fits for 0-shot ImageNet-1k classification and
+      MS-COCO retrieval, used for openCLIP and openMaMMUT comparison in Fig. 1
+      20
+      ModelImageNet-1k MS-COCO Retrieval
+      Ac Bc αc Ec Ac Bc αc Ec
+      openCLIP 14.769 16.725 -0.168 0.121 6.686 16.209 -0.123 0.089
+      openMaMMUT 1850.286 20.521 -0.379 0.198 634.190 20.256 -0.335 0.249
+      Table 6: Fitted scaling law parameters (Ac, Bc, αc, Ec)for error rate on 0-shot ImageNet-1k clas-
+      sification and MS-COCO retrieval tasks, rounded to three decimal places for models trained on
+      DataComp-1.4B with constant learning rate scheduler.
+      LR Scheduler GPU Dataset MWh GPU Hours
+      NVIDIA A100
+      cosine NVIDIA-A100 DataComp-1.4B 2.59e+05 1.03e+06
+      const-cooldown NVIDIA-A100 DataComp-1.4B 1.43e+05 5.72e+05
+      const NVIDIA-A100 DataComp-1.4B 9.30e+04 3.72e+05
+      cosine NVIDIA-A100 Re-LAION-1.4B 3.91e+04 1.56e+05
+      const-cooldown NVIDIA-A100 Re-LAION-1.4B 1.70e+04 6.79e+04
+      const NVIDIA-A100 Re-LAION-1.4B 4.61e+03 1.84e+04
+      A100 subtotal: 5.56e+05 2.22e+06
+      NVIDIA H100
+      cosine NVIDIA-H100 DataComp-1.4B 2.09e+04 2.98e+04
+      cosine NVIDIA-H100 Re-LAION-1.4B 1.06e+04 1.52e+04
+      H100 subtotal: 3.15e+04 4.50e+04
+      Total: 5.87e+05 2.27e+06
+      Table 7: Total GPU compute and energy consumption for scaling law derivation experiments.
+      samples seen scales, smaller models tend to saturate , indicating a bottleneck in model number of
+      parameters.
+      C Evaluating scaling law fit quality
+      To validate our scaling law fits, we use a threshold Cthreshold to up which we take the data for the fit.
+      We compute RMSE for the held-out points to get a measure of how good each fit is. We compare two
+      Cthreshold values (see Tab. 8 and Fig. 17 for DataComp-1.4B dataset). We see that both RMSE and
+      uncertainty (the width of the confidence intervals) decreases as we take more the more points for the
+      fit.
+      We also compare different functional forms that can be used to fit the data: model with double
+      saturation ( L(C) =Ac·(C+Bc)−αc+Ec) and without a term for irreducible error Ec:
+      L(C) =Ac·(C+Bc)−αc(3)
+      We choose first Cthreshold = 2.5·1011GFLOPs and the second Cthreshold = 5·1011GFLOPs. As we
+      see from Tab. 8 and Tab. 9 for both values of Cthreshold double saturation form (Eq. 1) has consistently
+      lower RMSE than the function without irreducible error. RMSE on held out points provides thus a
+      way to select among various scaling law fits the candidate that provides better prediction accuracy for
+      unseen scales, which in our case is the fit obtained via double saturation functional form (Eq. 1).
+      We see that the same trend of reducing confidence intervals and thus reducing uncertainty of the
+      predictions when taking more points for the scaling law fit holds also for other tasks like MS-
+      COCO image retrieval and other pre-training dataset Re-LAION-1.4B (see Fig. 17 and Fig. 18
+      for comparison between ImageNet-1k classification and MS-COCO retrieval and Figs. 19, 20 for
+      Re-LAION-1.4B).
+      When comparing predictions with actually measured downstream task performance, we see that
+      accuracy for the held-out points is high (Tab. 8). For instance, we measure for 3B samples seen scale
+      on held-out points for openMaMMUT ViT L-14 zero-shot IN1K 0.784, with prediction 0.777 and 95%
+      confidence interval (0.771, 0.783), and for openMaMMUT ViT H-14 0.795, with prediction 0.801
+      21
+      107108109101010111012
+      Compute C [GFLOPs]100
+      2×101
+      3×101
+      4×101
+      6×101
+      ImageNet1k 0-shot [Error Rate]
+      ViT-S-14
+      ViT-S-16
+      ViT-S-32
+      ViT-M-16
+      ViT-M-32
+      ViT-B-14
+      ViT-B-16-text-plus
+      ViT-B-32
+      ViT-L-14
+      ViT-L-16
+      ViT-L-32
+      ViT-H-14
+      ViT-H-16
+      ViT-H-32
+      CLIP: 57.86*(x+exp(18.39))0.227+0.11
+      Figure 15: Detailed version of the scaling law fit for ImageNet 0-shot classification error rate
+      for DataComp-1.4B for openCLIP. Cooler colors indicate smaller models. Bigger models are
+      bottlenecked by samples seen scale (require larger samples seen than the smaller ones) and smaller
+      models saturate with increased data and compute scale (over-training regime). Pareto front is
+      composed by taking for each compute budget the points corresponding to models reaching minimal
+      error rate for the given compute. Fit is performed through points on Pareto front.
+      108109101010111012
+      Compute C [GFLOPs]100
+      2×101
+      3×101
+      4×101
+      6×101
+      ImageNet1k 0-shot [Error Rate]
+      mammut_ViT-S-14
+      mammut_ViT-S-16
+      mammut_ViT-S-32
+      mammut_ViT-M-14
+      mammut_ViT-M-16
+      mammut_ViT-M-32
+      mammut_ViT-B-14
+      mammut_ViT-B-16
+      mammut_ViT-B-32
+      mammut_ViT-L-14
+      mammut_ViT-L-16
+      mammut_ViT-L-32
+      mammut_ViT-H-14
+      mammut_ViT-H-16
+      mammut_ViT-H-32
+      MAMMUT: 125.36*(x+exp(19.29))0.256+0.10
+      Figure 16: Detailed version of the scaling law fit for ImageNet 0-shot classification error rate
+      for DataComp-1.4B for OpenMaMMUT. Cooler colors indicate smaller models. Bigger models
+      are bottlenecked by samples seen scale (require larger samples seen than the smaller ones) and
+      smaller models saturate with increased data and compute scale (overtraining regime). Pareto front is
+      composed by taking for each compute budget the points corresponding to models reaching minimal
+      error rate for the given compute. Fit is performed through points on Pareto front.
+      22
+      107108109101010111012
+      Compute C [GFLOPs]100
+      2×101
+      3×101
+      4×101
+      6×101
+      ImageNet1k 0-shot [Error Rate]
+      CLIP: 81.05*(x+exp(18.49))0.246+0.14
+      MAMMUT: 120.32*(x+exp(19.22))0.255+0.11
+      (a) Scaling law fit for
+      ImageNet 0-shot classification error rate for
+      DataComp-1.4B
+      (Cthreshold = 2.5·1011GFLOPs)
+      107108109101010111012
+      Compute C [GFLOPs]100
+      2×101
+      3×101
+      4×101
+      6×101
+      ImageNet1k 0-shot [Error Rate]
+      CLIP: 63.34*(x+exp(18.42))0.232+0.12
+      MAMMUT: 102.23*(x+exp(19.18))0.246+0.10
+      (b) Scaling law fit for
+      ImageNet 0-shot classification error rate
+      for DataComp-1.4B using more points ( Cthreshold =
+      5·1011GFLOPs)
+      Figure 17: Comparison of the fit quality for ImageNet-1k 0-shot classification error rate for open-
+      MaMMUT and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained on
+      DataComp-1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands around
+      each curve).
+      107108109101010111012
+      Compute C [GFLOPs]100
+      3×101
+      4×101
+      6×101
+      MSCOCO Image Retrival R@5 [Error Rate]
+      CLIP: 57.46*(x+exp(18.43))0.234+0.22
+      MAMMUT: 228.63*(x+exp(19.26))0.297+0.25
+      (a) Scaling law fit for
+      MS-COCO image retrieval error rate (1-Recall@5)
+      for DataComp-1.4B
+      (Cthreshold = 2.5·1011GFLOPs)
+      107108109101010111012
+      Compute C [GFLOPs]100
+      3×101
+      4×101
+      6×101
+      MSCOCO Image Retrival R@5 [Error Rate]
+      CLIP: 58.58*(x+exp(18.44))0.235+0.22
+      MAMMUT: 174.92*(x+exp(19.21))0.283+0.23
+      (b) Scaling law fit for
+      MS-COCO image retrievat error rate (1-Recall@5)
+      for DataComp-1.4B using more points
+      (Cthreshold = 5·1011GFLOPs)
+      Figure 18: Comparison of the fit quality for MS-COCO image retrieval error rate for openMaMMUT
+      and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained on DataComp-
+      1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands around each curve).
+      23
+      107108109101010111012
+      Compute C [GFLOPs]100
+      2×101
+      3×101
+      4×101
+      6×101
+      ImageNet1k 0-shot [Error Rate]
+      CLIP: 81.05*(x+exp(18.49))0.246+0.14
+      MAMMUT: 120.32*(x+exp(19.22))0.255+0.11
+      (a) Scaling law fit for
+      ImageNet 0-shot classification Error rate
+      for Re-LAION-1.4B
+      (Cthreshold = 2.5·1011GFLOPs)
+      107108109101010111012
+      Compute C [GFLOPs]100
+      2×101
+      3×101
+      4×101
+      6×101
+      ImageNet1k 0-shot [Error Rate]
+      CLIP: 63.34*(x+exp(18.42))0.232+0.12
+      MAMMUT: 102.23*(x+exp(19.18))0.246+0.10
+      (b) Scaling law fit for
+      ImageNet 0-shot classification Error rate
+      for Re-LAION-1.4B using more points
+      (Cthreshold = 5·1011GFLOPs)
+      Figure 19: Comparison of the fit quality for ImageNet-1k 0-shot classification error rate for open-
+      MaMMUT and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained
+      on Re-LAION-1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands
+      around each curve).
+      107108109101010111012
+      Compute C [GFLOPs]100
+      3×101
+      4×101
+      6×101
+      MSCOCO Image Retrival R@5 [Error Rate]
+      CLIP: 57.46*(x+exp(18.43))0.234+0.22
+      MAMMUT: 228.63*(x+exp(19.26))0.297+0.25
+      (a) Scaling law fit for
+      MS-COCO image retrieval error rate (1-Recall@5)
+      for Re-LAION-1.4B
+      (Cthreshold = 2.5·1011GFLOPs)
+      107108109101010111012
+      Compute C [GFLOPs]100
+      3×101
+      4×101
+      6×101
+      MSCOCO Image Retrival R@5 [Error Rate]
+      CLIP: 58.58*(x+exp(18.44))0.235+0.22
+      MAMMUT: 174.92*(x+exp(19.21))0.283+0.23
+      (b) Scaling law fit for
+      MS-COCO image retrieval error rate (1-Recall@5)
+      for Re-LAION-1.4B
+      (Cthreshold = 5·1011GFLOPs)
+      Figure 20: Comparison of the fit quality for MS-COCO image retrieval error rate for openMaMMUT
+      and openCLIP if we take less points for the fit in (a) vs. more in (b), for models trained on Re-
+      LAION-1.4B. The uncertainty of the fit becomes smaller (indicated by the width of bands around
+      each curve).
+      24
+      and 95% CI of (0.793, 0.809). Similar accuracy is observed for openCLIP, with actual measurements
+      falling within predicted confidence intervals. The derived scaling laws provide thus solid ground
+      for comparison on unseen scales that have low amount of repetitions (less than 3x in case of 3B
+      samples seen scale when training on DataComp-1.4B or Re-LAION-1.4).
+      As already discussed in Sec. 3.7, the prediction for performance of MaMMUT L-14 on the larger
+      12.8B samples seen scale (Tab. 1, zero-shot IN1K 0.820, 95% CI (0.815, 0.826)) is therefore
+      only made for low repetition scenario, and to validate it, dataset size larger than currently used
+      1.4B samples (which gives around 9x repetitions for 12.8B samples seen scale) is required. The
+      measured 0.803 for openMaMMUT L-14 on 12.8B (Tab. 3) is thus expectedly below the prediction,
+      as performance is diminished due to high amount of repetitions, in line with observations by previous
+      works [41, 50].
+      Model Samples Seen GFLOPsIN1k
+      0-shot accPredicted IN1k
+      0-shot acc (95% CI)Predicted (more points) IN1k
+      0-shot acc (95% CI)
+      CLIP
+      ViT-L-16 3.07e+9 4.07e+11 0.761 0.747 (0.738, 0.755) –
+      ViT-L-14 3.07e+9 5.18e+11 0.766 0.753 (0.744, 0.762) 0.759 (0.751, 0.766)
+      ViT-H-14 3.07e+9 1.14e+12 0.784 0.773 (0.761, 0.784) 0.779 (0.770, 0.789)
+      RMSE: 1.26e-02 RMSE (more points): 5.90e-03
+      MaMMUT
+      mammut-ViT-L-14 1.28e+9 2.59e+11 0.749 0.743 (0.737, 0.748) –
+      mammut-ViT-L-14 3.07e+9 6.22e+11 0.784 0.773 (0.765, 0.781) 0.777 (0.771, 0.783)
+      mammut-ViT-H-14 3.07e+9 1.43e+12 0.794 0.797 (0.787, 0.807) 0.801 (0.793, 0.809)
+      RMSE: 7.57e-03 RMSE (more points): 7.57e-03
+      Table 8: Predictions for different values of Cthreshold for the functional form with double saturation
+      (Eq. 1). Scaling law derivation on DataComp-1.4B. The last column shows updated predictions made
+      after additional data points. Both confidence interval and RMSE decrease as we take more points.
+      RMSE is consistently lower than RMSE measured for functional form without irreducible error (Tab.
+      9).
+      Model Samples Seen GFLOPsIN1k
+      0-shot accPredicted IN1k
+      0-shot acc (95% CI)Predicted (more points) IN1k
+      0-shot acc (95% CI)
+      CLIP
+      ViT-L-16 3.07e+9 4.07e+11 0.761 0.769 (0.764, 0.773) –
+      ViT-L-14 3.07e+9 5.18e+11 0.766 0.778 (0.774, 0.783) 0.777 (0.773, 0.782)
+      ViT-H-14 3.07e+9 1.14e+12 0.784 0.806 (0.802, 0.811) 0.805 (0.801, 0.809)
+      RMSE: 1.55e-02 RMSE (more points): 1.72e-02
+      MaMMUT
+      mammut-ViT-L-14 1.28e+9 2.59e+11 0.749 0.757 (0.754, 0.760) –
+      mammut-ViT-L-14 3.07e+9 6.22e+11 0.784 0.795 (0.792, 0.798) 0.794 (0.791, 0.796)
+      mammut-ViT-H-14 3.07e+9 1.43e+12 0.794 0.825 (0.822, 0.828) 0.824 (0.822, 0.827)
+      RMSE: 1.98e-02 RMSE (more points): 2.26e-02
+      Table 9: Predictions for different values of Cthreshold for the functional form without irreducible error
+      (Eq. 3). Scaling law derivation on DataComp-1.4B. The last column shows updated predictions made
+      after additional data points. Both confidence interval and RMSE decrease as we take more points.
+      RMSE is consistently higher than RMSE measured for functional form with irreducible error (Tab.
+      8).
+      D Additional training details
+      In the Tab. 11 and 10 we provide training hyperparameters for all models and sample seen scales that
+      were used for scaling law fits (i.e. models that are located on the Pareto frontier) for openMaMMUT
+      and openCLIP respectively. Tab. 12 provides overview of model architectures parameters used for
+      training openCLIP and openMammut. For the hyperparameters used for training openMaMMUT-L-
+      14, the strongest model obtained following scaling law based comparisons done in this study, see Tab.
+2022. 25
+      Model Samples Seen Warmup Global Batch Size Learning Rate
+      mammut-ViT-S-32 1.28e+06 1000 512 1.00e-03
+      mammut-ViT-S-32 1.28e+06 1500 512 5.00e-04
+      mammut-ViT-S-16 1.28e+06 1000 512 5.00e-04
+      mammut-ViT-S-32 3.07e+06 4000 512 5.00e-04
+      mammut-ViT-S-16 3.07e+06 4000 512 1.00e-03
+      mammut-ViT-S-32 6.40e+06 4000 1024 1.00e-03
+      mammut-ViT-S-32 1.28e+07 4000 2048 2.00e-03
+      mammut-ViT-S-16 1.28e+07 3000 2048 2.00e-03
+      mammut-ViT-S-32 3.07e+07 4000 4096 2.00e-03
+      mammut-ViT-S-16 3.07e+07 3000 4096 2.00e-03
+      mammut-ViT-S-32 6.40e+07 4000 4096 2.00e-03
+      mammut-ViT-S-16 6.40e+07 4000 4096 1.50e-03
+      mammut-ViT-S-32 1.28e+08 4000 8192 2.00e-03
+      mammut-ViT-S-14 1.28e+08 4000 8192 2.00e-03
+      mammut-ViT-M-16 1.28e+08 4000 8192 2.00e-03
+      mammut-ViT-S-14 3.07e+08 4000 16384 2.00e-03
+      mammut-ViT-M-16 3.07e+08 4000 16384 2.00e-03
+      mammut-ViT-S-14 6.40e+08 4000 16384 1.50e-03
+      mammut-ViT-B-16 3.07e+08 4000 16384 2.00e-03
+      mammut-ViT-B-32 1.28e+09 4000 16384 2.00e-03
+      mammut-ViT-B-16 6.40e+08 4000 32768 2.00e-03
+      mammut-ViT-B-14 1.28e+09 4000 90624 2.00e-03
+      mammut-ViT-L-16 6.40e+08 6000 45056 2.00e-03
+      mammut-ViT-L-14 6.40e+08 6000 45056 2.00e-03
+      mammut-ViT-L-14 1.28e+09 4000 90624 2.00e-03
+      mammut-ViT-L-16 3.07e+09 4000 91136 2.00e-03
+      mammut-ViT-L-14 3.07e+09 4000 91136 2.00e-03
+      Table 10: Hyperparameters for MaMMUT models trained on DataComp-1.4B that are located on the
+      Pareto frontier
+      E More details on fine-tuning for segmentation and scaling laws
+      Following prior work on how to benchmark vision foundation models for semantic segmentation [ 35],
+      we evaluate CLIP and MaMMUT on semantic segmentation by fine-tuning them end-to-end using a
+      linear decoder on ADE20K [ 34]. Regardless of the patch size used during pre-training, we interpolate
+      the patch size of all models to 14×14, to ensure a fair comparison. We use an image input size of
+      224×224and thus interpolate the positional embedding to 16 ×16. Hyperparameters used for training
+      are consistent with [ 35], except the use of a linear learning rate warmup of 1500 steps, an epoch-
+      based schedule of 31 epochs, and a batch size of 16 without gradient accumulation, following [ 36].
+      We fine-tune pre-trained models up to and including ViT-L and 3B samples seen, with different
+      pre-training hyperparameters. We evaluate using a sliding window approach, again following [35].
+      Fig. 21 and Fig. 22 show the fitted scaling laws for CLIP and MaMMUT, respectively. Tab. 13 shows
+      the corresponding estimated scaling law fit parameters.
+      F Broader impact
+      This paper presents work whose goal is to advance the field of machine learning. While there are
+      many potential societal consequences of this work, as of any work that targets scientific progress, we
+      would like to emphasize some we consider important. Foundation models and datasets necessary for
+      their creation became essential artefacts in basic machine learning research. On the one hand, they
+      enable systematic studies of transferable learning and generalization. To ensure the reproducibility
+      of such studies by various independent parties, to draw verifiable comparisons between those and
+      to make collaborative, independently validated progress, models and datasets have to be open, and
+      robust comparison procedures have to be designed. On the other hand, foundation models became
+      26
+      Model Samples Seen Warmup Global Batch Size Learning Rate
+      ViT-S-32 1.28e+06 1500 512 5.00e-04
+      ViT-S-16 1.28e+06 1500 512 5.00e-04
+      ViT-S-16 1.28e+06 1500 512 2.00e-03
+      ViT-S-32 3.07e+06 1500 1024 5.00e-04
+      ViT-S-32 6.40e+06 4000 1024 1.00e-03
+      ViT-S-32 1.28e+07 4000 2048 1.00e-03
+      ViT-M-32 1.28e+07 3000 2048 1.00e-03
+      ViT-S-32 3.07e+07 4000 4096 2.00e-03
+      ViT-S-32 6.40e+07 4000 4096 2.00e-03
+      ViT-M-32 6.40e+07 10000 4096 1.00e-03
+      ViT-S-32 1.28e+08 6000 8192 2.00e-03
+      ViT-S-16 1.28e+08 6000 8192 2.00e-03
+      ViT-S-32 3.07e+08 8000 16384 2.00e-03
+      ViT-S-32 6.40e+08 4000 16384 2.00e-03
+      ViT-S-14 3.07e+08 4000 16384 2.00e-03
+      ViT-M-32 6.40e+08 6000 32800 2.00e-03
+      ViT-B-32 1.28e+09 15000 16384 1.00e-03
+      ViT-L-32 6.40e+08 4000 45056 2.00e-03
+      ViT-B-16-text-plus 6.40e+08 6000 32768 2.00e-03
+      ViT-L-32 1.28e+09 4000 90624 4.00e-03
+      ViT-L-16 6.40e+08 4000 45056 2.00e-03
+      ViT-L-32 3.07e+09 4000 91136 4.00e-03
+      ViT-L-14 1.28e+09 4000 90624 4.00e-03
+      ViT-L-16 3.07e+09 4000 91136 4.00e-03
+      ViT-L-14 3.07e+09 4000 91136 4.00e-03
+      Table 11: Hyperparameters for CLIP models trained on DataComp-1.4B that are located on the Pareto
+      frontier.
+      107108109101010111012
+      Compute C [GFLOPs]6×101
+      7×101
+      8×101
+      9×101
+      ADE20K Semantic Segmentation [Error Rate]
+      ViT-S-14
+      ViT-S-16
+      ViT-S-32
+      ViT-M-16
+      ViT-M-32
+      ViT-B-14
+      ViT-B-16-text-plus
+      ViT-B-32
+      ViT-L-14
+      ViT-L-16
+      ViT-L-32
+      CLIP: 17.93*(x+exp(17.49))0.208+0.47
+      Figure 21: Detailed scaling law for downstream semantic segmentation performance of openCLIP
+      pre-trained on DataComp-1.4B and fine-tuned on ADE20K. Error rate (1 – mIoU).
+      indispensable building blocks of various systems for problem solving. Claims behind the capabilities
+      of those systems to be rooted in certain conditions of the learning procedure and datasets used
+      to obtain the models are made, often without doing proper comparison of compute involved in
+      training of different models or without controlling for various conditions in the learning procedure.
+      Especially the datasets used in the large industry labs are still often closed, so that it is impossible
+      to do fair model comparison on same data if studying an alternative method. This makes claims
+      27
+      Name Width Emb Depth Params (M) GFLOPs
+      ViT-S-32 384/384 384 12/12 63.09 5.51
+      mammut-ViT-S-32 384/384 384 12/12 85.62 13.91
+      ViT-S-16 384/384 384 12/12 62.26 11.75
+      mammut-ViT-S-16 384/384 384 12/12 84.79 20.72
+      ViT-S-14 384/384 384 12/12 62.21 14.3
+      mammut-ViT-S-14 384/384 384 12/12 84.74 23.5
+      ViT-M-32 512/512 512 12/12 103.12 9.74
+      mammut-ViT-M-32 512/512 512 12/12 134.73 22.1
+      ViT-M-16 512/512 512 12/12 102.02 20.84
+      mammut-ViT-M-16 512/512 512 12/12 133.63 34.2
+      ViT-M-14 512/512 512 12/12 101.95 25.37
+      mammut-ViT-M-14 512/512 512 12/12 133.57 39.14
+      ViT-B-32 768/512 512 12/12 151.28 14.54
+      mammut-ViT-B-32 768/512 512 12/12 183.02 26.91
+      ViT-B-16 768/512 512 12/12 149.62 39.51
+      ViT-B-16-text-plus 768/768 768 12/12 210.04 46.78
+      mammut-ViT-B-16 768/512 512 12/12 290.52 79.7
+      ViT-B-14 768/512 512 12/12 149.53 49.7
+      mammut-ViT-B-14 768/512 512 12/12 181.27 63.54
+      ViT-L-32 1024/768 768 24/12 429.95 43.59
+      mammut-ViT-L-32 1024/768 768 24/12 510.63 74.28
+      ViT-L-16 1024/768 768 24/12 427.74 132.37
+      mammut-ViT-L-16 1024/768 768 24/12 508.42 165.37
+      ViT-L-14 1024/768 768 24/12 427.62 168.61
+      mammut-ViT-L-14 1024/768 768 24/12 508.29 202.56
+      ViT-H-32 1280/1024 1024 32/24 989.02 109.81
+      mammut-ViT-H-32 1280/1024 1024 32/24 1191.06 192.97
+      ViT-H-16 1280/1024 1024 32/24 986.26 294.78
+      mammut-ViT-H-16 1280/1024 1024 32/24 1188.3 385.72
+      ViT-H-14 1280/1024 1024 32/24 986.11 370.28
+      mammut-ViT-H-14 1280/1024 1024 32/24 1188.14 464.39
+      Table 12: Hyper-parameters of architectures we consider. Width refers to encoder width, Emb refers
+      to embedding size, Depth refers to number of layers, Params refer to the number of parameters in
+      millions, and GFLOPs refer to total GFLOPs per forward pass. Entries in the form of A / B denote
+      image and text parameters respectively. There are more parameters in MaMMUT models because of
+      the additional cross-attention layers.
+      Ac Bc αc Ec
+      CLIP 18.407549 17.577295 -0.209187 0.468456
+      MaMMUT 352.152176 18.759619 -0.356718 0.497617
+      Table 13: Fitted scaling law parameters (Ac, Bc, αc, Ec)for segmentation error rate.
+      hard to validate and impairs guided progress in improving foundation models and datasets. Our
+      work operates with whole research pipeline being fully open and reproducible, which includes open
+      datasets, open-source training and evaluation code and open weights models, including intermediate
+      checkpoints and training logs. Our comparison is done involving full scaling law derivation, instead
+      of reporting performance on few selected reference points. This sets standards for reproducibility,
+      transparency and robust comparison to check the claims in the field that generates important artefacts
+      that are getting used in increasingly many scenarios that directly impact our society. We consider this
+      work thus an important catalyst for trust into open foundation models that have undergone robust
+      comparison procedure, resulting in accurate, reproducible claims that can be validated by many
+      independent parties and in which the society and public can develop better trust.
+      28
+      108109101010111012
+      Compute C [GFLOPs]5×101
+      6×101
+      7×101
+      8×101
+      9×101
+      ADE20K Semantic Segmentation [Error Rate]
+      mammut_ViT-S-14
+      mammut_ViT-S-16
+      mammut_ViT-S-32
+      mammut_ViT-M-16
+      mammut_ViT-M-32
+      mammut_ViT-B-14
+      mammut_ViT-B-16
+      mammut_ViT-B-32
+      mammut_ViT-L-14
+      mammut_ViT-L-16
+      mammut_ViT-L-32
+      MAMMUT: 331.17*(x+exp(18.73))0.354+0.50
+      Figure 22: Detailed scaling law for downstream semantic segmentation performance of openMaM-
+      MUT pre-trained on DataComp-1.4B and fine-tuned on ADE20K. Error rate (1 – mIoU).
+      G Author contributions
+      •Marianna Nezhurina : established major part of scaling law fitting procedures. Performed
+      analysis of scaling law fit quality, derived predictions and confidence intervals. Conducted
+      major part of data analysis. Performed initial training experiments with openCLIP and
+      openMaMMUT. Established environments for experiments across various supercomputers.
+      Supported compute resource acquisition. Established infrastructure for distributed dataset
+      acquisition via Ray. Obtained Re-LAION and part of DFN dataset. Co-organized automated
+      experiments data collection and analysis. Wrote the manuscript.
+      •Tomer Porian : co-designed and performed const lr schedule scaling law derivation ex-
+      periments. Extended automated experiments execution for const lr schedule experiments.
+      Collected and analyzed data, provided further input for scaling law fitting procedures.
+      Co-wrote the manuscript.
+      •Tommie Kerssies : fine-tuning experiments for dense prediction segmentation, evaluating
+      segmentation via different modes, scaling law derivation for segmentation, data collection
+      and analysis. Co-wrote the manuscript.
+      •Giovanni Pucceti : openMaMMUT implementation in openCLIP, initial experiments with
+      openCLIP and openMammut training. Initial co-design and implementation of automated
+      experiments execution. Proof reading the manuscript.
+      •Romain Beaumont Re-LAION safety maintenance, hash filtering and re-packaging.
+      Toolsets for dataset download and composition. Proof reading the manuscript.
+      •Mehdi Cherti : led the project, supported compute resource acquisition. Co-established
+      environments for experiments across various supercomputers. Obtained DataComp, DFN
+      and part of Re-LAION dataset. Designed and implemented automated experiments execution
+      and evaluation. Wrote procedure for const lr schedule experiments. Conducted scaling
+      law derivation experiments (DataComp, Re-LAION, DFN; openMammut, openCLIP, Cap).
+      Designed and implemented evaluation. Organized automated experiments data collection
+      and analysis. Collected and analysed the experimental data. Wrote the manuscript.
+      •Jenia Jitsev : led and coordinated the project, acquired compute resources. Organized data
+      transfer (DataComp, Re-LAION) across the supercomputers. Co-established environments
+      for experiments across various supercomputers. Co-designed automated experiments exe-
+      cution. Defined, designed and conducted scaling law derivation experiments (DataComp,
+      Re-LAION, DFN; openMammut, openCLIP, CoCa, SigLIP). Collected and analysed the
+      experimental data. Trained openMammut-L-14 on 12.8B of DataComp-1.4B, following the
+      scaling law predictions. Led manuscript writing, wrote the manuscript.
+      29

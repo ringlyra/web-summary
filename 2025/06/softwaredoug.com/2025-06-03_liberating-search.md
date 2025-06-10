@@ -1,16 +1,19 @@
 <!-- metadata -->
+
 - **title**: Liberating search from the search engine
 - **source**: https://softwaredoug.com/blog/2025/06/03/liberating-search.html
 - **author**: Doug Turnbull
-- **published**: 
+- **published**:
 - **fetched**: 2025-06-04T11:47:55.547776Z
 - **tags**: codex
 - **image**: https://softwaredoug.com//assets/media/2025/top1000.jpg
 
 ## 要約
+
 　この記事は Doug Turnbull によるブログ投稿で、検索エンジンの複雑なクエリDSLに頼るのではなく、エンジンからトップN件の候補だけを取得し、アプリケーション側のAPIでリランキングやブーストを行うべきだと論じている。エンジンはシンプルな取得(L0)に徹し、BM25やトークナイズ、ページングなどをクライアントライブラリで扱えば、Pythonなど馴染みのツールを用いて柔軟な検索ロジックを実装できるという主張。
 
 ## 本文 / Article
+
 Modern search engines push waaay too much complexity into the engine. Frustrating search practitioners. Let’s stop doing that.
 
 Let’s just get the top N from the search engine, and boost/rerank/etc in our API code. Using tools we know and love.
@@ -25,10 +28,10 @@ For years I thought of this as a dirty hack. After all, you’d need to reimplem
 
 Nevertheless the upside of total control are numerous:
 
-* Predictable / reliable search engine query load with dumber L0 queries
-* Less lock-in to some search engine DSL
-* Ubiquitous Python ML tooling over search-engine specific tooling when reranking
-* Easier to understand implementation of business logic for boosting / filtering
+- Predictable / reliable search engine query load with dumber L0 queries
+- Less lock-in to some search engine DSL
+- Ubiquitous Python ML tooling over search-engine specific tooling when reranking
+- Easier to understand implementation of business logic for boosting / filtering
 
 Further, we can plan for this layer to fail, and have a clean fallback to the basic top 1000 or so candidates.
 
@@ -57,7 +60,7 @@ top_n[top_n_name_bm25 > 0] += (10 * top_n_name_bm25)  # boost by 10 times name m
 key = top_n.cache(ttl=120) # cache for paging for 120 seconds
 
 # FETCH TOP N (also return paging key)
-return key, top_n.fetch(start=0, page_size=10)  
+return key, top_n.fetch(start=0, page_size=10)
 
 ```
 

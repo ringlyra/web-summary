@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: What web frameworks does Firebase App Hosting support?
 - **source**: https://firebase.blog/posts/2025/06/app-hosting-frameworks/
 - **author**: firebase.blog
@@ -8,9 +9,11 @@
 - **image**: https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/og%2Fapp-hosting-frameworks.png?alt=media&token=8bb19a16-a705-4164-aa36-3ab2f0420eb7
 
 ## 要約
+
 Firebase App Hosting は、Angular と Next.js を中心に GA となったサーバレス型の Web ホスティングです。公式サポート以外にも、**Nitro** ベースのアダプターを利用することで **Nuxt** や **Tanstack Start**、**SolidStart**、**Analog** など多くのフレームワークがデプロイ可能です。さらに **Astro**、**SvelteKit**、**Vite** などもビルド成果物が仕様を満たせば利用でき、Firebase CLI もしくは Terraform を用いたコンテナデプロイも選択できます。設定例として `firebase.json` の記述が紹介され、フレームワーク開発者向けにアダプター実装のガイドラインも提示されています。
 
 ## 本文 / Article
+
 June 2, 2025
 
 Firebase App Hosting, a serverless web hosting service built for modern, full-stack web apps, [recently graduated to General Availability](https://firebase.blog/posts/2025/04/apphosting-general-availability) with headline support for Angular and Next.js. However, there are a lot more JavaScript frameworks out there. Can we deploy them to App Hosting?
@@ -39,8 +42,6 @@ Then, update your Astro config file to reference the adapter:
 
 astro.config.mjs
 
- 
-
 ```
 import { defineConfig } from 'astro/config';
 import node from '@apphosting/astro-adapter';
@@ -62,8 +63,6 @@ If you’re a framework author curious about the [output bundle spec](https://gi
 Sample `.apphosting/bundle.yaml` file
 
 .apphosting/bundle.yaml
-
- 
 
 ```
 version: v1
@@ -137,8 +136,6 @@ $npx create-react-router@latest
 
 server.mjs
 
- 
-
 ```
 import express from "express";
 
@@ -156,8 +153,6 @@ app.listen(port, () => {
 ```
 
 package.json
-
- 
 
 ```
 {
@@ -188,8 +183,6 @@ The only thing we need to modify is the port that the server listens on:
 
 src/index.ts
 
- 
-
 ```
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
@@ -202,7 +195,7 @@ app.get("/", (c) => {
 
 serve({
   fetch: app.fetch,
-  
+
   port: process.env.PORT ? parseInt(process.env.PORT) : 8080
 },
   (info) => {
@@ -247,8 +240,6 @@ Running these commands will result in this `package.json` file:
 
 react-spa/package.json
 
- 
-
 ```
 {
   "name": "react-spa",
@@ -290,8 +281,6 @@ npm pkg set scripts.start="superstatic dist --port \$PORT --host 0.0.0.0 -c supe
 This example caches content for an hour (3600 seconds):
 
 react-spa/superstatic.json
-
- 
 
 ```
 {

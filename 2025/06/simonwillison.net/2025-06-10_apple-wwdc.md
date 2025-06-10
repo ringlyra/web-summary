@@ -1,11 +1,12 @@
 <!-- metadata -->
+
 - **title**: WWDC: Apple supercharges its tools and technologies for developers
 - **source**: https://simonwillison.net/2025/Jun/9/apple-wwdc/
 - **author**: Simon Willison
 - **published**: 2025-06-09T19:42:00Z
 - **fetched**: 2025-06-10T09:33:08.998412+00:00
 - **tags**: codex
-- **image**: 
+- **image**:
 
 ## 要約
 
@@ -35,7 +36,7 @@ let response = try await session.respond(
 
 There's also a [23 minute Meet the Foundation Models framework](https://developer.apple.com/videos/play/wwdc2025/286/) video from the conference, which clarifies that this is a 3 billion parameter model with 2 bit quantization. The model is trained for both tool-calling and structured output, which they call "guided generation" and describe as taking advantage of constrained decoding.
 
-I'm also *very* excited about this:
+I'm also _very_ excited about this:
 
 > **Containerization Framework**
 >

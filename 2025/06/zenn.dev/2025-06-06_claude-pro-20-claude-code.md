@@ -1,4 +1,5 @@
 <!-- metadata -->
+
 - **title**: Claude Pro（$20）プランでゼロから始めるClaude Code
 - **source**: https://zenn.dev/asap/articles/700168965fdb7b
 - **author**: zenn.dev
@@ -8,6 +9,7 @@
 - **image**: https://res.cloudinary.com/zenn/image/upload/s--o927mcY9--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Pro%25EF%25BC%2588%252420%25EF%25BC%2589%25E3%2583%2597%25E3%2583%25A9%25E3%2583%25B3%25E3%2581%25A7%25E3%2582%25BC%25E3%2583%25AD%25E3%2581%258B%25E3%2582%2589%25E5%25A7%258B%25E3%2582%2581%25E3%2582%258BClaude%2520Code%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:asap%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2VhYjVhYTQ1MTkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
 
 ## 要約
+
 Claude Proプラン(月額 $20)で利用できる **Claude Code** の導入方法を解説。環境構築からテトリス制作、**Playwright MCP** での自動テスト、レート制限の検証まで実践的にまとめている。
 
 1. 契約手順と利用可能モデル（Claude Sonnet 4）の紹介
@@ -20,8 +22,8 @@ Claude Proプラン(月額 $20)で利用できる **Claude Code** の導入方�
 8. Claude Codeは簡単に導入でき、Proプランでも趣味開発には十分
 
 ## 本文 / Article
-はじめに
-====
+
+# はじめに
 
 ClaudeのProプラン（月額$20）からClaude Codeが利用できるようになったと聞きまして、早速試してみます。（後数日来なかったらMaxプラン契約してたかもしれない・・・）
 
@@ -41,17 +43,14 @@ ClaudeのProプラン（月額$20）からClaude Codeが利用できるように
 
 これから初めて使ってみようかなという方の手助けになれば幸いです。
 
-環境
-==
+# 環境
 
 M4 Max MacBook Pro  
 macOS Sequoia 15.2
 
-事前準備
-====
+# 事前準備
 
-Claudeの契約
----------
+## Claudeの契約
 
 ClaudeのProプラン（もしくはMaxプラン）を契約しましょう。  
 APIで利用したい場合はそれでも良いですが、月額$20くらいなので、とりあえず一ヶ月だけ課金するのはアリかなと思います。
@@ -65,18 +64,15 @@ APIで利用したい場合はそれでも良いですが、月額$20くらい�
 
 1ヶ月使ってみて、また継続して使いたくなった時に再度契約すれば良いのです。
 
-Node.jsをインストールする
-----------------
+## Node.jsをインストールする
 
 macなら
 
 でインストールできます。今後`npm`コマンドを利用する上で必要になります。
 
-Claude Codeを実行してみる
-==================
+# Claude Codeを実行してみる
 
-Claude Codeのインストール
-------------------
+## Claude Codeのインストール
 
 ターミナルで下記のコマンドを実行しましょう。  
 とりあえず、以降フォルダの移動はしたくないので、作業用の`sample`ディレクトリで実行するものとします。
@@ -93,8 +89,7 @@ npm install -g @anthropic-ai/claude-code
 下記のように表示されれば、成功です。  
 ![](https://storage.googleapis.com/zenn-user-upload/85292c5c6f97-20250605.png)
 
-Claude Codeのログイン
-----------------
+## Claude Codeのログイン
 
 続いて、下記のコマンドでログインを行います。
 
@@ -160,15 +155,15 @@ Claude Codeを実行したディレクトリ以下のフォルダやディレク
 ![](https://storage.googleapis.com/zenn-user-upload/8f47bb9ee5b7-20250605.png)
 
 ```
-このフォルダー内のファイルを信頼しますか？ 
+このフォルダー内のファイルを信頼しますか？
 
-/use_claudecode/sample                                    
+/use_claudecode/sample
 
 Claude Codeはこのフォルダー内のファイルを読み込む可能性があります。信頼できないファイルを読み込むと、Claude Codeが予期しない動作をする可能性があります。
 
 ご承諾いただければ、Claude Codeはこのフォルダー内のファイルを実行する可能性があります。信頼できないコードを実行することは危険です。
 https://docs.anthropic.com/s/claude-code-security
- ❯ 1. はい、続行  
+ ❯ 1. はい、続行
    2. いいえ、終了
 
 ```
@@ -176,11 +171,9 @@ https://docs.anthropic.com/s/claude-code-security
 さてこれで、Claude Codeが利用できるようになりました。  
 ![](https://storage.googleapis.com/zenn-user-upload/a56e56fb14e6-20250605.png)
 
-なんか作ってみる
-========
+# なんか作ってみる
 
-/initを実行する
-----------
+## /initを実行する
 
 さて、なんか作ってもらおうと思いますが、まずは`/init`を実行してみましょう。  
 これを実行することで、ディレクトリの中身をClaudeが読み込んで、CLAUDE.mdに情報を書き込んでくれます。  
@@ -201,8 +194,7 @@ https://docs.anthropic.com/s/claude-code-security
 こちらも承認します。  
 ![](https://storage.googleapis.com/zenn-user-upload/43b2b50efd24-20250606.png)
 
-日本語で出力させる
----------
+## 日本語で出力させる
 
 さて、下記のような`CLAUDE.md`が作られました。  
 ただ、このままだと英語なのでちょっと不便ですね。  
@@ -215,8 +207,7 @@ https://docs.anthropic.com/s/claude-code-security
 ![](https://storage.googleapis.com/zenn-user-upload/865ac556e814-20250606.png)  
 このようにすることで、今後Claudeの出力が日本語になります。
 
-テトリスでも作ってみる
------------
+## テトリスでも作ってみる
 
 ### 早速プロンプトを入れてみる
 
@@ -282,14 +273,12 @@ https://docs.anthropic.com/s/claude-code-security
 おそらくですが、ここに記載されている制約やルールも反映してくれるのだと思います。  
 ![](https://storage.googleapis.com/zenn-user-upload/641be32c36fd-20250606.png)
 
-Claude Codeを停止する
-----------------
+## Claude Codeを停止する
 
 `/exit`コマンドを実行することで、停止してコンソールに抜けることができます。  
 ![](https://storage.googleapis.com/zenn-user-upload/8e7256e7e5ed-20250606.png)
 
-MCPと接続させてみる
-===========
+# MCPと接続させてみる
 
 さて、せっかくWebアプリができたので、PlayWrite MCPを接続してテストも自動でしてもらいましょう。
 
@@ -315,8 +304,7 @@ MCPに接続させる方法はとても簡単です。
 下記の記事を参考にさせていただきました。  
 <https://izanami.dev/post/0b13ae65-d420-47cd-b8a0-d4ef9d301508>
 
-PlayWrite MCPでテトリスゲームをテストする
----------------------------
+## PlayWrite MCPでテトリスゲームをテストする
 
 いつも通り`claude`コマンドでClaude Codeを立ち上げてください。  
 すると、下記のようにMCPを実行してよいかの承認依頼が来るはずです。  
@@ -340,8 +328,7 @@ Web画面のスクリーンショットを撮りながら、画面をクリッ�
 最終的にテストを完了できました！  
 ![](https://storage.googleapis.com/zenn-user-upload/c4cb7b59fe25-20250606.png)
 
-かかったコストは？
----------
+## かかったコストは？
 
 Proプランから利用しているため、月額$20以上にはかかっていないですが、どうやらClaude Codeではかかったトークン数を保存してるらしく、そこからAPI利用時のコストを見積もってくれるツールを開発してくださった方がいるようです。
 
@@ -354,8 +341,7 @@ Proプランから利用しているため、月額$20以上にはかかって�
 ちょっとしか使っていない割には結構かかったなという印象ですね・・・  
 やはり定額利用が正義だ・・・
 
-Proプランの制限
-=========
+# Proプランの制限
 
 その後、開発中のWebアプリの機能追加などに利用していたところ、上記の$2.39に加えて、$20.05、つまり合計$22.44使ったところでレート制限に達しました。  
 ![](https://storage.googleapis.com/zenn-user-upload/26d59b19c2d1-20250606.png)  
@@ -369,8 +355,7 @@ AM2:30ごろに制限を受けて、AM6:00ごろまでということなので�
 ただ、大きいリポジトリの機能追加などに利用すると、1タスクくらいですぐに制限が来る感じです。  
 （それでも5時間待てば再開できるのだから、かなり良心的だと思う。趣味で使う分には十分すぎると思いました。）
 
-まとめ
-===
+# まとめ
 
 今回はClaudeのProプラン（月額 $20）を利用してClaude Codeを試してみました。
 
@@ -378,8 +363,7 @@ AM2:30ごろに制限を受けて、AM6:00ごろまでということなので�
 
 Claude Codeは手軽に使えて、初心者から上級者まで十分に活用できるツールです。興味がある方は一度試してみてはいかがでしょうか！
 
-参考文献
-====
+# 参考文献
 
 下記の記事で勉強させていただきました。ありがとうございました。
 

@@ -1,25 +1,28 @@
 <!-- metadata -->
+
 - **title**: Building an AI Agent that puts humans in the loop with Knock and Cloudflare’s Agents SDK
 - **source**: https://blog.cloudflare.com/building-agents-at-knock-agents-sdk/
-- **author**: 
+- **author**:
 - **published**: 2025-06-03T14:00+01:00
 - **fetched**: 2025-06-04T00:50:07Z
 - **tags**: codex, article
 - **image**: https://cf-assets.www.cloudflare.com/zkvhlag99gkb/4QDMGATQYFYtzw9CfEpZeA/b850ebb2dd2b22fd415807c4a7a09cf2/hero-knock-cloudflare-agents.png
 
 ## 要約
+
 Knock社が**Agents SDK**と**Workers**で、カード発行フローに人の承認を組み込む**AIエージェント**の作り方を解説。サーバレスで拡張性も高い。
 
 ## 本文 / Article
-*This is a guest post by Chris Bell, CTO of* [*Knock*](https://knock.app/)
 
-There’s a lot of talk right now about building AI agents, but not a lot out there about what it takes to make those agents truly *useful*.
+_This is a guest post by Chris Bell, CTO of_ [_Knock_](https://knock.app/)
+
+There’s a lot of talk right now about building AI agents, but not a lot out there about what it takes to make those agents truly _useful_.
 
 An Agent is an autonomous system designed to make decisions and perform actions to achieve a specific goal or set of goals, without human input.
 
 No matter how good your agent is at making decisions, you will need a person to provide guidance or input on the agent’s path towards its goal. After all, an agent that cannot interact or respond to the outside world and the systems that govern it will be limited in the problems it can solve.
 
-That’s where the “human-in-the-loop” interaction pattern comes in. You're bringing a human *into* the agent's loop and requiring an input from that human before the agent can continue on its task.
+That’s where the “human-in-the-loop” interaction pattern comes in. You're bringing a human _into_ the agent's loop and requiring an input from that human before the agent can continue on its task.
 
 ![](https://cf-assets.www.cloudflare.com/zkvhlag99gkb/6dhEhrOtwdaWOjJqhrzmMw/cc8576e7ccce43e2df1bacfd91b125ff/image3.png)
 
@@ -33,8 +36,7 @@ With Knock, you gain complete visibility into the messages being sent to your us
 
 You can use Knock to power human-in-the-loop flows for your agents using Knock’s [Agent Toolkit](https://docs.knock.app/developer-tools/agent-toolkit/overview), which is a set of tools that expose Knock’s APIs and messaging capabilities to your AI agents.
 
-Using the Agent SDK as the foundation of our AI Agent
------------------------------------------------------
+## Using the Agent SDK as the foundation of our AI Agent
 
 The Agents SDK provides an abstraction for building stateful, real-time agents on top of [Durable Objects](https://developers.cloudflare.com/durable-objects/) that are globally addressable and persist state using an embedded, [zero-latency](https://blog.cloudflare.com/sqlite-in-durable-objects/) SQLite database.
 
@@ -42,8 +44,7 @@ Building an AI agent outside of using the Agents SDK and the Cloudflare platform
 
 In the example, we’ll use these features to build an agent that users interact with in real-time via chat, and that can be paused and resumed as needed. The Agents SDK is the ideal platform for powering asynchronous agentic workflows, such as those required in human-in-the-loop interactions.
 
-Setting up our Knock messaging workflow
----------------------------------------
+## Setting up our Knock messaging workflow
 
 Within Knock, we design our approval workflow using the visual workflow builder to create the cross-channel messaging logic. We then make the notification templates associated with each channel to which we want to send messages.
 
@@ -98,7 +99,7 @@ import { useAgentChat } from "agents/ai-react";
 function Chat({ userId }: { userId: string }) {
   const agent = useAgent({ agent: "AIAgent", name: userId });
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useAgentChat({ agent });
-  // ... 
+  // ...
 }
 ```
 
@@ -146,19 +147,19 @@ async function initializeToolkit(agent: AIAgent) {
       },
     }
   );
-  
-  return { toolkit, tools: { issueCard } };  
+
+  return { toolkit, tools: { issueCard } };
 }
 ```
 
 There’s a lot going on here, so let’s walk through the key parts:
 
-* We wrap our `issueCard` tool in the `requireHumanInput` method, exposed from the Knock Agent Toolkit
-* We want the messaging workflow to be invoked to be our `approve-issued-card` workflow
-* We pass the agent.name as the `actor` of the request, which translates to the user ID
-* We set the recipient of this workflow to be the user `admin_user_1`
-* We pass the approve and reject URLs so that they can be used in our message templates
-* The wrapped tool is then returned as `issueCard`
+- We wrap our `issueCard` tool in the `requireHumanInput` method, exposed from the Knock Agent Toolkit
+- We want the messaging workflow to be invoked to be our `approve-issued-card` workflow
+- We pass the agent.name as the `actor` of the request, which translates to the user ID
+- We set the recipient of this workflow to be the user `admin_user_1`
+- We pass the approve and reject URLs so that they can be used in our message templates
+- The wrapped tool is then returned as `issueCard`
 
 Under the hood, these options are passed to the [Knock workflow trigger API](https://docs.knock.app/api-reference/workflows/trigger) to invoke a workflow per-recipient. The set of the recipients listed here could be dynamic, or go to a group of users through [Knock’s subscriptions API](https://docs.knock.app/concepts/subscriptions).
 
@@ -214,7 +215,7 @@ const client = new Knock();
 
 app.get("/card-issued/approve", async (c) => {
   const { messageId } = c.req.query();
-  
+
   if (!messageId) return c.text("No message ID found", { status: 400 });
 
   await client.messages.markAsInteracted(messageId, {
@@ -275,10 +276,10 @@ export class AIAgent extends AIChatAgent {
       return { error: "No deferred tool call given" };
     }
 
-    // If we received an "approved" status then we know the call was approved 
+    // If we received an "approved" status then we know the call was approved
     // so we can resume the deferred tool call execution
     if (result.interaction.status === "approved") {
-      const toolCallResult = 
+      const toolCallResult =
 	      await toolkit.resumeToolExecution(result.toolCall);
 
       const { response } = await generateText({
@@ -303,14 +304,13 @@ export class AIAgent extends AIChatAgent {
 
 Again, there’s a lot going on here, so let’s step through the important parts:
 
-* We attempt to transform the body, which is the webhook payload from Knock, into a deferred tool call via the `handleMessageInteraction` method
-* If the metadata status we passed through to the interaction call earlier has an “approved” status then we resume the tool call via the `resumeToolExecution` method
-* Finally, we generate a message from the LLM and persist it, ensuring that the user is informed of the approved card
+- We attempt to transform the body, which is the webhook payload from Knock, into a deferred tool call via the `handleMessageInteraction` method
+- If the metadata status we passed through to the interaction call earlier has an “approved” status then we resume the tool call via the `resumeToolExecution` method
+- Finally, we generate a message from the LLM and persist it, ensuring that the user is informed of the approved card
 
 With this last piece in place, we can now request a new card be issued, have an approval request be dispatched from the agent, send the approval messages, and route those approvals back to our agent to be processed. The agent will asynchronously process our card issue request and the deferred tool call will be resumed for us, with very little code.
 
-Protecting against duplicate approvals
---------------------------------------
+## Protecting against duplicate approvals
 
 One issue with the above implementation is that we’re prone to issuing multiple cards if someone clicks on the approve button more than once. To rectify this, we want to keep track of the tool calls being issued, and ensure that the call is processed at most once.
 
@@ -327,14 +327,14 @@ class AIAgent extends AIChatAgent<Env, AgentState> {
   initialState: AgentState = {
     toolCalls: {},
   };
-  
+
   setToolCallStatus(toolCallId: string, status: ToolCallStatus) {
     this.setState({
       ...this.state,
       toolCalls: { ...this.state.toolCalls, [toolCallId]: status },
     });
-  } 
-  // ... 
+  }
+  // ...
 }
 ```
 
@@ -347,7 +347,7 @@ const { issueCard }  = toolkit.requireHumanInput(
   { issueCard: issueCardTool },
   {
     // Keep track of the tool call state once it's been sent to Knock
-    onAfterCallKnock: async (toolCall) => 
+    onAfterCallKnock: async (toolCall) =>
       agent.setToolCallStatus(toolCall.id, "requested"),
     // ... as before
   }
