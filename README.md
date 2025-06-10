@@ -106,21 +106,23 @@ repo-root
 
 ⸻
 
-## 6. 注意事項
+## 6. Prettier の実行
+
+Markdown やコードを整形する場合は node_tools/run_prettier.js を使いましょう。
+個別にでチェックする場合は以下のコマンド↓
+
+```bash
+npx prettier --write <file globs>
+```
+
+⸻
+
+## 7. 注意事項
 
 - robots.txt を尊重。スクレイピング禁止サイトは除外。
 - JS レンダリング必須サイトは Headless browser (e.g. Playwright) を使用。
 - 著作権・ライセンスを確認し、引用の範囲に収める。
 
 ⸻
-
-## 7. Prettier の実行
-
-`npm install` で最新の Prettier を取得できる。Markdown やコードを整形する場合は node_tools/run_prettier.js を使いましょう。
-個別にでチェックする場合は以下のコマンド↓
-
-```bash
-npx prettier --write <file globs>
-```
 
 Happy clipping! 🚀
