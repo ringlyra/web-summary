@@ -44,7 +44,7 @@ Each of the six security challenges focuses on a different defensive technique. 
 
 Progressing through season three requires players to hack LLMs. Each challenge begins with a set of guiding instructions for the LLM provided in the form of a code and a system message. These elements might include gaps or edge cases that could be exploited using a malicious prompt. Your task is to identify the vulnerabilities and craft prompts to manipulate the model into exposing a hidden secret.
 
-[![](https://github.blog/wp-content/uploads/2025/06/Screenshot-2025-06-02-at-11.52.51 AM.png)](https://github.blog/wp-content/uploads/2025/06/s3-demo.mp4)
+![video](https://github.blog/wp-content/uploads/2025/06/s3-demo.mp4)
 
 After exploiting the vulnerability, your next task is to refine the code and system message to prevent future leaks from those malicious prompts. You must do this while maintaining the functionality of the code.
 
