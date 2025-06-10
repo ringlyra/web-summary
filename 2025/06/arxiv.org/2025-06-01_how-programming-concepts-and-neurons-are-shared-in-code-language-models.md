@@ -7,7 +7,7 @@
 - **tags**: codex, llm, programming languages, code analysis, neurons
 - **image**: https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 複数PLと英語の概念空間の共有を調査。中間層の埋め込み解析で英語キーワードが優勢となり、各PL専用ニューロンは上層に分布するなど構造的傾向を示した。
 
 ## 本文 / Article

@@ -29,7 +29,7 @@ We gratefully acknowledge the organizations and individuals who have made signif
 
 **Company Sponsors**
 
-<a href="https://zilliz.com" target="_blank"><img src="images/ziliz_logo.png" style="border-radius: 12px; margin-right: 24px; vertical-align: middle;" height="96" alt="Zilliz: Key Collaborator"></a>
+<a href="https://zilliz.com" target="_blank"><img src="https://raw.githubusercontent.com/NirDiamant/RAG_Techniques/main/images/ziliz_logo.png" style="border-radius: 12px; margin-right: 24px; vertical-align: middle;" height="96" alt="Zilliz: Key Collaborator"></a>
 
 **Individual Sponsors**
 
@@ -51,14 +51,14 @@ Welcome to one of the most comprehensive and dynamic collections of Retrieval-Au
 </tr>
 </table>
 
-[![Subscribe to DiamantAI Newsletter](images/subscribe-button.svg)](https://diamantai.substack.com/?r=336pe4&utm_campaign=pub-share-checklist)
+[![Subscribe to DiamantAI Newsletter](https://raw.githubusercontent.com/NirDiamant/RAG_Techniques/main/images/subscribe-button.svg)](https://diamantai.substack.com/?r=336pe4&utm_campaign=pub-share-checklist)
 
 *Join over 20,000 of AI enthusiasts getting unique cutting-edge insights and free tutorials!* ***Plus, subscribers get exclusive early access and special 33% discounts to my book and the upcoming RAG Techniques course!***
 </div>
 
 
 
-[![DiamantAI's newsletter](images/substack_image.png)](https://diamantai.substack.com/?r=336pe4&utm_campaign=pub-share-checklist)
+[![DiamantAI's newsletter](https://raw.githubusercontent.com/NirDiamant/RAG_Techniques/main/images/substack_image.png)](https://diamantai.substack.com/?r=336pe4&utm_campaign=pub-share-checklist)
 
 
 ## Introduction

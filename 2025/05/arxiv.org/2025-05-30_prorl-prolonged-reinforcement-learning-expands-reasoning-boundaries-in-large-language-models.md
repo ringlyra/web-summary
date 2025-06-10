@@ -8,7 +8,7 @@
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
 
-## 概要 / Summary
+## 要約
 **ProRL**は**長時間の強化学習**によって、基盤モデルでは到達できない推論境界を拡張する手法。KL制御や多様なタスクで訓練し、pass@k評価で一貫して基盤モデルを上回ることを示す。
 
 ## 本文 / Article

@@ -7,7 +7,7 @@
 - **tags**: codex, ai, performance, pytorch, llm
 - **image**: https://huggingface.co/blog/assets/kv-cache/thumbnail.png
 
-## 概要 / Summary
+## 要約
 nanoVLMリポジトリで**KVキャッシュ**をゼロから実装し、生成速度を**38%**向上させた経験を紹介する。文章生成では過去のトークン列を毎回再計算する必要があるが、各層のSelf-Attentionで使用するKey/Valueを保存することで計算を省略できる。実装では入力処理の**prefill**とキャッシュを使う**decode**の二段階に分け、位置エンコーディングを管理する`start_pos`で整合性を保つ。手法の要点と効率化のメリットを、小規模コードベースを用いて学ぶ狙いが語られている。
 
 ## 本文 / Article

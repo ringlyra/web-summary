@@ -7,7 +7,7 @@
 - **tags**: codex
 - **image**: https://res.cloudinary.com/zenn/image/upload/s--o927mcY9--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Pro%25EF%25BC%2588%252420%25EF%25BC%2589%25E3%2583%2597%25E3%2583%25A9%25E3%2583%25B3%25E3%2581%25A7%25E3%2582%25BC%25E3%2583%25AD%25E3%2581%258B%25E3%2582%2589%25E5%25A7%258B%25E3%2582%2581%25E3%2582%258BClaude%2520Code%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:asap%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2VhYjVhYTQ1MTkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
 
-## 概要 / Summary
+## 要約
 Claude Proプラン(月額 $20)で利用できる **Claude Code** の導入方法を解説。環境構築からテトリス制作、**Playwright MCP** での自動テスト、レート制限の検証まで実践的にまとめている。
 
 1. 契約手順と利用可能モデル（Claude Sonnet 4）の紹介

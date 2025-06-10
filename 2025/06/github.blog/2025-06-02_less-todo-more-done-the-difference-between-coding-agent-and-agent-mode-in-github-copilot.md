@@ -7,7 +7,7 @@
 - **tags**: codex, ai, github, copilot
 - **image**: https://github.blog/wp-content/uploads/2025/05/Github-DarkMode-Blog-Logo-16x9-07.png?fit=1200%2C630
 
-## 概要 / Summary
+## 要約
 **GitHub Copilot**の新機能**エージェントモード**と**コーディングエージェント**の違いを解説する。エージェントモードはエディタ内で同期的にコード修正やテストを実行する相棒、一方コーディングエージェントはGitHub Actions上で非同期にissueを処理し、PRを生成する。併用で開発効率が高まり、人間はレビューや設計に専念できる。活用ポイントや安全・品質チェックも紹介。
 
 ## 本文 / Article

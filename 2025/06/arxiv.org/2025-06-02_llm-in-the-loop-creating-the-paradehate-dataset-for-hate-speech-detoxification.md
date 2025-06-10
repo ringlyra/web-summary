@@ -7,7 +7,7 @@
 - **tags**: codex, dataset, nlp, ai
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 LLM-in-the-loop を活用してヘイトスピーチを無害化するデータセットPARADEHATEを生成。GPT-4o-miniで注釈を自動化し、BARTなどで検証、デトックス性能向上を示す。8kペアを公開。
 
 ## 本文 / Article

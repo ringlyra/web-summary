@@ -7,7 +7,7 @@
 - **tags**: codex, suno, aws, music
 - **image**: https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-v4.9f790b4dcf003500eb01.png?auto=format&bg=fff&fit=fill&fill=blur&w=1200&h=630&q=100&s=63164cc85fd254d91d216087b2a78c3f
 
-## 概要 / Summary
+## 要約
 **Suno**という音楽生成AIを使い、**AWS**サービスをテーマにしたオリジナル曲で資格学習を盛り上げようという記事。Claude 4を用いて歌詞を作り、Sunoで曲を生成する手順を紹介。試作曲として"Foundation of Tomorrow"など3曲を掲載し、Sunoの無料枠情報も触れている。
 
 ## 本文 / Article

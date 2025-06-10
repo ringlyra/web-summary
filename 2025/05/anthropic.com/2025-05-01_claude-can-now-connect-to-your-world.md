@@ -7,7 +7,7 @@
 - **tags**: codex, ai, integration, anthropic
 - **image**: https://cdn.sanity.io/images/4zrzovbb/website/823ff5e709d270e101840e349b539c4cb636dab9-1201x1201.png
 
-## 概要 / Summary
+## 要約
 Anthropicが**Integrations**を公開し、アプリをClaudeに接続可能に。**Research**機能も拡充、ウェブやGoogle Workspaceを横断検索。検索は有料プランで提供。
 
 ## 本文 / Article

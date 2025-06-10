@@ -7,7 +7,7 @@
 - **tags**: codex, ai
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 LLM を使い、文章の 90% 以上を他文書から直接引用しつつ、一貫した物語を生成する **Frankentexts** を提案。Gemini-2.5-Pro で検証したところ、品質と指示適合度は高く、**AI 文章判定** では最大 59% が人間作と誤判定された。
 
 ## 本文 / Article

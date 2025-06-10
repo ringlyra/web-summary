@@ -7,7 +7,7 @@
 - **tags**: codex, ai, forecasting
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 LLMの予測評価には**時系列リーク**や**実運用への外挿難**などの課題が存在。研究ではこうした問題点を整理し、より厳密な評価手法の確立を促している。
 
 ## 本文 / Article

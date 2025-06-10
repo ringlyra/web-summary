@@ -16,7 +16,7 @@ JulesのChangelogでは、2025年5月19日のローンチ以降の更新内容�
 
 **June 6, 2025**
 
-![Jules code view](/docs/_astro/jules-copy-paste-download.Bh0k6Pa9_ZL8pAP.webp)
+![Jules code view](https://jules.google/docs/_astro/jules-copy-paste-download.Bh0k6Pa9_ZL8pAP.webp)
 
 **Performance upgrades:** Enjoy a smoother, faster Jules experience with recent under-the-hood improvements.
 
@@ -54,7 +54,7 @@ Weâve been heads down improving stability and fixing bugsâbig and smal
 
 **May 19, 2025**
 
-![Jules dashboard](/docs/_astro/jules-changelog-og-image.CksfgUSk_1wDNHc.webp)
+![Jules dashboard](https://jules.google/docs/_astro/jules-changelog-og-image.CksfgUSk_1wDNHc.webp)
 
 Today, weâre launching [**Jules,**](https://jules.google.com) a new AI coding agent.
 

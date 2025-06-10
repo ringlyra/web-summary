@@ -7,7 +7,7 @@
 - **tags**: codex, changelog, openai
 - **image**: https://downloads.intercomcdn.com/i/o/dgkjq2bp/1553073411/18a74d8b76049eebb1a9bb2ec5e6/image.png
 
-## 概要 / Summary
+## 要約
 
 Codex の更新情報。**インターネットアクセス**を付与して依存関係をインストール可能になり、既存**PRの更新**や**音声入力**対応、環境設定の改善、iOS版**ChatGPT**への統合などが行われた。
 

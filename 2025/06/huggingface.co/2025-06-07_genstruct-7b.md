@@ -7,7 +7,7 @@
 - **tags**: codex
 - **image**: https://cdn-thumbnails.huggingface.co/social-thumbnails/models/NousResearch/Genstruct-7B.png
 
-## 概要 / Summary
+## 要約
 Genstruct 7Bは生データからユーザーに与えられた文脈を取り入れ、複雑なシナリオを含む質問と回答例を生成するモデルである。Ada-Instructを基にしつつ、追加の文脈を用いたInstruction生成を行い、生成したデータから推論能力を高めることを狙っている。
 
 ## 本文 / Article

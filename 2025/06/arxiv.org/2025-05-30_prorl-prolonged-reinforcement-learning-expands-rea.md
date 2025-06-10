@@ -7,7 +7,7 @@
 - **tags**: codex, reinforcement learning, reasoning, llm
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 長時間の**ProRL**訓練によりLLMの推論能力を拡張できるか検証。**KL制御**や参照ポリシーのリセットを導入し、幅広いタスクで基盤モデルを上回る性能を示した。
 
 ## 本文 / Article

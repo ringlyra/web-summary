@@ -7,7 +7,7 @@
 - **tags**: codex
 - **image**: https://softwaredoug.com//assets/media/2025/top1000.jpg
 
-## 概要 / Summary
+## 要約
 　この記事は Doug Turnbull によるブログ投稿で、検索エンジンの複雑なクエリDSLに頼るのではなく、エンジンからトップN件の候補だけを取得し、アプリケーション側のAPIでリランキングやブーストを行うべきだと論じている。エンジンはシンプルな取得(L0)に徹し、BM25やトークナイズ、ページングなどをクライアントライブラリで扱えば、Pythonなど馴染みのツールを用いて柔軟な検索ロジックを実装できるという主張。
 
 ## 本文 / Article
@@ -19,7 +19,7 @@ Elasticsearch, Vespa, Weaviate, and friends all have sophisticated under-the-hoo
 
 But its OK. We can just get the top 1000 candidates from the search engine and manipulate the ranking.
 
-![/assets/media/2025/top1000.jpg](/assets/media/2025/top1000.jpg)
+![/assets/media/2025/top1000.jpg](https://softwaredoug.com/assets/media/2025/top1000.jpg)
 
 For years I thought of this as a dirty hack. After all, you’d need to reimplement much of the search engine yourself: paging, aggregations, etc.
 
@@ -111,6 +111,6 @@ Do libraries like this exist and I’m not seeing it? Should search engine clien
 
 ### Enjoy softwaredoug in training course form!
 
-![Cheat at Search with LLMs](/assets/media/2025/cheat-at-search-social.png)
+![Cheat at Search with LLMs](https://softwaredoug.com/assets/media/2025/cheat-at-search-social.png)
 
 I hope you join me at [Cheat at Search with LLMs](https://maven.com/softwaredoug/cheat-at-search) to learn how to apply LLMs to search applications. Check out [this post](https://github.com/softwaredoug/softwaredoug.com/edit/master/_includes/post.html) for a sneak preview.

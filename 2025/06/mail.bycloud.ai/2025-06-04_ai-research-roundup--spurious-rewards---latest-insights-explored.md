@@ -7,7 +7,7 @@
 - **tags**: codex, ai, research
 - **image**: https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6d21e855-ca01-459a-b19b-a8b5c4cfbb2b/issue_58.jpg?t=1748980487
 
-## 概要 / Summary
+## 要約
 最新のAI研究ニュースレターでは、**DeepSeek**モデルの強化版や、画像編集に強い**FLUX.1 Kontext**など業界動向を紹介。注目論文は、**RLVR**でランダムや誤った報酬でも計算能力が向上するという衝撃の事実を報告し、特に**Qwen**系列はコード生成への嗜好が精度向上に寄与していると指摘。他にも、Transformerが系統的探索を苦手とする問題や、外部報酬を使わず自己確信度で学習する**RLIF/INTUITOR**手法の効果を解説。全体としてLLMの推論能力を高める新たなアプローチが議論された。
 
 ## 本文 / Article

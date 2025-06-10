@@ -7,7 +7,7 @@
 - **tags**: codex, ai-agents, openai, ai, llms, ai-assisted-programming, generative-ai, chatgpt, github, testing, postgresql
 - **image**: https://static.simonwillison.net/static/2025/codex-fix.jpg
 
-## 概要 / Summary
+## 要約
 **OpenAI Codex** を活用し自ブログの **OGP** 説明文のMarkdownを除去する **GitHub** PRを作成し、Codexのエージェント活用事例を紹介。
 
 ## 本文 / Article

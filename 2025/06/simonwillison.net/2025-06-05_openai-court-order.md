@@ -7,7 +7,7 @@
 - **tags**: codex, ai-ethics, generative-ai, openai, new-york-times, ai, law, llms
 - **image**: 
 
-## 概要 / Summary
+## 要約
 **OpenAI** が **ChatGPT** のログをすべて保存するよう求められた裁判所命令に強く反発。削除済みも含めたログ保管は多数の **プライバシー法** に抵触すると主張するが、判事は証拠保全の必要性を優先するとして命令を出した。これにより OpenAI の API 利用者が他社に移る可能性も懸念されている。
 
 ## 本文 / Article

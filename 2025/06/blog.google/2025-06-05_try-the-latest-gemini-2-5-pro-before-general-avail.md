@@ -7,7 +7,7 @@
 - **tags**: codex, ai
 - **image**: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2.5_pro_preview_snippet_social_share.max-1440x810.jpg
 
-## 概要 / Summary
+## 要約
 Gemini 2.5 Proのプレビュー版がアップグレードされ、まもなく正式リリース予定。最新モデルは各種ベンチマークで高スコアを記録し、前回版からスタイルと構成も改善。開発者はGoogle AI StudioやVertex AIで利用でき、思考予算(コストとレイテンシ制御機能)も追加。Geminiアプリでも公開開始。
 
 ## 本文 / Article

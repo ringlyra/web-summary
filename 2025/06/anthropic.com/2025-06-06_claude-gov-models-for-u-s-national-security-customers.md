@@ -7,7 +7,7 @@
 - **tags**: codex, ai, government, security, anthropic
 - **image**: https://www-cdn.anthropic.com/images/4zrzovbb/website/a4b4c0066fe7b5761115569317b97259567e207c-1920x1079.png
 
-## 概要 / Summary
+## 要約
 Anthropicは米国国家安全保障向けに**Claude Govモデル**を提供開始。政府顧客のフィードバックを反映し、安全性試験も他のClaudeモデルと同等に実施。**機密情報**への対応能力や**諜報・防衛**分野での理解度、重要な言語への対応、**サイバーセキュリティ**分析などが強化され、戦略立案から情報分析まで幅広く支援する。詳細はpubsec@anthropic.comまで。
 
 ## 本文 / Article
