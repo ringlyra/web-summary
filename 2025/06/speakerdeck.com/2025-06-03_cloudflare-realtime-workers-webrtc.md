@@ -258,7 +258,7 @@ TURN Serve
 
 Serverless SF
 
-(STUN Server) 
+
 
 
 で提供はされている
@@ -386,6 +386,48 @@ Error();
 }
 18constnewletifconstawaitconstnewreturn remoteTrackPromise ((resolve) {
 tracks [];
+response (
+,
+{
+method ,
+headers {
+,
+Authorization ${appSecret},
+},
+body .({
+sessionDescription {
+type ,
+sdp peerConnection.localDescription.sdp,
+},
+}),
+},
+newSessionResult response.();setLocalDescriptioncreateOfferfetchstringifyjson=::::::::="https://rtc.live.cloudflare.com/v1/apps/${appId}/sessions/new""POST""application/json"`Bearer `"offer""Content-Type"JSON1
+15trackObjects transceivers.((transceiver) {
+{
+location ,
+mid transceiver.mid ,
+trackName transceiver.sender.track.id,
+};
+peerConnection.( peerConnection.());
+newLocalTrackResult app.(
+trackObjects,
+peerConnection.localDescription.sdp,
+); peerConnection.(
+RTCSessionDescription(newLocalTrackResult.sessionDescription),
+(newRemoteTracksResult.sessionDescription.type) {
+.(${sessionId});
+peerConnection.(
+RTCSessionDescription(newRemoteTracksResult.sessionDescription),
+);
+peerConnection.(
+peerConnection.(),
+);
+app.(peerConnection.localDescription.sdp);
+;
+Error();
+}
+18constnewletifconstawaitconstnewreturn remoteTrackPromise ((resolve) {
+tracks [];
 peerConnection. (event) {
 tracks.(event.track);
 .(${event.track.id}${event.track.mid});
@@ -403,49 +445,6 @@ remoteStream;
 DataChannelとかも使える & WHIPの参考実装などもあ
 Realtime Kitたのしみ！
 Cloudflare Realtime
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20awaitawaitconstawaitconstawait peerConnection.( peerConnection.());
-
- response   (
-  ,
-  {
-    method ,
-    headers {
-       ,
-      Authorization ${appSecret},
-    },
-    body .({
-      sessionDescription {
-        type ,
-        sdp peerConnection.localDescription.sdp,
-      },
-    }),
-  },
-);
-
- newSessionResult   response.();setLocalDescriptioncreateOfferfetchstringifyjson=::::::::="https://rtc.live.cloudflare.com/v1/apps/${appId}/sessions/new""POST""application/json"`Bearer `"offer""Content-Type"JSON1
-2
-3
-4
-5
-6
-7
-8
-
-9
-10
-11
-12
-13
-14
 15trackObjects  transceivers.((transceiver)  {
    {
     location ,
