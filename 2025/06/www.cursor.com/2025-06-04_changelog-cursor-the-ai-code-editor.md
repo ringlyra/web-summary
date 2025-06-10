@@ -23,7 +23,7 @@ When an issue is found, BugBot leaves a comment on your PRs in GitHub. You can c
 
 To set it up, follow instructions in our [BugBot docs](https://docs.cursor.com/bugbot)
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/1-0/bug-bot-web.mp4)
+![video](https://www.cursor.com/changelog/1-0/bug-bot-web.mp4)
 
 ### Background Agent for everyone
 
@@ -37,7 +37,7 @@ Cursor can now implement changes in Jupyter Notebooks!
 
 Agent will now create and edit multiple cells directly inside of Jupyter, a significant improvement for research and data science tasks. Only supported with Sonnet models to start.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/1-0/jupyter-notebooks-web.mp4)
+![video](https://www.cursor.com/changelog/1-0/jupyter-notebooks-web.mp4)
 
 ### Memories
 
@@ -45,7 +45,7 @@ With Memories, Cursor can remember facts from conversations and reference them i
 
 We're rolling out Memories as a beta feature. To get started, enable from Settings → Rules.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/1-0/memories-web.mp4)
+![video](https://www.cursor.com/changelog/1-0/memories-web.mp4)
 
 ### MCP one-click install and OAuth support
 
@@ -55,15 +55,15 @@ We've curated a short list of official MCP servers you can add to Cursor at [doc
 
 If you're an MCP developer, you can easily make your server available to developers by adding a *Add to Cursor* button in your documentation and READMEs. Generate one at [docs.cursor.com/deeplinks](https://docs.cursor.com/deeplinks)
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/1-0/mcp-one-click.mp4)
+![video](https://www.cursor.com/changelog/1-0/mcp-one-click.mp4)
 
 ### Richer Chat responses
 
 Cursor can now render visualizations inside of a conversation. In particular, Mermaid diagrams and Markdown tables can now be generated and viewed in the same place!
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/1-0/mermaid-web.mp4)
+![video](https://www.cursor.com/changelog/1-0/mermaid-web.mp4)
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/1-0/markdown-web.mp4)
+![video](https://www.cursor.com/changelog/1-0/markdown-web.mp4)
 
 ### New Settings and Dashboard
 
@@ -112,7 +112,7 @@ The pricing is straightforward: you're charged based on token usage. If you've u
 
 Read more about Max Mode in our [documentation](https://docs.cursor.com/context/max-mode)
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/050/max-mode.mp4)
+![video](https://www.cursor.com/changelog/050/max-mode.mp4)
 
 ### New Tab model
 
@@ -128,13 +128,13 @@ This allows you to run many agents in parallel and have them tackle bigger tasks
 
 We're curious to hear what you think. While it is still early, we've found background agents useful internally for fixing nits, doing investigations, and writing first drafts of medium-sized PRs. Read more at [docs.cursor.com/background-agent](https://docs.cursor.com/background-agent).
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/050/bg.mp4)
+![video](https://www.cursor.com/changelog/050/bg.mp4)
 
 ### Include your entire codebase in context
 
 You can now use `@folders` to add your entire codebase into context, just make sure to enable `Full folder contents` from settings. If a folder (or file) is too large to be included, you'll see a small icon on the context pill indicating this.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/050/root.mp4)
+![video](https://www.cursor.com/changelog/050/root.mp4)
 
 ### Refreshed Inline Edit (Cmd/Ctrl+K) with Agent integration
 
@@ -142,13 +142,13 @@ Inline Edit (Cmd/Ctrl+K) has gotten a UI refresh and new options for full file e
 
 Full file makes it easy to do scope changes to a file without using agent. However, you might come across cases where you're working with a piece of code you want to make multi-file edits to or simply just want more control you can get from agent. That's when you want to send selected codeblock to agent and keep on editing from there.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/050/cmdk.mp4)
+![video](https://www.cursor.com/changelog/050/cmdk.mp4)
 
 ### Fast edits for long files with Agent
 
 We've added a new tool to the agent that will search & replace code in files, making it much more efficient for long files. Instead of reading the complete file, Agent can now find the exact place where edits should occur and change only that part. Here's an example editing a file in [Postgres codebase](https://github.com/postgres/postgres/blob/master/src/backend/tcop/postgres.c) where using search & replace tool is nearly double as fast. We're rolling this out to Anthropic models first and will expand to other models soon.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/050/search-n-replace.mov)
+![video](https://www.cursor.com/changelog/050/search-n-replace.mov)
 
 ### Work in multiple codebases with workspaces
 
@@ -162,13 +162,13 @@ Now you can create multi-root workspaces to make multiple codebases available to
 
 You can now export chats to markdown from the chat view. Text and code blocks are included in the final export.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/050/export-chat.mp4)
+![video](https://www.cursor.com/changelog/050/export-chat.mp4)
 
 #### Duplicate Chats
 
 Exploring different paths from a conversation while preserving the existing is now possible with chat duplication. Go to a message and start a new chat from the three dots menu.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/050/duplicate-chat.mp4)
+![video](https://www.cursor.com/changelog/050/duplicate-chat.mp4)
 
 Keybindings (1)
 
@@ -240,7 +240,7 @@ For `Auto Attached` rules with path patterns defined, Agent will now automatical
 
 We’ve also fixed a long-standing issue where `Always` attached rules now persist across longer conversations. Agent can now also edit rules reliably.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/049/generate-rules.mp4)
+![video](https://www.cursor.com/changelog/049/generate-rules.mp4)
 
 ### More accessible history
 
@@ -250,19 +250,19 @@ Chat history has moved into the command palette. You can access it from the "Sho
 
 Reviewing agent generated code is now easier with a built-in diff view at the end of each conversation. You'll find the `Review changes` button at the bottom of chat after a message from the agent.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/049/review-ui.mp4)
+![video](https://www.cursor.com/changelog/049/review-ui.mp4)
 
 ### Images in MCP
 
 You can now pass images as part of the context in MCP servers. This helps when screenshots, UI mocks, or diagrams add essential context to a question or prompt.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/049/mcp-image.mp4)
+![video](https://www.cursor.com/changelog/049/mcp-image.mp4)
 
 ### Improved agent terminal control
 
 We've added more control for you over terminals started by the agent. Commands can now be edited before they run, or skipped entirely. We've also renamed "Pop-out" to "Move to background" to better reflect what it does.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/049/agent-terminal.mp4)
+![video](https://www.cursor.com/changelog/049/agent-terminal.mp4)
 
 ### Global ignore files
 
@@ -384,7 +384,7 @@ Create new tabs (⌘T) in chat to have multiple conversations in parallel. You c
 
 When a tab is awaiting your input, you'll see an orange dot on that tab.
 
-[Your browser does not support the video tag.](https://www.cursor.com/changelog/048/chat-tabs.mp4)
+![video](https://www.cursor.com/changelog/048/chat-tabs.mp4)
 
 ### Faster indexing
 
