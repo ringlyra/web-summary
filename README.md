@@ -117,6 +117,7 @@ repo-root
 ## 7. Prettier の実行
 
 `npm install` で最新の Prettier を取得できる。Markdown やコードを整形する場合は node_tools/run_prettier.js を使いましょう。
+個別にでチェックする場合は以下のコマンド↓
 
 ```bash
 npx prettier --write <file globs>
