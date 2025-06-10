@@ -18,7 +18,7 @@ This isn’t just autocomplete. It’s a new class of software engineering agent
 
 Oh, and if you’re a visual learner we have you covered. 👇
 
-![video](https://github.blog/wp-content/uploads/2025/06/Copilot-Coding-Agent-Overview-v3-Burned.mp4)
+[![video](https://github.blog/wp-content/uploads/2025/06/Screenshot-2025-06-05-at-11.22.28%E2%80%AFAM.png)](https://github.blog/wp-content/uploads/2025/06/Copilot-Coding-Agent-Overview-v3-Burned.mp4)
 
 ## Coding agent in GitHub Copilot 101
 
