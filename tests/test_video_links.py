@@ -26,33 +26,34 @@ PAREN_VIDEO_RE = re.compile(
 
 def test_video_links():
     """
-    2025/ 配下の .md ファイルについて
+    2025/ と 2023/ 配下の .md ファイルについて
     1. 動画 URL は https:// で始まる
     2. 行内に [![alt](poster)](動画) 形式で書かれている
     の両方を満たしているかを検証する
     """
     errors: list[str] = []
 
-    for md in pathlib.Path("2025").rglob("*.md"):
-        for lineno, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
-            # その行に存在する「正しい動画 URL」を収集
-            correct_urls = {
-                m.group(1) for m in CORRECT_VIDEO_LINK_RE.finditer(line)
-            }
+    for year in ("2025", "2023"):
+        for md in pathlib.Path(year).rglob("*.md"):
+            for lineno, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
+                # その行に存在する「正しい動画 URL」を収集
+                correct_urls = {
+                    m.group(1) for m in CORRECT_VIDEO_LINK_RE.finditer(line)
+                }
 
-            # 丸かっこ内の動画 URL を列挙し、違反がないか確認
-            for m in PAREN_VIDEO_RE.finditer(line):
-                url = m.group(1)
+                # 丸かっこ内の動画 URL を列挙し、違反がないか確認
+                for m in PAREN_VIDEO_RE.finditer(line):
+                    url = m.group(1)
 
-                if not url.startswith("https://"):
-                    errors.append(
-                        f"{md}:{lineno}: https ではない → {url}"
-                    )
-                elif url not in correct_urls:
-                    errors.append(
-                        f"{md}:{lineno}: "
-                        "[![alt](poster)](url) 形式ではない → "
-                        f"{url}"
-                    )
+                    if not url.startswith("https://"):
+                        errors.append(
+                            f"{md}:{lineno}: https ではない → {url}"
+                        )
+                    elif url not in correct_urls:
+                        errors.append(
+                            f"{md}:{lineno}: "
+                            "[![alt](poster)](url) 形式ではない → "
+                            f"{url}"
+                        )
 
     assert not errors, "動画リンクのフォーマットエラー:\n" + "\n".join(errors)

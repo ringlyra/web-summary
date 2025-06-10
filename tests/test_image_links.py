@@ -17,26 +17,28 @@ PAREN_IMG_RE = re.compile(
 
 def test_image_links():
     """
+    2025/ と 2023/ 配下の .md ファイルについて
     - https:// で始まる
     - 同じ行に ![任意](URL) 形式で書かれている
     という 2 条件を画像リンクに対してチェックする
     """
     errors: list[str] = []
 
-    for md in pathlib.Path("2025").rglob("*.md"):
-        for lineno, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
-            good_urls = {m.group(1) for m in INLINE_IMG_RE.finditer(line)}
+    for year in ("2025", "2023"):
+        for md in pathlib.Path(year).rglob("*.md"):
+            for lineno, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
+                good_urls = {m.group(1) for m in INLINE_IMG_RE.finditer(line)}
 
-            for m in PAREN_IMG_RE.finditer(line):
-                url = m.group(1)
+                for m in PAREN_IMG_RE.finditer(line):
+                    url = m.group(1)
 
-                if not url.startswith("https://"):
-                    errors.append(
-                        f"{md}:{lineno}: https ではない → {url}"
-                    )
-                if url not in good_urls:
-                    errors.append(
-                        f"{md}:{lineno}: ![...](url) 形式ではない → {url}"
-                    )
+                    if not url.startswith("https://"):
+                        errors.append(
+                            f"{md}:{lineno}: https ではない → {url}"
+                        )
+                    if url not in good_urls:
+                        errors.append(
+                            f"{md}:{lineno}: ![...](url) 形式ではない → {url}"
+                        )
 
     assert not errors, "画像リンクのフォーマットエラー:\n" + "\n".join(errors)
