@@ -1,30 +1,31 @@
 import pathlib
 import re
 
-# ── ① 正しい inline 形式: ![](https://...mp4|mov|m3u8)
+# 対応拡張子（動画）
+VIDEO_EXT = r"(?:mp4|mov|m3u8)"
+
+# ![任意の alt](https://… .mp4|mov|m3u8)
 INLINE_VIDEO_RE = re.compile(
-    r'!\[\]\((https://[^)]+\.(?:mp4|mov|m3u8)(?:\?[^)]*)?)\)',
+    rf"!\[[^\]]*]\((https://[^)]+\.{VIDEO_EXT}(?:\?[^)]*)?)\)",
     flags=re.IGNORECASE,
 )
 
-# ── ② かっこだけ検出: (https://...mp4|mov|m3u8)
+# (https://… .mp4|mov|m3u8) ― alt 有無は問わない
 PAREN_VIDEO_RE = re.compile(
-    r'\(([^)]+\.(?:mp4|mov|m3u8)(?:\?[^)]*)?)\)',
+    rf"\(([^)]+\.{VIDEO_EXT}(?:\?[^)]*)?)\)",
     flags=re.IGNORECASE,
 )
 
 
 def test_video_links():
     """
-    2025/ 以下の .md に含まれる動画リンクが
-    1) https:// で始まり
-    2) 行内で ![](URL) 形式になっているか
-    を検証します。
+    - https:// で始まる
+    - 同じ行に ![任意](URL) 形式で書かれている
+    という 2 条件を動画リンクに対してチェックする
     """
-    md_files = pathlib.Path("2025").rglob("*.md")
     errors: list[str] = []
 
-    for md in md_files:
+    for md in pathlib.Path("2025").rglob("*.md"):
         for lineno, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
             good_urls = {m.group(1) for m in INLINE_VIDEO_RE.finditer(line)}
 
@@ -32,9 +33,12 @@ def test_video_links():
                 url = m.group(1)
 
                 if not url.startswith("https://"):
-                    errors.append(f"{md}:{lineno}:非 https URL → {url}")
-
+                    errors.append(
+                        f"{md}:{lineno}: https ではない → {url}"
+                    )
                 if url not in good_urls:
-                    errors.append(f"{md}:{lineno}:![](url) 形式で書かれていない → {url}")
+                    errors.append(
+                        f"{md}:{lineno}: ![...](url) 形式ではない → {url}"
+                    )
 
-    assert not errors, "Video link errors:\n" + "\n".join(errors)
+    assert not errors, "動画リンクのフォーマットエラー:\n" + "\n".join(errors)
