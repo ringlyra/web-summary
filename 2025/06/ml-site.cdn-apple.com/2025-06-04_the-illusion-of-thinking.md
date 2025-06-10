@@ -122,9 +122,41 @@ Tower of Hanoi Checkers Jumping River Crossing Blocks World
 4 Experiments & Results
 4.1 Experimental Setup
 4.2 How Does Complexity Affect Reasoning?
+another stack.
+MATH-500 AIME24 AIME25
+100 100 100
+80 80
+60 60
+40 40
+claude-3-7-sonnet-thinking 20 claude-3-7-sonnet-thinking 20 claude-3-7-sonnet-thinking
+claude-3-7-sonnet-no-thinking claude-3-7-sonnet-no-thinking claude-3-7-sonnet-no-thinking
+80 0 0
+0 5000 10000 15000 20000 25000 30000 35000 0 50000 100000 150000 200000 0 50000 100000 150000 200000
+Inference Compute Budget (Tokens) Inference Compute Budget (Tokens) Inference Compute Budget (Tokens)
+MATH-500 AIME24 AIME25
+100 100 100
+80 80
+60 60
+40 40
+DeepSeek-R1 20 DeepSeek-R1 20 DeepSeek-R1
+DeepSeek-V3 DeepSeek-V3 DeepSeek-V3
+80 0 0
+0 10000 20000 30000 40000 0 20000 40000 60000 80000 100000 120000 0 20000 40000 60000 80000 100000 120000
+Inference Compute Budget (Tokens) Inference Compute Budget (Tokens) Inference Compute Budget (Tokens)
+3 Math and Puzzle Environments
+Tower of Hanoi Checkers Jumping River Crossing Blocks World
+
+3.1 Puzzle Environments
+
+4 Experiments & Results
+4.1 Experimental Setup
+
+4.2 How Does Complexity Affect Reasoning?
 4.2.1 Three Regimes of Complexity
 
+
 4.2.2 Collapse of Reasoning Models
+
 4.3 What Happens Inside the Thoughts of Reasoning Models?
 100 N=1
 80 N=3
@@ -132,23 +164,28 @@ Tower of Hanoi Checkers Jumping River Crossing Blocks World
 40 N=8
 0 4000 8000 12000
 (a) (b)
+
+
 4.4 Open Questions: Puzzling Behavior of Reasoning Models
 Tower of Hanoi Tower of Hanoi Tower of Hanoi River Crossing
+
 100 100
+
 DeepSeek-R1 Claude-3.7-Sonnet (thinking) Claude-3.7-Sonnet (thinking)
 Algorithm Given Algorithm Given 8
 80 80 80
 Default Default
+
 60 60 60 6
+
 40 40 40 4
 20 20 20
 0 0 0
 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 2 3 4 5 6 8 10 15 20
 Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of People)
+
 (a) (b) (c) (d)
 5 Conclusion
-
-
 technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219, 2024.
 Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825, 2023.
 Sedghi. Teaching algorithmic reasoning via in-context learning. arXiv preprint arXiv:2211.09066, 2022.
@@ -159,152 +196,29 @@ ematics examination (aime). https://maa.org/math-competitions/
 [42] Art of Problem Solving. Amc historical results - aime i (february 1, 2024).
 [43] Art of Problem Solving. Amc historical results – aime i (february 6, 2025).
 A Appendix
+
+
 A.1 Details on Puzzle Environment Specifications and Design
 A.1.1 Tower of Hanoi
+
+
+
    another stack.
+
+
+
+
+
 A.1.2 Checker Jumping
 (’\_’). In the standard configuration, N red checkers are positioned on the left side, followed by an
 space (’\_’). A checker can move by either:
 moves = [[’R ’ , 0 , 1] , [ ’B ’ , 2 , 0] , [ ’R ’ , 1 , 2]]
+
+
 Goal board: B B ... B \_ R R ... R
 A.1.3 River Crossing
 A.1.4 Blocks World
-
-
-4
-MATH-500                                                                           AIME24                                                                  AIME25
-100                                                                             100                                                                          100
-
-
-80                                                                           80
-95
-pass@k
-
-
-
-
-pass@k
-
-
-
-
-pass@k
-60                                                                           60
-90
-40                                                                           40
-
-85
-claude-3-7-sonnet-thinking                          20                             claude-3-7-sonnet-thinking                    20                        claude-3-7-sonnet-thinking
-claude-3-7-sonnet-no-thinking                                                      claude-3-7-sonnet-no-thinking                                           claude-3-7-sonnet-no-thinking
-80                                                                               0                                                                            0
-0     5000     10000    15000   20000   25000   30000    35000                      0       50000        100000    150000     200000                         0        50000        100000       150000     200000
-Inference Compute Budget (Tokens)                                                   Inference Compute Budget (Tokens)                                        Inference Compute Budget (Tokens)
-MATH-500                                                                          AIME24                                                                  AIME25
-100                                                                             100                                                                          100
-
-
-80                                                                           80
-95
-pass@k
-
-
-
-
-pass@k
-
-
-
-
-pass@k
-60                                                                           60
-90
-40                                                                           40
-
-85
-DeepSeek-R1                     20                                               DeepSeek-R1                 20                                          DeepSeek-R1
-DeepSeek-V3                                                                      DeepSeek-V3                                                             DeepSeek-V3
-80                                                                               0                                                                            0
-0            10000         20000        30000           40000                   0        20000   40000     60000   80000    100000   120000                  0    20000   40000   60000     80000   100000 120000
-Inference Compute Budget (Tokens)                                                   Inference Compute Budget (Tokens)                                        Inference Compute Budget (Tokens)
-
-
-Figure 2: Comparative analysis of thinking versus non-thinking models across math benchmarks
-reveals inconsistent performance patterns. While results on the MATH-500 dataset show comparable
-performance between both model types, the thinking models demonstrate superior performance
-on AIME24 and AIME25 benchmarks. Additionally, the observed performance degradation from
-AIME24 to AIME25 highlights the vulnerability of these benchmarks to data contamination issues.
-
-
-3                  Math and Puzzle Environments
-Currently, it is not clear whether the performance enhancements observed in recent RL-based
-thinking models are attributable to increased exposure to established mathematical benchmark
-data, to the significantly greater inference compute allocated to thinking tokens, or to reasoning
-capabilities developed by RL-based training? Recent studies [35, 39] have explored this question
-with established math benchmarks by comparing the upper-bound capabilities (pass@k) of RL-based
-thinking models with their non-thinking standard LLM counterparts. They have shown that under
-equivalent inference token budgets, non-thinking LLMs can eventually reach performance comparable
-to thinking models on benchmarks like MATH500 [40] and AIME24 [41]. We also conducted our
-comparative analysis of frontier LRMs like Claude-3.7-Sonnet (with vs. without thinking) and
-DeepSeek (R1 vs. V3). Our results (shown in Fig. 2) confirm that, on the MATH500 dataset, the
-pass@k performance of thinking models is comparable to their non-thinking counterparts when
-provided with the same inference token budget. However, we observed that this performance gap
-widens on the AIME24 benchmark and widens further on AIME25. This widening gap presents
-an interpretive challenge. It could be attributed to either: (1) increasing complexity requiring
-more sophisticated reasoning processes, thus revealing genuine advantages of the thinking models
-for more complex problems, or (2) reduced data contamination in newer benchmarks (particularly
-AIME25). Interestingly, human performance on AIME25 was actually higher than on AIME24
-[42, 43], suggesting that AIME25 might be less complex. Yet models perform worse on AIME25
-than AIME24—potentially suggesting data contamination during the training of frontier LRMs.
-Given these non-justified observations and the fact that mathematical benchmarks do not allow for
-controlled manipulation of problem complexity, we turned to puzzle environments that enable more
-precise and systematic experimentation.
-
-
-
-
-5
-Tower of Hanoi       Checkers Jumping          River Crossing           Blocks World
-
-Initial State
-
-
-moves
-
-
-Middle State
-
-
-moves
-
-
-Target State
-
-
-Figure 3: Illustration of the four puzzle environments. Columns show the progression from initial
-state (top) through intermediate state (middle) to target state (bottom) for puzzles: Tower
-of Hanoi (disk transfer across pegs), Checkers Jumping (position swapping of colored tokens), River
-Crossing (transporting entities across a river), and Blocks World (stack reconfiguration).
-
-
-3.1       Puzzle Environments
-We evaluate LRM reasoning on four controllable puzzles spanning compositional depth, planning
-complexity, and distributional settings. The puzzles are defined below and illustrated in Fig. 3.
-Tower of Hanoi is a puzzle featuring three pegs and n disks of different sizes stacked on the first
-peg in size order (largest at bottom). The goal is to transfer all disks from the first peg to the third
-peg. Valid moves include moving only one disk at a time, taking only the top disk from a peg, and
-never placing a larger disk on top of a smaller one. The difficulty in this task can be controlled by
-the number of initial disks as the minimum number of required moves with n initial disks will be
-2n − 1. However, in this work we do not grade for optimality of final solution and only measuring
-the correctness of each move and reaching the target state.
-Checker Jumping is a one-dimensional puzzle arranging red checkers, blue checkers, and a single
-empty space in a line. The objective is to swap the positions of all red and blue checkers, effectively
-mirroring the initial configuration. Valid moves include sliding a checker into an adjacent empty
-space or jumping over exactly one checker of the opposite color to land in an empty space. No checker
-can move backward in the puzzle process. The complexity of this task can be controlled by the
-number of checkers: with 2n checkers, the minimum number of moves required will be (n + 1)2 − 1.
-River Crossing is a constraint satisfaction planning puzzle involving n actors and their corresponding
-n agents who must cross a river using a boat. The goal is to transport all 2n individuals from the
-left bank to the right bank. The boat can carry at most k individuals and cannot travel empty.
+A.2 Implementation Details
 Invalid situations arise when an actor is in the presence of another agent without their own agent
 present, as each agent must protect their client from competing agents. The complexity of this task
 can also be controlled by the number of actor/agent pairs present. For n = 2, n = 3 pairs, we use
@@ -1202,48 +1116,25 @@ moves list) were filtered. In case of duplicate solutions, only the first soluti
 
 Solution Evaluation After extraction, each solution candidate is passed to the corresponding
 simulator of puzzle for fine-grained verification. The simulator takes a solution as list of moves and
-evaluate that with respect to the puzzle (check App. A.1 for details of each puzzle simulator). Each
-move in the compositional solution is executed sequentially according to previous moves and the
-puzzle rules. Then, the final state obtained from all moves in the sequence is compared to the goal
-state of puzzle to determine full solution correctness. For incorrect solutions, details of first failure
-move and the type of failure is also collected during the move verification with puzzle simulator.
-
-Execution of Prescribed Steps In addition to open-ended problem solving across different
-puzzles, we also conducted focused experiments to test how providing the explicit solving algorithm
-
-24
-guidance with prescribed steps would affect behavior of these reasoning models (Sec. 4.4).
-We expected that finding and devising solution from scratch should require substantially more
-computation for model (e.g., for search and verification) than just following a given algorithm’s
-steps. However, results in Figures 8a and 8b show that reasoning models’ behavior does not change
-that much and the collapse still occurs at roughly same points as before with this setting. This
-finding strengthens evidence that the limitation is not just in problem-solving and solution strategy
-discovery but also in consistent logical verification and step execution limitation throughout the
-generated reasoning chains.
-For example, models are provided with a complete recursive algorithm of solving Tower of Hanoi
-puzzle as follows. This algorithm scratchpad was appended to the standard problem prompt to test
-its impact on reasoning behavior.
-
-Example of Prescribed Algorithm for Tower of Hanoi
-
-Here is a pseudocode of recursive algorithm to solve the puzzle:
-
-
-A.3 Details on Computational Complexity
-A.3.1 Compositional Depth Characterization
-erations (i.e., moves) required to reach a full solution. 60 Blocks World
-Figure 9 demonstrates how this depth scales with Checker Jumping
-problem size (N ) across our four puzzle environments. 50 Tower of Hanoi
-its underlying computational complexity. For exam- 40
-ple, Tower of Hanoi shows exponential growth (2N −1), 30
-(N + 1)2 − 1). The River Crossing and Blocks World 20
-N . These varying compositional depth profiles enable 10
 us to evaluate how language reasoning models handle 0
 different types of sequential reasoning challenges and 1 2 3 4 5 6
 if their accuracy is always correlated with the com- Problem Size (N)
 in App. A.4. for our four puzzle environments.
-
 A.3.2 Performance vs Compositional Depth
+
+A.4 Extended Results and Analysis
+DeepSeek-R1 Claude-3.7-Sonnet (thinking) o3-mini (high)
+100 100 100
+80 80 80
+60 60 60
+40 40 40
+
+20 20 20
+
+0 0 0
+100 101 102 103 100 101 102 103 100 101 102 103
+Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
+Tower Hanoi Checker Jumping River Crossing Blocks World
 A.4 Extended Results and Analysis
 DeepSeek-R1 Claude-3.7-Sonnet (thinking) o3-mini (high)
 100 100 100
