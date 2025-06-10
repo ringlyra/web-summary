@@ -50,6 +50,9 @@ repo-root
 ## 本文
 <HTML→Markdown 変換済み本文をそのまま貼り付ける>
 ```
+
+> **Note**: 同じタイトル、同じ URL の場合は更新(上書き)してください。
+
 ### 3.1 ヘッダー
 
 1 行目に `<!-- metadata -->`、2 行目以降に **Markdown 箇条書き**で key-value を並べる。解析ツール側で行頭 `- **key**:` パターンをパースすれば機械処理も容易。
@@ -106,18 +109,15 @@ HTML→Markdown 変換は readability-lxml + markdownify などで自動化し�
 - robots.txt を尊重。スクレイピング禁止サイトは除外。
 - JS レンダリング必須サイトは Headless browser (e.g. Playwright) を使用。
 - 著作権・ライセンスを確認し、引用の範囲に収める。
-- 同じタイトル、同じ URL の場合は更新(上書き)してください。
 
 ⸻
 
 ## 7. Prettier の実行
 
-`npm install` で最新の Prettier を取得できる。Markdown やコードを整形したい場合は次のコマンドを使う。
+`npm install` で最新の Prettier を取得できる。Markdown やコードを整形する場合は次のコマンドを使いましょう。
 
 ```bash
 npx prettier --write <file globs>
 ```
-
-Prettier v3 系では日本語と英語の間に余分なスペースが入らない。
 
 Happy clipping! 🚀
