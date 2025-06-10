@@ -54,9 +54,6 @@ repo-root
 
 1 行目に `<!-- metadata -->`、2 行目以降に **Markdown 箇条書き**で key-value を並べる。解析ツール側で行頭 `- **key**:` パターンをパースすれば機械処理も容易。
 
-```md
-<!-- metadata -->
-
 - **title**: ChatGPT, an AI model
 - **source**: https://openai.com/blog/chatgpt
 - **author**: openai.com (author が見つからなければドメイン名を入力)
@@ -65,7 +62,7 @@ repo-root
 - **tags**: codex, ai, nlp
 - **image**: https://cdn.openai.com/og/chatgpt.png (URL が長くてエラーが出る場合は短縮 URL にすること)
 
-## 3.2 要約
+### 3.2 要約
 
 - **日本語** で回答すること。
 - 筆者が伝えたいことを全て含めてください。
@@ -73,12 +70,9 @@ repo-root
 - 改行で文章を区切らないでください。
 - 重要キーワードは **bold** で強調。
 
-## 3.4 本文
-
-<ここに HTML→Markdown 変換済み本文をそのまま貼り付ける>
+### 3.3 本文
 
 HTML→Markdown 変換は readability-lxml + markdownify などで自動化し、不要なナビゲーション要素を極力除去してください。最後に本文が全て取得できたか確認することを忘れないでください。本文を上から順番に照らし合わせて確認してください。
-```
 
 ⸻
 
