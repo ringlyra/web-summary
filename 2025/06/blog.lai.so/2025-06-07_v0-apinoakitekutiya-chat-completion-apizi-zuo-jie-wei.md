@@ -7,7 +7,7 @@
 - **tags**: codex, v0-api, autofix, workers-ai, cli
 - **image**: https://blog.lai.so/content/images/2025/03/my-github-icon-2024-2.png
 
-## 概要 / Summary
+## 要約
 Vercelが提供する **v0 API** は、OpenAI互換のエンドポイントを備え、**Chat Completion API** を拡張して高品質なコード生成を実現するサービスです。記事では、v0 APIが**複合モデルアーキテクチャ**を採用し、前処理でRAGを行い、既存LLMでコード生成後、**AutoFix**で修正する仕組みを詳しく解説。さらに、自分で同様のAPIプロキシを構築する手順を紹介し、HonoとWorkersを使った実装例や、Cloudflare **Workers AI** を利用したモデル切り替え方法、ストリーミングレスポンスの変換など、実践的なノウハウがまとめられています。
 
 ## 本文 / Article

@@ -7,7 +7,7 @@
 - **tags**: codex
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 単声から高品質なバイノーラル音声を生成する**BinauralFlow**を提案。**フローマッチング**と因果**U-Net**でストリーミング推論を実現、従来法より高品質。
 
 ## 本文 / Article

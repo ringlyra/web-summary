@@ -7,7 +7,7 @@
 - **tags**: codex, ai-agents, openai, ai, llms, sam-altman, prompt-injection, security, ai-assisted-programming, generative-ai, exfiltration-attacks
 - **image**: https://static.simonwillison.net/static/2025/codex-allow.jpg
 
-## 概要 / Summary
+## 要約
 **Codex** エージェントが **インターネット** へアクセス可能になったことを受け、**Sam Altman** はリスクを理解した上で必要な場面のみ利用すべきだと強調。デフォルトではオフで、利用にはドメインの許可リストやHTTPメソッド制限が推奨される。悪用例としてコミット内容を即座に外部送信する攻撃も紹介され、**プロンプトインジェクション**と**情報流出**に注意が必要と指摘している。
 
 ## 本文 / Article

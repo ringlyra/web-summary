@@ -7,7 +7,7 @@
 - **tags**: codex, webrtc, cloudflare
 - **image**: https://files.speakerdeck.com/presentations/e9be246f239c4fdda3ef712ca808212a/slide_0.jpg?35329792
 
-## 概要 / Summary
+## 要約
 Cloudflare Workers と Cloudflare Realtime を用いたサーバーレス **WebRTC** の実装方法を解説するスライド。 **STUN**, **TURN**, **SFU** などの基本概念を説明し、Realtime Kit や Workers KV を活用したサンプルコードを示す。 さらに Serverless SFU の特徴と利点、OBS 配信への応用、今後の展望について触れている。
 
 ## 本文 / Article

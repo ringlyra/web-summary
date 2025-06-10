@@ -7,7 +7,7 @@
 - **tags**: codex, reverse-engineering, llm, cursor, observability
 - **image**: https://www.tensorzero.com/tensorzero-1200x630.png?1737435600
 
-## 概要 / Summary
+## 要約
 TensorZeroをセルフホストのプロキシとして**Cursor**とLLMの間に挟み、送受信されるリクエストを記録・最適化する試みを紹介。最初はCursorが自社サーバを経由するため接続に失敗したが、**Ngrok**と**Nginx**で公開エンドポイントを構築し、CORS対応も追加して解決した。これによりCursorのシステムプロンプトや実際のLLM呼び出しを観察でき、各種モデルを使ったA/Bテストやプロンプト実験が可能となった。現在はClaude 4.0 SonnetやGPT‑4.1など複数モデルをランダムに使用しながらも遅延は感じない。今後はフィードバックを収集し、個々の利用状況に合わせてCursorを最適化する予定だ。
 
 ## 本文 / Article
@@ -15,7 +15,7 @@ TensorZeroをセルフホストのプロキシとして**Cursor**とLLMの間に
 
 June 5, 2025 · Viraj Mehta, Aaron Hill, Gabriel Bianconi
 
-![CursorZero Diagram](/_astro/_cursorzero-diagram.qj-QA1yX_2vcbtQ.webp)
+![CursorZero Diagram](https://www.tensorzero.com/_astro/_cursorzero-diagram.qj-QA1yX_2vcbtQ.webp)
 
 What happens under the hood at Cursor?
 
@@ -101,7 +101,7 @@ It finally worked!
 
 We could finally see everything coming in and out of Cursor — including its prompts.
 
-![TensorZero UI](/_astro/_tensorzero-ui.mtV3u8ec_ZO8dmP.webp)
+![TensorZero UI](https://www.tensorzero.com/_astro/_tensorzero-ui.mtV3u8ec_ZO8dmP.webp)
 
 For example, here’s what we saw after asking Cursor “how do I get nginx to get the key from an environment variable in my .env?”
 

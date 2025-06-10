@@ -7,7 +7,7 @@
 - **tags**: codex, vlm, alignment, personalization, ai
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 VLMアシスタントを個人の状況認識に合わせるため、**Role-Set**による個人モデルと行動評価を導入。18k例の**PCogAlignBench**を構築し、報酬モデル**PCogAlign**で効果を検証。
 
 ## 本文 / Article

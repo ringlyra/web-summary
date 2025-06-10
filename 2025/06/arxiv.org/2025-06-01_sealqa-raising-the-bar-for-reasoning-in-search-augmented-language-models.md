@@ -7,7 +7,7 @@
 - **tags**: codex, llm, benchmark, reasoning, search
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 SealQAは、検索拡張言語モデルの推論力を測る難関ベンチマークで、Seal-0、Seal-Hard、LongSealの3種類があり、最先端モデルでも正答率が低い点を指摘。ノイズに弱く計算増加も効果が薄い。
 
 ## 本文 / Article

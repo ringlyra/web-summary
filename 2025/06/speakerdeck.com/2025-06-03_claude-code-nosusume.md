@@ -7,7 +7,7 @@
 - **tags**: codex
 - **image**: https://files.speakerdeck.com/presentations/d25a0c8d12644628866d1c285a97c985/slide_0.jpg?35330030
 
-## 概要 / Summary
+## 要約
 ハイブリッドリーズニングモデル**Claude Code**の特徴と、トークン数を調整して利用する方法を解説するスライド。
 
 ## 本文 / Article

@@ -7,7 +7,7 @@
 - **tags**: codex, ai, language model, diffusion
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 拡散型LMとARモデルを融合した**Eso-LMs**を提案。**KVキャッシュ**を導入し、従来比**65倍高速**かつ高精度な生成を実現。
 
 ## 本文 / Article

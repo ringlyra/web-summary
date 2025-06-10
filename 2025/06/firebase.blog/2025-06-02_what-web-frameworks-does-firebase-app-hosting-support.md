@@ -7,7 +7,7 @@
 - **tags**: codex, firebase, hosting, javascript, frameworks, serverless
 - **image**: https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/og%2Fapp-hosting-frameworks.png?alt=media&token=8bb19a16-a705-4164-aa36-3ab2f0420eb7
 
-## 概要 / Summary
+## 要約
 Firebase App Hosting は、Angular と Next.js を中心に GA となったサーバレス型の Web ホスティングです。公式サポート以外にも、**Nitro** ベースのアダプターを利用することで **Nuxt** や **Tanstack Start**、**SolidStart**、**Analog** など多くのフレームワークがデプロイ可能です。さらに **Astro**、**SvelteKit**、**Vite** などもビルド成果物が仕様を満たせば利用でき、Firebase CLI もしくは Terraform を用いたコンテナデプロイも選択できます。設定例として `firebase.json` の記述が紹介され、フレームワーク開発者向けにアダプター実装のガイドラインも提示されています。
 
 ## 本文 / Article

@@ -7,7 +7,7 @@
 - **tags**: codex, llm, reinforcement-learning, self-improvement
 - **image**: https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 大型言語モデルが誤答した際に**自己反省**を行い、その後の試行で成果を出した場合に報酬を与える**強化学習**手法を提案。抽象的なタスクでも自己改善が可能で、比較的小さなモデルで大幅な性能向上を確認。
 
 ## 本文 / Article

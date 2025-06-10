@@ -25,7 +25,7 @@ Which means you can carry your memories to any MCP client. and it just works!
 
 ## Demo (Click on the image for video!)
 
-[![Demo Video](./public/og-image.png)](https://youtu.be/ST6BR3vT5Xw)
+[![Demo Video](https://raw.githubusercontent.com/supermemoryai/supermemory-mcp/main/public/og-image.png)](https://youtu.be/ST6BR3vT5Xw)
 
 ## Getting Started
 

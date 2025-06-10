@@ -7,7 +7,7 @@
 - **tags**: codex, ai, remote-agent, automation, software-development, vs-code
 - **image**: https://cdn.prod.website-files.com/66e230b8c8062a18d04d3723/6840d2ef1a8604acec06d173_Blog%20Image%20-%20remote%201%20(1).png
 
-## 概要 / Summary
+## 要約
 Augment Codeはクラウド上で複数のタスクを並列に実行できるRemote Agentsを一般公開した。VS Code拡張 v0.472.1以降で利用でき、技術的負債の解消、リファクタリング、テスト生成、ドキュメント作成などを自律的に行う。コンテナ化されたエージェントがインフラ全体を横断し、セマンティックインデックスにより文脈を維持。プライバシーとリアルタイムのワークフロー制御にも配慮され、著名エンジニアからも高く評価されている。AIが雑務を肩代わりすることで開発者は戦略的思考に集中できる。
 
 ## 本文 / Article

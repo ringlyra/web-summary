@@ -7,7 +7,7 @@
 - **tags**: codex, article
 - **image**: https://cf-assets.www.cloudflare.com/zkvhlag99gkb/4QDMGATQYFYtzw9CfEpZeA/b850ebb2dd2b22fd415807c4a7a09cf2/hero-knock-cloudflare-agents.png
 
-## 概要 / Summary
+## 要約
 Knock社が**Agents SDK**と**Workers**で、カード発行フローに人の承認を組み込む**AIエージェント**の作り方を解説。サーバレスで拡張性も高い。
 
 ## 本文 / Article

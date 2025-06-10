@@ -7,7 +7,7 @@
 - **tags**: codex, machine-learning, diffusion-model, image-generation
 - **image**: https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 Flowベース画像生成モデル向け蒸留を改善する**SenseFlow**を提案。分布整合法とステップ再重み付けを導入し、SD 3.5やFLUXで収束性と性能を向上。
 
 ## 本文 / Article

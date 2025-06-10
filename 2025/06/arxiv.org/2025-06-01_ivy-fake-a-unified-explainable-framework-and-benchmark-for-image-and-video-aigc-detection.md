@@ -7,7 +7,7 @@
 - **tags**: codex, AIGC, detection, dataset
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 画像と映像の **AIGC** 検出のための説明可能な統一フレームワークとベンチマーク "IVY-FAKE" を提案。大規模なデータセットで検出精度を評価し、信頼性向上を目指す。
 
 ## 本文 / Article

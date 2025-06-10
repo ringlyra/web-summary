@@ -7,7 +7,7 @@
 - **tags**: codex, neuroscience, eeg, transfer learning
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 新提案の**Neuro2Semantic**はiEEGから連続言語を復元する転移学習フレームワーク。**LSTM**アダプタで信号をテキスト埋め込みへ整合し、補正モジュールで自然文を生成。30分のデータでも既存手法を上回り、BCI応用へ期待。
 
 ## 本文 / Article

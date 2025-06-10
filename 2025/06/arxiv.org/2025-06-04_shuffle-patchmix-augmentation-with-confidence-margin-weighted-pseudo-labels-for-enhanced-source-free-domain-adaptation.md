@@ -7,7 +7,7 @@
 - **tags**: codex, arxiv
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 Shuffle PatchMix(SPM)と信頼度重み付け擬似ラベルにより、Source-Free Domain Adaptationを改善。**SPM**で多様な画像生成、**pseudo-label**重み付けでPACs等でSOTAを達成。
 
 ## 本文 / Article

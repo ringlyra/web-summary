@@ -7,7 +7,7 @@
 - **tags**: codex, ai, langgraph, gemini, react, fastapi, docker
 - **image**: https://opengraph.githubassets.com/2b9c333af10cd3ad269285183d4f042224f744c53854c8fa487a54debdcbf835/google-gemini/gemini-fullstack-langgraph-quickstart
 
-## 概要 / Summary
+## 要約
 Gemini 2.5とLangGraphを組み合わせ、検索クエリ生成・反復的なリサーチ・引用付き回答までを自動化する**フルスタックAIエージェント**のサンプル。ReactフロントエンドとFastAPIバックエンドをDockerで実行可能。
 
 ## 本文 / Article
@@ -15,7 +15,7 @@ Gemini 2.5とLangGraphを組み合わせ、検索クエリ生成・反復的な�
 
 This project demonstrates a fullstack application using a React frontend and a LangGraph-powered backend agent. The agent is designed to perform comprehensive research on a user's query by dynamically generating search terms, querying the web using Google Search, reflecting on the results to identify knowledge gaps, and iteratively refining its search until it can provide a well-supported answer with citations. This application serves as an example of building research-augmented conversational AI using LangGraph and Google's Gemini models.
 
-![Gemini Fullstack LangGraph](./app.png)
+![Gemini Fullstack LangGraph](https://raw.githubusercontent.com/google-gemini/gemini-fullstack-langgraph-quickstart/main/app.png)
 
 ## Features
 
@@ -78,7 +78,7 @@ _Alternatively, you can run the backend and frontend development servers separat
 
 The core of the backend is a LangGraph agent defined in `backend/src/agent/graph.py`. It follows these steps:
 
-![Agent Flow](./agent.png)
+![Agent Flow](https://raw.githubusercontent.com/google-gemini/gemini-fullstack-langgraph-quickstart/main/agent.png)
 
 1.  **Generate Initial Queries:** Based on your input, it generates a set of initial search queries using a Gemini model.
 2.  **Web Research:** For each query, it uses the Gemini model with the Google Search API to find relevant web pages.

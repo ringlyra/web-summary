@@ -7,7 +7,7 @@
 - **tags**: codex, rag, evaluation, robustness, retrieval
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
-## 概要 / Summary
+## 要約
 **RAG**システムの頑健性を評価する**RARE**フレームワークと大規模ベンチマークを提案。クエリ・文書の攪乱に強さを測定し、マルチホップ質問でより脆弱と報告。
 
 ## 本文 / Article
