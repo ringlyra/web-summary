@@ -258,9 +258,6 @@ TURN Serve
 
 Serverless SF
 
-
-
-
 で提供はされている
 Realtime Ki
 
@@ -419,6 +416,23 @@ RTCSessionDescription(newLocalTrackResult.sessionDescription),
 peerConnection.(
 RTCSessionDescription(newRemoteTracksResult.sessionDescription),
 );
+15trackObjects transceivers.((transceiver) {
+{
+location ,
+mid transceiver.mid ,
+trackName transceiver.sender.track.id,
+};
+peerConnection.( peerConnection.());
+newLocalTrackResult app.(
+trackObjects,
+peerConnection.localDescription.sdp,
+); peerConnection.(
+RTCSessionDescription(newLocalTrackResult.sessionDescription),
+(newRemoteTracksResult.sessionDescription.type) {
+.(${sessionId});
+peerConnection.(
+RTCSessionDescription(newRemoteTracksResult.sessionDescription),
+);
 peerConnection.(
 peerConnection.(),
 );
@@ -445,24 +459,6 @@ remoteStream;
 DataChannelとかも使える & WHIPの参考実装などもあ
 Realtime Kitたのしみ！
 Cloudflare Realtime
-15trackObjects  transceivers.((transceiver)  {
-   {
-    location ,
-    mid transceiver.mid  ,
-    trackName transceiver.sender.track.id,
-  };
-});
- peerConnection.( peerConnection.());
- newLocalTrackResult   app.(
-  trackObjects,
-  peerConnection.localDescription.sdp,
-);  peerConnection.(
-   RTCSessionDescription(newLocalTrackResult.sessionDescription),
-);==>::??:=mapsetLocalDescriptioncreateOffernewTrackssetRemoteDescriptionreturnawaitawaitconstawaitawaitnew"local""1"// POST /session/sessionid/tracks/new
-1
-2
-3
-4
 5
 6
 
