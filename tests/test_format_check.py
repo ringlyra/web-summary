@@ -4,11 +4,10 @@ import pytest
 
 # ── 設定 ──────────────────────────────────────────────────────────────
 META_LINE_RE = re.compile(r"- \*\*(.+?)\*\*: *(.*)")
-RECOMMENDED_TAGS = {"ai", "nlp"}          # README に記載されている推奨タグ
-TARGET_YEARS = ("2025", "2023")           # 対象フォルダを増やすならここを編集
+RECOMMENDED_TAGS = {"ai", "nlp"}          # README 推奨タグ
+TARGET_YEARS = ("2025", "2023")           # 対象フォルダ
 
 # ── テスト本体 ────────────────────────────────────────────────────────
-@pytest.mark.xfail(reason="既存ファイルが新ルールに未対応")
 def test_formatting():
     errors: list[str] = []
 
@@ -28,7 +27,8 @@ def test_formatting():
             try:
                 i = lines.index("<!-- metadata -->")
             except ValueError:
-                continue  # metadata ブロック自体が無ければ他のチェックはスキップ
+                errors.append(f"{md}: '<!-- metadata -->' ブロックがありません")
+                continue
             for line in lines[i + 1:]:
                 if line.startswith("## "):
                     break
@@ -42,7 +42,6 @@ def test_formatting():
             if "codex" not in tags:
                 errors.append(f"{md}: 必須タグ 'codex' が抜けています")
             elif tags == ["codex"]:
-                # codex だけ → エラー（推奨タグが無い）
                 errors.append(
                     f"{md}: 'codex' 以外に推奨タグ ({', '.join(sorted(RECOMMENDED_TAGS))}) を少なくとも 1 つ追加してください"
                 )
@@ -61,4 +60,5 @@ def test_formatting():
                     f"{md}: image URL が長すぎます。短縮 URL を検討してください"
                 )
 
+    # 1 件でもあれば赤で落とす
     assert not errors, "フォーマットエラー:\n" + "\n".join(errors)
