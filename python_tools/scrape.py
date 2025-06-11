@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 from datetime import datetime, timezone
 
 import requests
+import re
 
 from bs4 import BeautifulSoup
 from readability import Document
@@ -57,6 +58,30 @@ if not published:
                 break
         if published:
             break
+
+if not published:
+    entry_footer = soup.find("div", class_="entryFooter")
+    if entry_footer:
+        text = entry_footer.get_text(" ")
+        m = re.search(r"(\d{1,2})(?:st|nd|rd|th) (\w+) (\d{4})", text)
+        t = re.search(r"(\d+:\d+) ?(am|pm)", text, re.I)
+        if m:
+            day, month_name, year = m.groups()
+            if t:
+                time_str = f"{t.group(1)} {t.group(2)}"
+                try:
+                    dt = datetime.strptime(
+                        f"{day} {month_name} {year} {time_str}", "%d %B %Y %I:%M %p"
+                    )
+                except Exception:
+                    dt = datetime.strptime(
+                        f"{day} {month_name} {year}", "%d %B %Y"
+                    )
+            else:
+                dt = datetime.strptime(
+                    f"{day} {month_name} {year}", "%d %B %Y"
+                )
+            published = dt.replace(tzinfo=timezone.utc).isoformat()
 image = get_meta('og:image')
 fetched = datetime.now(timezone.utc).isoformat()
 source = url
