@@ -59,7 +59,7 @@ repo-root
 ### 3.1 ヘッダー
 
 - author が見つからなければドメイン名を入力すること。
-- **tags**: codex, ai, nlp
+- **tags**: codex の他に関連するタグが必要。
 - image の URL が長くてエラーが出る場合は短縮 URL にすること。
 
 > **Note**: 1 行目に `<!-- metadata -->`、2 行目以降に **Markdown 箇条書き**で key-value を並べる。解析ツール側で行頭 `- **key**:` パターンをパースすれば機械処理も容易。
@@ -108,8 +108,8 @@ repo-root
 
 ## 6. Prettier の実行
 
-Markdown やコードを整形する場合は node_tools/run_prettier.js を使いましょう。
-個別にでチェックする場合は以下のコマンド↓
+全体の Markdown やコードを整形する場合は node_tools/run_prettier.js を使いましょう。
+個別にでチェックすることも可能。その場合は以下のコマンド↓
 
 ```bash
 npx prettier --write <file globs>
