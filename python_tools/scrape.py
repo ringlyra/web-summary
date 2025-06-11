@@ -13,83 +13,108 @@ from markdownify import markdownify as md
 from playwright.sync_api import sync_playwright
 
 url = sys.argv[1]
+parsed_url = urlparse(url)
 
-with sync_playwright() as p:
-    browser = p.chromium.launch()
-    page = browser.new_page(ignore_https_errors=True)
-    page.goto(url, wait_until="networkidle", timeout=60000)
-    html = page.content()
-    browser.close()
-
-soup = BeautifulSoup(html, 'html.parser')
-
-def get_meta(prop):
-    tag = soup.find('meta', attrs={'property': prop}) or soup.find('meta', attrs={'name': prop})
-    if tag and tag.get('content'):
-        return tag['content']
-    return ''
-
-title = get_meta('og:title') or get_meta('citation_title') or soup.title.string.strip()
-authors = soup.find_all('meta', attrs={'name': 'citation_author'})
-if authors:
-    author = ", ".join([a['content'] for a in authors])
+html = None
+if parsed_url.hostname == "help.openai.com":
+    proxy_url = f"https://r.jina.ai/{url}"
+    r = requests.get(proxy_url, timeout=120)
+    r.raise_for_status()
+    text = r.text
+    lines = text.splitlines()
+    title = lines[0].split(":", 1)[1].strip() if lines and lines[0].startswith("Title:") else ""
+    try:
+        idx = lines.index("Markdown Content:")
+        content_md = "\n".join(lines[idx + 1:])
+    except ValueError:
+        content_md = text
+    author = parsed_url.hostname
+    published = ""
+    image = ""
+    html = None
 else:
-    author_tag = soup.find('meta', attrs={'name':'author'})
-    if author_tag:
-        author = author_tag['content']
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(ignore_https_errors=True)
+        page.goto(url, wait_until="domcontentloaded", timeout=120000)
+        html = page.content()
+        browser.close()
+
+if html is not None:
+    soup = BeautifulSoup(html, 'html.parser')
+
+    def get_meta(prop):
+        tag = soup.find('meta', attrs={'property': prop}) or soup.find('meta', attrs={'name': prop})
+        if tag and tag.get('content'):
+            return tag['content']
+        return ''
+
+    title = (
+        get_meta('og:title')
+        or get_meta('citation_title')
+        or (soup.title.string.strip() if soup.title else '')
+    )
+    authors = soup.find_all('meta', attrs={'name': 'citation_author'})
+    if authors:
+        author = ", ".join([a['content'] for a in authors])
     else:
-        author = urlparse(url).hostname
-published = (
-    get_meta("article:published_time")
-    or get_meta("citation_date")
-    or get_meta("citation_publication_date")
-)
+        author_tag = soup.find('meta', attrs={'name':'author'})
+        if author_tag:
+            author = author_tag['content']
+        else:
+            author = urlparse(url).hostname
+    published = (
+        get_meta("article:published_time")
+        or get_meta("citation_date")
+        or get_meta("citation_publication_date")
+    )
 
-if not published:
-    for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
-        try:
-            data = json.loads(script.string)
-        except Exception:
-            continue
-        items = data if isinstance(data, list) else [data]
-        for item in items:
-            if isinstance(item, dict) and item.get("datePublished"):
-                published = item["datePublished"]
+    if not published:
+        for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
+            try:
+                data = json.loads(script.string)
+            except Exception:
+                continue
+            items = data if isinstance(data, list) else [data]
+            for item in items:
+                if isinstance(item, dict) and item.get("datePublished"):
+                    published = item["datePublished"]
+                    break
+            if published:
                 break
-        if published:
-            break
 
-if not published:
-    entry_footer = soup.find("div", class_="entryFooter")
-    if entry_footer:
-        text = entry_footer.get_text(" ")
-        m = re.search(r"(\d{1,2})(?:st|nd|rd|th) (\w+) (\d{4})", text)
-        t = re.search(r"(\d+:\d+) ?(am|pm)", text, re.I)
-        if m:
-            day, month_name, year = m.groups()
-            if t:
-                time_str = f"{t.group(1)} {t.group(2)}"
-                try:
-                    dt = datetime.strptime(
-                        f"{day} {month_name} {year} {time_str}", "%d %B %Y %I:%M %p"
-                    )
-                except Exception:
+    if not published:
+        entry_footer = soup.find("div", class_="entryFooter")
+        if entry_footer:
+            text = entry_footer.get_text(" ")
+            m = re.search(r"(\d{1,2})(?:st|nd|rd|th) (\w+) (\d{4})", text)
+            t = re.search(r"(\d+:\d+) ?(am|pm)", text, re.I)
+            if m:
+                day, month_name, year = m.groups()
+                if t:
+                    time_str = f"{t.group(1)} {t.group(2)}"
+                    try:
+                        dt = datetime.strptime(
+                            f"{day} {month_name} {year} {time_str}", "%d %B %Y %I:%M %p"
+                        )
+                    except Exception:
+                        dt = datetime.strptime(
+                            f"{day} {month_name} {year}", "%d %B %Y"
+                        )
+                else:
                     dt = datetime.strptime(
                         f"{day} {month_name} {year}", "%d %B %Y"
                     )
-            else:
-                dt = datetime.strptime(
-                    f"{day} {month_name} {year}", "%d %B %Y"
-                )
-            published = dt.replace(tzinfo=timezone.utc).isoformat()
-image = get_meta('og:image')
+                published = dt.replace(tzinfo=timezone.utc).isoformat()
+    image = get_meta('og:image')
 fetched = datetime.now(timezone.utc).isoformat()
 source = url
 
 parsed = urlparse(url)
 domain = parsed.hostname
 path_segments = parsed.path.strip('/').split('/')
-content_md = ""
+if 'content_md' not in locals():
+    content_md = ""
 if domain == "github.com" and len(path_segments) == 2:
     user, repo = path_segments
     for branch in ["master", "main"]:
@@ -99,7 +124,7 @@ if domain == "github.com" and len(path_segments) == 2:
             content_md = r.text
             break
 
-if not content_md:
+if html is not None and not content_md:
     article_tag = soup.find('article')
     if article_tag:
         content_html = article_tag.decode_contents()
