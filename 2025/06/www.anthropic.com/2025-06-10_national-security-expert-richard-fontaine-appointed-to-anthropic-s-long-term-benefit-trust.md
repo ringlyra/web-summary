@@ -5,7 +5,7 @@
 - **author**: www.anthropic.com
 - **published**: 2025-06-07T00:00:00Z
 - **fetched**: 2025-06-10T09:42:11.547535+00:00
-- **tags**: codex
+- **tags**: codex, ai
 - **image**: https://cdn.sanity.io/images/4zrzovbb/website/c07f638082c569e8ce1e89ae95ee6f332a98ec08-2400x1260.jpg
 
 ## 要約

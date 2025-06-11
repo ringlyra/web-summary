@@ -5,7 +5,7 @@
 - **author**: Liang, Susan, Markovic, Dejan, Gebru, Israel D., Krenn, Steven, Keebler, Todd, Sandakly, Jacob, Yu, Frank, Hassel, Samuel, Xu, Chenliang, Richard, Alexander
 - **published**: 2025-05-28
 - **fetched**: 2025-06-04T04:41:53.009201Z
-- **tags**: codex
+- **tags**: codex, ai
 - **image**: /static/browse/0.3.4/images/arxiv-logo-fb.png
 
 ## 要約

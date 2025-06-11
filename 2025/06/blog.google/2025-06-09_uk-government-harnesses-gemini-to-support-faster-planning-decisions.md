@@ -5,7 +5,7 @@
 - **author**: blog.google
 - **published**: 2025-06-09
 - **fetched**: 2025-06-09T20:58:03.368268+00:00
-- **tags**: codex
+- **tags**: codex, ai
 - **image**: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/overview.width-1300.png
 
 ## 要約

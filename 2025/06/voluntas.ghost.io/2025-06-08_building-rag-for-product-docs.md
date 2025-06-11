@@ -5,7 +5,7 @@
 - **author**: voluntas.ghost.io
 - **published**: 2025-06-08T13:25:45.000Z
 - **fetched**: 2025-06-08T17:06:21.492855Z
-- **tags**: codex
+- **tags**: codex, ai
 - **image**: https://static.ghost.org/v5.0.0/images/publication-cover.jpg
 
 ## 要約

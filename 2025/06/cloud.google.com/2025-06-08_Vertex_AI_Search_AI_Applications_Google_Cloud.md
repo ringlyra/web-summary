@@ -10,7 +10,7 @@
 
 - **fetched**: 2025-06-08T18:32:36.735849+00:00
 
-- **tags**: codex
+- **tags**: codex, ai
 
 - **image**: https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png?hl=ja
 

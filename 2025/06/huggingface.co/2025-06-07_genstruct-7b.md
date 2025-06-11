@@ -5,7 +5,7 @@
 - **author**: huggingface.co
 - **published**:
 - **fetched**: 2025-06-07T23:40:39Z
-- **tags**: codex
+- **tags**: codex, ai
 - **image**: https://cdn-thumbnails.huggingface.co/social-thumbnails/models/NousResearch/Genstruct-7B.png
 
 ## 要約
