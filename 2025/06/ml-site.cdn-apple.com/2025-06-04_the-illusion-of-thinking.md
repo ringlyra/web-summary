@@ -128,36 +128,16 @@ MATH-500 AIME24 AIME25
 80 80
 60 60
 40 40
-claude-3-7-sonnet-thinking 20 claude-3-7-sonnet-thinking 20 claude-3-7-sonnet-thinking
-claude-3-7-sonnet-no-thinking claude-3-7-sonnet-no-thinking claude-3-7-sonnet-no-thinking
-80 0 0
-0 5000 10000 15000 20000 25000 30000 35000 0 50000 100000 150000 200000 0 50000 100000 150000 200000
-Inference Compute Budget (Tokens) Inference Compute Budget (Tokens) Inference Compute Budget (Tokens)
-MATH-500 AIME24 AIME25
-100 100 100
-80 80
-60 60
-40 40
-DeepSeek-R1 20 DeepSeek-R1 20 DeepSeek-R1
-DeepSeek-V3 DeepSeek-V3 DeepSeek-V3
-80 0 0
-0 10000 20000 30000 40000 0 20000 40000 60000 80000 100000 120000 0 20000 40000 60000 80000 100000 120000
-Inference Compute Budget (Tokens) Inference Compute Budget (Tokens) Inference Compute Budget (Tokens)
-3 Math and Puzzle Environments
-Tower of Hanoi Checkers Jumping River Crossing Blocks World
-
-3.1 Puzzle Environments
-
+another stack.
 4 Experiments & Results
 4.1 Experimental Setup
-
 4.2 How Does Complexity Affect Reasoning?
 4.2.1 Three Regimes of Complexity
 
 
 4.2.2 Collapse of Reasoning Models
-
 4.3 What Happens Inside the Thoughts of Reasoning Models?
+
 100 N=1
 80 N=3
 60 N=6
@@ -167,27 +147,28 @@ Tower of Hanoi Checkers Jumping River Crossing Blocks World
 
 
 4.4 Open Questions: Puzzling Behavior of Reasoning Models
+
 Tower of Hanoi Tower of Hanoi Tower of Hanoi River Crossing
 
 100 100
-
 DeepSeek-R1 Claude-3.7-Sonnet (thinking) Claude-3.7-Sonnet (thinking)
 Algorithm Given Algorithm Given 8
 80 80 80
 Default Default
-
 60 60 60 6
-
 40 40 40 4
 20 20 20
 0 0 0
 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 2 3 4 5 6 8 10 15 20
 Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of People)
-
 (a) (b) (c) (d)
 5 Conclusion
+
+
 technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219, 2024.
+
 Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825, 2023.
+
 Sedghi. Teaching algorithmic reasoning via in-context learning. arXiv preprint arXiv:2211.09066, 2022.
 [24] David Herel and Tomas Mikolov. Thinking tokens for language modeling. ArXiv, abs/2405.08644, 2024.
 jishirzi. Tülu 3: Pushing frontiers in open language model post-training. ArXiv, abs/2411.15124, 2024.
@@ -196,15 +177,9 @@ ematics examination (aime). https://maa.org/math-competitions/
 [42] Art of Problem Solving. Amc historical results - aime i (february 1, 2024).
 [43] Art of Problem Solving. Amc historical results – aime i (february 6, 2025).
 A Appendix
-
-
 A.1 Details on Puzzle Environment Specifications and Design
 A.1.1 Tower of Hanoi
-
-
-
    another stack.
-
 
 
 
@@ -214,54 +189,10 @@ A.1.2 Checker Jumping
 space (’\_’). A checker can move by either:
 moves = [[’R ’ , 0 , 1] , [ ’B ’ , 2 , 0] , [ ’R ’ , 1 , 2]]
 
-
 Goal board: B B ... B \_ R R ... R
 A.1.3 River Crossing
 A.1.4 Blocks World
 A.2 Implementation Details
-Invalid situations arise when an actor is in the presence of another agent without their own agent
-present, as each agent must protect their client from competing agents. The complexity of this task
-can also be controlled by the number of actor/agent pairs present. For n = 2, n = 3 pairs, we use
-boat capacity of k = 2 and for larger number of pairs we use k = 3.
-Blocks World is a block-stacking puzzle requiring rearrangement of blocks from an initial configu-
-ration into a specified goal configuration. The objective is to find the minimum number of moves
-needed for this transformation. Valid moves are restricted to the topmost block of any stack, which
-can be placed either on an empty stack or on top of another block. The complexity in this task can
-be controlled by the number of blocks present.
-
-
-6
-Figure 4: Accuracy of thinking models (Claude 3.7 Sonnet with thinking, DeepSeek-R1) versus their
-non-thinking counterparts (Claude 3.7 Sonnet, DeepSeek-V3) across all puzzle environments and
-varying levels of problem complexity.
-
-
-4     Experiments & Results
-4.1     Experimental Setup
-Most of our experiments are conducted on reasoning models and their non-thinking counterparts,
-such as Claude 3.7 Sonnet (thinking/non-thinking) and DeepSeek-R1/V3. We chose these models
-because they allow access to the thinking tokens, unlike models such as OpenAI’s o-series. For
-experiments focused solely on final accuracy, we also report results on the o-series models. For Claude
-3.7 Sonnet models, we allow the maximum token budget (64k). Similarly, for DeepSeek-R1/V3
-models on local servers, we allow the maximum length to be up to 64k tokens. For each puzzle
-instance, we generate 25 samples and report the average performance of each model across them.
-Comprehensive details of our experimental setup and results are provided in the Appendix.
-
-4.2     How Does Complexity Affect Reasoning?
-4.2.1    Three Regimes of Complexity
-Motivated by the observations in Fig. 2, to systematically investigate the impact of problem complexity
-on reasoning behavior, we conducted experiments comparing thinking and non-thinking model
-pairs across our controlled puzzle environments. Our analysis focused on matched pairs of LLMs
-with identical model backbones, specifically Claude-3.7-Sonnet (w. vs. w/o thinking) and DeepSeek
-(R1 vs. V3). In each puzzle, we vary the complexity by manipulating problem size N (representing
-disk count, checker count, block count, or crossing elements).
-Fig. 4 presents the accuracy of both model types as a function of problem complexity across all
-puzzle environments. Complementing this, Fig. 5 shows the upper bound performance capabilities
-(pass@k) of these model pairs under equivalent inference token compute (averaged across all puzzles),
-extending earlier analyses from mathematical benchmarks (Fig. 2) to the controlled puzzle environ-
-ments. Results from both these figures demonstrate that, unlike observations from math, there exists
-three regimes in the behavior of these models with respect to complexity. In the first regime where
-problem complexity is low, we observe that non-thinking models are capable to obtain performance
 comparable to, or even better than thinking models with more token-efficient inference. In the
 
 7
@@ -1135,48 +1066,26 @@ DeepSeek-R1 Claude-3.7-Sonnet (thinking) o3-mini (high)
 100 101 102 103 100 101 102 103 100 101 102 103
 Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
 Tower Hanoi Checker Jumping River Crossing Blocks World
+us to evaluate how language reasoning models handle 0
+different types of sequential reasoning challenges and 1 2 3 4 5 6
+if their accuracy is always correlated with the com- Problem Size (N)
+in App. A.4. for our four puzzle environments.
+A.3.2 Performance vs Compositional Depth
+
 A.4 Extended Results and Analysis
+
 DeepSeek-R1 Claude-3.7-Sonnet (thinking) o3-mini (high)
 100 100 100
+
 80 80 80
 
 60 60 60
 40 40 40
-
 20 20 20
-
 0 0 0
 100 101 102 103 100 101 102 103 100 101 102 103
 Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
 Tower Hanoi Checker Jumping River Crossing Blocks World
-
-
-
-us to evaluate how language reasoning models handle           0
-different types of sequential reasoning challenges and          1       2        3        4    5    6
-if their accuracy is always correlated with the com-                          Problem Size (N)
-positional depth required to solve the puzzle. More Figure 9: Compositional depth (number of
-details regarding this analysis is provided in Figure 10 moves required) across different problem sizes
-in App. A.4.                                              for our four puzzle environments.
-
-A.3.2    Performance vs Compositional Depth
-While intuition suggests a negative correlation between problem complexity and model accuracy, our
-analysis reveals a more nuanced relationship between compositional depth and LRM performance.
-Figure 10 demonstrates this across three state-of-the-art reasoning models (Claude-3.7-Sonnet w.
-thinking, DeepSeek-R1, and o3-mini) on our puzzle suite. Within individual puzzle types, we observe
-the expected negative correlation: as compositional depth increases, model accuracy consistently
-decreases. However, across different puzzle types, this relation breaks. Models may struggle with
-puzzles of lower compositional depth while succeeding on different puzzles with higher compositional
-depth. . For instance, models achieve >50% accuracy on Tower of Hanoi instances requiring
-approximately 102 moves, yet consistently fail on River Crossing puzzles with substantially lower
-compositional depth (∼ 101 moves).
-
-A.4     Extended Results and Analysis
-Failure Analysis. Understanding where models fail within the compositional reasoning steps
-provides insights beyond binary success metrics. Our accuracy evaluation requires perfect execution
-of entire move sequences—a single incorrect move results in failure. To examine failure patterns
-more granularly, we analyze the compositional depth at which models first make incorrect moves
-across varying problem complexity levels.
 
 
 
