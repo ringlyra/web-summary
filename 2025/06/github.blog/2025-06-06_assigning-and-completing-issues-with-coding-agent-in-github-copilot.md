@@ -12,6 +12,8 @@
 
 GitHub Copilotの新しい**コーディングエージェント**は、Issueを割り当てるだけでテスト済みのPRを作成してくれる非同期のソフトウェアエージェントです。GitHub Actions上で動作し、関連IssueやPRの情報、リポジトリのカスタム指示を利用してコードを生成します。エージェントモードがIDE内でリアルタイムに協調するのに対し、コーディングエージェントはIssueを受け取ってバックグラウンドで作業を進めます。Issueには背景や期待する結果、技術的詳細、フォーマット規則などを明確に記載することが成功の鍵です。エージェントは作業計画、コード生成、テスト実行、PR作成、レビュー依頼まで行い、最終承認は人間が行います。小規模タスクから始めて、問題があればコメントで指示するなどの工夫が推奨されます。AIとLLMは急速に進化しており、コーディングエージェントは既に実用的です。まずはサンプルリポジトリで試し、独自のワークフロー構築に活用してみましょう。
 
+## 本文
+
 You’ve used GitHub Copilot to help you write code in your IDE. Now, imagine assigning Copilot an issue, just like you would a teammate—and getting a fully tested pull request in return.
 
 That’s the power of the new [coding agent in GitHub Copilot](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/). Built directly into GitHub, this agent starts working as soon as you assign it a GitHub Issue or prompt it in VS Code. Keeping you firmly in the pilot’s seat, the coding agent builds pull requests based on the issues you assign it.

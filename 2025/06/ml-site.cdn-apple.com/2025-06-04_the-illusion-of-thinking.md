@@ -110,34 +110,9 @@ MATH-500 AIME24 AIME25
 60 60
 40 40
 
-DeepSeek-R1 20 DeepSeek-R1 20 DeepSeek-R1
-DeepSeek-V3 DeepSeek-V3 DeepSeek-V3
-80 0 0
-0 10000 20000 30000 40000 0 20000 40000 60000 80000 100000 120000 0 20000 40000 60000 80000 100000 120000
-Inference Compute Budget (Tokens) Inference Compute Budget (Tokens) Inference Compute Budget (Tokens)
-3 Math and Puzzle Environments
-
-Tower of Hanoi Checkers Jumping River Crossing Blocks World
-3.1 Puzzle Environments
-4 Experiments & Results
-4.1 Experimental Setup
-4.2 How Does Complexity Affect Reasoning?
 another stack.
-MATH-500 AIME24 AIME25
-100 100 100
-80 80
-60 60
-40 40
-another stack.
-4 Experiments & Results
-4.1 Experimental Setup
-4.2 How Does Complexity Affect Reasoning?
-4.2.1 Three Regimes of Complexity
-
-
 4.2.2 Collapse of Reasoning Models
 4.3 What Happens Inside the Thoughts of Reasoning Models?
-
 100 N=1
 80 N=3
 60 N=6
@@ -149,7 +124,6 @@ another stack.
 4.4 Open Questions: Puzzling Behavior of Reasoning Models
 
 Tower of Hanoi Tower of Hanoi Tower of Hanoi River Crossing
-
 100 100
 DeepSeek-R1 Claude-3.7-Sonnet (thinking) Claude-3.7-Sonnet (thinking)
 Algorithm Given Algorithm Given 8
@@ -162,73 +136,36 @@ Default Default
 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 2 3 4 5 6 8 10 15 20
 Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of People)
 (a) (b) (c) (d)
+
+
 5 Conclusion
-
-
 technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219, 2024.
-
 Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825, 2023.
-
 Sedghi. Teaching algorithmic reasoning via in-context learning. arXiv preprint arXiv:2211.09066, 2022.
 [24] David Herel and Tomas Mikolov. Thinking tokens for language modeling. ArXiv, abs/2405.08644, 2024.
 jishirzi. Tülu 3: Pushing frontiers in open language model post-training. ArXiv, abs/2411.15124, 2024.
+
+
 [41] Mathematical Association of America. American invitational math-
 ematics examination (aime). https://maa.org/math-competitions/
 [42] Art of Problem Solving. Amc historical results - aime i (february 1, 2024).
 [43] Art of Problem Solving. Amc historical results – aime i (february 6, 2025).
+
 A Appendix
 A.1 Details on Puzzle Environment Specifications and Design
 A.1.1 Tower of Hanoi
    another stack.
 
-
-
-
 A.1.2 Checker Jumping
 (’\_’). In the standard configuration, N red checkers are positioned on the left side, followed by an
 space (’\_’). A checker can move by either:
-moves = [[’R ’ , 0 , 1] , [ ’B ’ , 2 , 0] , [ ’R ’ , 1 , 2]]
 
+moves = [[’R ’ , 0 , 1] , [ ’B ’ , 2 , 0] , [ ’R ’ , 1 , 2]]
 Goal board: B B ... B \_ R R ... R
 A.1.3 River Crossing
 A.1.4 Blocks World
+
 A.2 Implementation Details
-comparable to, or even better than thinking models with more token-efficient inference. In the
-
-7
-Figure 5: Pass@k performance of thinking vs. non-thinking models across equivalent compute
-budgets in puzzle environments of low , medium , and high complexity. Non-thinking models excel
-in simple problems, thinking models show advantages at medium complexity, while both approaches
-fail at high complexity regardless of compute allocation.
-
-
-second regime with medium complexity, the advantage of reasoning models capable of generating
-long chain-of-thought begin to manifest, and the performance gap between model pairs increases. The
-most interesting regime is the third regime where problem complexity is higher and the performance
-of both models have collapsed to zero. Results show that while thinking models delay this collapse,
-they also ultimately encounter the same fundamental limitations as their non-thinking counterparts.
-
-4.2.2   Collapse of Reasoning Models
-We next examine how different specialized reasoning models equipped with thinking tokens respond
-to increasing problem complexity. Our experiments evaluate five state-of-the-art thinking models:
-o3-mini (medium and high configurations), DeepSeek-R1, DeepSeek-R1-Qwen-32B, and Claude-3.7-
-Sonnet (thinking). Fig. 6 demonstrates these models’ performance in terms of accuracy (top) and
-thinking token usage (bottom) across varying complexity levels. Results show that all reasoning
-models exhibit a similar pattern with respect to complexity: accuracy progressively declines as
-problem complexity increases until reaching complete collapse (zero accuracy) beyond a model-
-specific complexity threshold. Analysis of inference thinking token compute also reveals an intriguing
-pattern in thinking token allocation learned by these models. We observe that reasoning models
-initially increase their thinking tokens proportionally with problem complexity. However, upon
-approaching a critical threshold—which closely corresponds to their accuracy collapse point—models
-counterintuitively begin to reduce their reasoning effort despite increasing problem difficulty. This
-phenomenon is most pronounced in o3-mini variants and less severe in the Claude-3.7-Sonnet
-(thinking) model. Notably, despite operating well below their generation length limits with ample
-inference budget available, these models fail to take advantage of additional inference compute during
-the thinking phase as problems become more complex. This behavior suggests a fundamental scaling
-limitation in the thinking capabilities of current reasoning models relative to problem complexity.
-
-
-
 8
 Figure 6: Accuracy and thinking tokens vs. problem complexity for reasoning models across puzzle
 environments. As complexity increases, reasoning models initially spend more tokens while accuracy
@@ -1066,17 +1003,8 @@ DeepSeek-R1 Claude-3.7-Sonnet (thinking) o3-mini (high)
 100 101 102 103 100 101 102 103 100 101 102 103
 Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
 Tower Hanoi Checker Jumping River Crossing Blocks World
-us to evaluate how language reasoning models handle 0
-different types of sequential reasoning challenges and 1 2 3 4 5 6
-if their accuracy is always correlated with the com- Problem Size (N)
-in App. A.4. for our four puzzle environments.
-A.3.2 Performance vs Compositional Depth
-
-A.4 Extended Results and Analysis
-
 DeepSeek-R1 Claude-3.7-Sonnet (thinking) o3-mini (high)
 100 100 100
-
 80 80 80
 
 60 60 60
@@ -1089,17 +1017,6 @@ Tower Hanoi Checker Jumping River Crossing Blocks World
 
 
 
-26
-DeepSeek-R1                                     Claude-3.7-Sonnet (thinking)                                      o3-mini (high)
-100                                                     100                                                       100
-
-80                                                      80                                                        80
-Accuracy (%)
-
-
-
-
-Accuracy (%)
 
 
 

@@ -5,7 +5,7 @@
 - **author**: research.google
 - **published**: 2025-06-03
 - **fetched**: 2025-06-04T10:37:51Z
-- **tags**: codex
+- **tags**: codex, ai
 - **image**: https://storage.googleapis.com/gweb-research2023-media/images/Open_Graph.width-800.format-jpeg.jpg
 
 ## 要約

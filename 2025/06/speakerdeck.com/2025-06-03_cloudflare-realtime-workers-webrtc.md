@@ -447,6 +447,27 @@ tracks.(event.track);
 .(${event.track.id}${event.track.mid});
 (tracks.length ) {
 (tracks);
+(newRemoteTracksResult.sessionDescription.type) {
+.(${sessionId});
+peerConnection.(
+RTCSessionDescription(newRemoteTracksResult.sessionDescription),
+);
+peerConnection.(
+peerConnection.(),
+);
+app.(peerConnection.localDescription.sdp);
+;
+Error();
+}
+5
+6
+18constnewletifconstawaitconstnewreturn remoteTrackPromise ((resolve) {
+tracks [];
+peerConnection. (event) {
+tracks.(event.track);
+.(${event.track.id}${event.track.mid});
+(tracks.length ) {
+(tracks);
 }
 };
 remoteTracks remoteTrackPromise;
@@ -459,28 +480,6 @@ remoteStream;
 DataChannelとかも使える & WHIPの参考実装などもあ
 Realtime Kitたのしみ！
 Cloudflare Realtime
-5
-6
-
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18ifswitchcaseawaitnewawaitawaitawaitbreakcasethrownew (newRemoteTracksResult.sessionDescription) {
-   (newRemoteTracksResult.sessionDescription.type) {
-           .(${sessionId});
-       peerConnection.(
-         RTCSessionDescription(newRemoteTracksResult.sessionDescription),
-      );
-       peerConnection.(
-         peerConnection.(),
       );
        app.(peerConnection.localDescription.sdp);
       ;
