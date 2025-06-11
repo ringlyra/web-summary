@@ -1,6 +1,5 @@
 # ルール
 
-- AGENTS.md → README.md の順番で参照すること。
-- 概要ではなく要約に変更しています。ルールは日々アップデートされています。
-- pdf を処理する時は python_tools/pdf_to_text.py, スクレイピングする時は python_tools/scrape.py を使用してコード実行にエラーがあれば改善し更新すること。
-- prettier を実行する時は node_tools/run_prettier.js を使用してください。
+- AGENTS.md と README.md を参照すること。
+- スクレイピングする時は python_tools/scrape.py, pdf を処理する時は python_tools/pdf_to_text.py を使用してコード不具合があれば改善し更新すること。  
+- prettier は node_tools/run_prettier.js にあります。
