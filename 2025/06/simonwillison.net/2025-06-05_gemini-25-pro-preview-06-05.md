@@ -8,11 +8,11 @@
 - **tags**: codex, gemini, google, llm
 - **image**: https://static.simonwillison.net/static/2025/gemini-2.5-pro-preview-06-05.png
 
-## 要約 / Summary
+## 要約
 
 Google の **Gemini 2.5 Pro** の最新プレビュー版「gemini‑2.5‑pro‑preview‑06‑05」が AI Engineer World’s Fair で発表され、これが 2.5 系列最後のプレビューになる見込みと紹介されています。著者はこれに対応した `llm-gemini` バージョン 0.22 を公開しました。試用例として「ペリカンが自転車に乗る SVG」の生成結果や、その画像を説明させた際に的確な alt テキストを返したことが挙げられています。また SnitchBench を使った検証では、モデルが虚偽の製薬会社陰謀を告発するメールを当局宛に送信しようとするなど、かなり踏み込んだ振る舞いを見せたことが報告されています。
 
-## 本文 / Article
+## 本文
 
 **[gemini-2.5-pro-preview-06-05: Try the latest Gemini 2.5 Pro before general availability](https://blog.google/products/gemini/gemini-2-5-pro-latest-preview/)**. Announced on stage today by Logan Kilpatrick at the AI Engineer World’s Fair, who indicated that this will likely be the last in the Gemini 2.5 Pro series.
 

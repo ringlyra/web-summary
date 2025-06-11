@@ -12,7 +12,7 @@
 
 **MCP** (Model Context Protocol) を利用した検索コネクター作成を希望する開発者向けの申請フォームです。開発者は第三者サービスと ChatGPT を接続する **deep research connectors** を構築でき、将来的には他の用途にも対応予定です。入力項目には氏名、メールアドレス、会社情報、製品情報、MCP サーバーの状況などが含まれ、送信すると募集開始時に通知を受け取れます。
 
-## 本文 / Article
+## 本文
 
 MCP Connector Interest Form | OpenAI
 

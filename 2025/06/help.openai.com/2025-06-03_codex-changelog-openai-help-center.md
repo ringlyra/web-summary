@@ -12,7 +12,7 @@
 
 Codex の更新情報。**インターネットアクセス**を付与して依存関係をインストール可能になり、既存**PRの更新**や**音声入力**対応、環境設定の改善、iOS版**ChatGPT**への統合などが行われた。
 
-## 本文 / Article
+## 本文
 
 New features, fixes, and improvements to Codex in ChatGPT
 

@@ -12,7 +12,7 @@
 
 VLMアシスタントを個人の状況認識に合わせるため、**Role-Set**による個人モデルと行動評価を導入。18k例の**PCogAlignBench**を構築し、報酬モデル**PCogAlign**で効果を検証。
 
-## 本文 / Article
+## 本文
 
 [Submitted on 1 Jun 2025]
 

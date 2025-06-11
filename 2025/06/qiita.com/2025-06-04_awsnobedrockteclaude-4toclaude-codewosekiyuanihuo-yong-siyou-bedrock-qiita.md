@@ -12,7 +12,7 @@
 
 **AWSのBedrock**で**Claude 4**と**Claude Code**を安全に導入する方法を解説。利点と制約、利用時のポイントを端的にまとめている。
 
-## 本文 / Article
+## 本文
 
 [![](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F41574%2F7cf985a8-7134-408b-a197-cf566a0d133d.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=c674351ddc39dc70f708b5026ccba7cb)](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F41574%2F7cf985a8-7134-408b-a197-cf566a0d133d.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&s=c674351ddc39dc70f708b5026ccba7cb)
 

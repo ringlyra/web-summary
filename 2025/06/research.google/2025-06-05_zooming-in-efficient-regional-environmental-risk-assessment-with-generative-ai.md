@@ -12,7 +12,7 @@
 
 この記事では、物理シミュレーションと生成AIを組み合わせた新しいダウンスケーリング手法「R2D2」を紹介している。従来の地域モデルより計算コストを約85%削減しつつ高解像度の気候予測を実現する。米国西部のデータで検証した結果、統計的手法より40%以上誤差を低減し、山火事などの極端現象の予測精度も向上した。この方法は農業や防災計画など地域レベルの環境リスク評価を大きく改善すると期待される。
 
-## 本文 / Article
+## 本文
 
 We present a new method that combines physics-based climate modeling with artificial intelligence to create detailed estimates of regional environmental risk. This approach enables a more comprehensive assessment of uncertainties in future environmental outlooks than existing techniques.
 

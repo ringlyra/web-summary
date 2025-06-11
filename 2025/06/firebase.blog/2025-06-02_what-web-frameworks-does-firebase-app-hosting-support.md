@@ -12,7 +12,7 @@
 
 Firebase App Hosting は、Angular と Next.js を中心に GA となったサーバレス型の Web ホスティングです。公式サポート以外にも、**Nitro** ベースのアダプターを利用することで **Nuxt** や **Tanstack Start**、**SolidStart**、**Analog** など多くのフレームワークがデプロイ可能です。さらに **Astro**、**SvelteKit**、**Vite** などもビルド成果物が仕様を満たせば利用でき、Firebase CLI もしくは Terraform を用いたコンテナデプロイも選択できます。設定例として `firebase.json` の記述が紹介され、フレームワーク開発者向けにアダプター実装のガイドラインも提示されています。
 
-## 本文 / Article
+## 本文
 
 June 2, 2025
 

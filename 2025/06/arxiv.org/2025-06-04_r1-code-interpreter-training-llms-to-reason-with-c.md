@@ -12,7 +12,7 @@
 
 **LLM** にコード実行能力を組み合わせ、強化学習で訓練することで、計算やアルゴリズム推論を改善。Despite advances in reasoning and planning of R1-like models, Large Language Models (LLMs) still struggle with tasks requiring...
 
-## 本文 / Article
+## 本文
 
 [Submitted on 27 May 2025]
 

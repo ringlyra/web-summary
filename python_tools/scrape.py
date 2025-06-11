@@ -139,9 +139,29 @@ slug = os.path.basename(parsed.path.strip('/')) or 'index'
 file_title = re.sub(r'[^a-zA-Z0-9_-]+', '-', slug).strip('-')
 # ensure path
 if published:
-    published_date = published[:10].replace('/', '-')
+    dt = None
+    for fmt in (
+        "%Y-%m-%d",
+        "%Y/%m/%d",
+        "%b %d, %Y",
+        "%B %d, %Y",
+        "%d %b %Y",
+        "%d %B %Y",
+    ):
+        try:
+            dt = datetime.strptime(published.split()[0] if fmt.startswith("%Y") else published, fmt)
+            break
+        except Exception:
+            continue
+    if dt is None:
+        published_date = published[:10].replace('/', '-')
+    else:
+        dt = dt.replace(tzinfo=timezone.utc)
+        published_date = dt.strftime('%Y-%m-%d')
+        published = dt.isoformat()
 else:
-    published_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    dt = datetime.now(timezone.utc)
+    published_date = dt.strftime('%Y-%m-%d')
 year,month,_ = published_date.split('-')
 path = os.path.join(year, month, domain)
 os.makedirs(path, exist_ok=True)

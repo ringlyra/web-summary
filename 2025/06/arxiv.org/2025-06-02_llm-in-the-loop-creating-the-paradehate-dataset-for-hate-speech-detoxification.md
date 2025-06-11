@@ -12,7 +12,7 @@
 
 LLM-in-the-loop を活用してヘイトスピーチを無害化するデータセットPARADEHATEを生成。GPT-4o-miniで注釈を自動化し、BARTなどで検証、デトックス性能向上を示す。8kペアを公開。
 
-## 本文 / Article
+## 本文
 
 [Submitted on 2 Jun 2025]
 

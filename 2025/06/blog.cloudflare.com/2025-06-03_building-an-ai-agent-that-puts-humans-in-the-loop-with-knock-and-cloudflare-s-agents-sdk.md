@@ -12,7 +12,7 @@
 
 Knock社が**Agents SDK**と**Workers**で、カード発行フローに人の承認を組み込む**AIエージェント**の作り方を解説。サーバレスで拡張性も高い。
 
-## 本文 / Article
+## 本文
 
 _This is a guest post by Chris Bell, CTO of_ [_Knock_](https://knock.app/)
 

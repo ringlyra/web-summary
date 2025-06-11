@@ -12,7 +12,7 @@
 
 AIコードエディタCursorの更新履歴。最新版1.0では、PRを自動レビューする**BugBot**、会話内容を記憶する**Memories**、クラウドでの作業を自動化する**Background Agent**、Jupyter Notebook対応、MCPワンクリック設定などを追加。チャット内の可視化、ダッシュボード刷新、価格体系の統一と**Max Mode**導入など、多数の改善が実施された。
 
-## 本文 / Article
+## 本文
 
 Cursor 1.0 is here!
 

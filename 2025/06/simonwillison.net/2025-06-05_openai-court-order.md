@@ -12,7 +12,7 @@
 
 **OpenAI** が **ChatGPT** のログをすべて保存するよう求められた裁判所命令に強く反発。削除済みも含めたログ保管は多数の **プライバシー法** に抵触すると主張するが、判事は証拠保全の必要性を優先するとして命令を出した。これにより OpenAI の API 利用者が他社に移る可能性も懸念されている。
 
-## 本文 / Article
+## 本文
 
 **[OpenAI slams court order to save all ChatGPT logs, including deleted chats](https://arstechnica.com/tech-policy/2025/06/openai-says-court-forcing-it-to-save-all-chatgpt-logs-is-a-privacy-nightmare/)** ([via](https://news.ycombinator.com/item?id=44185913 "Hacker News")) This is very worrying. The New York Times v OpenAI lawsuit, now in its 17th month, includes accusations that OpenAI's models can output verbatim copies of New York Times content - both from training data and from implementations of RAG.
 
