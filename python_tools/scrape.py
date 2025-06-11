@@ -1,17 +1,25 @@
 import sys
+import os
+import json
+from urllib.parse import urlparse
+from datetime import datetime, timezone
+
 import requests
+
 from bs4 import BeautifulSoup
 from readability import Document
 from markdownify import markdownify as md
-from urllib.parse import urlparse
-from datetime import datetime, timezone
-import os
-import json
+from playwright.sync_api import sync_playwright
 
 url = sys.argv[1]
-resp = requests.get(url, timeout=10)
-resp.raise_for_status()
-html = resp.text
+
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    page = browser.new_page(ignore_https_errors=True)
+    page.goto(url, wait_until="networkidle", timeout=60000)
+    html = page.content()
+    browser.close()
+
 soup = BeautifulSoup(html, 'html.parser')
 
 def get_meta(prop):
