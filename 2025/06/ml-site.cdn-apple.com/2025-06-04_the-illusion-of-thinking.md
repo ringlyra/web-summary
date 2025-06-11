@@ -107,6 +107,13 @@ another stack.
 0 4000 8000 12000
 (a) (b)
 4.4 Open Questions: Puzzling Behavior of Reasoning Models
+another stack.
+80 N=3
+60 N=6
+40 N=8
+0 4000 8000 12000
+(a) (b)
+4.4 Open Questions: Puzzling Behavior of Reasoning Models
 Tower of Hanoi Tower of Hanoi Tower of Hanoi River Crossing
 100 100
 DeepSeek-R1 Claude-3.7-Sonnet (thinking) Claude-3.7-Sonnet (thinking)
@@ -119,10 +126,14 @@ Default Default
 0 0 0
 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 2 3 4 5 6 8 10 15 20
 Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of People)
+
 (a) (b) (c) (d)
 5 Conclusion
+
+
 technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219, 2024.
 Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825, 2023.
+
 Sedghi. Teaching algorithmic reasoning via in-context learning. arXiv preprint arXiv:2211.09066, 2022.
 [24] David Herel and Tomas Mikolov. Thinking tokens for language modeling. ArXiv, abs/2405.08644, 2024.
 jishirzi. Tülu 3: Pushing frontiers in open language model post-training. ArXiv, abs/2411.15124, 2024.
@@ -131,11 +142,10 @@ ematics examination (aime). https://maa.org/math-competitions/
 [42] Art of Problem Solving. Amc historical results - aime i (february 1, 2024).
 [43] Art of Problem Solving. Amc historical results – aime i (february 6, 2025).
 A Appendix
+
 A.1 Details on Puzzle Environment Specifications and Design
 A.1.1 Tower of Hanoi
    another stack.
-
-
 A.1.2 Checker Jumping
 (’\_’). In the standard configuration, N red checkers are positioned on the left side, followed by an
 space (’\_’). A checker can move by either:
@@ -144,102 +154,22 @@ Goal board: B B ... B \_ R R ... R
 A.1.3 River Crossing
 A.1.4 Blocks World
 
-
 A.2 Implementation Details
-80                                        N=3
-N=4
+
+
+60 60 60
+
+40 40 40
+20 20 20
+0 0 0
+100 101 102 103 100 101 102 103 100 101 102 103
+Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
+Tower Hanoi Checker Jumping River Crossing Blocks World
 
 
 
 
-Solution Accuracy (%)
-N=5
-60                                        N=6
-N=7
-40                                        N=8
-N=10
-20
 
-0
-0   4000            8000         12000
-Position in Thinking (Token)
-
-(a)                                                                           (b)
-
-Figure 7: Left & Middle: Position and correctness of intermediate solutions within reasoning traces
-across four puzzles at varying complexity levels. ✓ indicates correct solutions, ✗ indicates incorrect
-solutions, with distribution density shown by shading; Right: Solution accuracy versus position
-in thinking for Tower of Hanoi at different complexity levels. Simple problems (N=1-3) show early
-accuracy declining over time (overthinking), moderate problems (N=4-7) show slight improvement
-in accuracy with continued reasoning, and complex problems (N≥8) exhibit consistently near-zero
-accuracy, indicating complete reasoning failure.
-
-
-meaning that the model fails to generate any correct solutions within the thought.
-Fig. 7b presents a complementary analysis of solution accuracy within sequential segments (bins)
-of the thoughts in the Tower of Hanoi environment. It can be observed that for simpler problems
-(smaller N), solution accuracy tends to decrease or oscillate as thinking progresses, providing further
-evidence of the overthinking phenomenon. However, this trend changes for more complex problems,
-where solution accuracy increases with thinking progression—up to a certain threshold. Beyond this
-complexity threshold, in the “collapse mode”, accuracy is zero.
-
-4.4   Open Questions: Puzzling Behavior of Reasoning Models
-In this section, we present surprising results concerning the limitations of reasoning models in
-executing exact problem-solving steps, as well as demonstrating different behaviors of the models
-based on the number of moves.
-As shown in Figures 8a and 8b, in the Tower of Hanoi environment, even when we provide the
-algorithm in the prompt—so that the model only needs to execute the prescribed steps—performance
-does not improve, and the observed collapse still occurs at roughly the same point. This is noteworthy
-because finding and devising a solution should require substantially more computation (e.g., for search
-and verification) than merely executing a given algorithm. This further highlights the limitations of
-reasoning models in verification and in following logical steps to solve a problem, suggesting that
-further research is needed to understand the symbolic manipulation capabilities of such models [44, 6].
-Moreover, in Figures 8c and 8d, we observe very different behavior from the Claude 3.7 Sonnet think-
-ing model. In the Tower of Hanoi environment, the model’s first error in the proposed solution often
-occurs much later, e.g., around move 100 for (N=10), compared to the River Crossing environment,
-where the model can only produce a valid solution until move 4. Note that this model also achieves
-near-perfect accuracy when solving the Tower of Hanoi with (N=5), which requires 31 moves, while
-it fails to solve the River Crossing puzzle when (N=3), which has a solution of 11 moves. This likely
-suggests that examples of River Crossing with N>2 are scarce on the web, meaning LRMs may not
-have frequently encountered or memorized such instances during training.
-
-10
-Tower of Hanoi                                                 Tower of Hanoi                                                                 Tower of Hanoi                                                                River Crossing
-10
-100
-
-
-
-
-First Wrong Move (Median)
-100                                                            100
-
-
-
-
-First Wrong Move (Median)
-DeepSeek-R1                                           Claude-3.7-Sonnet (thinking)                                                                                                                                   Claude-3.7-Sonnet (thinking)
-Algorithm Given                                               Algorithm Given                                                                                                                   8
-80                                                             80                                                                             80
-Default                                                       Default
-Accuracy (%)
-
-
-
-
-Accuracy (%)
-60                                                             60                                                                             60                                                                             6
-
-
-40                                                             40                                                                             40                                                                             4
-
-
-20                                                             20                                                                             20
-2
-Claude-3.7-Sonnet (thinking)
-0                                                              0                                                                              0
-0
-1 2 3 4 5 6 7 8 9 10         15      20                        1 2 3 4 5 6 7 8 9 10         15        20                                      1 2 3 4 5 6 7 8 9 10         15         20                                    2 3 4 5 6   8      10          15         20
 Complexity (Number of Disks)                                   Complexity (Number of Disks)                                                   Complexity (Number of Disks)                                                 Complexity (Number of People)
 
 

@@ -12,7 +12,7 @@
 
 **GitHub Copilot**の新機能**エージェントモード**と**コーディングエージェント**の違いを解説する。エージェントモードはエディタ内で同期的にコード修正やテストを実行する相棒、一方コーディングエージェントはGitHub Actions上で非同期にissueを処理し、PRを生成する。併用で開発効率が高まり、人間はレビューや設計に専念できる。活用ポイントや安全・品質チェックも紹介。
 
-## 本文 / Article
+## 本文
 
 “_Give a dev a code completion and they’ll merge once. Teach a dev to wield an AI agent and they’ll empty the backlog before the coffee cools._“
 

@@ -12,7 +12,7 @@
 
 Anthropicが**Integrations**を公開し、アプリをClaudeに接続可能に。**Research**機能も拡充、ウェブやGoogle Workspaceを横断検索。検索は有料プランで提供。
 
-## 本文 / Article
+## 本文
 
 Today we're announcing Integrations, a new way to connect your apps and tools to Claude. We're also expanding Claude's [Research](https://www.anthropic.com/news/research) capabilities with an advanced mode that searches the web, your Google Workspace, and now your Integrations too. Claude can research for up to 45 minutes before delivering a comprehensive report, complete with citations. In addition to these updates, we're making web search available globally for all Claude users on paid plans.
 

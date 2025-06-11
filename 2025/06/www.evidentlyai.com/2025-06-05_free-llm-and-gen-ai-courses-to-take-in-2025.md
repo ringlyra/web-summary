@@ -12,7 +12,7 @@
 
 2025年に受講できる無料の **LLM**・**Generative AI** コース10件を紹介する記事。Evidently AI が提供するLLM評価講座や、Microsoft・Googleの基礎講座、Andrej Karpathyによる解説動画、スタンフォード大学などの大学教材、Maxime Labonneのロードマップ、Decoding MLのLLM Twin、CohereのLLM University、DeepLearning.AIとAWSの生成AIコースなど、実践的な学習に役立つ内容をまとめている。各講座はオンラインで公開され、教材は無料または無償でアクセス可能である。
 
-## 本文 / Article
+## 本文
 
 Looking for free LLM and Gen AI courses to dive into? Here are 10 online courses that focus on the practical side of building with LLMs. Our picks prioritize hands-on learning and accessibility: each course is either free or offers open access to its materials. We hope this list helps you find your next learning adventure.
 

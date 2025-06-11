@@ -12,7 +12,7 @@
 
 ComfyUIのノードを理解しやすくするため、UIに新しいヘルプページを組み込んだ。各ノードの使い方や入出力を多言語で解説し、カスタムノードにも対応。ドキュメントはオープンソースで貢献可能。ナイトリ版フロントエンドで利用でき、ユーザーのワークフロー作成を支援する。
 
-## 本文 / Article
+## 本文
 
 Nodes can be confusing! It’s often a daunting task to set out, building a new workflow from scratch, and trying to find the best nodes to do the job, and how to use them properly.
 

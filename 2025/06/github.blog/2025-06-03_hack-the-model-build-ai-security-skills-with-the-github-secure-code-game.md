@@ -12,7 +12,7 @@
 
 GitHubはソフトウェア開発者向けの無料学習コース「Secure Code Game」のシーズン3を公開した。今回はAIがもたらすセキュリティ課題に焦点を当て、悪意あるプロンプトを作ってLLMの脆弱性を突く攻撃者視点から始め、最終的には防御策を実装していく。各レベルではシステムプロンプト設計、出力検証、入力フィルタリング、自己検証などの手法を段階的に学べる。またオープンソースの貢献者が作ったHackMerlinをベースにより実践的なシナリオを備える。リポジトリを公開しており、誰でもチャレンジや改善に参加可能。
 
-## 本文 / Article
+## 本文
 
 We just launched season three of the GitHub Secure Code Game, and this time we’re putting you face to face with the security risks introduced by artificial intelligence. Get ready to learn by doing and have fun doing it! First, you’ll step into the shoes of an adversary crafting malicious prompts. Then, you’ll secure your application against those attacks.
 

@@ -12,7 +12,7 @@
 
 Gemini 2.5とLangGraphを組み合わせ、検索クエリ生成・反復的なリサーチ・引用付き回答までを自動化する**フルスタックAIエージェント**のサンプル。ReactフロントエンドとFastAPIバックエンドをDockerで実行可能。
 
-## 本文 / Article
+## 本文
 
 # Gemini Fullstack LangGraph Quickstart
 

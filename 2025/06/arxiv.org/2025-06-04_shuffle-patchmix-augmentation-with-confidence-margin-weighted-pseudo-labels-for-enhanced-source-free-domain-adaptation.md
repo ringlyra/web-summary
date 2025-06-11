@@ -12,7 +12,7 @@
 
 Shuffle PatchMix(SPM)と信頼度重み付け擬似ラベルにより、Source-Free Domain Adaptationを改善。**SPM**で多様な画像生成、**pseudo-label**重み付けでPACs等でSOTAを達成。
 
-## 本文 / Article
+## 本文
 
 [Submitted on 30 May 2025]
 

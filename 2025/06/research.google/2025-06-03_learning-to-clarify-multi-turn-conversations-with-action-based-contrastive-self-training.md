@@ -12,7 +12,7 @@
 
 マルチターンシミュレーションがなければ、私たちのアプローチは、IRPOのようなポリシーでのDPOバリアントと同様に見ることができますが、会話アクションとタスクヒューリスティックを説明する会話固有の報酬信号を使用します。「シミュレーション付きのサンプリングw/サンプリング」では、この軌跡レベルのシミュレーションは、マルチターンパフォーマンス、特に独自の明確化の質問について推論するポリシーモデルの能力を改善するために重要であることがわかります。主な実験の基本モデルであるZephyrは、ミストラルを調整することにより得られます。
 
-## 本文 / Article
+## 本文
 
 **_Are action-based preferences necessary?_** One of the key factors of ACT is that the contrastive pairs highlight differences between conversational actions. In “ACT w/ Random Actions”, we additionally examine the importance of action selection by randomly sampling both the winning and losing action when constructing the preference pair, and observe this underperforms normal ACT.
 

@@ -12,7 +12,7 @@
 
 Cloudflare Workers と Cloudflare Realtime を用いたサーバーレス **WebRTC** の実装方法を解説するスライド。 **STUN**, **TURN**, **SFU** などの基本概念を説明し、Realtime Kit や Workers KV を活用したサンプルコードを示す。 さらに Serverless SFU の特徴と利点、OBS 配信への応用、今後の展望について触れている。
 
-## 本文 / Article
+## 本文
 
 Cloudflare Workers + Realtime
 
@@ -453,14 +453,11 @@ peerConnection.(
 RTCSessionDescription(newRemoteTracksResult.sessionDescription),
 );
 peerConnection.(
-);
 app.(peerConnection.localDescription.sdp);
 ;
 Error();
 }
 }
-5
-6
 18constnewletifconstawaitconstnewreturn remoteTrackPromise ((resolve) {
 tracks [];
 peerConnection. (event) {
@@ -478,6 +475,8 @@ remoteStream;
 現状だとまだある程度 WebRTC の初期知識が必要で、すぐに
 ある意味無限スケーリングするSFU・TURN Serverというもの
 DataChannelとかも使える & WHIPの参考実装などもあ
+Realtime Kitたのしみ！
+Cloudflare Realtime
 Realtime Kitたのしみ！
 Cloudflare Realtime
        app.(peerConnection.localDescription.sdp);

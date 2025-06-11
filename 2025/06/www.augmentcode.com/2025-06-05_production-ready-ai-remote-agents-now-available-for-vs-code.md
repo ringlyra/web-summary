@@ -12,7 +12,7 @@
 
 Augment Codeはクラウド上で複数のタスクを並列に実行できるRemote Agentsを一般公開した。VS Code拡張 v0.472.1以降で利用でき、技術的負債の解消、リファクタリング、テスト生成、ドキュメント作成などを自律的に行う。コンテナ化されたエージェントがインフラ全体を横断し、セマンティックインデックスにより文脈を維持。プライバシーとリアルタイムのワークフロー制御にも配慮され、著名エンジニアからも高く評価されている。AIが雑務を肩代わりすることで開発者は戦略的思考に集中できる。
 
-## 本文 / Article
+## 本文
 
 Today, we're excited to announce the general availability of [Augment Code’s Remote Agents.](https://docs.augmentcode.com/using-augment/remote-agent)
 

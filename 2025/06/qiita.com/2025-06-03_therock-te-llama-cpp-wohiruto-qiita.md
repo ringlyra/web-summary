@@ -12,7 +12,7 @@
 
 TheRock（ROCm開発版）を用いて**llama.cpp**をビルドする手順を解説。API変更により**HIP**周りのヘッダを修正し、llvm-rcを利用してCMakeでコンパイル。RX 7600 XT向けにgfx1102を指定して問題なくビルドできた。**HIP SDK 6.2**版とのベンチマークでは処理速度にほぼ差はなく、TheRockでも安定動作を確認した。
 
-## 本文 / Article
+## 本文
 
 TheRock（ROCm の開発版）で llama.cpp をビルドしてみました。API に変更があり、llvm-rc がなかったため、多少の修正が必要でした。
 

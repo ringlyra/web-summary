@@ -12,7 +12,7 @@
 
 **OpenAI Codex** を活用し自ブログの **OGP** 説明文のMarkdownを除去する **GitHub** PRを作成し、Codexのエージェント活用事例を紹介。
 
-## 本文 / Article
+## 本文
 
 **[PR #537: Fix Markdown in og descriptions](https://github.com/simonw/simonwillisonblog/pull/537)**. Since [OpenAI Codex](https://openai.com/index/introducing-codex/) is now available to us ChatGPT Plus subscribers I decided to try it out against my blog.
 

@@ -12,7 +12,7 @@
 
 Gemini 2.5 Proのプレビュー版がアップグレードされ、まもなく正式リリース予定。最新モデルは各種ベンチマークで高スコアを記録し、前回版からスタイルと構成も改善。開発者はGoogle AI StudioやVertex AIで利用でき、思考予算(コストとレイテンシ制御機能)も追加。Geminiアプリでも公開開始。
 
-## 本文 / Article
+## 本文
 
 We’re introducing an upgraded preview of Gemini 2.5 Pro, our most intelligent model yet. Building on the version we [released in May](https://blog.google/products/gemini/gemini-2-5-pro-updates/) and showed at I/O, this model will be the generally available, stable version starting in a couple of weeks, ready for enterprise-scale applications.
 

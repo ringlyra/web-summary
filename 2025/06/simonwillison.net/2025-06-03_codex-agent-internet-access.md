@@ -12,7 +12,7 @@
 
 **Codex** エージェントが **インターネット** へアクセス可能になったことを受け、**Sam Altman** はリスクを理解した上で必要な場面のみ利用すべきだと強調。デフォルトではオフで、利用にはドメインの許可リストやHTTPメソッド制限が推奨される。悪用例としてコミット内容を即座に外部送信する攻撃も紹介され、**プロンプトインジェクション**と**情報流出**に注意が必要と指摘している。
 
-## 本文 / Article
+## 本文
 
 **[Codex agent internet access](https://platform.openai.com/docs/codex/agent-network)**. Sam Altman, [just now](https://twitter.com/sama/status/1930006856019390521):
 

@@ -12,7 +12,7 @@
 
 　この記事は Doug Turnbull によるブログ投稿で、検索エンジンの複雑なクエリDSLに頼るのではなく、エンジンからトップN件の候補だけを取得し、アプリケーション側のAPIでリランキングやブーストを行うべきだと論じている。エンジンはシンプルな取得(L0)に徹し、BM25やトークナイズ、ページングなどをクライアントライブラリで扱えば、Pythonなど馴染みのツールを用いて柔軟な検索ロジックを実装できるという主張。
 
-## 本文 / Article
+## 本文
 
 Modern search engines push waaay too much complexity into the engine. Frustrating search practitioners. Let’s stop doing that.
 
