@@ -6,6 +6,7 @@ from markdownify import markdownify as md
 from urllib.parse import urlparse
 from datetime import datetime, timezone
 import os
+import json
 
 url = sys.argv[1]
 resp = requests.get(url, timeout=10)
@@ -29,7 +30,25 @@ else:
         author = author_tag['content']
     else:
         author = urlparse(url).hostname
-published = get_meta('article:published_time') or get_meta('citation_date') or get_meta('citation_publication_date')
+published = (
+    get_meta("article:published_time")
+    or get_meta("citation_date")
+    or get_meta("citation_publication_date")
+)
+
+if not published:
+    for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
+        try:
+            data = json.loads(script.string)
+        except Exception:
+            continue
+        items = data if isinstance(data, list) else [data]
+        for item in items:
+            if isinstance(item, dict) and item.get("datePublished"):
+                published = item["datePublished"]
+                break
+        if published:
+            break
 image = get_meta('og:image')
 fetched = datetime.now(timezone.utc).isoformat()
 source = url
