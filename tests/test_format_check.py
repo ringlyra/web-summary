@@ -4,8 +4,8 @@ import pytest
 
 # ── 設定 ──────────────────────────────────────────────────────────────
 META_LINE_RE = re.compile(r"- \*\*(.+?)\*\*: *(.*)")
-RECOMMENDED_TAGS = {"ai", "nlp"}          # README 推奨タグ
 TARGET_YEARS = ("2025", "2023")           # 対象フォルダ
+MAX_IMAGE_BYTES = 1600                    # image URL 長さの上限
 
 # ── テスト本体 ────────────────────────────────────────────────────────
 def test_formatting():
@@ -15,13 +15,13 @@ def test_formatting():
         for md in pathlib.Path(year).rglob("*.md"):
             text = md.read_text(encoding="utf-8")
 
-            # ------ セクション見出しチェック ----------------------------------
+            # ------ セクション見出しチェック ------------------------------
             if "## 要約" not in text:
                 errors.append(f"{md}: 正しいセクション名は '## 要約'")
             if "## 本文" not in text:
                 errors.append(f"{md}: 正しいセクション名は '## 本文'")
 
-            # ------ メタデータ抽出 ------------------------------------------
+            # ------ メタデータ抽出 --------------------------------------
             meta: dict[str, str] = {}
             lines = text.splitlines()
             try:
@@ -37,28 +37,28 @@ def test_formatting():
                     key, value = m.groups()
                     meta[key.lower()] = value.strip()
 
-            # ------ タグチェック --------------------------------------------
+            # ------ タグチェック ----------------------------------------
             tags = [t.strip() for t in meta.get("tags", "").split(",") if t.strip()]
             if "codex" not in tags:
                 errors.append(f"{md}: 必須タグ 'codex' が抜けています")
             elif tags == ["codex"]:
                 errors.append(
-                    f"{md}: 'codex' 以外に推奨タグ ({', '.join(sorted(RECOMMENDED_TAGS))}) を少なくとも 1 つ追加してください"
+                    f"{md}: 'codex' 以外に関連タグを少なくとも 1 つ追加してください。どんなタグが適切か考えてみてください"
                 )
 
-            # ------ author チェック -----------------------------------------
+            # ------ author チェック -------------------------------------
             author = meta.get("author", "").strip()
             if not author:
                 errors.append(
                     f"{md}: author が空白です。個人名が望ましい。なければドメイン名を入力してください"
                 )
 
-            # ------ 画像 URL 長さチェック ------------------------------------
+            # ------ image URL 長さチェック ------------------------------
             image = meta.get("image", "")
-            if len(image.encode("utf-8")) > 1600:
+            if image and len(image.encode("utf-8")) > MAX_IMAGE_BYTES:
                 errors.append(
-                    f"{md}: image URL が長すぎます。短縮 URL を検討してください"
+                    f"{md}: image URL が {MAX_IMAGE_BYTES} バイトを超えています。`image:` フィールドを空にしてください"
                 )
 
-    # 1 件でもあれば赤で落とす
+    # 1 件でもあれば失敗
     assert not errors, "フォーマットエラー:\n" + "\n".join(errors)
