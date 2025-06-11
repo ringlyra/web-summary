@@ -453,11 +453,11 @@ peerConnection.(
 RTCSessionDescription(newRemoteTracksResult.sessionDescription),
 );
 peerConnection.(
-peerConnection.(),
 );
 app.(peerConnection.localDescription.sdp);
 ;
 Error();
+}
 }
 5
 6
@@ -480,7 +480,6 @@ remoteStream;
 DataChannelとかも使える & WHIPの参考実装などもあ
 Realtime Kitたのしみ！
 Cloudflare Realtime
-      );
        app.(peerConnection.localDescription.sdp);
       ;
              Error();
