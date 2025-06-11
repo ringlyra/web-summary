@@ -42,7 +42,7 @@ repo-root
 - **author**: <著者名 / ドメイン名>
 - **published**: <公開日時 (ISO 8601)>
 - **fetched**: <取得日時 (ISO 8601)>
-- **tags**: codex, <任意タグをカンマ区切りで追加>
+- **tags**: codex, <関連タグをカンマ区切りで追加>
 - **image**: <OGP 画像やアイキャッチ URL>
 
 ## 要約
@@ -87,7 +87,7 @@ repo-root
     2. Fetch: HTTP GET。必要に応じて Headless browser で JS レンダリング。
     3. Parse:
     - {title}, {meta} 各種, OGP, {time} 等を抽出。
-    - 取得できない項目は空文字列。tags には必ず codex を入れる。推奨タグも必ず追加してください。
+    - 取得できない項目は空文字列。tags には必ず codex を入れる。関連タグも必ず追加してください。
     4. Convert: 本文 HTML を Markdown に変換。
     5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
     6. Save: YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
@@ -101,7 +101,7 @@ repo-root
 
 - ファイル名: {YYYY-MM-DD}\_{title}.md
 - 必須タグ: codex
-- 推奨タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列にすること。
+- 関連タグ: ソーシャルブックマークなどで使われる、調査したコンテンツの内容を的確に表現する、15個以下の複数のタグからなる文字列にすること。
 - タグ名は必ず英語にすること。
 
 ⸻
