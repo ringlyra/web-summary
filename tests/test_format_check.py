@@ -14,16 +14,31 @@ def test_formatting():
     for year in TARGET_YEARS:
         for md in pathlib.Path(year).rglob("*.md"):
             text = md.read_text(encoding="utf-8")
+            lines = text.splitlines()
 
             # ------ セクション見出しチェック ------------------------------
-            if "## 要約" not in text:
-                errors.append(f"{md}: 正しいセクション名は '## 要約'")
-            if "## 本文" not in text:
+            body_lines = [l.strip() for l in lines if l.strip().startswith("## 本文")]
+            if not body_lines:
                 errors.append(f"{md}: 正しいセクション名は '## 本文'")
+            else:
+                for l in body_lines:
+                    if l != "## 本文":
+                        errors.append(
+                            f"{md}: '## 本文' の行に余計な文字があります: '{l}'"
+                        )
+
+            summary_lines = [l.strip() for l in lines if l.strip().startswith("## 要約")]
+            if not summary_lines:
+                errors.append(f"{md}: 正しいセクション名は '## 要約'")
+            else:
+                for l in summary_lines:
+                    if l != "## 要約":
+                        errors.append(
+                            f"{md}: '## 要約' の行に余計な文字があります: '{l}'"
+                        )
 
             # ------ メタデータ抽出 --------------------------------------
             meta: dict[str, str] = {}
-            lines = text.splitlines()
             try:
                 i = lines.index("<!-- metadata -->")
             except ValueError:
