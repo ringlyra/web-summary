@@ -452,7 +452,6 @@ tracks.(event.track);
 peerConnection.(
 RTCSessionDescription(newRemoteTracksResult.sessionDescription),
 );
-peerConnection.(
 app.(peerConnection.localDescription.sdp);
 ;
 Error();

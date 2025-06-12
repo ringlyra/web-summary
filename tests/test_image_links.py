@@ -24,7 +24,7 @@ def test_image_links():
     """
     errors: list[str] = []
 
-    for year in ("2025", "2023"):
+    for year in ("Summary/2025", "Summary/2023"):
         for md in pathlib.Path(year).rglob("*.md"):
             for lineno, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
                 good_urls = {m.group(1) for m in INLINE_IMG_RE.finditer(line)}

@@ -163,7 +163,7 @@ else:
     dt = datetime.now(timezone.utc)
     published_date = dt.strftime('%Y-%m-%d')
 year,month,_ = published_date.split('-')
-path = os.path.join(year, month, domain)
+path = os.path.join("Summary", year, month, domain)
 os.makedirs(path, exist_ok=True)
 filename = f"{published_date}_{file_title}.md"
 filepath = os.path.join(path, filename)
