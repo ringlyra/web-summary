@@ -108,33 +108,13 @@ another stack.
 (a) (b)
 4.4 Open Questions: Puzzling Behavior of Reasoning Models
 another stack.
-80 N=3
-60 N=6
-40 N=8
-0 4000 8000 12000
-(a) (b)
-4.4 Open Questions: Puzzling Behavior of Reasoning Models
-Tower of Hanoi Tower of Hanoi Tower of Hanoi River Crossing
-100 100
-DeepSeek-R1 Claude-3.7-Sonnet (thinking) Claude-3.7-Sonnet (thinking)
-Algorithm Given Algorithm Given 8
-80 80 80
-Default Default
-60 60 60 6
-40 40 40 4
-20 20 20
-0 0 0
-1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 1 2 3 4 5 6 7 8 9 10 15 20 2 3 4 5 6 8 10 15 20
 Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of People)
-
 (a) (b) (c) (d)
 5 Conclusion
-
-
 technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219, 2024.
 Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825, 2023.
-
 Sedghi. Teaching algorithmic reasoning via in-context learning. arXiv preprint arXiv:2211.09066, 2022.
+
 [24] David Herel and Tomas Mikolov. Thinking tokens for language modeling. ArXiv, abs/2405.08644, 2024.
 jishirzi. Tülu 3: Pushing frontiers in open language model post-training. ArXiv, abs/2411.15124, 2024.
 [41] Mathematical Association of America. American invitational math-
@@ -142,75 +122,36 @@ ematics examination (aime). https://maa.org/math-competitions/
 [42] Art of Problem Solving. Amc historical results - aime i (february 1, 2024).
 [43] Art of Problem Solving. Amc historical results – aime i (february 6, 2025).
 A Appendix
-
 A.1 Details on Puzzle Environment Specifications and Design
 A.1.1 Tower of Hanoi
    another stack.
+
 A.1.2 Checker Jumping
 (’\_’). In the standard configuration, N red checkers are positioned on the left side, followed by an
+
 space (’\_’). A checker can move by either:
+
 moves = [[’R ’ , 0 , 1] , [ ’B ’ , 2 , 0] , [ ’R ’ , 1 , 2]]
 Goal board: B B ... B \_ R R ... R
+
+
+
+
+
+
 A.1.3 River Crossing
+
 A.1.4 Blocks World
 
+
 A.2 Implementation Details
-
-
 60 60 60
-
 40 40 40
 20 20 20
 0 0 0
 100 101 102 103 100 101 102 103 100 101 102 103
 Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
 Tower Hanoi Checker Jumping River Crossing Blocks World
-
-
-
-
-
-Complexity (Number of Disks)                                   Complexity (Number of Disks)                                                   Complexity (Number of Disks)                                                 Complexity (Number of People)
-
-
-(a)                                                            (b)                                                                            (c)                                                                              (d)
-
-Figure 8: (a) & (b) Despite providing the solution algorithm in the prompt, execution failure
-occurs at similar points, highlighting reasoning model limitations in logical step execution. (c) &
-(d) Notably, the Claude 3.7 Sonnet model demonstrates much longer error-free sequences in the
-Tower of Hanoi compared to early errors in the River Crossing scenario.
-
-
-5                      Conclusion
-In this paper, we systematically examine frontier Large Reasoning Models (LRMs) through the lens
-of problem complexity using controllable puzzle environments. Our findings reveal fundamental
-limitations in current models: despite sophisticated self-reflection mechanisms, these models fail to
-develop generalizable reasoning capabilities beyond certain complexity thresholds. We identified
-three distinct reasoning regimes: standard LLMs outperform LRMs at low complexity, LRMs excel at
-moderate complexity, and both collapse at high complexity. Particularly concerning is the counterin-
-tuitive reduction in reasoning effort as problems approach critical complexity, suggesting an inherent
-compute scaling limit in LRMs. Our detailed analysis of reasoning traces further exposed complexity-
-dependent reasoning patterns, from inefficient “overthinking” on simpler problems to complete failure
-on complex ones. These insights challenge prevailing assumptions about LRM capabilities and
-suggest that current approaches may be encountering fundamental barriers to generalizable reasoning.
-Finally, we presented some surprising results on LRMs that lead to several open questions for future
-work. Most notably, we observed their limitations in performing exact computation; for example,
-when we provided the solution algorithm for the Tower of Hanoi to the models, their performance
-on this puzzle did not improve. Moreover, investigating the first failure move of the models revealed
-surprising behaviors. For instance, they could perform up to 100 correct moves in the Tower of
-Hanoi but fail to provide more than 5 correct moves in the River Crossing puzzle. We believe our
-results can pave the way for future investigations into the reasoning capabilities of these systems.
-
-Limitations
-We acknowledge that our work has limitations. While our puzzle environments enable controlled
-experimentation with fine-grained control over problem complexity, they represent a narrow slice of
-reasoning tasks and may not capture the diversity of real-world or knowledge-intensive reasoning
-problems. It is notable that most of our experiments rely on black-box API access to the closed frontier
-LRMs, limiting our ability to analyze internal states or architectural components. Furthermore, the
-use of deterministic puzzle simulators assumes that reasoning can be perfectly validated step by
-step. However, in less structured domains, such precise validation may not be feasible, limiting the
-transferability of this analysis to other more generalizable reasoning.
-
 
 
 

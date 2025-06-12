@@ -33,7 +33,7 @@ def test_video_links():
     """
     errors: list[str] = []
 
-    for year in ("2025", "2023"):
+    for year in ("Summary/2025", "Summary/2023"):
         for md in pathlib.Path(year).rglob("*.md"):
             for lineno, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
                 # その行に存在する「正しい動画 URL」を収集

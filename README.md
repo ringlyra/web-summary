@@ -16,12 +16,13 @@
 
 ```
 repo-root
-└── 2025
-    └── 06
-        ├── openai.com
-        │   └── 2025-06-04_chatgpt.md
-        └── nytimes.com
-            └── 2025-06-01_nvidia-ai.md
+└── Summary
+    └── 2025
+        └── 06
+            ├── openai.com
+            │   └── 2025-06-04_chatgpt.md
+            └── nytimes.com
+                └── 2025-06-01_nvidia-ai.md
 ```
 
 > **Note**: ドメイン名直下に日付プレフィックス付きの単一ファイルを置く方針です。異なる命名ポリシーがあれば適宜置換してください。
@@ -90,7 +91,7 @@ repo-root
     - 取得できない項目は空文字列。tags には必ず codex を入れる。関連タグも必ず追加してください。
     4. Convert: 本文 HTML を Markdown に変換。
     5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
-    6. Save: YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
+    6. Save: Summary/YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
     7. 各種テストと prettier を実行し、エラーが出る場合はの修正を行う
     8. Commit: git add → git commit -m "Add clip: <title or domain>"。
     9. Repeat: 次の URL へ。
