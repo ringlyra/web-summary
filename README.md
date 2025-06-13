@@ -10,6 +10,19 @@
 - **最小限の加工**：元 HTML を Markdown 化しつつ、解釈 (メタデータ・要約) を明確に分離。
 - **タグ駆動**：必ず `codex` タグを含め、後のクエリーやフィルタを容易にする。
 
+## 環境セットアップ
+
+1. Python 依存パッケージ
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Playwright ブラウザ
+   ```bash
+   python python_tools/setup_playwright.py
+   ```
+   これにより `.playwright-browsers` にブラウザが保存され、次回以降の実行が高速化されます。
+
+
 ---
 
 ## 2. ディレクトリ構成
