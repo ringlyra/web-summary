@@ -125,8 +125,8 @@ if domain == "github.com" and len(path_segments) == 2:
             break
 
 if html is not None and not content_md:
-    article_tag = soup.find('article')
-    if article_tag:
+    article_tag = soup.find('article', attrs={'class': re.compile('post|article', re.I)})
+    if article_tag and len(article_tag.get_text(strip=True)) > 200:
         content_html = article_tag.decode_contents()
     else:
         article = Document(html)
