@@ -98,23 +98,10 @@ MATH-500 AIME24 AIME25
 60 60
 40 40
 another stack.
-4.3 What Happens Inside the Thoughts of Reasoning Models?
-100 N=1
-80 N=3
-
-60 N=6
-40 N=8
-0 4000 8000 12000
-(a) (b)
-4.4 Open Questions: Puzzling Behavior of Reasoning Models
 another stack.
-Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of Disks) Complexity (Number of People)
-(a) (b) (c) (d)
-5 Conclusion
 technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219, 2024.
 Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825, 2023.
 Sedghi. Teaching algorithmic reasoning via in-context learning. arXiv preprint arXiv:2211.09066, 2022.
-
 [24] David Herel and Tomas Mikolov. Thinking tokens for language modeling. ArXiv, abs/2405.08644, 2024.
 jishirzi. Tülu 3: Pushing frontiers in open language model post-training. ArXiv, abs/2411.15124, 2024.
 [41] Mathematical Association of America. American invitational math-
@@ -124,80 +111,37 @@ ematics examination (aime). https://maa.org/math-competitions/
 A Appendix
 A.1 Details on Puzzle Environment Specifications and Design
 A.1.1 Tower of Hanoi
+
    another stack.
+
+
+
+
+
+
+
 
 A.1.2 Checker Jumping
 (’\_’). In the standard configuration, N red checkers are positioned on the left side, followed by an
-
 space (’\_’). A checker can move by either:
-
 moves = [[’R ’ , 0 , 1] , [ ’B ’ , 2 , 0] , [ ’R ’ , 1 , 2]]
+
 Goal board: B B ... B \_ R R ... R
-
-
-
-
-
-
 A.1.3 River Crossing
+
 
 A.1.4 Blocks World
 
-
 A.2 Implementation Details
+
 60 60 60
 40 40 40
+
 20 20 20
 0 0 0
 100 101 102 103 100 101 102 103 100 101 102 103
 Compositional Depth (# of Moves) Compositional Depth (# of Moves) Compositional Depth (# of Moves)
 Tower Hanoi Checker Jumping River Crossing Blocks World
-
-
-
-11
-Acknowledgments
-The authors would like to thank Scott Hoang, Yichen Jiang, Minsik Cho, Mohammad Sekhavat, David
-Harrison, Mohammadreza Armandpour and Devi Krishna for the valuable feedback and support.
-
-
-References
-[1] Aaron Jaech, Adam Kalai, Adam Lerer, Adam Richardson, Ahmed El-Kishky, Aiden Low, Alec
-Helyar, Aleksander Madry, Alex Beutel, Alex Carney, et al. Openai o1 system card. arXiv
-preprint arXiv:2412.16720, 2024.
-
-[2] OpenAI. Introducing openai o1. Jan 2024.
-
-[3] Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu,
-Shirong Ma, Peiyi Wang, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in llms
-via reinforcement learning. arXiv preprint arXiv:2501.12948, 2025.
-
-[4] Anthropic. Claude 3.7 sonnet. Feb 2025.
-
-[5] Google. Gemini flash thinking. Google AI Blog, Jan 2025.
-
-[6] Seyed Iman Mirzadeh, Keivan Alizadeh, Hooman Shahrokhi, Oncel Tuzel, Samy Bengio,
-and Mehrdad Farajtabar. GSM-symbolic: Understanding the limitations of mathematical
-reasoning in large language models. In The Thirteenth International Conference on Learning
-Representations, 2025.
-
-[7] Francois Chollet, Mike Knoop, Gregory Kamradt, Bryan Landers, and Henry Pinkard. Arc-agi-2:
-A new challenge for frontier ai reasoning systems. arXiv preprint arXiv:2505.11831, 2025.
-
-[8] Gary Marcus. Five ways in which the last 3 months — and especially the deepseek era — have
-vindicated "deep learning is hitting a wall". Marcus on AI (Substack), February 2025. Blog
-post.
-
-[9] Marah I Abdin, Sam Ade Jacobs, Ammar Ahmad Awan, Jyoti Aneja, Ahmed Awadallah, Hany
-Awadalla, Nguyen Bach, Amit Bahree, Arash Bakhtiari, Harkirat S. Behl, and et. al. Phi-3
-technical report: A highly capable language model locally on your phone. CoRR, abs/2404.14219,
-2024.
-
-[10] Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chap-
-lot, Diego de Las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier,
-Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril,
-Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b. CoRR, abs/2310.06825,
-2023.
 
 [11] Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle,
 Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, Anirudh Goyal, Anthony
