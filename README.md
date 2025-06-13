@@ -40,7 +40,7 @@ repo-root
 
 - **title**: <タイトル>
 - **source**: <URL>
-- **author**: <著者名 / ドメイン名>
+- **author**: <著者名>
 - **published**: <公開日時 (ISO 8601)>
 - **fetched**: <取得日時 (ISO 8601)>
 - **tags**: codex, <関連タグをカンマ区切りで追加>
@@ -92,7 +92,7 @@ repo-root
     4. Convert: 本文 HTML を Markdown に変換。
     5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
     6. Save: Summary/YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
-    7. 各種テストと prettier を実行し、エラーが出る場合はの修正を行う
+    7. 各種テストを実行し、エラーが出る場合はの修正を行う
     8. Commit: git add → git commit -m "Add clip: <title or domain>"。
     9. Repeat: 次の URL へ。
 
@@ -107,14 +107,9 @@ repo-root
 
 ⸻
 
-## 6. Prettier の実行
+## 6. lint-summary.js の実行
 
-全体の Markdown やコードを整形する場合は node_tools/run_prettier.js を使いましょう。
-個別にでチェックすることも可能。その場合は以下のコマンド↓
-
-```bash
-npx prettier --write <file globs>
-```
+要約を作成してコミットする前にテストと一緒に実行します。prettier の変更は必ず保存し、エラーが出た場合は修正する必要があります。全て完了したら PR を作成してください。
 
 ⸻
 
