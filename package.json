@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "prettier": "^3.5.3"
+  },
+  "devDependencies": {
+    "textlint": "^14.8.0",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2"
+  },
+  "scripts": {
+    "lint-summary": "node node_tools/lint-summary.js",
+    "test": "npm run lint-summary && pytest -q"
   }
 }
