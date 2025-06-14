@@ -16,11 +16,6 @@
    ```bash
    pip install -r requirements.txt
    ```
-2. Playwright ブラウザ
-   ```bash
-   python python_tools/setup_playwright.py
-   ```
-   これにより `.playwright-browsers` にブラウザが保存され、次回以降の実行が高速化されます。
 
 
 ---
@@ -120,9 +115,9 @@ repo-root
 
 ⸻
 
-## 6. lint-summary.js の実行
+## 6. テスト
 
-要約を作成してコミットする前にテストと一緒に実行します。prettier の変更は必ず保存し、エラーが出た場合は修正する必要があります。全て完了したら PR を作成してください。
+要約を作成してコミットする前に `pytest -q` を実行し、エラーがないことを確認してください。すべて完了したら PR を作成します。
 
 ⸻
 
