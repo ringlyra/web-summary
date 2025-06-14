@@ -10,7 +10,6 @@ import re
 from bs4 import BeautifulSoup
 from readability import Document
 from markdownify import markdownify as md
-from playwright.sync_api import sync_playwright
 
 url = sys.argv[1]
 parsed_url = urlparse(url)
@@ -33,12 +32,9 @@ if parsed_url.hostname == "help.openai.com":
     image = ""
     html = None
 else:
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page(ignore_https_errors=True)
-        page.goto(url, wait_until="domcontentloaded", timeout=120000)
-        html = page.content()
-        browser.close()
+    r = requests.get(url, timeout=120)
+    r.raise_for_status()
+    html = r.text
 
 if html is not None:
     soup = BeautifulSoup(html, 'html.parser')

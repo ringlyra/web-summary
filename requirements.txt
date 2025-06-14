@@ -4,4 +4,3 @@ PyPDF2
 readability-lxml
 requests
 pytest
-playwright
