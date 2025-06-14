@@ -16,6 +16,7 @@
    ```bash
    pip install uv
    uv pip install -r requirements.txt
+   pre-commit install
    ```
 
 ---
@@ -117,7 +118,9 @@ repo-root
 
 ## 6. テスト
 
-要約を作成してコミットする前に `pytest -q` を実行し、エラーがないことを確認してください。すべて完了したら PR を作成します。
+`pre-commit` を導入しています。初回のみ `pre-commit install` を実行してください。
+コミット時に自動で `pytest -q` が実行されます。手動で確認したい場合は
+`pre-commit run --all-files` を使ってください。すべて完了したら PR を作成します。
 
 ⸻
 
