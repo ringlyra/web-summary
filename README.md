@@ -18,8 +18,6 @@
    uv pip install -r requirements.txt
    ```
 
-> **Note**: 既にインストールされているので実行する必要はないです。
-
 ---
 
 ## 2. ディレクトリ構成
