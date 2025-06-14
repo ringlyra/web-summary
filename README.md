@@ -12,9 +12,10 @@
 
 ## 環境セットアップ
 
-1. Python 依存パッケージ
+1. Python 依存パッケージ (uv を利用)
    ```bash
-   pip install -r requirements.txt
+   pip install uv
+   uv pip install -r requirements.txt
    ```
 
 
