@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: not much happened today | AINews
-- **source**: https://news.smol.ai/issues/25-06-02-not-much/
-- **author**: news.smol.ai
-- **published**: 2025-06-02T05:44:39.731Z
-- **fetched**: 2025-06-04T03:06:02.926764Z
-- **tags**: codex, ai
-- **image**: https://news.smol.ai/api/og?title=not+much+happened+today&description=**DeepSeek+R1-0528**+release+brings+major+improvements+in+reasoning%2C+hallucination+reduction%2C+JSON+output%2C+and+function+calling%2C+matching+or+surpassing+closed+models+like+**OpenAI+o3**+and+**Gemini+2.5+Pro**+on+benchmarks+such+as+**Artificial+Analysis+Intelligence+Index**%2C+**LiveBench**%2C+and+**GPQA+Diamond**.+The+model+ranks+%232+globally+in+open+weights+intelligence%2C+surpassing+**Meta+AI**%2C+**Anthropic**%2C+and+**xAI**.+Open+weights+and+technical+transparency+have+fueled+rapid+adoption+across+platforms+like+**Ollama**+and+**Hugging+Face**.+Chinese+AI+labs+including+**DeepSeek**%2C+**Alibaba**%2C+**ByteDance**%2C+and+**Xiaomi**+now+match+or+surpass+US+labs+in+model+releases+and+intelligence%2C+driven+by+open+weights+strategies.+Reinforcement+learning+post-training+is+critical+for+intelligence+gains%2C+mirroring+trends+seen+at+**OpenAI**.+Optimized+quantization+techniques+%281-bit%2C+4-bit%29+and+local+inference+enable+efficient+experimentation+on+consumer+hardware.+New+benchmarks+like+**LisanBench**+test+knowledge%2C+planning%2C+memory%2C+and+long-context+reasoning%2C+with+**OpenAI+o3**+and+**Claude+Opus+4**+leading.+Discussions+highlight+concerns+about+benchmark+contamination+and+overemphasis+on+RL-tuned+gains.&type=issue&issueNumber=06&date=2025-06-02T05%3A44%3A39.731Z&companies=deepseek_ai%2Copenai%2Cgemini%2Cmeta-ai-fair%2Canthropic%2Cx-ai%2Collama%2Chugging-face%2Calibaba%2Cbytedance%2Cxiaomi&models=deepseek-r1-0528%2Co3%2Cgemini-2.5-pro%2Cclaude-opus-4
+---
+title: not much happened today | AINews
+source: https://news.smol.ai/issues/25-06-02-not-much/
+author: news.smol.ai
+published: '2025-06-02T05:44:39.731Z'
+fetched: '2025-06-04T03:06:02.926764Z'
+tags:
+- codex
+- ai
+image: https://news.smol.ai/api/og?title=not+much+happened+today&description=**DeepSeek+R1-0528**+release+brings+major+improvements+in+reasoning%2C+hallucination+reduction%2C+JSON+output%2C+and+function+calling%2C+matching+or+surpassing+closed+models+like+**OpenAI+o3**+and+**Gemini+2.5+Pro**+on+benchmarks+such+as+**Artificial+Analysis+Intelligence+Index**%2C+**LiveBench**%2C+and+**GPQA+Diamond**.+The+model+ranks+%232+globally+in+open+weights+intelligence%2C+surpassing+**Meta+AI**%2C+**Anthropic**%2C+and+**xAI**.+Open+weights+and+technical+transparency+have+fueled+rapid+adoption+across+platforms+like+**Ollama**+and+**Hugging+Face**.+Chinese+AI+labs+including+**DeepSeek**%2C+**Alibaba**%2C+**ByteDance**%2C+and+**Xiaomi**+now+match+or+surpass+US+labs+in+model+releases+and+intelligence%2C+driven+by+open+weights+strategies.+Reinforcement+learning+post-training+is+critical+for+intelligence+gains%2C+mirroring+trends+seen+at+**OpenAI**.+Optimized+quantization+techniques+%281-bit%2C+4-bit%29+and+local+inference+enable+efficient+experimentation+on+consumer+hardware.+New+benchmarks+like+**LisanBench**+test+knowledge%2C+planning%2C+memory%2C+and+long-context+reasoning%2C+with+**OpenAI+o3**+and+**Claude+Opus+4**+leading.+Discussions+highlight+concerns+about+benchmark+contamination+and+overemphasis+on+RL-tuned+gains.&type=issue&issueNumber=06&date=2025-06-02T05%3A44%3A39.731Z&companies=deepseek_ai%2Copenai%2Cgemini%2Cmeta-ai-fair%2Canthropic%2Cx-ai%2Collama%2Chugging-face%2Calibaba%2Cbytedance%2Cxiaomi&models=deepseek-r1-0528%2Co3%2Cgemini-2.5-pro%2Cclaude-opus-4
+---
 
 ## 要約
 

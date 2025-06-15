@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: Claude can now connect to your world | Anthropic
-- **source**: https://www.anthropic.com/news/integrations
-- **author**: anthropic.com
-- **published**: 2025-05-01T00:00:00Z
-- **fetched**: 2025-06-04T03:23:01Z
-- **tags**: codex, ai, integration, anthropic
-- **image**: https://cdn.sanity.io/images/4zrzovbb/website/823ff5e709d270e101840e349b539c4cb636dab9-1201x1201.png
+---
+title: Claude can now connect to your world | Anthropic
+source: https://www.anthropic.com/news/integrations
+author: anthropic.com
+published: '2025-05-01T00:00:00Z'
+fetched: '2025-06-04T03:23:01Z'
+tags:
+- codex
+- ai
+- integration
+- anthropic
+image: https://cdn.sanity.io/images/4zrzovbb/website/823ff5e709d270e101840e349b539c4cb636dab9-1201x1201.png
+---
 
 ## 要約
 

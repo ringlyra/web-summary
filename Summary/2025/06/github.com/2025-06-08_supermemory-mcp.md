@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: GitHub - supermemoryai/supermemory-mcp: Your memories are in ChatGPT... But nowhere else. Universal Memory MCP makes your memories available to every single LLM. No logins or paywall. One command to set it up.
-- **source**: https://github.com/supermemoryai/supermemory-mcp
-- **author**: github.com
-- **published**:
-- **fetched**: 2025-06-08T19:12:28.198186Z
-- **tags**: codex, ai
-- **image**: https://opengraph.githubassets.com/03b56e54b510be7f4d9e75112a55fef6e5c8df7499373310a58274aa03db3196/supermemoryai/supermemory-mcp
+---
+title: 'GitHub - supermemoryai/supermemory-mcp: Your memories are in ChatGPT... But
+  nowhere else. Universal Memory MCP makes your memories available to every single
+  LLM. No logins or paywall. One command to set it up.'
+source: https://github.com/supermemoryai/supermemory-mcp
+author: github.com
+published: ''
+fetched: '2025-06-08T19:12:28.198186Z'
+tags:
+- codex
+- ai
+image: https://opengraph.githubassets.com/03b56e54b510be7f4d9e75112a55fef6e5c8df7499373310a58274aa03db3196/supermemoryai/supermemory-mcp
+---
 
 ## 要約
 

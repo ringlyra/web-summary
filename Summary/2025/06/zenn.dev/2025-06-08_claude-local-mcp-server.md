@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: claude code でローカルなMCPサーバーを叩けるようにする
-- **source**: https://zenn.dev/mizchi/articles/claude-local-mcp-server
-- **author**: mizchi
-- **published**: 2025-06-08T18:32:52.581+09:00
-- **fetched**: 2025-06-08T16:17:46Z
-- **tags**: codex, ai, typescript, mcp
-- **image**: https://res.cloudinary.com/zenn/image/upload/s--miyzM-f0--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:claude%2520code%2520%25E3%2581%25A7%25E3%2583%25AD%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25AB%25E3%2581%25AAMCP%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2590%25E3%2583%25BC%25E3%2582%2592%25E5%258F%25A9%25E3%2581%2591%25E3%2582%258B%25E3%2582%2588%25E3%2581%2586%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:mizchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liclRHT052Z3d3ay1fNGxlcVk4TGNGSlNuX0FoWnpEWVlKaXJNcWc9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
+---
+title: claude code でローカルなMCPサーバーを叩けるようにする
+source: https://zenn.dev/mizchi/articles/claude-local-mcp-server
+author: mizchi
+published: '2025-06-08T18:32:52.581+09:00'
+fetched: '2025-06-08T16:17:46Z'
+tags:
+- codex
+- ai
+- typescript
+- mcp
+image: https://res.cloudinary.com/zenn/image/upload/s--miyzM-f0--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:claude%2520code%2520%25E3%2581%25A7%25E3%2583%25AD%25E3%2583%25BC%25E3%2582%25AB%25E3%2583%25AB%25E3%2581%25AAMCP%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2590%25E3%2583%25BC%25E3%2582%2592%25E5%258F%25A9%25E3%2581%2591%25E3%2582%258B%25E3%2582%2588%25E3%2581%2586%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:mizchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liclRHT052Z3d3ay1fNGxlcVk4TGNGSlNuX0FoWnpEWVlKaXJNcWc9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
+---
 
 ## 要約
 

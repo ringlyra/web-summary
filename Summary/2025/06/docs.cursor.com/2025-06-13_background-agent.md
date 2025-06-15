@@ -1,13 +1,15 @@
-<!-- textlint-disable-file -->
-<!-- metadata -->
-
-- **title**: Cursor – Background Agents
-- **source**: https://docs.cursor.com/background-agent
-- **author**: docs.cursor.com
-- **published**:
-- **fetched**: 2025-06-13T09:48:57.400902+00:00
-- **tags**: codex, agents, automation
-- **image**: https://mintlify.s3.us-west-1.amazonaws.com/cursor/images/og/background-agent.png?v=1747020336832
+---
+title: Cursor – Background Agents
+source: https://docs.cursor.com/background-agent
+author: docs.cursor.com
+published: ''
+fetched: '2025-06-13T09:48:57.400902+00:00'
+tags:
+- codex
+- agents
+- automation
+image: https://mintlify.s3.us-west-1.amazonaws.com/cursor/images/og/background-agent.png?v=1747020336832
+---
 
 ## 要約
 

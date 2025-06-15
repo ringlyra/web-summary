@@ -1,12 +1,18 @@
-<!-- metadata -->
-
-- **title**: KV Cache from scratch in nanoVLM
-- **source**: https://huggingface.co/blog/kv-cache
-- **author**: Aritra Roy Gosthipaty, Kashif Rasul, Luis Wiedmann, Andres Marafioti, Pedro Cuenca
-- **published**: 2025-05-28T00:00:00Z
-- **fetched**: 2025-06-04T13:30:57Z
-- **tags**: codex, ai, performance, pytorch, llm
-- **image**: https://huggingface.co/blog/assets/kv-cache/thumbnail.png
+---
+title: KV Cache from scratch in nanoVLM
+source: https://huggingface.co/blog/kv-cache
+author: Aritra Roy Gosthipaty, Kashif Rasul, Luis Wiedmann, Andres Marafioti, Pedro
+  Cuenca
+published: '2025-05-28T00:00:00Z'
+fetched: '2025-06-04T13:30:57Z'
+tags:
+- codex
+- ai
+- performance
+- pytorch
+- llm
+image: https://huggingface.co/blog/assets/kv-cache/thumbnail.png
+---
 
 ## 要約
 

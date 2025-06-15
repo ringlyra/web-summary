@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Why Fireworks Scrapped Creating Their Own Agents Framework to Build with Mastra
-- **source**: https://mastra.ai/blog/fireworks-xml-prompting
-- **author**: mastra.ai
-- **published**: 2025-06-10
-- **fetched**: 2025-06-11T07:00:58.236873+00:00
-- **tags**: codex, ai, agents
-- **image**: https://mastra.ai/api/og/blog?title=Why%20Fireworks%20Scrapped%20Creating%20Their%20Own%20Agents%20Framework%20to%20Build%20with%20Mastra&date=Jun%2010,%202025
+---
+title: Why Fireworks Scrapped Creating Their Own Agents Framework to Build with Mastra
+source: https://mastra.ai/blog/fireworks-xml-prompting
+author: mastra.ai
+published: '2025-06-10'
+fetched: '2025-06-11T07:00:58.236873+00:00'
+tags:
+- codex
+- ai
+- agents
+image: https://mastra.ai/api/og/blog?title=Why%20Fireworks%20Scrapped%20Creating%20Their%20Own%20Agents%20Framework%20to%20Build%20with%20Mastra&date=Jun%2010,%202025
+---
 
 ## 要約
 

@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: Apple製デバイス全体に及ぶ新機能により、Apple Intelligenceがさらにパワフルになります
-- **source**: https://www.apple.com/jp/newsroom/2025/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/
-- **author**: www.apple.com
-- **published**:
-- **fetched**: 2025-06-09T23:20:52.967298+00:00
-- **tags**: codex, ai
-- **image**: https://www.apple.com/newsroom/images/2025/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/tile/Apple-WWDC25-Apple-Intelligence-hero-250609-lp.jpg.og.jpg?202506092016
+---
+title: Apple製デバイス全体に及ぶ新機能により、Apple Intelligenceがさらにパワフルになります
+source: https://www.apple.com/jp/newsroom/2025/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/
+author: www.apple.com
+published: ''
+fetched: '2025-06-09T23:20:52.967298+00:00'
+tags:
+- codex
+- ai
+image: https://www.apple.com/newsroom/images/2025/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/tile/Apple-WWDC25-Apple-Intelligence-hero-250609-lp.jpg.og.jpg?202506092016
+---
 
 ## 要約
 

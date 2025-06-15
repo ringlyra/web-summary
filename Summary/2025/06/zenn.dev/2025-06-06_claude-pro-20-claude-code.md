@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: Claude Pro（$20）プランでゼロから始めるClaude Code
-- **source**: https://zenn.dev/asap/articles/700168965fdb7b
-- **author**: zenn.dev
-- **published**: 2025-06-06T02:56:51.366+09:00
-- **fetched**: 2025-06-05T18:59:52Z
-- **tags**: codex, ai
-- **image**: https://res.cloudinary.com/zenn/image/upload/s--o927mcY9--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Pro%25EF%25BC%2588%252420%25EF%25BC%2589%25E3%2583%2597%25E3%2583%25A9%25E3%2583%25B3%25E3%2581%25A7%25E3%2582%25BC%25E3%2583%25AD%25E3%2581%258B%25E3%2582%2589%25E5%25A7%258B%25E3%2582%2581%25E3%2582%258BClaude%2520Code%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:asap%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2VhYjVhYTQ1MTkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
+---
+title: Claude Pro（$20）プランでゼロから始めるClaude Code
+source: https://zenn.dev/asap/articles/700168965fdb7b
+author: zenn.dev
+published: '2025-06-06T02:56:51.366+09:00'
+fetched: '2025-06-05T18:59:52Z'
+tags:
+- codex
+- ai
+image: https://res.cloudinary.com/zenn/image/upload/s--o927mcY9--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Pro%25EF%25BC%2588%252420%25EF%25BC%2589%25E3%2583%2597%25E3%2583%25A9%25E3%2583%25B3%25E3%2581%25A7%25E3%2582%25BC%25E3%2583%25AD%25E3%2581%258B%25E3%2582%2589%25E5%25A7%258B%25E3%2582%2581%25E3%2582%258BClaude%2520Code%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:asap%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2VhYjVhYTQ1MTkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
+---
 
 ## 要約
 

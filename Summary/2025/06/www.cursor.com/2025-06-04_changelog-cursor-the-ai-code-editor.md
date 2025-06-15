@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: Changelog | Cursor - The AI Code Editor
-- **source**: https://www.cursor.com/ja/changelog
-- **author**: cursor.com
-- **published**: 2025-06-04T00:00:00Z
-- **fetched**: 2025-06-04T23:40:48Z
-- **tags**: codex, ai, changelog, code, editor
-- **image**: https://www.cursor.com/_next/static/media/opengraph-image.375711d3.png
+---
+title: Changelog | Cursor - The AI Code Editor
+source: https://www.cursor.com/ja/changelog
+author: cursor.com
+published: '2025-06-04T00:00:00Z'
+fetched: '2025-06-04T23:40:48Z'
+tags:
+- codex
+- ai
+- changelog
+- code
+- editor
+image: https://www.cursor.com/_next/static/media/opengraph-image.375711d3.png
+---
 
 ## 要約
 

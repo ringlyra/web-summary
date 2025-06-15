@@ -1,12 +1,18 @@
-<!-- metadata -->
-
-- **title**: Qwen3 Embedding
-- **source**: https://simonwillison.net/2025/Jun/8/qwen3-embedding/
-- **author**: Simon Willison
-- **published**: 2025-06-08T04:22:29Z
-- **fetched**: 2025-06-08T15:59:46Z
-- **tags**: codex, ai, embeddings, qwen, llm, huggingface
-- **image**: https://static.simonwillison.net/static/2025/qwen3-mteb.jpg
+---
+title: Qwen3 Embedding
+source: https://simonwillison.net/2025/Jun/8/qwen3-embedding/
+author: Simon Willison
+published: '2025-06-08T04:22:29Z'
+fetched: '2025-06-08T15:59:46Z'
+tags:
+- codex
+- ai
+- embeddings
+- qwen
+- llm
+- huggingface
+image: https://static.simonwillison.net/static/2025/qwen3-mteb.jpg
+---
 
 ## 要約
 

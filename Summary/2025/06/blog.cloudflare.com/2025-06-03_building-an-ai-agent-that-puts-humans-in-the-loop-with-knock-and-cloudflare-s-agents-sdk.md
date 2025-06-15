@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Building an AI Agent that puts humans in the loop with Knock and Cloudflare’s Agents SDK
-- **source**: https://blog.cloudflare.com/building-agents-at-knock-agents-sdk/
-- **author**: blog.cloudflare.com
-- **published**: 2025-06-03T14:00+01:00
-- **fetched**: 2025-06-04T00:50:07Z
-- **tags**: codex, article
-- **image**: https://cf-assets.www.cloudflare.com/zkvhlag99gkb/4QDMGATQYFYtzw9CfEpZeA/b850ebb2dd2b22fd415807c4a7a09cf2/hero-knock-cloudflare-agents.png
+---
+title: Building an AI Agent that puts humans in the loop with Knock and Cloudflare’s
+  Agents SDK
+source: https://blog.cloudflare.com/building-agents-at-knock-agents-sdk/
+author: blog.cloudflare.com
+published: 2025-06-03T14:00+01:00
+fetched: '2025-06-04T00:50:07Z'
+tags:
+- codex
+- article
+image: https://cf-assets.www.cloudflare.com/zkvhlag99gkb/4QDMGATQYFYtzw9CfEpZeA/b850ebb2dd2b22fd415807c4a7a09cf2/hero-knock-cloudflare-agents.png
+---
 
 ## 要約
 

@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: The Gentle Singularity
-- **source**: https://blog.samaltman.com/the-gentle-singularity
-- **author**: Sam Altman
-- **published**: 2025-06-10T21:12:47+00:00
-- **fetched**: 2025-06-11T08:11:45.599593+00:00
-- **tags**: codex, ai, singularity
-- **image**:
+---
+title: The Gentle Singularity
+source: https://blog.samaltman.com/the-gentle-singularity
+author: Sam Altman
+published: '2025-06-10T21:12:47+00:00'
+fetched: '2025-06-11T08:11:45.599593+00:00'
+tags:
+- codex
+- ai
+- singularity
+image: ''
+---
 
 ## 要約
 

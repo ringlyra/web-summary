@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: Free LLM and Gen AI courses to take in 2025
-- **source**: https://www.evidentlyai.com/blog/llm-genai-courses
-- **author**: evidentlyai.com
-- **published**: 2025-06-05T13:25:10+00:00
-- **fetched**: 2025-06-06T03:43:04Z
-- **tags**: codex, llm, genai, courses, education
-- **image**: https://cdn.prod.website-files.com/660ef16a9e0687d9cc27474a/6841972efc6d6b5823b2274f_three-robots-seat-and-study-in-a-classroom%20(1)-min.jpg
+---
+title: Free LLM and Gen AI courses to take in 2025
+source: https://www.evidentlyai.com/blog/llm-genai-courses
+author: evidentlyai.com
+published: '2025-06-05T13:25:10+00:00'
+fetched: '2025-06-06T03:43:04Z'
+tags:
+- codex
+- llm
+- genai
+- courses
+- education
+image: https://cdn.prod.website-files.com/660ef16a9e0687d9cc27474a/6841972efc6d6b5823b2274f_three-robots-seat-and-study-in-a-classroom%20(1)-min.jpg
+---
 
 ## 要約
 

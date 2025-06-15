@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Zooming in: Efficient regional environmental risk assessment with generative AI
-- **source**: https://research.google/blog/zooming-in-efficient-regional-environmental-risk-assessment-with-generative-ai/
-- **author**: research.google blog
-- **published**: 2025-06-05T00:00:00Z
-- **fetched**: 2025-06-05T19:31:22Z
-- **tags**: codex, ai
-- **image**: https://storage.googleapis.com/gweb-research2023-media/images/Open_Graph.width-800.format-jpeg.jpg
+---
+title: 'Zooming in: Efficient regional environmental risk assessment with generative
+  AI'
+source: https://research.google/blog/zooming-in-efficient-regional-environmental-risk-assessment-with-generative-ai/
+author: research.google blog
+published: '2025-06-05T00:00:00Z'
+fetched: '2025-06-05T19:31:22Z'
+tags:
+- codex
+- ai
+image: https://storage.googleapis.com/gweb-research2023-media/images/Open_Graph.width-800.format-jpeg.jpg
+---
 
 ## 要約
 

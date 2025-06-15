@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: GitHub - NirDiamant/RAG_Techniques: This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine information retrieval with generative models to provide accurate and contextually rich responses.
-- **source**: https://github.com/NirDiamant/RAG_Techniques
-- **author**: github.com
-- **published**:
-- **fetched**: 2025-06-09T20:57:09.132526+00:00
-- **tags**: codex, ai
-- **image**: https://opengraph.githubassets.com/93fe20e4efb3474ce3ac1bc3069a2b2f07fb09bb0ffb3f9b6106b03e232f2dc6/NirDiamant/RAG_Techniques
+---
+title: 'GitHub - NirDiamant/RAG_Techniques: This repository showcases various advanced
+  techniques for Retrieval-Augmented Generation (RAG) systems. RAG systems combine
+  information retrieval with generative models to provide accurate and contextually
+  rich responses.'
+source: https://github.com/NirDiamant/RAG_Techniques
+author: github.com
+published: ''
+fetched: '2025-06-09T20:57:09.132526+00:00'
+tags:
+- codex
+- ai
+image: https://opengraph.githubassets.com/93fe20e4efb3474ce3ac1bc3069a2b2f07fb09bb0ffb3f9b6106b03e232f2dc6/NirDiamant/RAG_Techniques
+---
 
 ## 要約
 

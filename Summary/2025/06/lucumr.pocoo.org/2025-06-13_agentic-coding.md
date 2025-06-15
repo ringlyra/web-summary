@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: Agentic Coding Recommendations
-- **source**: https://lucumr.pocoo.org/2025/6/12/agentic-coding/
-- **author**: lucumr.pocoo.org
-- **published**: 2025-06-12
-- **fetched**: 2025-06-13T10:39:40.496160+00:00
-- **tags**: codex, ai, agentic-coding, programming
-- **image**: https://lucumr.pocoo.org/static/avatar-small.jpg
+---
+title: Agentic Coding Recommendations
+source: https://lucumr.pocoo.org/2025/6/12/agentic-coding/
+author: lucumr.pocoo.org
+published: '2025-06-12'
+fetched: '2025-06-13T10:39:40.496160+00:00'
+tags:
+- codex
+- ai
+- agentic-coding
+- programming
+image: https://lucumr.pocoo.org/static/avatar-small.jpg
+---
 
 ## 要約
 

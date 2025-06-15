@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: ‘AI Maker, Not an AI Taker’: UK Builds Its Vision With NVIDIA Infrastructure
-- **source**: https://blogs.nvidia.com/blog/uk-ai-vision/
-- **author**: Anthony Hills
-- **published**: 2025-06-08T21:30:18+00:00
-- **fetched**: 2025-06-09T20:58:21.223505+00:00
-- **tags**: codex, nvidia, uk, ai, infrastructure
-- **image**: https://blogs.nvidia.com/wp-content/uploads/2025/06/eyJ3IjoyMDQ4LCJoIjoyMDQ4LCJzY29wZSI6ImFwcCJ9.webp
+---
+title: '‘AI Maker, Not an AI Taker’: UK Builds Its Vision With NVIDIA Infrastructure'
+source: https://blogs.nvidia.com/blog/uk-ai-vision/
+author: Anthony Hills
+published: '2025-06-08T21:30:18+00:00'
+fetched: '2025-06-09T20:58:21.223505+00:00'
+tags:
+- codex
+- nvidia
+- uk
+- ai
+- infrastructure
+image: https://blogs.nvidia.com/wp-content/uploads/2025/06/eyJ3IjoyMDQ4LCJoIjoyMDQ4LCJzY29wZSI6ImFwcCJ9.webp
+---
 
 ## 要約
 

@@ -1,12 +1,18 @@
-<!-- metadata -->
-
-- **title**: Microsoft Copilot Data Security & Governance Guide for CISOs
-- **source**: https://www.knostic.ai/blog/microsoft-copilot-data-security-governance
-- **author**: Knostic Team
-- **published**: 2025-06-06T17:17:11.000Z
-- **fetched**: 2025-06-07T23:40:28.080281+00:00
-- **tags**: codex, microsoft, copilot, security, governance, ai
-- **image**: https://www.knostic.ai/hubfs/365.png
+---
+title: Microsoft Copilot Data Security & Governance Guide for CISOs
+source: https://www.knostic.ai/blog/microsoft-copilot-data-security-governance
+author: Knostic Team
+published: '2025-06-06T17:17:11.000Z'
+fetched: '2025-06-07T23:40:28.080281+00:00'
+tags:
+- codex
+- microsoft
+- copilot
+- security
+- governance
+- ai
+image: https://www.knostic.ai/hubfs/365.png
+---
 
 ## 要約
 

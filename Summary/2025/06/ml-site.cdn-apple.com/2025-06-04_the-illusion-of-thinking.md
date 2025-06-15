@@ -1,12 +1,19 @@
-<!-- metadata -->
-
-- **title**: The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
-- **source**: https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf
-- **author**: Parshin Shojaee, Maxwell Horton, Iman Mirzadeh, Keivan Alizadeh, Samy Bengio, Mehrdad Farajtabar, Apple
-- **published**: 2025-06-04T16:43:49Z
-- **fetched**: 2025-06-08T17:52:31Z
-- **tags**: codex, reasoning, puzzle, large-language-model, ai
-- **image**:
+---
+title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning
+  Models via the Lens of Problem Complexity'
+source: https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf
+author: Parshin Shojaee, Maxwell Horton, Iman Mirzadeh, Keivan Alizadeh, Samy Bengio,
+  Mehrdad Farajtabar, Apple
+published: '2025-06-04T16:43:49Z'
+fetched: '2025-06-08T17:52:31Z'
+tags:
+- codex
+- reasoning
+- puzzle
+- large-language-model
+- ai
+image: ''
+---
 
 ## 要約
 
@@ -70,7 +77,9 @@ LLM Response Peg 0 Peg 1 Peg 2
 <think>
 1
 2
-Move disk 1 from peg 0 to peg 2 ...   Initial State 3
+Move disk 1 from peg 0 to peg 2 ... 
+ Initial State 3
+ Initial State 3
 (for analysis) [1, 2, 1]
 2 3
 
@@ -815,7 +824,7 @@ DeepSeek-R1 vs DeepSeek-V3.
 
 
 correct solutions, red crosses show incorrect ones, and blue lines track average thinking token usage at
-each complexity level (N ) across different puzzles and LRMs. We observe a consistent pattern across
+30
 all three reasoning models (DeepSeek-R1, Claude-3.7-Sonnet-thinking, o3-mini) where thinking token
 usage, i.e. reasoning effort, initially scales with problem complexity but counterintuitively declines
 after reaching a model-specific threshold. This suggests an interesting and fundamental scaling limit

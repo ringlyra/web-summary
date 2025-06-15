@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: AWSのBedrockでClaude 4とClaude Codeをセキュアに活用しよう！ #bedrock - Qiita
-- **source**: https://qiita.com/moritalous/items/9da3e2538c9507890e40
-- **author**: moritalous
-- **published**: 2025-06-04T02:37:57Z
-- **fetched**: 2025-06-04T03:04:30Z
-- **tags**: codex, bedrock, claude4, claudecode, aws
-- **image**: https://example.com/short.png
+---
+title: 'AWSのBedrockでClaude 4とClaude Codeをセキュアに活用しよう！ #bedrock - Qiita'
+source: https://qiita.com/moritalous/items/9da3e2538c9507890e40
+author: moritalous
+published: '2025-06-04T02:37:57Z'
+fetched: '2025-06-04T03:04:30Z'
+tags:
+- codex
+- bedrock
+- claude4
+- claudecode
+- aws
+image: https://example.com/short.png
+---
 
 ## 要約
 

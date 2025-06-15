@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: What if Organizations Ran Themselves? | AI Frontiers
-- **source**: https://www.ai-frontiers.org/articles/what-if-organizations-ran-themselves
-- **author**: www.ai-frontiers.org
-- **published**: 2025-06-10T00:00:00+00:00
-- **fetched**: 2025-06-11T10:45:13.476155+00:00
-- **tags**: codex, ai, governance
-- **image**: https://cdn.prod.website-files.com/66e38815e6bc34b7f5e1768b/6848b0cfdf189abdebf926f1_ai-daos.jpg
+---
+title: What if Organizations Ran Themselves? | AI Frontiers
+source: https://www.ai-frontiers.org/articles/what-if-organizations-ran-themselves
+author: www.ai-frontiers.org
+published: '2025-06-10T00:00:00+00:00'
+fetched: '2025-06-11T10:45:13.476155+00:00'
+tags:
+- codex
+- ai
+- governance
+image: https://cdn.prod.website-files.com/66e38815e6bc34b7f5e1768b/6848b0cfdf189abdebf926f1_ai-daos.jpg
+---
 
 ## 要約
 

@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: 音楽生成AI 「Suno」でAWSの曲を作って楽しく資格勉強できないだろうか #SUNOAI - Qiita
-- **source**: https://qiita.com/Takenoko4594/items/38e50a607ce2dad2ab06
-- **author**: qiita.com
-- **published**: 2025-06-03T14:47:30Z
-- **fetched**: 2025-06-04T12:43:43Z
-- **tags**: codex, suno, aws, music
-- **image**: https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-v4.9f790b4dcf003500eb01.png?auto=format&bg=fff&fit=fill&fill=blur&w=1200&h=630&q=100&s=63164cc85fd254d91d216087b2a78c3f
+---
+title: '音楽生成AI 「Suno」でAWSの曲を作って楽しく資格勉強できないだろうか #SUNOAI - Qiita'
+source: https://qiita.com/Takenoko4594/items/38e50a607ce2dad2ab06
+author: qiita.com
+published: '2025-06-03T14:47:30Z'
+fetched: '2025-06-04T12:43:43Z'
+tags:
+- codex
+- suno
+- aws
+- music
+image: https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-v4.9f790b4dcf003500eb01.png?auto=format&bg=fff&fit=fill&fill=blur&w=1200&h=630&q=100&s=63164cc85fd254d91d216087b2a78c3f
+---
 
 ## 要約
 

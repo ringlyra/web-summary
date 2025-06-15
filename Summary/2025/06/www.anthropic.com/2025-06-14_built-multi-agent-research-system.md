@@ -1,11 +1,14 @@
-<!-- metadata -->
-- **title**: How we built our multi-agent research system
-- **source**: https://www.anthropic.com/engineering/built-multi-agent-research-system
-- **author**: www.anthropic.com
-- **published**: 
-- **fetched**: 2025-06-14T23:48:16.471912+00:00
-- **tags**: codex, ai
-- **image**: https://cdn.sanity.io/images/4zrzovbb/website/5cf046fff69b847bfa78c12723dd466b285c0218-2400x1260.png
+---
+title: How we built our multi-agent research system
+source: https://www.anthropic.com/engineering/built-multi-agent-research-system
+author: www.anthropic.com
+published: ''
+fetched: '2025-06-14T23:48:16.471912+00:00'
+tags:
+- codex
+- ai
+image: https://cdn.sanity.io/images/4zrzovbb/website/5cf046fff69b847bfa78c12723dd466b285c0218-2400x1260.png
+---
 
 ## 要約
 

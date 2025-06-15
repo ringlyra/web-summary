@@ -1,12 +1,20 @@
-<!-- metadata -->
-
-- **title**: Claude Code with Claude Pro on リモート Ubuntu 環境で安価に常在戦場モバイルポチポチ開発
-- **source**: https://note.com/hi_noguchi/n/n53fbc5f23be4
-- **author**: Hi-Noguchi | 株式会社きみより代表
-- **published**: 2025-06-08T21:14:30+09:00
-- **fetched**: 2025-06-08T16:17:31Z
-- **tags**: codex, ubuntu, github, claude, aicoding, claudeCode, greptile, byobu
-- **image**: https://assets.st-note.com/production/uploads/images/194956419/45af9a15393574684e6ac9ee8b90ecf3.png
+---
+title: Claude Code with Claude Pro on リモート Ubuntu 環境で安価に常在戦場モバイルポチポチ開発
+source: https://note.com/hi_noguchi/n/n53fbc5f23be4
+author: Hi-Noguchi | 株式会社きみより代表
+published: '2025-06-08T21:14:30+09:00'
+fetched: '2025-06-08T16:17:31Z'
+tags:
+- codex
+- ubuntu
+- github
+- claude
+- aicoding
+- claudeCode
+- greptile
+- byobu
+image: https://assets.st-note.com/production/uploads/images/194956419/45af9a15393574684e6ac9ee8b90ecf3.png
+---
 
 ## 要約
 

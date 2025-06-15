@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: 📖 Introducing the Node Help Menu
-- **source**: https://blog.comfy.org/p/introducing-the-node-help-menu
-- **author**: Christian Byrne
-- **published**: 2025-06-04T11:11:55+00:00
-- **fetched**: 2025-06-04T13:26:48Z
-- **tags**: codex, comfyui, documentation
-- **image**: https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c0d8310-19ed-4071-9634-17b0e03011d9_4005x2355.png
+---
+title: 📖 Introducing the Node Help Menu
+source: https://blog.comfy.org/p/introducing-the-node-help-menu
+author: Christian Byrne
+published: '2025-06-04T11:11:55+00:00'
+fetched: '2025-06-04T13:26:48Z'
+tags:
+- codex
+- comfyui
+- documentation
+image: https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c0d8310-19ed-4071-9634-17b0e03011d9_4005x2355.png
+---
 
 ## 要約
 

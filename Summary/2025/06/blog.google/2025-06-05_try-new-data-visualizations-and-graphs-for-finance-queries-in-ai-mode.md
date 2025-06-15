@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: Try new data visualizations and graphs for finance queries in AI Mode.
-- **source**: https://blog.google/products/search/ai-mode-data-visualization/
-- **author**: Soufi Esmaeilzadeh
-- **published**: 2025-06-05
-- **fetched**: 2025-06-05T23:43:31Z
-- **tags**: codex, ai, data-visualization, search
-- **image**: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/BlueChip_1920x1080.max-1440x810.png
+---
+title: Try new data visualizations and graphs for finance queries in AI Mode.
+source: https://blog.google/products/search/ai-mode-data-visualization/
+author: Soufi Esmaeilzadeh
+published: '2025-06-05'
+fetched: '2025-06-05T23:43:31Z'
+tags:
+- codex
+- ai
+- data-visualization
+- search
+image: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/BlueChip_1920x1080.max-1440x810.png
+---
 
 ## 要約
 
