@@ -15,26 +15,43 @@ url = sys.argv[1]
 parsed_url = urlparse(url)
 
 html = None
+def parse_rjina_text(text):
+    lines = text.splitlines()
+    t = lines[0].split(":", 1)[1].strip() if lines and lines[0].startswith("Title:") else ""
+    published = ""
+    for line in lines:
+        if line.startswith("Published Time:"):
+            published = line.split(":", 1)[1].strip()
+            break
+    try:
+        idx = lines.index("Markdown Content:")
+        content = "\n".join(lines[idx + 1:])
+    except ValueError:
+        content = text
+    return t, published, content
+
 if parsed_url.hostname == "help.openai.com":
     proxy_url = f"https://r.jina.ai/{url}"
     r = requests.get(proxy_url, timeout=120)
     r.raise_for_status()
-    text = r.text
-    lines = text.splitlines()
-    title = lines[0].split(":", 1)[1].strip() if lines and lines[0].startswith("Title:") else ""
-    try:
-        idx = lines.index("Markdown Content:")
-        content_md = "\n".join(lines[idx + 1:])
-    except ValueError:
-        content_md = text
+    title, published, content_md = parse_rjina_text(r.text)
     author = parsed_url.hostname
-    published = ""
     image = ""
     html = None
 else:
     r = requests.get(url, timeout=120)
+    use_proxy = r.status_code >= 400 or "Your request has been blocked" in r.text or "Access Denied" in r.text
+    if use_proxy:
+        proxy_url = f"https://r.jina.ai/{url}"
+        r = requests.get(proxy_url, timeout=120)
     r.raise_for_status()
-    html = r.text
+    if use_proxy:
+        title, published, content_md = parse_rjina_text(r.text)
+        author = parsed_url.hostname
+        image = ""
+        html = None
+    else:
+        html = r.text
 
 if html is not None:
     soup = BeautifulSoup(html, 'html.parser')
