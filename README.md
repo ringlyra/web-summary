@@ -14,9 +14,8 @@
 
 1. Python 依存パッケージ (uv を利用)
    ```bash
-   pip install uv
    uv sync
-   pre-commit install
+   uv run pre-commit install
    ```
 
 ---
@@ -118,9 +117,9 @@ image: <OGP 画像やアイキャッチ URL>
 
 ## 6. テスト
 
-`pre-commit` を導入しています。初回のみ `pre-commit install` を実行してください。
-コミット時に自動で `pytest -q` が実行されます。手動で確認したい場合は
-`pre-commit run --all-files` を使ってください。すべて完了したら PR を作成します。
+`pre-commit` を導入しています。
+コミット時に自動で `pytest -q` が実行されます。
+すべて完了したら PR を作成します。  
 
 ⸻
 
