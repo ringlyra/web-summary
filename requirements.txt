@@ -1,7 +1,0 @@
-beautifulsoup4
-markdownify
-PyPDF2
-readability-lxml
-requests
-pytest
-pre-commit
