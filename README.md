@@ -12,9 +12,8 @@
 
 ## 環境セットアップ
 
-1. Python 依存パッケージ (uv を利用)
+uv を使用しています。起動時に既に以下のコマンドで依存関係がインストールされました
    ```bash
-   uv sync
    uv run pre-commit install
    ```
 
