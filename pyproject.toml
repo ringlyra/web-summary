@@ -1,0 +1,17 @@
+[project]
+name = "web-summary"
+version = "0.1.0"
+description = "Web page scraping and summarization utilities"
+readme = "README.md"
+dependencies = [
+    "beautifulsoup4",
+    "markdownify",
+    "PyPDF2",
+    "readability-lxml",
+    "requests",
+    "pytest",
+    "pre-commit",
+]
+
+[tool.uv]
+managed = true
