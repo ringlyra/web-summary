@@ -9,7 +9,6 @@ dependencies = [
     "PyPDF2",
     "readability-lxml",
     "requests",
-    "pytest",
     "pre-commit",
 ]
 
