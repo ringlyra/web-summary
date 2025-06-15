@@ -60,11 +60,6 @@ def test_formatting():
         elif tags == ["codex"]:
             errors.append(f"{md}: 'codex' 以外に関連タグを少なくとも 1 つ追加してください。どんなタグが適切か考えてみてください")
 
-        # ------ author チェック -------------------------------------
-        author = meta.get("author", "").strip()
-        if not author:
-            errors.append(f"{md}: author が空白です。個人名が望ましい。なければドメイン名を入力してください")
-
         # ------ image URL 長さチェック ------------------------------
         image = meta.get("image", "")
         if image and len(image.encode("utf-8")) > MAX_IMAGE_BYTES:

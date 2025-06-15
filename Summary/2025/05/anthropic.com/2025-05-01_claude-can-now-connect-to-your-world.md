@@ -1,7 +1,7 @@
 ---
 title: Claude can now connect to your world | Anthropic
 source: https://www.anthropic.com/news/integrations
-author: anthropic.com
+author: www.anthropic.com
 published: '2025-05-01T00:00:00Z'
 fetched: '2025-06-04T03:23:01Z'
 tags:

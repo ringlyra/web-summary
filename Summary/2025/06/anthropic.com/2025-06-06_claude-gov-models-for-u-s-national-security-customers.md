@@ -1,7 +1,7 @@
 ---
 title: Claude Gov Models for U.S. National Security Customers
 source: https://www.anthropic.com/news/claude-gov-models-for-u-s-national-security-customers
-author: anthropic.com
+author: www.anthropic.com
 published: '2025-06-06T00:00:00Z'
 fetched: '2025-06-05T19:00:04Z'
 tags:
