@@ -80,7 +80,6 @@ image: <OGP 画像やアイキャッチ URL>
 
 - **日本語** で回答すること。
 - 筆者が伝えたいことを全て含めてください。
-- あなたが一番理解しやすい形にまとめること。短すぎるのはNG。内容が頭に入ってこないから。
 - 改行で文章を区切らないでください。
 - 重要キーワードは **bold** で強調。
 - 300文字以上500文字以内に調整すること。足りなかった場合に文章を変えずに付け足す行為はチートなので禁止、再生成してください。
@@ -98,14 +97,13 @@ image: <OGP 画像やアイキャッチ URL>
     1. Input: エージェントに URL が渡される。
     2. Fetch: HTTP GET。必要に応じて Headless browser で JS レンダリング。
     3. Parse:
-    - {title}, {meta} 各種, OGP, {time} 等を抽出。
-    - 取得できない項目は空文字列。tags には必ず codex を入れる。関連タグも箇条書きで必ず追加してください。
+    - {title}, {meta} 各種, OGP, {date} 等を抽出。
+    - 取得できない項目は空文字列。tags には必ず codex を入れる。
     4. Convert: 本文 HTML を Markdown に変換。
     5. Assemble: メタデータ → 要約 → 本文 の順で 1 ファイルに結合。
     6. Save: Summary/YYYY/MM/{domain}/{YYYY-MM-DD}_{title}.md に保存。
-    7. 各種テストを実行し、エラーが出る場合はの修正を行う
-    8. Commit: git add → git commit -m "Add clip: <title or domain>"。
-    9. Repeat: 次の URL へ。
+    7. Commit: git add → git commit -m "Add clip: <title or domain>"。
+    8. Repeat: 次の URL へ。
 
 ⸻
 
