@@ -13,9 +13,13 @@
 ## 環境セットアップ
 
 uv を使用しています。起動時に既に以下のコマンドで依存関係がインストールされました
-   ```bash
-   uv run pre-commit install
-   ```
+  ```bash
+  uv run pre-commit install
+  ```
+依存関係を更新した場合は以下を実行して `uv.lock` を再生成してください
+```bash
+uv lock
+```
 
 ---
 
