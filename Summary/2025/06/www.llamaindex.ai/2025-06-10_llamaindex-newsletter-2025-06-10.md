@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: LlamaIndex Newsletter 2025-06-10 — LlamaIndex - Build Knowledge Assistants over your Enterprise Data
-- **source**: https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-06-10
-- **author**: www.llamaindex.ai
-- **published**:
-- **fetched**: 2025-06-10T20:51:35.690349+00:00
-- **tags**: codex, ai, newsletter
-- **image**: https://cdn.sanity.io/images/7m9jw85w/production/6cb089f627d03f286bc98e071757db196cdcf88c-1024x1536.png
+---
+title: LlamaIndex Newsletter 2025-06-10 — LlamaIndex - Build Knowledge Assistants
+  over your Enterprise Data
+source: https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-06-10
+author: www.llamaindex.ai
+published: ''
+fetched: '2025-06-10T20:51:35.690349+00:00'
+tags:
+- codex
+- ai
+- newsletter
+image: https://cdn.sanity.io/images/7m9jw85w/production/6cb089f627d03f286bc98e071757db196cdcf88c-1024x1536.png
+---
 
 ## 要約
 

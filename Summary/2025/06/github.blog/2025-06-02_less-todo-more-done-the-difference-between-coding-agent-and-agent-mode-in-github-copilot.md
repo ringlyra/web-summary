@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot
-- **source**: https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/
-- **author**: Andrea Griffiths
-- **published**: 2025-06-02T16:00:00+00:00
-- **fetched**: 2025-06-04T11:23:15.806689Z
-- **tags**: codex, ai, github, copilot
-- **image**: https://github.blog/wp-content/uploads/2025/05/Github-DarkMode-Blog-Logo-16x9-07.png?fit=1200%2C630
+---
+title: 'Less TODO, more done: The difference between coding agent and agent mode in
+  GitHub Copilot'
+source: https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/
+author: Andrea Griffiths
+published: '2025-06-02T16:00:00+00:00'
+fetched: '2025-06-04T11:23:15.806689Z'
+tags:
+- codex
+- ai
+- github
+- copilot
+image: https://github.blog/wp-content/uploads/2025/05/Github-DarkMode-Blog-Logo-16x9-07.png?fit=1200%2C630
+---
 
 ## 要約
 

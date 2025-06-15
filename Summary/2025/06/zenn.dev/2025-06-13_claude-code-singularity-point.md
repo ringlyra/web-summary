@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: Claude Code による技術的特異点を見届けろ
-- **source**: https://zenn.dev/mizchi/articles/claude-code-singularity-point
-- **author**: zenn.dev
-- **published**:
-- **fetched**: 2025-06-13T09:20:01.826648+00:00
-- **tags**: codex, ai, automation, software-development
-- **image**: https://res.cloudinary.com/zenn/image/upload/s--0gY0jgcX--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%25AB%25E3%2582%2588%25E3%2582%258B%25E6%258A%2580%25E8%25A1%2593%25E7%259A%2584%25E7%2589%25B9%25E7%2595%25B0%25E7%2582%25B9%25E3%2582%2592%25E8%25A6%258B%25E5%25B1%258A%25E3%2581%2591%25E3%2582%258D%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:mizchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liclRHT052Z3d3ay1fNGxlcVk4TGNGSlNuX0FoWnpEWVlKaXJNcWc9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
+---
+title: Claude Code による技術的特異点を見届けろ
+source: https://zenn.dev/mizchi/articles/claude-code-singularity-point
+author: zenn.dev
+published: ''
+fetched: '2025-06-13T09:20:01.826648+00:00'
+tags:
+- codex
+- ai
+- automation
+- software-development
+image: https://res.cloudinary.com/zenn/image/upload/s--0gY0jgcX--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%2520%25E3%2581%25AB%25E3%2582%2588%25E3%2582%258B%25E6%258A%2580%25E8%25A1%2593%25E7%259A%2584%25E7%2589%25B9%25E7%2595%25B0%25E7%2582%25B9%25E3%2582%2592%25E8%25A6%258B%25E5%25B1%258A%25E3%2581%2591%25E3%2582%258D%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:mizchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liclRHT052Z3d3ay1fNGxlcVk4TGNGSlNuX0FoWnpEWVlKaXJNcWc9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png
+---
 
 ## 要約
 

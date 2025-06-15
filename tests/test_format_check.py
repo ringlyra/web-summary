@@ -1,11 +1,10 @@
 import pathlib
-import re
+import yaml
 import pytest
 
 # ── 設定 ──────────────────────────────────────────────────────────────
-META_LINE_RE   = re.compile(r"- \*\*(.+?)\*\*: *(.*)")
-SUMMARY_DIR    = pathlib.Path("Summary")   # ここだけ指定すれば OK
-MAX_IMAGE_BYTES = 1600                     # image URL 長さの上限
+SUMMARY_DIR = pathlib.Path("Summary")  # ここだけ指定すれば OK
+MAX_IMAGE_BYTES = 1600  # image URL 長さの上限
 
 # ── テスト本体 ────────────────────────────────────────────────────────
 def test_formatting():
@@ -36,20 +35,26 @@ def test_formatting():
         # ------ メタデータ抽出 --------------------------------------
         meta: dict[str, str] = {}
         try:
-            i = lines.index("<!-- metadata -->")
+            start = lines.index("---")
+            end = lines.index("---", start + 1)
         except ValueError:
-            errors.append(f"{md}: '<!-- metadata -->' ブロックがありません")
+            errors.append(f"{md}: YAML メタデータブロックがありません")
             continue
-        for line in lines[i + 1:]:
-            if line.startswith("## "):
-                break
-            m = META_LINE_RE.match(line.strip())
-            if m:
-                key, value = m.groups()
-                meta[key.lower()] = value.strip()
+        yaml_text = "\n".join(lines[start + 1 : end])
+        try:
+            meta = yaml.load(yaml_text, Loader=yaml.BaseLoader) or {}
+        except Exception as e:
+            errors.append(f"{md}: YAML パースエラー: {e}")
+            continue
 
         # ------ タグチェック ----------------------------------------
-        tags = [t.strip() for t in meta.get("tags", "").split(",") if t.strip()]
+        tags_field = meta.get("tags", [])
+        if isinstance(tags_field, str):
+            tags = [t.strip() for t in tags_field.split(",") if t.strip()]
+        elif isinstance(tags_field, list):
+            tags = [str(t).strip() for t in tags_field if str(t).strip()]
+        else:
+            tags = []
         if "codex" not in tags:
             errors.append(f"{md}: 必須タグ 'codex' が抜けています")
         elif tags == ["codex"]:

@@ -1,12 +1,20 @@
-<!-- metadata -->
-
-- **title**: OpenAI Agents の TypeScript SDK
-- **source**: https://azukiazusa.dev/blog/openai-agents-sdk-typescript
-- **author**: azukiazusa.dev
-- **published**: 2025-06-08T09:18:00.000+09:00
-- **fetched**: 2025-06-08T16:09:14.876998Z
-- **tags**: codex, openai, agents, typescript, sdk, tutorial, guardrail, hitl
-- **image**: https://azukiazusa.dev/blog/ogp/openai-agents-sdk-typescript.png
+---
+title: OpenAI Agents の TypeScript SDK
+source: https://azukiazusa.dev/blog/openai-agents-sdk-typescript
+author: azukiazusa.dev
+published: '2025-06-08T09:18:00.000+09:00'
+fetched: '2025-06-08T16:09:14.876998Z'
+tags:
+- codex
+- openai
+- agents
+- typescript
+- sdk
+- tutorial
+- guardrail
+- hitl
+image: https://azukiazusa.dev/blog/ogp/openai-agents-sdk-typescript.png
+---
 
 ## 要約
 

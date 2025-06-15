@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: GitHub - tensorzero/tensorzero: TensorZero creates a feedback loop for optimizing LLM applications — turning production data into smarter, faster, and cheaper models.
-- **source**: https://github.com/tensorzero/tensorzero
-- **author**: tensorzero
-- **published**: 2025-06-04T18:18:34Z
-- **fetched**: 2025-06-08T16:17:36Z
-- **tags**: codex, LLM, optimization, open-source
-- **image**: https://repository-images.githubusercontent.com/829640443/26b7c5c4-c12c-4e89-beaf-a4233f1dac87
+---
+title: 'GitHub - tensorzero/tensorzero: TensorZero creates a feedback loop for optimizing
+  LLM applications — turning production data into smarter, faster, and cheaper models.'
+source: https://github.com/tensorzero/tensorzero
+author: tensorzero
+published: '2025-06-04T18:18:34Z'
+fetched: '2025-06-08T16:17:36Z'
+tags:
+- codex
+- LLM
+- optimization
+- open-source
+image: https://repository-images.githubusercontent.com/829640443/26b7c5c4-c12c-4e89-beaf-a4233f1dac87
+---
 
 ## 要約
 

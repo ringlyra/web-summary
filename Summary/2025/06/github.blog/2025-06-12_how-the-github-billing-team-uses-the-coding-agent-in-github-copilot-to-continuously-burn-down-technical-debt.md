@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: How the GitHub billing team uses the coding agent in GitHub Copilot to continuously burn down technical debt
-- **source**: https://github.blog/ai-and-ml/github-copilot/how-the-github-billing-team-uses-the-coding-agent-in-github-copilot-to-continuously-burn-down-technical-debt/
-- **author**: Brittany Ellich
-- **published**: 2025-06-12T16:00:00+00:00
-- **fetched**: 2025-06-13T04:03:17.589200+00:00
-- **tags**: codex, github, ai
-- **image**: https://github.blog/wp-content/uploads/2024/07/maxresdefault-1.jpg?fit=1280%2C720
+---
+title: How the GitHub billing team uses the coding agent in GitHub Copilot to continuously
+  burn down technical debt
+source: https://github.blog/ai-and-ml/github-copilot/how-the-github-billing-team-uses-the-coding-agent-in-github-copilot-to-continuously-burn-down-technical-debt/
+author: Brittany Ellich
+published: '2025-06-12T16:00:00+00:00'
+fetched: '2025-06-13T04:03:17.589200+00:00'
+tags:
+- codex
+- github
+- ai
+image: https://github.blog/wp-content/uploads/2024/07/maxresdefault-1.jpg?fit=1280%2C720
+---
 
 ## 要約
 

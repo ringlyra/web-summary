@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: Reverse Engineering Cursor's LLM Client · TensorZero
-- **source**: https://www.tensorzero.com/blog/reverse-engineering-cursors-llm-client/
-- **author**: Viraj Mehta, Aaron Hill, Gabriel Bianconi
-- **published**: 2025-06-05
-- **fetched**: 2025-06-07T12:12:55Z
-- **tags**: codex, reverse-engineering, llm, cursor, observability
-- **image**: https://www.tensorzero.com/tensorzero-1200x630.png?1737435600
+---
+title: Reverse Engineering Cursor's LLM Client · TensorZero
+source: https://www.tensorzero.com/blog/reverse-engineering-cursors-llm-client/
+author: Viraj Mehta, Aaron Hill, Gabriel Bianconi
+published: '2025-06-05'
+fetched: '2025-06-07T12:12:55Z'
+tags:
+- codex
+- reverse-engineering
+- llm
+- cursor
+- observability
+image: https://www.tensorzero.com/tensorzero-1200x630.png?1737435600
+---
 
 ## 要約
 

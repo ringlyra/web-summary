@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: Claude Code のすすめ
-- **source**: https://speakerdeck.com/schroneko/getting-started-with-claude-code
-- **author**: schroneko
-- **published**: 2025-06-03T00:00:00Z
-- **fetched**: 2025-06-04T02:37:24Z
-- **tags**: codex, ai
-- **image**: https://files.speakerdeck.com/presentations/d25a0c8d12644628866d1c285a97c985/slide_0.jpg?35330030
+---
+title: Claude Code のすすめ
+source: https://speakerdeck.com/schroneko/getting-started-with-claude-code
+author: schroneko
+published: '2025-06-03T00:00:00Z'
+fetched: '2025-06-04T02:37:24Z'
+tags:
+- codex
+- ai
+image: https://files.speakerdeck.com/presentations/d25a0c8d12644628866d1c285a97c985/slide_0.jpg?35330030
+---
 
 ## 要約
 

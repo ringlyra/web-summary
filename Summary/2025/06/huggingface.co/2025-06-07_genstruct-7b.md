@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: NousResearch/Genstruct-7B · Hugging Face
-- **source**: https://huggingface.co/NousResearch/Genstruct-7B
-- **author**: huggingface.co
-- **published**:
-- **fetched**: 2025-06-07T23:40:39Z
-- **tags**: codex, ai
-- **image**: https://cdn-thumbnails.huggingface.co/social-thumbnails/models/NousResearch/Genstruct-7B.png
+---
+title: NousResearch/Genstruct-7B · Hugging Face
+source: https://huggingface.co/NousResearch/Genstruct-7B
+author: huggingface.co
+published: ''
+fetched: '2025-06-07T23:40:39Z'
+tags:
+- codex
+- ai
+image: https://cdn-thumbnails.huggingface.co/social-thumbnails/models/NousResearch/Genstruct-7B.png
+---
 
 ## 要約
 

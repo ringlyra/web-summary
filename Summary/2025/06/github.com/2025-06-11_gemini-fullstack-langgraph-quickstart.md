@@ -1,12 +1,21 @@
-<!-- metadata -->
-
-- **title**: GitHub - google-gemini/gemini-fullstack-langgraph-quickstart: Get started with building Fullstack Agents using Gemini 2.5 and LangGraph
-- **source**: https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart
-- **author**: google-gemini
-- **published**:
-- **fetched**: 2025-06-11T09:36:59.987264+00:00
-- **tags**: codex, gemini, langgraph, react, fastapi, docker, tutorial, open-source
-- **image**: https://opengraph.githubassets.com/89cb8f8bfd8a67e483f61af309a20788808acc37cbf2c8a185d44cc68b167393/google-gemini/gemini-fullstack-langgraph-quickstart
+---
+title: 'GitHub - google-gemini/gemini-fullstack-langgraph-quickstart: Get started
+  with building Fullstack Agents using Gemini 2.5 and LangGraph'
+source: https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart
+author: google-gemini
+published: ''
+fetched: '2025-06-11T09:36:59.987264+00:00'
+tags:
+- codex
+- gemini
+- langgraph
+- react
+- fastapi
+- docker
+- tutorial
+- open-source
+image: https://opengraph.githubassets.com/89cb8f8bfd8a67e483f61af309a20788808acc37cbf2c8a185d44cc68b167393/google-gemini/gemini-fullstack-langgraph-quickstart
+---
 
 ## 要約
 

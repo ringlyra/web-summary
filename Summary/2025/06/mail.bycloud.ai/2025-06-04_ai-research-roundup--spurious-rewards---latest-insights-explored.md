@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: AI Research Roundup: Spurious Rewards & Latest Insights Explored
-- **source**: https://mail.bycloud.ai/p/a-shocking-rlvr-revelation-for-llm-just-dropped-dacd425f175077f9
-- **author**: mail.bycloud.ai
-- **published**:
-- **fetched**: 2025-06-04T11:10:30.676110Z
-- **tags**: codex, ai, research
-- **image**: https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6d21e855-ca01-459a-b19b-a8b5c4cfbb2b/issue_58.jpg?t=1748980487
+---
+title: 'AI Research Roundup: Spurious Rewards & Latest Insights Explored'
+source: https://mail.bycloud.ai/p/a-shocking-rlvr-revelation-for-llm-just-dropped-dacd425f175077f9
+author: mail.bycloud.ai
+published: ''
+fetched: '2025-06-04T11:10:30.676110Z'
+tags:
+- codex
+- ai
+- research
+image: https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6d21e855-ca01-459a-b19b-a8b5c4cfbb2b/issue_58.jpg?t=1748980487
+---
 
 ## 要約
 

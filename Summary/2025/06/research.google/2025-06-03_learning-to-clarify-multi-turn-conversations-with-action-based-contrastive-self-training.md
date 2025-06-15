@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Learning to clarify: Multi-turn conversations with Action-Based Contrastive Self-Training
-- **source**: https://research.google/blog/learning-to-clarify-multi-turn-conversations-with-action-based-contrastive-self-training/
-- **author**: research.google
-- **published**: 2025-06-03
-- **fetched**: 2025-06-04T10:37:51Z
-- **tags**: codex, ai
-- **image**: https://storage.googleapis.com/gweb-research2023-media/images/Open_Graph.width-800.format-jpeg.jpg
+---
+title: 'Learning to clarify: Multi-turn conversations with Action-Based Contrastive
+  Self-Training'
+source: https://research.google/blog/learning-to-clarify-multi-turn-conversations-with-action-based-contrastive-self-training/
+author: research.google
+published: '2025-06-03'
+fetched: '2025-06-04T10:37:51Z'
+tags:
+- codex
+- ai
+image: https://storage.googleapis.com/gweb-research2023-media/images/Open_Graph.width-800.format-jpeg.jpg
+---
 
 ## 要約
 

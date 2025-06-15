@@ -1,12 +1,16 @@
-<!-- metadata -->
-
-- **title**: Assigning and completing issues with coding agent in GitHub Copilot
-- **source**: https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/
-- **author**: Alexandra Lietzke
-- **published**: 2025-06-06T16:00:00+00:00
-- **fetched**: 2025-06-07T11:04:04Z
-- **tags**: codex, ai, github, automation
-- **image**: https://github.blog/wp-content/uploads/2025/04/wallpaper_copilot_generic_logo.png?fit=1920%2C1080
+---
+title: Assigning and completing issues with coding agent in GitHub Copilot
+source: https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/
+author: Alexandra Lietzke
+published: '2025-06-06T16:00:00+00:00'
+fetched: '2025-06-07T11:04:04Z'
+tags:
+- codex
+- ai
+- github
+- automation
+image: https://github.blog/wp-content/uploads/2025/04/wallpaper_copilot_generic_logo.png?fit=1920%2C1080
+---
 
 ## 要約
 

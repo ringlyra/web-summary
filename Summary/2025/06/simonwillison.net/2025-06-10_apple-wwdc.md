@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: WWDC: Apple supercharges its tools and technologies for developers
-- **source**: https://simonwillison.net/2025/Jun/9/apple-wwdc/
-- **author**: Simon Willison
-- **published**: 2025-06-09T19:42:00Z
-- **fetched**: 2025-06-10T09:33:08.998412+00:00
-- **tags**: codex, ai
-- **image**:
+---
+title: 'WWDC: Apple supercharges its tools and technologies for developers'
+source: https://simonwillison.net/2025/Jun/9/apple-wwdc/
+author: Simon Willison
+published: '2025-06-09T19:42:00Z'
+fetched: '2025-06-10T09:33:08.998412+00:00'
+tags:
+- codex
+- ai
+image: ''
+---
 
 ## 要約
 

@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Model Release Notes | OpenAI Help Center
-- **source**: https://help.openai.com/en/articles/9624314-model-release-notes#h_77f7e366fe
-- **author**: help.openai.com
-- **published**:
-- **fetched**: 2025-06-11T09:52:14.380835+00:00
-- **tags**: codex, openai, release-notes
-- **image**:
+---
+title: Model Release Notes | OpenAI Help Center
+source: https://help.openai.com/en/articles/9624314-model-release-notes#h_77f7e366fe
+author: help.openai.com
+published: ''
+fetched: '2025-06-11T09:52:14.380835+00:00'
+tags:
+- codex
+- openai
+- release-notes
+image: ''
+---
 
 ## 要約
 

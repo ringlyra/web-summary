@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Alibaba Cloud PAI が NVIDIA Cosmos Reason-1 を提供
-- **source**: https://developer.nvidia.com/ja-jp/blog/aliyun-pai-nvidia-cosmos-reason-1-model/
-- **author**: developer.nvidia.com
-- **published**: 2025-06-13T02:53:19+00:00
-- **fetched**: 2025-06-13T10:47:07.871712+00:00
-- **tags**: codex, ai, robotics
-- **image**: https://developer-blogs.nvidia.com/ja-jp/wp-content/uploads/sites/6/2025/06/image001.png
+---
+title: Alibaba Cloud PAI が NVIDIA Cosmos Reason-1 を提供
+source: https://developer.nvidia.com/ja-jp/blog/aliyun-pai-nvidia-cosmos-reason-1-model/
+author: developer.nvidia.com
+published: '2025-06-13T02:53:19+00:00'
+fetched: '2025-06-13T10:47:07.871712+00:00'
+tags:
+- codex
+- ai
+- robotics
+image: https://developer-blogs.nvidia.com/ja-jp/wp-content/uploads/sites/6/2025/06/image001.png
+---
 
 ## 要約
 

@@ -1,12 +1,18 @@
-<!-- metadata -->
-
-- **title**: Production-ready AI: Remote Agents now available for VS Code
-- **source**: https://www.augmentcode.com/blog/production-ready-ai-remote-agents-now-available-for-all-augment-code-users
-- **author**: Augment Code
-- **published**: 2025-06-05T17:01:04Z
-- **fetched**: 2025-06-05T18:58:15Z
-- **tags**: codex, ai, remote-agent, automation, software-development, vs-code
-- **image**: https://cdn.prod.website-files.com/66e230b8c8062a18d04d3723/6840d2ef1a8604acec06d173_Blog%20Image%20-%20remote%201%20(1).png
+---
+title: 'Production-ready AI: Remote Agents now available for VS Code'
+source: https://www.augmentcode.com/blog/production-ready-ai-remote-agents-now-available-for-all-augment-code-users
+author: Augment Code
+published: '2025-06-05T17:01:04Z'
+fetched: '2025-06-05T18:58:15Z'
+tags:
+- codex
+- ai
+- remote-agent
+- automation
+- software-development
+- vs-code
+image: https://cdn.prod.website-files.com/66e230b8c8062a18d04d3723/6840d2ef1a8604acec06d173_Blog%20Image%20-%20remote%201%20(1).png
+---
 
 ## 要約
 

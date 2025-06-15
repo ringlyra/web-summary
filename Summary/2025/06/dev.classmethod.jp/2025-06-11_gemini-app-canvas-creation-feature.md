@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Gemini アプリ Canvas の作成機能でスライド作成が捗りそう！ | DevelopersIO
-- **source**: https://dev.classmethod.jp/articles/gemini-app-canvas-creation-feature/
-- **author**: エノカワ
-- **published**: 2025-06-11T00:00:00+09:00
-- **fetched**: 2025-06-11T08:32:14.646145+00:00
-- **tags**: codex, ai, gemini
-- **image**: https://images.ctfassets.net/ct0aopd36mqt/wp-thumbnail-6a331d7c70f1897ca2ef1ad4cbe7c6bf/78c556633ae5115aa065636cc4a1160a/eyecatch_gemini
+---
+title: Gemini アプリ Canvas の作成機能でスライド作成が捗りそう！ | DevelopersIO
+source: https://dev.classmethod.jp/articles/gemini-app-canvas-creation-feature/
+author: エノカワ
+published: '2025-06-11T00:00:00+09:00'
+fetched: '2025-06-11T08:32:14.646145+00:00'
+tags:
+- codex
+- ai
+- gemini
+image: https://images.ctfassets.net/ct0aopd36mqt/wp-thumbnail-6a331d7c70f1897ca2ef1ad4cbe7c6bf/78c556633ae5115aa065636cc4a1160a/eyecatch_gemini
+---
 
 ## 要約
 

@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: v0 APIのアーキテクチャ: Chat Completion API自作界隈
-- **source**: https://blog.lai.so/v0-api/
-- **author**: laiso
-- **published**: 2025-06-07T10:15:05.000Z
-- **fetched**: 2025-06-07T20:39:04Z
-- **tags**: codex, v0-api, autofix, workers-ai, cli
-- **image**: https://blog.lai.so/content/images/2025/03/my-github-icon-2024-2.png
+---
+title: 'v0 APIのアーキテクチャ: Chat Completion API自作界隈'
+source: https://blog.lai.so/v0-api/
+author: laiso
+published: '2025-06-07T10:15:05.000Z'
+fetched: '2025-06-07T20:39:04Z'
+tags:
+- codex
+- v0-api
+- autofix
+- workers-ai
+- cli
+image: https://blog.lai.so/content/images/2025/03/my-github-icon-2024-2.png
+---
 
 ## 要約
 

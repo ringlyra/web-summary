@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: Liberating search from the search engine
-- **source**: https://softwaredoug.com/blog/2025/06/03/liberating-search.html
-- **author**: Doug Turnbull
-- **published**:
-- **fetched**: 2025-06-04T11:47:55.547776Z
-- **tags**: codex, ai
-- **image**: https://softwaredoug.com//assets/media/2025/top1000.jpg
+---
+title: Liberating search from the search engine
+source: https://softwaredoug.com/blog/2025/06/03/liberating-search.html
+author: Doug Turnbull
+published: ''
+fetched: '2025-06-04T11:47:55.547776Z'
+tags:
+- codex
+- ai
+image: https://softwaredoug.com//assets/media/2025/top1000.jpg
+---
 
 ## 要約
 

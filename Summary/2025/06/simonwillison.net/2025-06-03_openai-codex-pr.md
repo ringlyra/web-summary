@@ -1,12 +1,23 @@
-<!-- metadata -->
-
-- **title**: PR #537: Fix Markdown in og descriptions
-- **source**: https://simonwillison.net/2025/Jun/3/openai-codex-pr/
-- **author**: Simon Willison
-- **published**: 2025-06-03T23:58:00Z
-- **fetched**: 2025-06-04T04:26:27Z
-- **tags**: codex, ai-agents, openai, ai, llms, ai-assisted-programming, generative-ai, chatgpt, github, testing, postgresql
-- **image**: https://static.simonwillison.net/static/2025/codex-fix.jpg
+---
+title: 'PR #537: Fix Markdown in og descriptions'
+source: https://simonwillison.net/2025/Jun/3/openai-codex-pr/
+author: Simon Willison
+published: '2025-06-03T23:58:00Z'
+fetched: '2025-06-04T04:26:27Z'
+tags:
+- codex
+- ai-agents
+- openai
+- ai
+- llms
+- ai-assisted-programming
+- generative-ai
+- chatgpt
+- github
+- testing
+- postgresql
+image: https://static.simonwillison.net/static/2025/codex-fix.jpg
+---
 
 ## 要約
 

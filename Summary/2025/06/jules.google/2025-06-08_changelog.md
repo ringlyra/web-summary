@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: Changelog
-- **source**: https://jules.google/docs/changelog
-- **author**: jules.google
-- **published**:
-- **fetched**: 2025-06-08T17:31:25.876866Z
-- **tags**: codex, ai
-- **image**:
+---
+title: Changelog
+source: https://jules.google/docs/changelog
+author: jules.google
+published: ''
+fetched: '2025-06-08T17:31:25.876866Z'
+tags:
+- codex
+- ai
+image: ''
+---
 
 ## 要約
 

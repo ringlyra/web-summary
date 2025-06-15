@@ -1,12 +1,15 @@
-<!-- metadata -->
-
-- **title**: Cloudflare Realtime と Workers でつくるサーバーレス WebRTC
-- **source**: https://speakerdeck.com/nekoya3/cloudflare-realtime-to-workers-detukurusabaresu-webrtc
-- **author**: Taiyu Yoshizawa
-- **published**: 2025-06-03T00:00:00Z
-- **fetched**: 2025-06-04T13:28:25Z
-- **tags**: codex, webrtc, cloudflare
-- **image**: https://files.speakerdeck.com/presentations/e9be246f239c4fdda3ef712ca808212a/slide_0.jpg?35329792
+---
+title: Cloudflare Realtime と Workers でつくるサーバーレス WebRTC
+source: https://speakerdeck.com/nekoya3/cloudflare-realtime-to-workers-detukurusabaresu-webrtc
+author: Taiyu Yoshizawa
+published: '2025-06-03T00:00:00Z'
+fetched: '2025-06-04T13:28:25Z'
+tags:
+- codex
+- webrtc
+- cloudflare
+image: https://files.speakerdeck.com/presentations/e9be246f239c4fdda3ef712ca808212a/slide_0.jpg?35329792
+---
 
 ## 要約
 
@@ -264,9 +267,12 @@ Realtime Ki
 TURN Serve
 Serverless SF
 
-(STUN Server) 
+(STUN Server)
 
-で提供はされている
+
+
+(STUN Server)
+
 Realtime Ki
 
 TURN Serve
@@ -511,8 +517,7 @@ logsetRemoteDescriptionsetLocalDescriptioncreateAnswersendAnswerSDP1
      (tracks.length  ) {
       (tracks);
     }
-  };
-});
+ぜひ遊んでみてね！
 
  remoteTracks   remoteTrackPromise;
  remoteStream   MediaStream();

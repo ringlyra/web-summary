@@ -1,12 +1,18 @@
-<!-- metadata -->
-
-- **title**: What web frameworks does Firebase App Hosting support?
-- **source**: https://firebase.blog/posts/2025/06/app-hosting-frameworks/
-- **author**: firebase.blog
-- **published**: 2025-06-02T00:00:00Z
-- **fetched**: 2025-06-05T23:43:55Z
-- **tags**: codex, firebase, hosting, javascript, frameworks, serverless
-- **image**: https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/og%2Fapp-hosting-frameworks.png?alt=media&token=8bb19a16-a705-4164-aa36-3ab2f0420eb7
+---
+title: What web frameworks does Firebase App Hosting support?
+source: https://firebase.blog/posts/2025/06/app-hosting-frameworks/
+author: firebase.blog
+published: '2025-06-02T00:00:00Z'
+fetched: '2025-06-05T23:43:55Z'
+tags:
+- codex
+- firebase
+- hosting
+- javascript
+- frameworks
+- serverless
+image: https://firebasestorage.googleapis.com/v0/b/first-class-blog.appspot.com/o/og%2Fapp-hosting-frameworks.png?alt=media&token=8bb19a16-a705-4164-aa36-3ab2f0420eb7
+---
 
 ## 要約
 

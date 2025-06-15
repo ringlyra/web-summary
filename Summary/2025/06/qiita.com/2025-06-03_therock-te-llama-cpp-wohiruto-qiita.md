@@ -1,12 +1,18 @@
-<!-- metadata -->
-
-- **title**: TheRock で llama.cpp をビルド - Qiita
-- **source**: https://qiita.com/7shi/items/99d5f80a45bf72b693e9
-- **author**: 7shi
-- **published**: 2025-06-03T18:43:23Z
-- **fetched**: 2025-06-04T13:10:11Z
-- **tags**: codex, rocm, therock, llama-cpp, build, benchmark
-- **image**: https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGMzIwNTclMkZwcm9maWxlLWltYWdlcyUyRjE0NzM2ODU4MjM_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmZtPXBuZzMyJnM9ZjkzNGEwNDA4YTRhNzY1OTgwMDQzODVlN2ZlOGFiN2U%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D66b5a274999f487487c018e23f50cb6b?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9VGhlUm9jayUyMCVFMyU4MSVBNyUyMGxsYW1hLmNwcCUyMCVFMyU4MiU5MiVFMyU4MyU5MyVFMyU4MyVBQiVFMyU4MyU4OSZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTI3N2NmY2EwMmFkNTk3YjRlYWE5MWNjMGQyODk1NDFk&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDA3c2hpJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZTY5Nzc0ZGRlYmNkNTAzNDM5ODM2ZGY1N2FmYjc0NTE&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=fa0c44d088f02658b7818f9d4e4bf138
+---
+title: TheRock で llama.cpp をビルド - Qiita
+source: https://qiita.com/7shi/items/99d5f80a45bf72b693e9
+author: 7shi
+published: '2025-06-03T18:43:23Z'
+fetched: '2025-06-04T13:10:11Z'
+tags:
+- codex
+- rocm
+- therock
+- llama-cpp
+- build
+- benchmark
+image: https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGMzIwNTclMkZwcm9maWxlLWltYWdlcyUyRjE0NzM2ODU4MjM_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmZtPXBuZzMyJnM9ZjkzNGEwNDA4YTRhNzY1OTgwMDQzODVlN2ZlOGFiN2U%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D66b5a274999f487487c018e23f50cb6b?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9VGhlUm9jayUyMCVFMyU4MSVBNyUyMGxsYW1hLmNwcCUyMCVFMyU4MiU5MiVFMyU4MyU5MyVFMyU4MyVBQiVFMyU4MyU4OSZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTI3N2NmY2EwMmFkNTk3YjRlYWE5MWNjMGQyODk1NDFk&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDA3c2hpJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZTY5Nzc0ZGRlYmNkNTAzNDM5ODM2ZGY1N2FmYjc0NTE&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=fa0c44d088f02658b7818f9d4e4bf138
+---
 
 ## 要約
 

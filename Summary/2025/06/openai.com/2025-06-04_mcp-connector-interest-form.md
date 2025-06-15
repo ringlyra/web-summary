@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: MCP Connector Interest Form
-- **source**: https://openai.com/form/mcp-connector-interest-form/
-- **author**: openai.com
-- **published**:
-- **fetched**: 2025-06-04T23:38:12Z
-- **tags**: codex, mcp, connector, openai, form
-- **image**:
+---
+title: MCP Connector Interest Form
+source: https://openai.com/form/mcp-connector-interest-form/
+author: openai.com
+published: ''
+fetched: '2025-06-04T23:38:12Z'
+tags:
+- codex
+- mcp
+- connector
+- openai
+- form
+image: ''
+---
 
 ## 要約
 

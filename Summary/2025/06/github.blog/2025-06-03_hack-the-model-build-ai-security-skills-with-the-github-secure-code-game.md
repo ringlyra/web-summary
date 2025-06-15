@@ -1,12 +1,18 @@
-<!-- metadata -->
-
-- **title**: Hack the model: Build AI security skills with the GitHub Secure Code Game - The GitHub Blog
-- **source**: https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/
-- **author**: Joseph Katsioloudes, Jaroslav Lobacevski, Greg Ose, Man Yue Mo
-- **published**: 2025-06-03T16:37:03+00:00
-- **fetched**: 2025-06-04T13:21:57Z
-- **tags**: codex, ai, security, game, github
-- **image**: https://github.blog/wp-content/uploads/2025/04/wallpaper_github_generic_1.png
+---
+title: 'Hack the model: Build AI security skills with the GitHub Secure Code Game
+  - The GitHub Blog'
+source: https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/
+author: Joseph Katsioloudes, Jaroslav Lobacevski, Greg Ose, Man Yue Mo
+published: '2025-06-03T16:37:03+00:00'
+fetched: '2025-06-04T13:21:57Z'
+tags:
+- codex
+- ai
+- security
+- game
+- github
+image: https://github.blog/wp-content/uploads/2025/04/wallpaper_github_generic_1.png
+---
 
 ## 要約
 

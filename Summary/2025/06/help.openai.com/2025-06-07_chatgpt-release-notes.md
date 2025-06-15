@@ -1,12 +1,17 @@
-<!-- metadata -->
-
-- **title**: ChatGPT — Release Notes | OpenAI Help Center
-- **source**: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
-- **author**: openai.com
-- **published**: 2022-12-15T00:00:00Z
-- **fetched**: 2025-06-08T17:03:52Z
-- **tags**: codex, chatgpt, release-notes, updates, openai
-- **image**:
+---
+title: ChatGPT — Release Notes | OpenAI Help Center
+source: https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+author: openai.com
+published: '2022-12-15T00:00:00Z'
+fetched: '2025-06-08T17:03:52Z'
+tags:
+- codex
+- chatgpt
+- release-notes
+- updates
+- openai
+image: ''
+---
 
 ## 要約
 

@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: GitHub - nishimoto265/Claude-Code-Communication
-- **source**: https://github.com/nishimoto265/Claude-Code-Communication
-- **author**: github.com
-- **published**:
-- **fetched**: 2025-06-10T08:48:20.489157+00:00
-- **tags**: codex, ai
-- **image**: https://opengraph.githubassets.com/03c0bdee4520a4ecd6f6d8ba348f9a42daaf719989b99eff4c61a6a2ea1bd5f9/nishimoto265/Claude-Code-Communication
+---
+title: GitHub - nishimoto265/Claude-Code-Communication
+source: https://github.com/nishimoto265/Claude-Code-Communication
+author: github.com
+published: ''
+fetched: '2025-06-10T08:48:20.489157+00:00'
+tags:
+- codex
+- ai
+image: https://opengraph.githubassets.com/03c0bdee4520a4ecd6f6d8ba348f9a42daaf719989b99eff4c61a6a2ea1bd5f9/nishimoto265/Claude-Code-Communication
+---
 
 ## 要約
 

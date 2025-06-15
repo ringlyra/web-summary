@@ -1,12 +1,23 @@
-<!-- metadata -->
-
-- **title**: Codex agent internet access
-- **source**: https://simonwillison.net/2025/Jun/3/codex-agent-internet-access/
-- **author**: Simon Willison
-- **published**: 2025-06-03T21:15:41Z
-- **fetched**: 2025-06-04T11:43:56Z
-- **tags**: codex, ai-agents, openai, ai, llms, sam-altman, prompt-injection, security, ai-assisted-programming, generative-ai, exfiltration-attacks
-- **image**: https://static.simonwillison.net/static/2025/codex-allow.jpg
+---
+title: Codex agent internet access
+source: https://simonwillison.net/2025/Jun/3/codex-agent-internet-access/
+author: Simon Willison
+published: '2025-06-03T21:15:41Z'
+fetched: '2025-06-04T11:43:56Z'
+tags:
+- codex
+- ai-agents
+- openai
+- ai
+- llms
+- sam-altman
+- prompt-injection
+- security
+- ai-assisted-programming
+- generative-ai
+- exfiltration-attacks
+image: https://static.simonwillison.net/static/2025/codex-allow.jpg
+---
 
 ## 要約
 

@@ -1,12 +1,14 @@
-<!-- metadata -->
-
-- **title**: Try the latest Gemini 2.5 Pro before general availability.
-- **source**: https://blog.google/products/gemini/gemini-2-5-pro-latest-preview/
-- **author**: Tulsee Doshi
-- **published**: 2025-06-05
-- **fetched**: 2025-06-05T18:58:07Z
-- **tags**: codex, ai
-- **image**: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2.5_pro_preview_snippet_social_share.max-1440x810.jpg
+---
+title: Try the latest Gemini 2.5 Pro before general availability.
+source: https://blog.google/products/gemini/gemini-2-5-pro-latest-preview/
+author: Tulsee Doshi
+published: '2025-06-05'
+fetched: '2025-06-05T18:58:07Z'
+tags:
+- codex
+- ai
+image: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2.5_pro_preview_snippet_social_share.max-1440x810.jpg
+---
 
 ## 要約
 
