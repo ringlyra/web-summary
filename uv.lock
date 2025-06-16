@@ -351,6 +351,7 @@ dependencies = [
     { name = "markdownify" },
     { name = "pre-commit" },
     { name = "pypdf2" },
+    { name = "pyyaml" },
     { name = "readability-lxml" },
     { name = "requests" },
 ]
@@ -361,6 +362,7 @@ requires-dist = [
     { name = "markdownify" },
     { name = "pre-commit" },
     { name = "pypdf2" },
+    { name = "pyyaml" },
     { name = "readability-lxml" },
     { name = "requests" },
 ]

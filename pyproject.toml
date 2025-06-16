@@ -10,6 +10,7 @@ dependencies = [
     "readability-lxml",
     "requests",
     "pre-commit",
+    "PyYAML",
 ]
 
 [tool.uv]
