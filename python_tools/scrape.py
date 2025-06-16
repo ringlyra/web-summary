@@ -14,6 +14,8 @@ from markdownify import markdownify as md
 url = sys.argv[1]
 parsed_url = urlparse(url)
 
+SUMMARY_PLACEHOLDER = "<ここに日本語の要約を書く>"
+
 html = None
 def parse_rjina_text(text):
     lines = text.splitlines()
@@ -195,7 +197,8 @@ with open(filepath, "w") as f:
     f.write(f"image: {image}\n")
     f.write("---\n\n")
     f.write("## 要約\n\n")
-    f.write("TODO: summary\n\n")
+    summary_md = SUMMARY_PLACEHOLDER
+    f.write(summary_md + "\n\n")
     f.write("## 本文\n\n")
     f.write(content_md)
 
