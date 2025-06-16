@@ -1,8 +1,39 @@
+# .pre-commit-config.yaml
+# 2025-06-16 現在の安定版 tag を pin しています。
+# 将来アップデートするときは rev を書き換えるだけで OK。
+
 repos:
-- repo: local
-  hooks:
-  - id: pytest
-    name: pytest
-    entry: pytest -q
-    language: system
-    pass_filenames: false
+  # --- フォーマッタ & リンター ---------------------------
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.5        # ← Ruff 最新安定タグ
+    hooks:
+      - id: ruff
+        name: ruff lint
+        # Black と重複するフォーマッタ機能は無効化して lint のみに
+        args: [--ignore=E501]   # 例: 80 文字制限はスキップ
+      - id: ruff-format
+        name: ruff format
+        # もし Black を使わず Ruff 単体で整形したいなら有効化
+        additional_dependencies: []   # Black を併用するならこのフックはコメントアウト可
+
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+        language_version: python3.12  # 使っている Python に合わせる
+
+  # --- 型チェック ----------------------------------------
+  - repo: https://github.com/pre-commit/mirrors-pyright
+    rev: v1.1.377
+    hooks:
+      - id: pyright
+        args: [--pythonversion, "3.12"]
+
+  # --- ユーザー独自フック (pytest) -----------------------
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest -q
+        language: system
+        pass_filenames: false
