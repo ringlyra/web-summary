@@ -37,9 +37,9 @@ def clean_text(raw_text: str) -> str:
 
     joined: list[str] = []
     for line in filtered:
-        if joined and joined[-1].endswith('-') and line:
+        if joined and joined[-1].endswith("-") and line:
             # Keep hyphen when next line also contains a hyphen near the start
-            if '-' in line[:5]:
+            if "-" in line[:5]:
                 joined[-1] = joined[-1] + line.lstrip()
             elif line[0].islower():
                 joined[-1] = joined[-1][:-1] + line.lstrip()
@@ -53,7 +53,7 @@ def clean_text(raw_text: str) -> str:
         s = line.strip()
         if not s:
             if result and result[-1]:
-                result.append('')
+                result.append("")
             continue
         if result and result[-1]:
             last = result[-1]
@@ -82,10 +82,20 @@ def safe_filename(doi: str) -> str:
 
 
 def fetch_arxiv_meta(paper_id: str) -> dict:
-    """Fetch metadata from arXiv API."""
-    api = f"https://export.arxiv.org/api/query?search_query=id:{paper_id}"
-    r = requests.get(api, timeout=120)
-    r.raise_for_status()
+    """Fetch metadata from arXiv API.
+
+    The HTTPS endpoint occasionally fails in the container environment,
+    so fall back to HTTP if necessary.
+    """
+    api_https = f"https://export.arxiv.org/api/query?search_query=id:{paper_id}"
+    try:
+        r = requests.get(api_https, timeout=120)
+        r.raise_for_status()
+    except Exception:
+        api_http = api_https.replace("https://", "http://")
+        r = requests.get(api_http, timeout=120)
+        r.raise_for_status()
+
     root = ET.fromstring(r.text)
     ns = {"atom": "http://www.w3.org/2005/Atom"}
     entry = root.find("atom:entry", ns)
@@ -118,6 +128,8 @@ def fetch_paper(doi: str, out_dir: Path) -> Optional[Path]:
     json_path = base.with_suffix(".json")
     txt_path = base.with_suffix(".txt")
 
+    paper_id: str | None = None
+
     # --- 1. PDF を取得 ----------------------------------------------
     try:
         if doi.startswith("10.48550/arXiv."):
@@ -145,7 +157,7 @@ def fetch_paper(doi: str, out_dir: Path) -> Optional[Path]:
     # --- 3. Markdown 生成 -------------------------------------------
     md_path = base.with_suffix(".md")
     meta = {}
-    if 'paper_id' in locals():
+    if paper_id:
         try:
             meta = fetch_arxiv_meta(paper_id)
         except Exception as e:
@@ -163,7 +175,7 @@ def fetch_paper(doi: str, out_dir: Path) -> Optional[Path]:
         f.write(f"title: {meta.get('title', '')!r}\n")
         f.write(f"source: {pdf_url}\n")
         f.write("author:\n")
-        for a in meta.get('author', ['arxiv.org']):
+        for a in meta.get("author", ["arxiv.org"]):
             f.write(f"  - {a}\n")
         f.write(f"published: '{meta.get('published', '')}'\n")
         f.write(f"fetched: '{datetime.now(timezone.utc).isoformat()}'\n")
@@ -177,7 +189,10 @@ def fetch_paper(doi: str, out_dir: Path) -> Optional[Path]:
         f.write(txt_path.read_text(encoding="utf-8"))
 
     # rename Markdown file to normalized name
-    title_slug = re.sub(r"[^a-zA-Z0-9_-]+", "-", meta.get("title", "paper").lower()).strip("-") or "paper"
+    title_slug = (
+        re.sub(r"[^a-zA-Z0-9_-]+", "-", meta.get("title", "paper").lower()).strip("-")
+        or "paper"
+    )
     if meta.get("published"):
         pub_date = meta["published"][:10].replace("/", "-")
     else:

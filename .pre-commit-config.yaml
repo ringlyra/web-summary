@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: ruff
         name: ruff lint
-        entry: ruff --ignore=E501
+        entry: ruff check --ignore=E501
         language: system
         types: [python]
 
