@@ -17,6 +17,8 @@ import requests
 from PyPDF2 import PdfReader
 import json
 
+SUMMARY_PLACEHOLDER = "<ここに日本語の要約を書く>"
+
 
 def clean_text(raw_text: str) -> str:
     """Remove spurious line breaks and hyphenation."""
@@ -169,7 +171,8 @@ def fetch_paper(doi: str, out_dir: Path) -> Optional[Path]:
         f.write("image: \n")
         f.write("---\n\n")
         f.write("## 要約\n\n")
-        f.write("TODO: summary\n\n")
+        summary_md = SUMMARY_PLACEHOLDER
+        f.write(summary_md + "\n\n")
         f.write("## 本文\n\n")
         f.write(txt_path.read_text(encoding="utf-8"))
 
