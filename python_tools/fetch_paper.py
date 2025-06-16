@@ -17,7 +17,7 @@ import requests
 from PyPDF2 import PdfReader
 import json
 
-SUMMARY_PLACEHOLDER = "<ここに日本語の要約を書く>"
+SUMMARY_PLACEHOLDER = "<日本語の要約を書く>"
 
 
 def clean_text(raw_text: str) -> str:
