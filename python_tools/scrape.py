@@ -14,7 +14,7 @@ from markdownify import markdownify as md
 url = sys.argv[1]
 parsed_url = urlparse(url)
 
-SUMMARY_PLACEHOLDER = "<ここに日本語の要約を書く>"
+SUMMARY_PLACEHOLDER = "<日本語の要約を書く>"
 
 html = None
 
