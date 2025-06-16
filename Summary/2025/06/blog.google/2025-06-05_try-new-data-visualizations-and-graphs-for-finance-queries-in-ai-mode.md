@@ -1,7 +1,8 @@
 ---
 title: Try new data visualizations and graphs for finance queries in AI Mode.
 source: https://blog.google/products/search/ai-mode-data-visualization/
-author: Soufi Esmaeilzadeh
+author:
+- Soufi Esmaeilzadeh
 published: '2025-06-05'
 fetched: '2025-06-05T23:43:31Z'
 tags:

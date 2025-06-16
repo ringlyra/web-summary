@@ -1,7 +1,8 @@
 ---
 title: 'Production-ready AI: Remote Agents now available for VS Code'
 source: https://www.augmentcode.com/blog/production-ready-ai-remote-agents-now-available-for-all-augment-code-users
-author: Augment Code
+author:
+- Augment Code
 published: '2025-06-05T17:01:04Z'
 fetched: '2025-06-05T18:58:15Z'
 tags:

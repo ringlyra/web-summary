@@ -39,7 +39,8 @@ repo-root
 ---
 title: <タイトル>
 source: <URL>
-author: <著者名>
+author:
+  - <著者名>
 published: <公開日時 (ISO 8601)>
 fetched: <取得日時 (ISO 8601)>
 tags:
@@ -62,6 +63,7 @@ image: <OGP 画像やアイキャッチ URL>
 ### 3.1 ヘッダー
 
 - author が見つからなければドメイン名を入力すること。
+- 複数著者の場合でもカンマ区切りにせず、author フィールドを箇条書きで記述すること。
 - **tags**: codex の他に関連するタグを箇条書きで追加すること。
 - image の URL が長くてエラーが出る場合は空にすること。
 

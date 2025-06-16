@@ -1,7 +1,8 @@
 ---
 title: Claude Pro（$20）プランでゼロから始めるClaude Code
 source: https://zenn.dev/asap/articles/700168965fdb7b
-author: zenn.dev
+author:
+- zenn.dev
 published: '2025-06-06T02:56:51.366+09:00'
 fetched: '2025-06-05T18:59:52Z'
 tags:

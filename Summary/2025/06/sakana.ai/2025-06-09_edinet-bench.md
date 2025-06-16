@@ -1,7 +1,8 @@
 ---
 title: Sakana AI
 source: https://sakana.ai/edinet-bench/
-author: Sakana AI
+author:
+- Sakana AI
 published: '2025-06-05T00:00:00Z'
 fetched: '2025-06-09T02:11:10.678683+00:00'
 tags:

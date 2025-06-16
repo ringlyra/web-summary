@@ -92,12 +92,15 @@ def fetch_arxiv_meta(paper_id: str) -> dict:
     title = entry.findtext("atom:title", default="", namespaces=ns).strip()
     published = entry.findtext("atom:published", default="", namespaces=ns)
     summary = entry.findtext("atom:summary", default="", namespaces=ns).strip()
-    authors = [a.findtext("atom:name", default="", namespaces=ns) for a in entry.findall("atom:author", ns)]
+    authors = [
+        a.findtext("atom:name", default="", namespaces=ns)
+        for a in entry.findall("atom:author", ns)
+    ]
     return {
         "title": title,
         "published": published,
         "summary": summary,
-        "author": ", ".join(filter(None, authors)),
+        "author": [a for a in authors if a],
     }
 
 
@@ -157,7 +160,9 @@ def fetch_paper(doi: str, out_dir: Path) -> Optional[Path]:
         f.write("---\n")
         f.write(f"title: {meta.get('title', '')!r}\n")
         f.write(f"source: {pdf_url}\n")
-        f.write(f"author: {meta.get('author', 'arxiv.org')}\n")
+        f.write("author:\n")
+        for a in meta.get('author', ['arxiv.org']):
+            f.write(f"  - {a}\n")
         f.write(f"published: '{meta.get('published', '')}'\n")
         f.write(f"fetched: '{datetime.now(timezone.utc).isoformat()}'\n")
         f.write("tags:\n  - codex\n  - arxiv\n")

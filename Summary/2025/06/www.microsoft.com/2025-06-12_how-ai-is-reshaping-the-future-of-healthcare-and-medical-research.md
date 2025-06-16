@@ -2,7 +2,8 @@
 title: How AI is reshaping the future of healthcare and medical research - Microsoft
   Research
 source: https://www.microsoft.com/en-us/research/podcast/how-ai-is-reshaping-the-future-of-healthcare-and-medical-research/
-author: www.microsoft.com
+author:
+- www.microsoft.com
 published: '2025-06-12T16:17:04+00:00'
 fetched: '2025-06-15T10:24:42.050207+00:00'
 tags:

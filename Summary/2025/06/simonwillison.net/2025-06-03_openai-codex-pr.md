@@ -1,7 +1,8 @@
 ---
 title: 'PR #537: Fix Markdown in og descriptions'
 source: https://simonwillison.net/2025/Jun/3/openai-codex-pr/
-author: Simon Willison
+author:
+- Simon Willison
 published: '2025-06-03T23:58:00Z'
 fetched: '2025-06-04T04:26:27Z'
 tags:

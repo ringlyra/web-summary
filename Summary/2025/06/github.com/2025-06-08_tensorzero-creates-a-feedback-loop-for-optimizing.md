@@ -2,7 +2,8 @@
 title: 'GitHub - tensorzero/tensorzero: TensorZero creates a feedback loop for optimizing
   LLM applications — turning production data into smarter, faster, and cheaper models.'
 source: https://github.com/tensorzero/tensorzero
-author: tensorzero
+author:
+- tensorzero
 published: '2025-06-04T18:18:34Z'
 fetched: '2025-06-08T16:17:36Z'
 tags:

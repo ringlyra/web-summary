@@ -1,7 +1,10 @@
 ---
 title: Reverse Engineering Cursor's LLM Client · TensorZero
 source: https://www.tensorzero.com/blog/reverse-engineering-cursors-llm-client/
-author: Viraj Mehta, Aaron Hill, Gabriel Bianconi
+author:
+- Viraj Mehta
+- Aaron Hill
+- Gabriel Bianconi
 published: '2025-06-05'
 fetched: '2025-06-07T12:12:55Z'
 tags:

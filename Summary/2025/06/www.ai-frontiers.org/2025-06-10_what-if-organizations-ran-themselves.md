@@ -1,7 +1,8 @@
 ---
 title: What if Organizations Ran Themselves? | AI Frontiers
 source: https://www.ai-frontiers.org/articles/what-if-organizations-ran-themselves
-author: www.ai-frontiers.org
+author:
+- www.ai-frontiers.org
 published: '2025-06-10T00:00:00+00:00'
 fetched: '2025-06-11T10:45:13.476155+00:00'
 tags:

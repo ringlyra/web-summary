@@ -1,7 +1,8 @@
 ---
 title: MCP Connector Interest Form
 source: https://openai.com/form/mcp-connector-interest-form/
-author: openai.com
+author:
+- openai.com
 published: ''
 fetched: '2025-06-04T23:38:12Z'
 tags:

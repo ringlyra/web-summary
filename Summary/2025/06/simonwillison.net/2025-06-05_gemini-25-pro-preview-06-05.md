@@ -2,7 +2,8 @@
 title: 'gemini-2.5-pro-preview-06-05: Try the latest Gemini 2.5 Pro before general
   availability'
 source: https://simonwillison.net/2025/Jun/5/gemini-25-pro-preview-06-05/
-author: Simon Willison
+author:
+- Simon Willison
 published: '2025-06-05T05:52:00'
 fetched: '2025-06-05T19:55:16Z'
 tags:

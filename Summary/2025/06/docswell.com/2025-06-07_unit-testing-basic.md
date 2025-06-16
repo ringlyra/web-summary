@@ -1,7 +1,8 @@
 ---
 title: ユニットテスト基礎講座 | ドクセル
 source: https://www.docswell.com/s/tyonekubo/ZP21V1-unit-testing-basic
-author: yonekubo / アーキテクトの教科書
+author:
+- yonekubo / アーキテクトの教科書
 published: '2025-06-07'
 fetched: '2025-06-07T23:35:53Z'
 tags:

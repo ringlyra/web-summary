@@ -1,7 +1,8 @@
 ---
 title: 'v0 APIのアーキテクチャ: Chat Completion API自作界隈'
 source: https://blog.lai.so/v0-api/
-author: laiso
+author:
+- laiso
 published: '2025-06-07T10:15:05.000Z'
 fetched: '2025-06-07T20:39:04Z'
 tags:

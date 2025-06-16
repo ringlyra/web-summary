@@ -2,7 +2,8 @@
 title: 'Zooming in: Efficient regional environmental risk assessment with generative
   AI'
 source: https://research.google/blog/zooming-in-efficient-regional-environmental-risk-assessment-with-generative-ai/
-author: research.google blog
+author:
+- research.google blog
 published: '2025-06-05T00:00:00Z'
 fetched: '2025-06-05T19:31:22Z'
 tags:

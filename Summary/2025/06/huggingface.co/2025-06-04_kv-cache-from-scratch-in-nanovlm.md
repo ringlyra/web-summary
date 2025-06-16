@@ -1,8 +1,12 @@
 ---
 title: KV Cache from scratch in nanoVLM
 source: https://huggingface.co/blog/kv-cache
-author: Aritra Roy Gosthipaty, Kashif Rasul, Luis Wiedmann, Andres Marafioti, Pedro
-  Cuenca
+author:
+- Aritra Roy Gosthipaty
+- Kashif Rasul
+- Luis Wiedmann
+- Andres Marafioti
+- Pedro Cuenca
 published: '2025-05-28T00:00:00Z'
 fetched: '2025-06-04T13:30:57Z'
 tags:

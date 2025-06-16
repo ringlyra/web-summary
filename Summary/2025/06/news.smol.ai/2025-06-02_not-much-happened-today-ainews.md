@@ -1,7 +1,8 @@
 ---
 title: not much happened today | AINews
 source: https://news.smol.ai/issues/25-06-02-not-much/
-author: news.smol.ai
+author:
+- news.smol.ai
 published: '2025-06-02T05:44:39.731Z'
 fetched: '2025-06-04T03:06:02.926764Z'
 tags:

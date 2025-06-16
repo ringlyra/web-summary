@@ -1,7 +1,8 @@
 ---
 title: Cloudflare Realtime と Workers でつくるサーバーレス WebRTC
 source: https://speakerdeck.com/nekoya3/cloudflare-realtime-to-workers-detukurusabaresu-webrtc
-author: Taiyu Yoshizawa
+author:
+- Taiyu Yoshizawa
 published: '2025-06-03T00:00:00Z'
 fetched: '2025-06-04T13:28:25Z'
 tags:
@@ -278,7 +279,9 @@ Realtime Ki
 TURN Serve
 
 Serverless SF
-(STUN Server) 
+(STUN Server)
+
+
 
 で提供はされている
 
@@ -519,7 +522,6 @@ logsetRemoteDescriptionsetLocalDescriptioncreateAnswersendAnswerSDP1
     }
 ぜひ遊んでみてね！
 
- remoteTracks   remoteTrackPromise;
  remoteStream   MediaStream();
 remoteTracks.((track)  {
   remoteStream.(track);

@@ -17,10 +17,15 @@ def test_author_field():
             continue
 
         meta = yaml.load("\n".join(lines[start + 1 : end]), Loader=yaml.BaseLoader) or {}
-        author = str(meta.get("author", "")).strip()
+        author_field = meta.get("author", [])
+        if not isinstance(author_field, list):
+            errors.append(f"{md}: author フィールドは箇条書きで記述してください")
+            authors = [str(author_field).strip()] if str(author_field).strip() else []
+        else:
+            authors = [str(a).strip() for a in author_field if str(a).strip()]
         source = str(meta.get("source", "")).strip()
 
-        if not author:
+        if not authors:
             errors.append(f"{md}: author が空白です。個人名が望ましい。なければドメイン名を入力してください")
             continue
 
@@ -31,7 +36,7 @@ def test_author_field():
             host_parts = host.split(".")
             if len(host_parts) > 2:
                 apex = ".".join(host_parts[-2:])
-                if author == apex:
+                if any(a == apex for a in authors):
                     errors.append(
                         f"{md}: サブドメインがあるのに省略されています。URLをもう一度確認して正しいドメイン名を入力してください"
                     )

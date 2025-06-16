@@ -1,7 +1,8 @@
 ---
 title: Ryzen AI MAX+395（Windows）でWan2.1を動かす
 source: https://zenn.dev/robustonian/articles/wan2_1_ryzen_ai
-author: 金のニワトリ
+author:
+- 金のニワトリ
 published: '2025-06-03T14:32:54+00:00'
 fetched: '2025-06-04T13:04:15Z'
 tags:

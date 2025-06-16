@@ -1,7 +1,8 @@
 ---
 title: NousResearch/Genstruct-7B · Hugging Face
 source: https://huggingface.co/NousResearch/Genstruct-7B
-author: huggingface.co
+author:
+- huggingface.co
 published: ''
 fetched: '2025-06-07T23:40:39Z'
 tags:

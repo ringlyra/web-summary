@@ -1,7 +1,8 @@
 ---
 title: Claude Code による技術的特異点を見届けろ
 source: https://zenn.dev/mizchi/articles/claude-code-singularity-point
-author: zenn.dev
+author:
+- zenn.dev
 published: ''
 fetched: '2025-06-13T09:20:01.826648+00:00'
 tags:

@@ -2,7 +2,11 @@
 title: 'Hack the model: Build AI security skills with the GitHub Secure Code Game
   - The GitHub Blog'
 source: https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/
-author: Joseph Katsioloudes, Jaroslav Lobacevski, Greg Ose, Man Yue Mo
+author:
+- Joseph Katsioloudes
+- Jaroslav Lobacevski
+- Greg Ose
+- Man Yue Mo
 published: '2025-06-03T16:37:03+00:00'
 fetched: '2025-06-04T13:21:57Z'
 tags:

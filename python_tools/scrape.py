@@ -35,7 +35,7 @@ if parsed_url.hostname == "help.openai.com":
     r = requests.get(proxy_url, timeout=120)
     r.raise_for_status()
     title, published, content_md = parse_rjina_text(r.text)
-    author = parsed_url.hostname
+    authors = [parsed_url.hostname]
     image = ""
     html = None
 else:
@@ -47,7 +47,7 @@ else:
     r.raise_for_status()
     if use_proxy:
         title, published, content_md = parse_rjina_text(r.text)
-        author = parsed_url.hostname
+        authors = [parsed_url.hostname]
         image = ""
         html = None
     else:
@@ -69,13 +69,13 @@ if html is not None:
     )
     authors = soup.find_all('meta', attrs={'name': 'citation_author'})
     if authors:
-        author = ", ".join([a['content'] for a in authors])
+        authors = [a['content'] for a in authors]
     else:
         author_tag = soup.find('meta', attrs={'name':'author'})
         if author_tag:
-            author = author_tag['content']
+            authors = [author_tag['content']]
         else:
-            author = urlparse(url).hostname
+            authors = [urlparse(url).hostname]
     published = (
         get_meta("article:published_time")
         or get_meta("citation_date")
@@ -185,7 +185,9 @@ with open(filepath, "w") as f:
     f.write("---\n")
     f.write(f"title: {title!r}\n")
     f.write(f"source: {source}\n")
-    f.write(f"author: {author}\n")
+    f.write("author:\n")
+    for a in authors:
+        f.write(f"  - {a}\n")
     f.write(f"published: {published!r}\n")
     f.write(f"fetched: {fetched!r}\n")
     f.write("tags:\n")

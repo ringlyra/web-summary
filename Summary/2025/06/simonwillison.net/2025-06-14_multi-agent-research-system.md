@@ -1,7 +1,8 @@
 ---
 title: 'Anthropic: How we built our multi-agent research system'
 source: https://simonwillison.net/2025/Jun/14/multi-agent-research-system/
-author: Simon Willison
+author:
+- Simon Willison
 published: '2025-06-14T00:00:00+00:00'
 fetched: '2025-06-14T23:38:55.183295+00:00'
 tags:

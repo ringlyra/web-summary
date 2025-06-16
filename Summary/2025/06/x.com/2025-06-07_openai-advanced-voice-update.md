@@ -3,7 +3,8 @@ title: 'OpenAI on X: "We launched an update to Advanced Voice to make it way mor
   natural and effortless to talk to. Now available to all paid users in ChatGPT."
   / X'
 source: https://x.com/openai/status/1931446297665695773
-author: OpenAI
+author:
+- OpenAI
 published: '2025-06-07T20:20:00Z'
 fetched: '2025-06-08T01:57:38Z'
 tags:

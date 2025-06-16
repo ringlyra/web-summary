@@ -2,7 +2,8 @@
 title: 'Learning to clarify: Multi-turn conversations with Action-Based Contrastive
   Self-Training'
 source: https://research.google/blog/learning-to-clarify-multi-turn-conversations-with-action-based-contrastive-self-training/
-author: research.google
+author:
+- research.google
 published: '2025-06-03'
 fetched: '2025-06-04T10:37:51Z'
 tags:

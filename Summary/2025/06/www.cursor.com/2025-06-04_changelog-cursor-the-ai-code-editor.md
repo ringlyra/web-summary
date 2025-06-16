@@ -1,7 +1,8 @@
 ---
 title: Changelog | Cursor - The AI Code Editor
 source: https://www.cursor.com/ja/changelog
-author: www.cursor.com
+author:
+- www.cursor.com
 published: '2025-06-04T00:00:00Z'
 fetched: '2025-06-04T23:40:48Z'
 tags:

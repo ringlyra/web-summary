@@ -1,7 +1,8 @@
 ---
 title: How we built our multi-agent research system
 source: https://www.anthropic.com/engineering/built-multi-agent-research-system
-author: www.anthropic.com
+author:
+- www.anthropic.com
 published: ''
 fetched: '2025-06-14T23:48:16.471912+00:00'
 tags:

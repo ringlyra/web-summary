@@ -2,8 +2,14 @@
 title: 'The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning
   Models via the Lens of Problem Complexity'
 source: https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf
-author: Parshin Shojaee, Maxwell Horton, Iman Mirzadeh, Keivan Alizadeh, Samy Bengio,
-  Mehrdad Farajtabar, Apple
+author:
+- Parshin Shojaee
+- Maxwell Horton
+- Iman Mirzadeh
+- Keivan Alizadeh
+- Samy Bengio
+- Mehrdad Farajtabar
+- Apple
 published: '2025-06-04T16:43:49Z'
 fetched: '2025-06-08T17:52:31Z'
 tags:

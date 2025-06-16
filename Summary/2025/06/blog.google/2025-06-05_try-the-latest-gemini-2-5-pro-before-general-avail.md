@@ -1,7 +1,8 @@
 ---
 title: Try the latest Gemini 2.5 Pro before general availability.
 source: https://blog.google/products/gemini/gemini-2-5-pro-latest-preview/
-author: Tulsee Doshi
+author:
+- Tulsee Doshi
 published: '2025-06-05'
 fetched: '2025-06-05T18:58:07Z'
 tags:

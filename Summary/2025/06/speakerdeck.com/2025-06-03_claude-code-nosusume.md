@@ -1,7 +1,8 @@
 ---
 title: Claude Code のすすめ
 source: https://speakerdeck.com/schroneko/getting-started-with-claude-code
-author: schroneko
+author:
+- schroneko
 published: '2025-06-03T00:00:00Z'
 fetched: '2025-06-04T02:37:24Z'
 tags:

@@ -1,7 +1,8 @@
 ---
 title: Claude Code with Claude Pro on リモート Ubuntu 環境で安価に常在戦場モバイルポチポチ開発
 source: https://note.com/hi_noguchi/n/n53fbc5f23be4
-author: Hi-Noguchi | 株式会社きみより代表
+author:
+- Hi-Noguchi | 株式会社きみより代表
 published: '2025-06-08T21:14:30+09:00'
 fetched: '2025-06-08T16:17:31Z'
 tags:

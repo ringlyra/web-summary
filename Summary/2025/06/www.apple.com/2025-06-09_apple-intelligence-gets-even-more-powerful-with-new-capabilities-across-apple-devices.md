@@ -1,7 +1,8 @@
 ---
 title: Apple製デバイス全体に及ぶ新機能により、Apple Intelligenceがさらにパワフルになります
 source: https://www.apple.com/jp/newsroom/2025/06/apple-intelligence-gets-even-more-powerful-with-new-capabilities-across-apple-devices/
-author: www.apple.com
+author:
+- www.apple.com
 published: ''
 fetched: '2025-06-09T23:20:52.967298+00:00'
 tags:

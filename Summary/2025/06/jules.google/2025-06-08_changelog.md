@@ -1,7 +1,8 @@
 ---
 title: Changelog
 source: https://jules.google/docs/changelog
-author: jules.google
+author:
+- jules.google
 published: ''
 fetched: '2025-06-08T17:31:25.876866Z'
 tags:

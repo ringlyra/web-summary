@@ -1,13 +1,17 @@
 ---
 title: 'Text-to-LoRA: Instant Transformer Adaption'
 source: https://arxiv.org/pdf/2506.06105
-author: Rujikorn Charakorn, Edoardo Cetin, Yujin Tang, Robert Tjarko Lange
+author:
+- Rujikorn Charakorn
+- Edoardo Cetin
+- Yujin Tang
+- Robert Tjarko Lange
 published: '2025-06-06T14:11:27Z'
 fetched: '2025-06-16T00:35:43.197124+00:00'
 tags:
-  - codex
-  - arxiv
-image: 
+- codex
+- arxiv
+image: null
 ---
 
 ## 要約
