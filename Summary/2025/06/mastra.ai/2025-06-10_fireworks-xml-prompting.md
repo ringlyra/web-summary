@@ -1,7 +1,8 @@
 ---
 title: Why Fireworks Scrapped Creating Their Own Agents Framework to Build with Mastra
 source: https://mastra.ai/blog/fireworks-xml-prompting
-author: mastra.ai
+author:
+- mastra.ai
 published: '2025-06-10'
 fetched: '2025-06-11T07:00:58.236873+00:00'
 tags:

@@ -1,7 +1,8 @@
 ---
 title: 自社製品ドキュメント向けの RAG を作ろうとしている
 source: https://voluntas.ghost.io/building-rag-for-product-docs/
-author: voluntas.ghost.io
+author:
+- voluntas.ghost.io
 published: '2025-06-08T13:25:45.000Z'
 fetched: '2025-06-08T17:06:21.492855Z'
 tags:

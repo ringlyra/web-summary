@@ -1,7 +1,8 @@
 ---
 title: GitHub - nishimoto265/Claude-Code-Communication
 source: https://github.com/nishimoto265/Claude-Code-Communication
-author: github.com
+author:
+- github.com
 published: ''
 fetched: '2025-06-10T08:48:20.489157+00:00'
 tags:

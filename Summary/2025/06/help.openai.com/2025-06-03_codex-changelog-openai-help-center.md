@@ -1,7 +1,8 @@
 ---
 title: Codex Changelog | OpenAI Help Center
 source: https://help.openai.com/en/articles/11428266-codex-changelog
-author: help.openai.com
+author:
+- help.openai.com
 published: '2025-06-03T00:00:00Z'
 fetched: '2025-06-04T02:05:05Z'
 tags:

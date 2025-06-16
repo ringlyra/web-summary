@@ -1,7 +1,8 @@
 ---
 title: Cursor – Background Agents
 source: https://docs.cursor.com/background-agent
-author: docs.cursor.com
+author:
+- docs.cursor.com
 published: ''
 fetched: '2025-06-13T09:48:57.400902+00:00'
 tags:

@@ -1,7 +1,8 @@
 ---
 title: Free LLM and Gen AI courses to take in 2025
 source: https://www.evidentlyai.com/blog/llm-genai-courses
-author: www.evidentlyai.com
+author:
+- www.evidentlyai.com
 published: '2025-06-05T13:25:10+00:00'
 fetched: '2025-06-06T03:43:04Z'
 tags:

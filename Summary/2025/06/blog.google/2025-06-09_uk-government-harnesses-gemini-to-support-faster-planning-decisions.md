@@ -1,7 +1,8 @@
 ---
 title: UK government harnesses Gemini to support faster planning decisions
 source: https://blog.google/around-the-globe/google-europe/united-kingdom/uk-government-harnesses-gemini-to-support-faster-planning-decisions/
-author: blog.google
+author:
+- blog.google
 published: '2025-06-09'
 fetched: '2025-06-09T20:58:03.368268+00:00'
 tags:

@@ -1,7 +1,8 @@
 ---
 title: Qwen3 Embedding
 source: https://simonwillison.net/2025/Jun/8/qwen3-embedding/
-author: Simon Willison
+author:
+- Simon Willison
 published: '2025-06-08T04:22:29Z'
 fetched: '2025-06-08T15:59:46Z'
 tags:

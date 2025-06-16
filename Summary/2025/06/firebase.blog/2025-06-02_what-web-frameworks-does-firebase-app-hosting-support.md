@@ -1,7 +1,8 @@
 ---
 title: What web frameworks does Firebase App Hosting support?
 source: https://firebase.blog/posts/2025/06/app-hosting-frameworks/
-author: firebase.blog
+author:
+- firebase.blog
 published: '2025-06-02T00:00:00Z'
 fetched: '2025-06-05T23:43:55Z'
 tags:

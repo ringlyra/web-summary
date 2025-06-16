@@ -2,7 +2,8 @@
 title: 'GitHub - google-gemini/gemini-fullstack-langgraph-quickstart: Get started
   with building Fullstack Agents using Gemini 2.5 and LangGraph'
 source: https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart
-author: google-gemini
+author:
+- google-gemini
 published: ''
 fetched: '2025-06-11T09:36:59.987264+00:00'
 tags:

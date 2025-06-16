@@ -1,7 +1,8 @@
 ---
 title: 'AI Research Roundup: Spurious Rewards & Latest Insights Explored'
 source: https://mail.bycloud.ai/p/a-shocking-rlvr-revelation-for-llm-just-dropped-dacd425f175077f9
-author: mail.bycloud.ai
+author:
+- mail.bycloud.ai
 published: ''
 fetched: '2025-06-04T11:10:30.676110Z'
 tags:

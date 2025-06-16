@@ -1,7 +1,8 @@
 ---
 title: 📖 Introducing the Node Help Menu
 source: https://blog.comfy.org/p/introducing-the-node-help-menu
-author: Christian Byrne
+author:
+- Christian Byrne
 published: '2025-06-04T11:11:55+00:00'
 fetched: '2025-06-04T13:26:48Z'
 tags:

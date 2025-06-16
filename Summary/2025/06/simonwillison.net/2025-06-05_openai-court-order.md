@@ -1,7 +1,8 @@
 ---
 title: OpenAI slams court order to save all ChatGPT logs, including deleted chats
 source: https://simonwillison.net/2025/Jun/5/openai-court-order/
-author: Simon Willison
+author:
+- Simon Willison
 published: '2025-06-05T14:20:06Z'
 fetched: '2025-06-05T19:00:44Z'
 tags:

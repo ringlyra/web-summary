@@ -1,7 +1,8 @@
 ---
 title: TheRock で llama.cpp をビルド - Qiita
 source: https://qiita.com/7shi/items/99d5f80a45bf72b693e9
-author: 7shi
+author:
+- 7shi
 published: '2025-06-03T18:43:23Z'
 fetched: '2025-06-04T13:10:11Z'
 tags:

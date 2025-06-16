@@ -1,7 +1,8 @@
 ---
 title: Using Projects in ChatGPT | OpenAI Help Center
 source: https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt
-author: help.openai.com
+author:
+- help.openai.com
 published: ''
 fetched: '2025-06-13T00:10:22.006442+00:00'
 tags:

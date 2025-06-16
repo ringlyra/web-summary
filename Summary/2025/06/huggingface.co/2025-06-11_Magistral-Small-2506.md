@@ -1,7 +1,8 @@
 ---
 title: mistralai/Magistral-Small-2506 · Hugging Face
 source: https://huggingface.co/mistralai/Magistral-Small-2506
-author: huggingface.co
+author:
+- huggingface.co
 published: ''
 fetched: '2025-06-11T10:33:52.966963+00:00'
 tags:

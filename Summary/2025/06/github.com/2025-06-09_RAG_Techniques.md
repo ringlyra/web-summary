@@ -4,7 +4,8 @@ title: 'GitHub - NirDiamant/RAG_Techniques: This repository showcases various ad
   information retrieval with generative models to provide accurate and contextually
   rich responses.'
 source: https://github.com/NirDiamant/RAG_Techniques
-author: github.com
+author:
+- github.com
 published: ''
 fetched: '2025-06-09T20:57:09.132526+00:00'
 tags:

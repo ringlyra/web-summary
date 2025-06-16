@@ -1,7 +1,8 @@
 ---
 title: Plan ahead with scheduled actions in the Gemini app.
 source: https://blog.google/products/gemini/scheduled-actions-gemini-app/
-author: blog.google
+author:
+- blog.google
 published: '2025-06-06'
 fetched: '2025-06-09T20:58:33.937647+00:00'
 tags:

@@ -3,7 +3,8 @@ title: 'GitHub - supermemoryai/supermemory-mcp: Your memories are in ChatGPT... 
   nowhere else. Universal Memory MCP makes your memories available to every single
   LLM. No logins or paywall. One command to set it up.'
 source: https://github.com/supermemoryai/supermemory-mcp
-author: github.com
+author:
+- github.com
 published: ''
 fetched: '2025-06-08T19:12:28.198186Z'
 tags:

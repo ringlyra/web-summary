@@ -1,7 +1,8 @@
 ---
 title: claude code でローカルなMCPサーバーを叩けるようにする
 source: https://zenn.dev/mizchi/articles/claude-local-mcp-server
-author: mizchi
+author:
+- mizchi
 published: '2025-06-08T18:32:52.581+09:00'
 fetched: '2025-06-08T16:17:46Z'
 tags:

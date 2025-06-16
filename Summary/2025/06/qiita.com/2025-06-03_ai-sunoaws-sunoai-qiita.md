@@ -1,7 +1,8 @@
 ---
 title: '音楽生成AI 「Suno」でAWSの曲を作って楽しく資格勉強できないだろうか #SUNOAI - Qiita'
 source: https://qiita.com/Takenoko4594/items/38e50a607ce2dad2ab06
-author: qiita.com
+author:
+- qiita.com
 published: '2025-06-03T14:47:30Z'
 fetched: '2025-06-04T12:43:43Z'
 tags:

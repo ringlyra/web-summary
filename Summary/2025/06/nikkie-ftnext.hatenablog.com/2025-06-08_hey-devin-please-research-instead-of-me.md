@@ -1,7 +1,8 @@
 ---
 title: ふーん Devinやるじゃん - nikkie-ftnextの日記
 source: https://nikkie-ftnext.hatenablog.com/entry/hey-devin-please-research-instead-of-me
-author: nikkie-ftnext.hatenablog.com
+author:
+- nikkie-ftnext.hatenablog.com
 published: '2025-06-08T13:16:21Z'
 fetched: '2025-06-08T17:14:14.383340Z'
 tags:

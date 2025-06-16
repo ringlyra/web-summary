@@ -2,7 +2,8 @@
 title: LlamaIndex Newsletter 2025-06-10 — LlamaIndex - Build Knowledge Assistants
   over your Enterprise Data
 source: https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-06-10
-author: www.llamaindex.ai
+author:
+- www.llamaindex.ai
 published: ''
 fetched: '2025-06-10T20:51:35.690349+00:00'
 tags:

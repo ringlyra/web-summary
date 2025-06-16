@@ -1,7 +1,8 @@
 ---
 title: Vertex AI Search の概要  |  AI Applications  |  Google Cloud
 source: https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction?hl=ja
-author: cloud.google.com
+author:
+- cloud.google.com
 published: ''
 fetched: '2025-06-08T18:32:36.735849+00:00'
 tags:

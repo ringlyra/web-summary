@@ -1,7 +1,8 @@
 ---
 title: メルカリにおけるデータアナリティクス AI エージェント「Socrates」と ADK 活用事例
 source: https://speakerdeck.com/na0/merukariniokerudetaanariteikusu-ai-eziento-socrates-to-adk-huo-yong-shi-li
-author: Naofumi Yamada
+author:
+- Naofumi Yamada
 published: ''
 fetched: '2025-06-10T13:57:59.699587+00:00'
 tags:

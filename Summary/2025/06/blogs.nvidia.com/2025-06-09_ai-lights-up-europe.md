@@ -1,7 +1,8 @@
 ---
 title: UK Prime Minister, NVIDIA CEO Set the Stage as AI Lights Up Europe
 source: https://blogs.nvidia.com/blog/ai-lights-up-europe/
-author: David Hogan
+author:
+- David Hogan
 published: '2025-06-09T10:25:39+00:00'
 fetched: '2025-06-09T20:57:19.509842+00:00'
 tags:
