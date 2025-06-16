@@ -17,9 +17,15 @@ parsed_url = urlparse(url)
 SUMMARY_PLACEHOLDER = "<ここに日本語の要約を書く>"
 
 html = None
+
+
 def parse_rjina_text(text):
     lines = text.splitlines()
-    t = lines[0].split(":", 1)[1].strip() if lines and lines[0].startswith("Title:") else ""
+    t = (
+        lines[0].split(":", 1)[1].strip()
+        if lines and lines[0].startswith("Title:")
+        else ""
+    )
     published = ""
     for line in lines:
         if line.startswith("Published Time:"):
@@ -27,10 +33,11 @@ def parse_rjina_text(text):
             break
     try:
         idx = lines.index("Markdown Content:")
-        content = "\n".join(lines[idx + 1:])
+        content = "\n".join(lines[idx + 1 :])
     except ValueError:
         content = text
     return t, published, content
+
 
 if parsed_url.hostname == "help.openai.com":
     proxy_url = f"https://r.jina.ai/{url}"
@@ -42,7 +49,11 @@ if parsed_url.hostname == "help.openai.com":
     html = None
 else:
     r = requests.get(url, timeout=120)
-    use_proxy = r.status_code >= 400 or "Your request has been blocked" in r.text or "Access Denied" in r.text
+    use_proxy = (
+        r.status_code >= 400
+        or "Your request has been blocked" in r.text
+        or "Access Denied" in r.text
+    )
     if use_proxy:
         proxy_url = f"https://r.jina.ai/{url}"
         r = requests.get(proxy_url, timeout=120)
@@ -56,26 +67,28 @@ else:
         html = r.text
 
 if html is not None:
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, "html.parser")
 
     def get_meta(prop):
-        tag = soup.find('meta', attrs={'property': prop}) or soup.find('meta', attrs={'name': prop})
-        if tag and tag.get('content'):
-            return tag['content']
-        return ''
+        tag = soup.find("meta", attrs={"property": prop}) or soup.find(
+            "meta", attrs={"name": prop}
+        )
+        if tag and tag.get("content"):
+            return tag["content"]
+        return ""
 
     title = (
-        get_meta('og:title')
-        or get_meta('citation_title')
-        or (soup.title.string.strip() if soup.title else '')
+        get_meta("og:title")
+        or get_meta("citation_title")
+        or (soup.title.string.strip() if soup.title else "")
     )
-    authors = soup.find_all('meta', attrs={'name': 'citation_author'})
+    authors = soup.find_all("meta", attrs={"name": "citation_author"})
     if authors:
-        authors = [a['content'] for a in authors]
+        authors = [a["content"] for a in authors]
     else:
-        author_tag = soup.find('meta', attrs={'name':'author'})
+        author_tag = soup.find("meta", attrs={"name": "author"})
         if author_tag:
-            authors = [author_tag['content']]
+            authors = [author_tag["content"]]
         else:
             authors = [urlparse(url).hostname]
     published = (
@@ -113,22 +126,27 @@ if html is not None:
                             f"{day} {month_name} {year} {time_str}", "%d %B %Y %I:%M %p"
                         )
                     except Exception:
-                        dt = datetime.strptime(
-                            f"{day} {month_name} {year}", "%d %B %Y"
-                        )
+                        dt = datetime.strptime(f"{day} {month_name} {year}", "%d %B %Y")
                 else:
-                    dt = datetime.strptime(
-                        f"{day} {month_name} {year}", "%d %B %Y"
-                    )
+                    dt = datetime.strptime(f"{day} {month_name} {year}", "%d %B %Y")
                 published = dt.replace(tzinfo=timezone.utc).isoformat()
-    image = get_meta('og:image')
+    image = get_meta("og:image")
 fetched = datetime.now(timezone.utc).isoformat()
 source = url
 
 parsed = urlparse(url)
-domain = parsed.hostname
-path_segments = parsed.path.strip('/').split('/')
-if 'content_md' not in locals():
+
+
+def extract_domain(parsed_url):
+    """Return host including subdomain but without port."""
+    host = parsed_url.netloc.split("@")[-1]
+    host = host.split(":")[0]
+    return host.lower()
+
+
+domain = extract_domain(parsed)
+path_segments = parsed.path.strip("/").split("/")
+if "content_md" not in locals():
     content_md = ""
 if domain == "github.com" and len(path_segments) == 2:
     user, repo = path_segments
@@ -140,7 +158,9 @@ if domain == "github.com" and len(path_segments) == 2:
             break
 
 if html is not None and not content_md:
-    article_tag = soup.find('article', attrs={'class': re.compile('post|article', re.I)})
+    article_tag = soup.find(
+        "article", attrs={"class": re.compile("post|article", re.I)}
+    )
     if article_tag and len(article_tag.get_text(strip=True)) > 200:
         content_html = article_tag.decode_contents()
     else:
@@ -150,8 +170,9 @@ if html is not None and not content_md:
 
 # filename from url slug instead of title
 import re
-slug = os.path.basename(parsed.path.strip('/')) or 'index'
-file_title = re.sub(r'[^a-zA-Z0-9_-]+', '-', slug).strip('-')
+
+slug = os.path.basename(parsed.path.strip("/")) or "index"
+file_title = re.sub(r"[^a-zA-Z0-9_-]+", "-", slug).strip("-")
 # ensure path
 if published:
     dt = None
@@ -164,20 +185,22 @@ if published:
         "%d %B %Y",
     ):
         try:
-            dt = datetime.strptime(published.split()[0] if fmt.startswith("%Y") else published, fmt)
+            dt = datetime.strptime(
+                published.split()[0] if fmt.startswith("%Y") else published, fmt
+            )
             break
         except Exception:
             continue
     if dt is None:
-        published_date = published[:10].replace('/', '-')
+        published_date = published[:10].replace("/", "-")
     else:
         dt = dt.replace(tzinfo=timezone.utc)
-        published_date = dt.strftime('%Y-%m-%d')
+        published_date = dt.strftime("%Y-%m-%d")
         published = dt.isoformat()
 else:
     dt = datetime.now(timezone.utc)
-    published_date = dt.strftime('%Y-%m-%d')
-year,month,_ = published_date.split('-')
+    published_date = dt.strftime("%Y-%m-%d")
+year, month, _ = published_date.split("-")
 path = os.path.join("Summary", year, month, domain)
 os.makedirs(path, exist_ok=True)
 filename = f"{published_date}_{file_title}.md"
