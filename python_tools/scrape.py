@@ -166,11 +166,25 @@ if html is not None and not content_md:
     else:
         article = Document(html)
         content_html = article.summary()
+
+    # arXiv uses spans for bullet symbols and bold text, which break markdownify
+    if parsed.netloc.endswith("arxiv.org"):
+        content_soup = BeautifulSoup(content_html, "html.parser")
+        for span in content_soup.select("span.ltx_tag_item"):
+            if span.string and "\u2022" in span.string:
+                span.decompose()
+        for bold in content_soup.select("span.ltx_font_bold"):
+            bold.name = "strong"
+            bold.attrs = {}
+        for img in content_soup.find_all("img"):
+            src = img.get("src")
+            if src and src.startswith("/"):
+                img["src"] = f"https://{parsed.netloc}{src}"
+        content_html = str(content_soup)
+
     content_md = md(content_html)
 
 # filename from url slug instead of title
-import re
-
 slug = os.path.basename(parsed.path.strip("/")) or "index"
 file_title = re.sub(r"[^a-zA-Z0-9_-]+", "-", slug).strip("-")
 # ensure path
@@ -217,6 +231,9 @@ with open(filepath, "w") as f:
     f.write(f"fetched: {fetched!r}\n")
     f.write("tags:\n")
     f.write("  - codex\n")
+    domain_tag = domain.split(".")[-2] if "." in domain else domain
+    if domain_tag != "codex":
+        f.write(f"  - {domain_tag}\n")
     f.write(f"image: {image}\n")
     f.write("---\n\n")
     f.write("## 要約\n\n")
