@@ -7,6 +7,7 @@ usage: python fetch_paper.py <doi> <output_dir>
 """
 
 import sys
+import os
 from pathlib import Path
 from typing import Optional
 from datetime import datetime, timezone
@@ -18,6 +19,9 @@ from PyPDF2 import PdfReader
 import json
 
 SUMMARY_PLACEHOLDER = "<日本語の要約を書く>"
+
+# 環境変数 SUMMARY があればそちらを採用する
+SUMMARY_TEXT = os.environ.get("SUMMARY", SUMMARY_PLACEHOLDER)
 
 
 def clean_text(raw_text: str) -> str:
@@ -183,7 +187,7 @@ def fetch_paper(doi: str, out_dir: Path) -> Optional[Path]:
         f.write("image: \n")
         f.write("---\n\n")
         f.write("## 要約\n\n")
-        summary_md = SUMMARY_PLACEHOLDER
+        summary_md = SUMMARY_TEXT
         f.write(summary_md + "\n\n")
         f.write("## 本文\n\n")
         f.write(txt_path.read_text(encoding="utf-8"))
