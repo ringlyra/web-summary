@@ -1,0 +1,3 @@
+{
+  "ignore": ["python_tools/scrape.py"]
+}
