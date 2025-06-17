@@ -8,6 +8,7 @@ import requests
 import re
 
 from bs4 import BeautifulSoup
+import string
 from readability import Document
 from markdownify import markdownify as md
 
@@ -15,6 +16,9 @@ url = sys.argv[1]
 parsed_url = urlparse(url)
 
 SUMMARY_PLACEHOLDER = "<日本語の要約を書く>"
+
+# 環境変数 SUMMARY があればそちらを採用する
+SUMMARY_TEXT = os.environ.get("SUMMARY", SUMMARY_PLACEHOLDER)
 
 html = None
 
@@ -167,20 +171,41 @@ if html is not None and not content_md:
         article = Document(html)
         content_html = article.summary()
 
+    content_soup = BeautifulSoup(content_html, "html.parser")
+
+    def fix_inline_spacing(soup):
+        for tag in soup.find_all(["b", "strong", "i", "em"]):
+            sib = tag.next_sibling
+            if (
+                sib
+                and isinstance(sib, str)
+                and not sib[0].isspace()
+                and sib[0] not in string.punctuation
+            ):
+                text = tag.get_text()
+                last = text[-1] if text else ""
+                if not (last.isalnum() and sib[0].isalnum()):
+                    tag.insert_after(" ")
+
+    fix_inline_spacing(content_soup)
+
+    # convert relative URLs to absolute for images, links and video sources
+    for tag in content_soup.find_all(["img", "a", "source"]):
+        attr = "href" if tag.name == "a" else "src"
+        url_val = tag.get(attr)
+        if url_val and url_val.startswith("/"):
+            tag[attr] = f"https://{parsed.netloc}{url_val}"
+
     # arXiv uses spans for bullet symbols and bold text, which break markdownify
     if parsed.netloc.endswith("arxiv.org"):
-        content_soup = BeautifulSoup(content_html, "html.parser")
         for span in content_soup.select("span.ltx_tag_item"):
             if span.string and "\u2022" in span.string:
                 span.decompose()
         for bold in content_soup.select("span.ltx_font_bold"):
             bold.name = "strong"
             bold.attrs = {}
-        for img in content_soup.find_all("img"):
-            src = img.get("src")
-            if src and src.startswith("/"):
-                img["src"] = f"https://{parsed.netloc}{src}"
-        content_html = str(content_soup)
+
+    content_html = str(content_soup)
 
     content_md = md(content_html)
 
@@ -237,7 +262,7 @@ with open(filepath, "w") as f:
     f.write(f"image: {image}\n")
     f.write("---\n\n")
     f.write("## 要約\n\n")
-    summary_md = SUMMARY_PLACEHOLDER
+    summary_md = SUMMARY_TEXT
     f.write(summary_md + "\n\n")
     f.write("## 本文\n\n")
     f.write(content_md)
