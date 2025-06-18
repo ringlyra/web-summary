@@ -8,7 +8,6 @@ import requests
 import re
 
 from bs4 import BeautifulSoup
-import string
 from readability import Document
 from markdownify import markdownify as md
 
@@ -161,4 +160,94 @@ if domain == "github.com" and len(path_segments) == 2:
             content_md = r.text
             break
 
-if html is not None and not conten
+if html is not None and not content_md:
+    article_tag = soup.find(
+        "article", attrs={"class": re.compile("post|article", re.I)}
+    )
+    if article_tag and len(article_tag.get_text(strip=True)) > 200:
+        content_html = article_tag.decode_contents()
+    else:
+        article = Document(html)
+        content_html = article.summary()
+
+    content_soup = BeautifulSoup(content_html, "html.parser")
+
+    # convert relative URLs to absolute for images, links and video sources
+    for tag in content_soup.find_all(["img", "a", "source"]):
+        attr = "href" if tag.name == "a" else "src"
+        url_val = tag.get(attr)
+        if url_val and url_val.startswith("/"):
+            tag[attr] = f"https://{parsed.netloc}{url_val}"
+
+    # arXiv uses spans for bullet symbols and bold text, which break markdownify
+    if parsed.netloc.endswith("arxiv.org"):
+        for span in content_soup.select("span.ltx_tag_item"):
+            if span.string and "\u2022" in span.string:
+                span.decompose()
+        for bold in content_soup.select("span.ltx_font_bold"):
+            bold.name = "strong"
+            bold.attrs = {}
+
+    content_html = str(content_soup)
+
+    content_md = md(content_html)
+
+# filename from url slug instead of title
+slug = os.path.basename(parsed.path.strip("/")) or "index"
+file_title = re.sub(r"[^a-zA-Z0-9_-]+", "-", slug).strip("-")
+# ensure path
+if published:
+    dt = None
+    for fmt in (
+        "%Y-%m-%d",
+        "%Y/%m/%d",
+        "%b %d, %Y",
+        "%B %d, %Y",
+        "%d %b %Y",
+        "%d %B %Y",
+    ):
+        try:
+            dt = datetime.strptime(
+                published.split()[0] if fmt.startswith("%Y") else published, fmt
+            )
+            break
+        except Exception:
+            continue
+    if dt is None:
+        published_date = published[:10].replace("/", "-")
+    else:
+        dt = dt.replace(tzinfo=timezone.utc)
+        published_date = dt.strftime("%Y-%m-%d")
+        published = dt.isoformat()
+else:
+    dt = datetime.now(timezone.utc)
+    published_date = dt.strftime("%Y-%m-%d")
+year, month, _ = published_date.split("-")
+path = os.path.join("Summary", year, month, domain)
+os.makedirs(path, exist_ok=True)
+filename = f"{published_date}_{file_title}.md"
+filepath = os.path.join(path, filename)
+
+with open(filepath, "w") as f:
+    f.write("---\n")
+    f.write(f"title: {title!r}\n")
+    f.write(f"source: {source}\n")
+    f.write("author:\n")
+    for a in authors:
+        f.write(f"  - {a}\n")
+    f.write(f"published: {published!r}\n")
+    f.write(f"fetched: {fetched!r}\n")
+    f.write("tags:\n")
+    f.write("  - codex\n")
+    domain_tag = domain.split(".")[-2] if "." in domain else domain
+    if domain_tag != "codex":
+        f.write(f"  - {domain_tag}\n")
+    f.write(f"image: {image}\n")
+    f.write("---\n\n")
+    f.write("## 要約\n\n")
+    summary_md = SUMMARY_TEXT
+    f.write(summary_md + "\n\n")
+    f.write("## 本文\n\n")
+    f.write(content_md)
+
+print(filepath)
