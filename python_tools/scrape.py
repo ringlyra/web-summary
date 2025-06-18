@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 import requests
 import re
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from readability import Document
 from markdownify import markdownify as md
 
@@ -19,7 +19,14 @@ SUMMARY_PLACEHOLDER = "<日本語の要約を書く>"
 # 環境変数 SUMMARY があればそちらを採用する
 SUMMARY_TEXT = os.environ.get("SUMMARY", SUMMARY_PLACEHOLDER)
 
-html = None
+# Initialize variables for type checkers
+html: str | None = None
+title: str = ""
+published: str = ""
+content_md: str = ""
+authors: list[str] = []
+image: str = ""
+soup: BeautifulSoup | None = None
 
 
 def parse_rjina_text(text):
@@ -63,7 +70,7 @@ else:
     r.raise_for_status()
     if use_proxy:
         title, published, content_md = parse_rjina_text(r.text)
-        authors = [parsed_url.hostname]
+        authors = [parsed_url.hostname or ""]
         image = ""
         html = None
     else:
@@ -71,38 +78,41 @@ else:
 
 if html is not None:
     soup = BeautifulSoup(html, "html.parser")
+    assert soup is not None
 
-    def get_meta(prop):
-        tag = soup.find("meta", attrs={"property": prop}) or soup.find(
+    def get_meta(s: BeautifulSoup, prop: str) -> str:
+        tag = s.find("meta", attrs={"property": prop}) or s.find(
             "meta", attrs={"name": prop}
         )
-        if tag and tag.get("content"):
-            return tag["content"]
+        if isinstance(tag, Tag) and tag.get("content"):
+            return str(tag["content"])
         return ""
 
     title = (
-        get_meta("og:title")
-        or get_meta("citation_title")
-        or (soup.title.string.strip() if soup.title else "")
+        get_meta(soup, "og:title")
+        or get_meta(soup, "citation_title")
+        or (soup.title.string.strip() if soup.title and soup.title.string else "")
     )
-    authors = soup.find_all("meta", attrs={"name": "citation_author"})
-    if authors:
-        authors = [a["content"] for a in authors]
+    author_tags = soup.find_all("meta", attrs={"name": "citation_author"})
+    if author_tags:
+        authors = [str(a["content"]) for a in author_tags if isinstance(a, Tag)]
     else:
         author_tag = soup.find("meta", attrs={"name": "author"})
-        if author_tag:
-            authors = [author_tag["content"]]
+        if isinstance(author_tag, Tag):
+            authors = [str(author_tag["content"])]
         else:
-            authors = [urlparse(url).hostname]
+            authors = [urlparse(url).hostname or ""]
     published = (
-        get_meta("article:published_time")
-        or get_meta("citation_date")
-        or get_meta("citation_publication_date")
+        get_meta(soup, "article:published_time")
+        or get_meta(soup, "citation_date")
+        or get_meta(soup, "citation_publication_date")
     )
 
     if not published:
         for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
             try:
+                if not isinstance(script, Tag) or not script.string:
+                    continue
                 data = json.loads(script.string)
             except Exception:
                 continue
@@ -133,7 +143,7 @@ if html is not None:
                 else:
                     dt = datetime.strptime(f"{day} {month_name} {year}", "%d %B %Y")
                 published = dt.replace(tzinfo=timezone.utc).isoformat()
-    image = get_meta("og:image")
+    image = get_meta(soup, "og:image")
 fetched = datetime.now(timezone.utc).isoformat()
 source = url
 
@@ -161,10 +171,11 @@ if domain == "github.com" and len(path_segments) == 2:
             break
 
 if html is not None and not content_md:
+    assert soup is not None
     article_tag = soup.find(
         "article", attrs={"class": re.compile("post|article", re.I)}
     )
-    if article_tag and len(article_tag.get_text(strip=True)) > 200:
+    if isinstance(article_tag, Tag) and len(article_tag.get_text(strip=True)) > 200:
         content_html = article_tag.decode_contents()
     else:
         article = Document(html)
@@ -174,9 +185,11 @@ if html is not None and not content_md:
 
     # convert relative URLs to absolute for images, links and video sources
     for tag in content_soup.find_all(["img", "a", "source"]):
+        if not isinstance(tag, Tag):
+            continue
         attr = "href" if tag.name == "a" else "src"
         url_val = tag.get(attr)
-        if url_val and url_val.startswith("/"):
+        if isinstance(url_val, str) and url_val.startswith("/"):
             tag[attr] = f"https://{parsed.netloc}{url_val}"
 
     # arXiv uses spans for bullet symbols and bold text, which break markdownify
