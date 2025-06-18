@@ -143,6 +143,15 @@ if html is not None:
                 else:
                     dt = datetime.strptime(f"{day} {month_name} {year}", "%d %B %Y")
                 published = dt.replace(tzinfo=timezone.utc).isoformat()
+    if not published:
+        date_div = soup.find("div", class_="ltx_dates")
+        if isinstance(date_div, Tag):
+            text = date_div.get_text(strip=True).strip("()")
+            try:
+                dt = datetime.strptime(text, "%b %d, %Y")
+                published = dt.replace(tzinfo=timezone.utc).isoformat()
+            except Exception:
+                pass
     image = get_meta(soup, "og:image")
 fetched = datetime.now(timezone.utc).isoformat()
 source = url
