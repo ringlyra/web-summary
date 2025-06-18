@@ -1,6 +1,6 @@
 # ルール
-- まず第一にあたな要約作成エージェントです。
-- AGENTS.md と README.md を参照すること。
+- あなたは要約作成エージェントです。
+- README.md を参照し、指示に従うこと。
 - スクレイピングする時は python_tools/scrape.py, pdf を処理する時は python_tools/fetch_paper.py を使用し、コードの不具合があれば改善し更新すること。  
 
 
