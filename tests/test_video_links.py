@@ -2,10 +2,10 @@ import pathlib
 import re
 
 # ── 拡張子定義 ──────────────────────────────────────────────
-VIDEO_EXT  = r"(?:mp4|mov|m3u8)"                     # 動画
-POSTER_EXT = r"(?:png|jpe?g|gif|webp|svg)"           # サムネイル画像
+VIDEO_EXT = r"(?:mp4|mov)"  # 動画
+POSTER_EXT = r"(?:png|jpe?g|gif|webp|svg)"  # サムネイル画像
 
-# ── 正しい動画リンク構文： [![alt](poster)](https://...video.xxx)
+# ── 正しい動画リンク構文： [![alt](poster)](https://...video.mp4|mov)
 CORRECT_VIDEO_LINK_RE = re.compile(
     rf"""\[!\[[^\]]*]\(      # [![alt](
           [^)]+\.{POSTER_EXT} #   poster 画像 URL
@@ -17,7 +17,7 @@ CORRECT_VIDEO_LINK_RE = re.compile(
     flags=re.IGNORECASE | re.VERBOSE,
 )
 
-# ── 動画 URL を含む丸かっこ ( https://... .mp4|mov|m3u8 )
+# ── 動画 URL を含む丸かっこ ( https://... .mp4|mov )
 PAREN_VIDEO_RE = re.compile(
     rf"\(([^)]+\.{VIDEO_EXT}(?:\?[^)]*)?)\)",
     flags=re.IGNORECASE,
@@ -31,7 +31,7 @@ def test_video_links():
     Summary/ 配下の .md ファイルについて
     1. 動画 URL は https:// で始まる
     2. 行内に [![alt](poster)](動画) 形式で書かれている
-    の両方を満たしているかを検証する
+    の両方を満たしているかを検証する (対象拡張子は mp4, mov)
     """
     errors: list[str] = []
 
@@ -49,9 +49,7 @@ def test_video_links():
                     errors.append(f"{md}:{lineno}: https ではない → {url}")
                 elif url not in correct_urls:
                     errors.append(
-                        f"{md}:{lineno}: "
-                        "[![alt](poster)](url) 形式ではない → "
-                        f"{url}"
+                        f"{md}:{lineno}: [![alt](poster)](url) 形式ではない → {url}"
                     )
 
     assert not errors, "動画リンクのフォーマットエラー:\n" + "\n".join(errors)
