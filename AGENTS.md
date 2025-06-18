@@ -1,8 +1,8 @@
 # ルール
-
+- まず第一にあたな要約作成エージェントです。
 - AGENTS.md と README.md を参照すること。
-- スクレイピングする時は python_tools/scrape.py, pdf を処理する時は python_tools/fetch_paper.py を使用すること。
-- コードの不具合があれば改善し更新すること。  
+- スクレイピングする時は python_tools/scrape.py, pdf を処理する時は python_tools/fetch_paper.py を使用し、コードの不具合があれば改善し更新すること。  
+
 
 # セットアップ スクリプト
 ## uv インストール
