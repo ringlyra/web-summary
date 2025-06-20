@@ -49,32 +49,36 @@ def parse_rjina_text(text):
     return t, published, content
 
 
-if parsed_url.hostname == "help.openai.com":
-    proxy_url = f"https://r.jina.ai/{url}"
-    r = requests.get(proxy_url, timeout=120)
-    r.raise_for_status()
-    title, published, content_md = parse_rjina_text(r.text)
-    authors = [parsed_url.hostname]
+def fetch_with_fallback(url: str, parsed_url) -> tuple[str, bool]:
+    """Fetch URL with automatic proxy fallback. Returns (response_text, used_proxy)"""
+    if parsed_url.hostname == "help.openai.com":
+        proxy_url = f"https://r.jina.ai/{url}"
+        r = requests.get(proxy_url, timeout=120)
+        r.raise_for_status()
+        return r.text, True
+    
+    try:
+        r = requests.get(url, timeout=120)
+        if (r.status_code >= 400 or 
+            "Your request has been blocked" in r.text or 
+            "Access Denied" in r.text):
+            raise requests.RequestException("Blocked or denied")
+        return r.text, False
+    except requests.RequestException:
+        proxy_url = f"https://r.jina.ai/{url}"
+        r = requests.get(proxy_url, timeout=120)
+        r.raise_for_status()
+        return r.text, True
+
+
+response_text, used_proxy = fetch_with_fallback(url, parsed_url)
+if used_proxy:
+    title, published, content_md = parse_rjina_text(response_text)
+    authors = [parsed_url.hostname or ""]
     image = ""
     html = None
 else:
-    r = requests.get(url, timeout=120)
-    use_proxy = (
-        r.status_code >= 400
-        or "Your request has been blocked" in r.text
-        or "Access Denied" in r.text
-    )
-    if use_proxy:
-        proxy_url = f"https://r.jina.ai/{url}"
-        r = requests.get(proxy_url, timeout=120)
-    r.raise_for_status()
-    if use_proxy:
-        title, published, content_md = parse_rjina_text(r.text)
-        authors = [parsed_url.hostname or ""]
-        image = ""
-        html = None
-    else:
-        html = r.text
+    html = response_text
 
 if html is not None:
     soup = BeautifulSoup(html, "html.parser")
