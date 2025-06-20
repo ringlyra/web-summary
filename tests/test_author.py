@@ -16,7 +16,9 @@ def test_author_field():
         except ValueError:
             continue
 
-        meta = yaml.load("\n".join(lines[start + 1 : end]), Loader=yaml.BaseLoader) or {}
+        meta = (
+            yaml.load("\n".join(lines[start + 1 : end]), Loader=yaml.BaseLoader) or {}
+        )
         author_field = meta.get("author", [])
         if not isinstance(author_field, list):
             errors.append(f"{md}: author フィールドは箇条書きで記述してください")
@@ -26,7 +28,9 @@ def test_author_field():
         source = str(meta.get("source", "")).strip()
 
         if not authors:
-            errors.append(f"{md}: author が空白です。個人名が望ましい。なければドメイン名を入力してください")
+            errors.append(
+                f"{md}: author が空白です。個人名が望ましい。なければドメイン名を入力してください"
+            )
             continue
 
         if not source:
