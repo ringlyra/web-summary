@@ -3,9 +3,9 @@ import re
 
 # ── 拡張子定義 ──────────────────────────────────────────────
 VIDEO_EXT = r"(?:mp4|mov)"  # 動画
-POSTER_EXT = r"(?:png|jpe?g|gif|webp|svg)"  # サムネイル画像
+POSTER_EXT = r"(?:png|jpe?g|webp|svg)"  # サムネイル画像 (GIF は画像テストで扱う)
 
-# ── 正しい動画リンク構文： [![alt](poster)](https://...video.mp4|mov)
+# ── 正しいアニメーションリンク構文： [![alt](poster)](https://...video.mp4|mov)
 CORRECT_VIDEO_LINK_RE = re.compile(
     rf"""\[!\[[^\]]*]\(      # [![alt](
           [^)]+\.{POSTER_EXT} #   poster 画像 URL
@@ -26,7 +26,7 @@ PAREN_VIDEO_RE = re.compile(
 SUMMARY_DIR = pathlib.Path("Summary")  # ここだけ指定すれば OK
 
 
-def test_video_links():
+def test_animation_links():
     """
     Summary/ 配下の .md ファイルについて
     1. 動画 URL は https:// で始まる
@@ -52,4 +52,4 @@ def test_video_links():
                         f"{md}:{lineno}: [![alt](poster)](url) 形式ではない → {url}"
                     )
 
-    assert not errors, "動画リンクのフォーマットエラー:\n" + "\n".join(errors)
+    assert not errors, "アニメーションリンクのフォーマットエラー:\n" + "\n".join(errors)
