@@ -21,7 +21,7 @@ repos:
 
       - id: pyright
         name: pyright
-        entry: pyright --pythonversion 3.12
+        entry: pyright --warnings --pythonversion 3.12
         language: system
         types: [python]
 
