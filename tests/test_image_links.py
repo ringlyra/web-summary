@@ -1,8 +1,8 @@
 import pathlib
 import re
 
-# 対応拡張子（画像）: PNG / JPEG のみ
-IMG_EXT = r"(?:png|jpe?g)"
+# 対応拡張子（画像）: PNG / JPEG / GIF
+IMG_EXT = r"(?:png|jpe?g|gif)"
 
 INLINE_IMG_RE = re.compile(
     rf"!\[[^\]]*]\((https://[^)]+\.{IMG_EXT}(?:\?[^)]*)?)\)",
@@ -22,7 +22,7 @@ def test_image_links():
     Summary/ 配下の .md ファイルについて
     - https:// で始まる
     - 同じ行に ![任意](URL) 形式で書かれている
-    という 2 条件を PNG / JPEG 画像リンクに対してチェックする
+    という 2 条件を PNG / JPEG / GIF 画像リンクに対してチェックする
     """
     errors: list[str] = []
 
