@@ -56,12 +56,14 @@ def fetch_with_fallback(url: str, parsed_url) -> tuple[str, bool]:
         r = requests.get(proxy_url, timeout=120)
         r.raise_for_status()
         return r.text, True
-    
+
     try:
         r = requests.get(url, timeout=120)
-        if (r.status_code >= 400 or 
-            "Your request has been blocked" in r.text or 
-            "Access Denied" in r.text):
+        if (
+            r.status_code >= 400
+            or "Your request has been blocked" in r.text
+            or "Access Denied" in r.text
+        ):
             raise requests.RequestException("Blocked or denied")
         return r.text, False
     except requests.RequestException:
