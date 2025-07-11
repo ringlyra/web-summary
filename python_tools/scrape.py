@@ -171,7 +171,7 @@ def generate_summary(url: str) -> str:
     def extract_domain(parsed_url):
         """Return host including subdomain but without port."""
         host = parsed_url.netloc.split("@")[-1]
-        host = host.split(":")[-1] if ":" in host else host
+        host = host.split(":")[0] if ":" in host else host
         return host.lower()
 
     domain = extract_domain(parsed)
