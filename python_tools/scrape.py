@@ -1,7 +1,7 @@
 import sys
 import os
 import json
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 from datetime import datetime, timezone
 
 import requests
@@ -54,6 +54,20 @@ def fetch_with_fallback(url: str, parsed_url) -> tuple[str, bool]:
         r = requests.get(proxy_url, timeout=120)
         r.raise_for_status()
         return r.text, True
+
+
+def fix_relative_links_md(md_text: str, base_url: str) -> str:
+    """Convert relative Markdown links to absolute using base_url."""
+    pattern = re.compile(r"\((?!https?://)([^)#]+)\)")
+
+    def repl(match: re.Match[str]) -> str:
+        url = match.group(1).strip()
+        if url.startswith("#"):
+            return match.group(0)
+        abs_url = urljoin(base_url, url)
+        return f"({abs_url})"
+
+    return pattern.sub(repl, md_text)
 
 
 def generate_summary(url: str) -> str:
@@ -186,7 +200,8 @@ def generate_summary(url: str) -> str:
             )
             r = requests.get(raw_url)
             if r.status_code == 200:
-                content_md = r.text
+                base_raw = f"https://raw.githubusercontent.com/{user}/{repo}/{branch}/"
+                content_md = fix_relative_links_md(r.text, base_raw)
                 break
 
     if html is not None and not content_md:
