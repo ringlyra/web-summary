@@ -113,13 +113,17 @@ def generate_summary(url: str) -> str:
             or (soup.title.string.strip() if soup.title and soup.title.string else "")
         )
         author_tags = soup.find_all("meta", attrs={"name": "citation_author"})
-        if author_tags:
-            authors = [str(a["content"]) for a in author_tags if isinstance(a, Tag)]
-        else:
+        authors = [
+            str(a.get("content", "")).strip()
+            for a in author_tags
+            if isinstance(a, Tag) and str(a.get("content", "")).strip()
+        ]
+        if not authors:
             author_tag = soup.find("meta", attrs={"name": "author"})
             if isinstance(author_tag, Tag):
-                authors = [str(author_tag["content"])]
-            else:
+                content = str(author_tag.get("content", "")).strip()
+                authors = [content] if content else []
+            if not authors:
                 authors = [urlparse(url).hostname or ""]
         published = (
             get_meta(soup, "article:published_time")
